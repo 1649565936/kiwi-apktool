@@ -66,6 +66,12 @@
 
     invoke-interface {p0, v0}, Lorg/chromium/content_public/browser/WebContents;->l(Ljava/lang/String;)V
 
+    invoke-static {}, Lorg/chromium/chrome/browser/translate/GoogleAiTranslateHelper;->e()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-interface {p0, v0}, Lorg/chromium/content_public/browser/WebContents;->l(Ljava/lang/String;)V
+
     const-string v0, "if(window.__kiwiAiTranslator){window.__kiwiAiTranslator.show(true);}"
 
     invoke-interface {p0, v0}, Lorg/chromium/content_public/browser/WebContents;->l(Ljava/lang/String;)V
@@ -159,6 +165,12 @@
     move-result-object v0
 
     invoke-interface {p0, v0}, Lorg/chromium/content_public/browser/WebContents;->l(Ljava/lang/String;)V
+
+    invoke-static {}, Lorg/chromium/chrome/browser/translate/GoogleAiTranslateHelper;->e()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-interface {p0, v0}, Lorg/chromium/content_public/browser/WebContents;->l(Ljava/lang/String;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -173,6 +185,14 @@
     .locals 1
 
     const-string v0, "(function(){try{const ID='kiwi-ai-translate',D=document;if(!D.documentElement)return;let st=D.getElementById(ID+'-polish');if(!st){st=D.createElement('style');st.id=ID+'-polish';D.documentElement.appendChild(st);}st.textContent='#'+ID+'-panel{left:12px!important;right:12px!important;top:calc(env(safe-area-inset-top,0px) + 10px)!important;transform:none!important;margin:0 auto!important;max-width:540px!important;display:grid!important;grid-template-columns:auto auto minmax(116px,1fr) auto auto!important;gap:8px!important;align-items:center!important;padding:10px 12px!important;border-radius:16px!important;border:1px solid rgba(60,64,67,.12)!important;background:rgba(255,255,255,.98)!important;color:#202124!important;font:13px Arial,sans-serif!important;box-shadow:0 10px 30px rgba(60,64,67,.22)!important;backdrop-filter:blur(14px)!important;-webkit-backdrop-filter:blur(14px)!important;box-sizing:border-box!important}#'+ID+'-panel[style*=none]{display:none!important}#'+ID+'-panel span,#'+ID+'-panel button,#'+ID+'-panel select{white-space:nowrap!important;box-sizing:border-box!important}#'+ID+'-panel button,#'+ID+'-panel select{height:36px!important;border-radius:10px!important;font:600 14px Arial,sans-serif!important;border:1px solid #dadce0!important}#'+ID+'-panel select{min-width:116px!important;padding:0 28px 0 12px!important;background:#fff!important;color:#202124!important}#'+ID+'-panel button{min-width:52px!important;padding:0 12px!important;background:#fff!important;color:#202124!important}#'+ID+'-panel button[data-primary=\"1\"]{background:#1a73e8!important;color:#fff!important;border-color:#1a73e8!important;box-shadow:0 3px 10px rgba(26,115,232,.28)!important}#'+ID+'-status{grid-column:1/-1!important;max-width:100%!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important;color:#5f6368!important;background:#f1f3f4!important;border-radius:999px!important;padding:5px 9px!important;font-size:12px!important}#'+ID+'-btn{width:62px!important;height:62px!important;right:18px!important;bottom:88px!important;font-size:22px!important;line-height:62px!important;box-shadow:0 10px 24px rgba(26,115,232,.32),0 2px 6px rgba(0,0,0,.18)!important}@media(min-width:560px){#'+ID+'-panel{left:50%!important;right:auto!important;transform:translateX(-50%)!important;width:auto!important;min-width:520px!important;grid-template-columns:auto auto 150px auto auto minmax(92px,1fr)!important}#'+ID+'-status{grid-column:auto!important}}';}catch(e){console.warn('Google AI translator style failed: '+(e&&e.message?e.message:e));}})();"
+
+    return-object v0
+.end method
+
+.method public static e()Ljava/lang/String;
+    .locals 1
+
+    const-string v0, "(function(){try{const ID='kiwi-ai-translate',D=document;if(!D.documentElement)return;let st=D.getElementById(ID+'-loading-spin');if(!st){st=D.createElement('style');st.id=ID+'-loading-spin';D.documentElement.appendChild(st);}st.textContent='@keyframes kiwiAiSpin{to{transform:rotate(360deg)}}[data-kiwi-ai-loading=\"1\"]{display:block!important;height:18px!important;margin-top:4px!important;font-size:0!important;line-height:18px!important;color:transparent!important;white-space:normal!important}[data-kiwi-ai-loading=\"1\"]::after{content:\"\"!important;display:inline-block!important;width:14px!important;height:14px!important;margin-left:0!important;border:2px solid rgba(95,99,104,.25)!important;border-top-color:#1a73e8!important;border-radius:50%!important;background:transparent!important;background-size:auto!important;animation:kiwiAiSpin .8s linear infinite!important;vertical-align:middle!important}';}catch(e){console.warn('Google AI loading style failed: '+(e&&e.message?e.message:e));}})();"
 
     return-object v0
 .end method
