@@ -12,6 +12,7 @@ Main changes:
 - Swiping the floating translate UI to the right dismisses it for the current tab/site session; choosing Translate from the browser menu shows it again.
 - The source language is auto-detected, and the target language can be changed from the top panel: Chinese, English, Russian, or Ukrainian.
 - New page text is translated incrementally through a MutationObserver queue while keeping the original text visible.
+- Translation now prioritizes the current viewport and nearby content instead of sending the whole page at once; scrolling triggers debounced incremental translation for newly visible text.
 - Douyin/Kuaishou live pages stop and hide video/audio, hide horizontal danmaku overlays, and translate only the right-side comment text where possible.
 - Comment nicknames are skipped; only the message content is sent for translation.
 - Google Translate web fallback is not used.
