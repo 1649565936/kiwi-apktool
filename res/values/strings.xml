@@ -3567,5 +3567,5 @@ Geometry gets info about the sites you set timers for and how long you visit the
     <string name="wiping_profile_data_title">Clearing account data</string>
     <string name="yes">Yes</string>
     <string name="yesterday">Yesterday</string>
-    <string name="google_ai_translate_default_api_key">AQ.Ab8RN6IPx3QEXfjZYXqXlH-3hNujI-78lNjibZDcR-eshB9cnw</string>
+    <string name="google_ai_translate_default_api_key"></string>
 </resources>

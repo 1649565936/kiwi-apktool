@@ -4141,6 +4141,8 @@
     .locals 3
 
     .line 1
+    invoke-static {p0}, Lorg/chromium/chrome/browser/translate/GoogleAiTranslateHelper;->c(Lorg/chromium/chrome/browser/tab/Tab;)V
+
     iget-object v0, p0, Lorg/chromium/chrome/browser/tab/TabImpl;->k:LBQ0;
 
     .line 2

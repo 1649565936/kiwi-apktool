@@ -64,11 +64,23 @@
 
     move-result-object p2
 
-    const-string v0, "active_translator"
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
 
-    const-string v1, "GoogleAI"
+    move-result v0
 
-    invoke-interface {p2, v0, v1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+    if-lez v0, :cond_store_empty
+
+    const-string v0, "GoogleAI"
+
+    goto :goto_store_translator
+
+    :cond_store_empty
+    const-string v0, ""
+
+    :goto_store_translator
+    const-string v1, "active_translator"
+
+    invoke-interface {p2, v1, v0}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
     move-result-object p2
 
@@ -84,7 +96,7 @@
 
     if-lez p1, :cond_empty
 
-    const-string v2, "Saved. Google AI (Gemini) is active."
+    const-string v2, "Saved. Gemini translation is active."
 
     goto :goto_set_summary
 

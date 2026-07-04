@@ -356,6 +356,13 @@
 
     .line 43
     :cond_2
+    iget-boolean v0, p1, Lorg/chromium/content_public/browser/NavigationHandle;->c:Z
+
+    if-nez v0, :cond_kiwi_auto_translate_done
+
+    invoke-static {v3}, Lorg/chromium/chrome/browser/translate/GoogleAiTranslateHelper;->c(Lorg/chromium/chrome/browser/tab/Tab;)V
+
+    :cond_kiwi_auto_translate_done
     invoke-virtual {v3}, Lorg/chromium/chrome/browser/tab/TabImpl;->g0()V
 
     .line 44

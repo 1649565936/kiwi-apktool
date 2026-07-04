@@ -6,13 +6,18 @@ Package:
 com.kiwibrowser.browser.dev
 
 Main changes:
-- The Translate menu action is forced to call GoogleAiTranslateHelper.
-- GoogleAiTranslateHelper injects page JavaScript that collects readable text nodes.
-- Text is sent to Gemini and replaced in-place on the page.
-- The target language is fixed to Simplified Chinese (zh-CN).
+- The Translate menu action is forced to call GoogleAiTranslateHelper, but no floating UI is injected until a Gemini API key has been saved.
+- GoogleAiTranslateHelper auto-injects a floating page translation button and a top status panel after page/WebContents navigation.
+- Clicking the floating Translate button sends readable page text to Gemini and inserts translations next to the original text.
+- Swiping the floating translate UI to the right dismisses it for the current tab/site session; choosing Translate from the browser menu shows it again.
+- The source language is auto-detected, and the target language can be changed from the top panel: Chinese, English, Russian, or Ukrainian.
+- New page text is translated incrementally through a MutationObserver queue while keeping the original text visible.
+- Douyin/Kuaishou live pages stop and hide video/audio, hide horizontal danmaku overlays, and translate only the right-side comment text where possible.
+- Comment nicknames are skipped; only the message content is sent for translation.
 - Google Translate web fallback is not used.
-- A default API key is embedded in the resource string google_ai_translate_default_api_key. It can still be overridden at runtime from the app setting:
+- No default API key is embedded. The key must be saved from Settings > Translate > Gemini API key:
   google_ai_translate_api_key
+- Settings > Translate only shows Gemini as the translation provider; the API key editor is kept as a separate preference.
 
 Build example:
 java -jar tools\apktool.jar b kiwi-apktool-dev -o kiwi-browser-dev-googleai-unsigned.apk
