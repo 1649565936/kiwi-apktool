@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<org.chromium.components.browser_ui.widget.promo.PromoCardView n0:layout_width="match_parent" n0:layout_height="wrap_content" style="@style/MaterialCardStyle"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <LinearLayout n0:orientation="vertical" n0:paddingLeft="@dimen/promo_compact_padding" n0:paddingTop="@dimen/promo_compact_padding" n0:paddingRight="@dimen/promo_compact_padding" n0:paddingBottom="@dimen/promo_compact_padding_bottom" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:paddingHorizontal="@dimen/promo_compact_padding">
+        <LinearLayout n0:orientation="horizontal" n0:id="@id/promo_header" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginBottom="@dimen/promo_compact_header_margin_vertical">
+            <ImageView n0:layout_gravity="top" n0:id="@id/promo_image" n0:layout_width="@dimen/promo_image_size" n0:layout_height="@dimen/promo_image_size" n0:scaleType="fitCenter" n0:importantForAccessibility="no" />
+            <LinearLayout n0:orientation="vertical" n0:id="@id/promo_text_group" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginStart="@dimen/promo_compact_header_margin_vertical">
+                <org.chromium.ui.widget.TextViewWithLeading n0:textAppearance="@style/TextAppearance.TextLarge.Primary" n0:id="@id/promo_title" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginBottom="@dimen/promo_between_text_margin" n1:leading="@dimen/text_size_large_leading"
+                  xmlns:n1="http://schemas.android.com/apk/res-auto" />
+                <org.chromium.ui.widget.TextViewWithLeading n0:textAppearance="@style/TextAppearance.TextSmall.Secondary" n0:id="@id/promo_description" n0:layout_width="match_parent" n0:layout_height="wrap_content" n2:leading="@dimen/text_size_small_leading"
+                  xmlns:n2="http://schemas.android.com/apk/res-auto" />
+            </LinearLayout>
+        </LinearLayout>
+        <org.chromium.components.browser_ui.widget.DualControlLayout n0:id="@id/promo_button_group" n0:layout_width="match_parent" n0:layout_height="wrap_content" n3:buttonAlignment="end"
+          xmlns:n3="http://schemas.android.com/apk/res-auto">
+            <org.chromium.ui.widget.ButtonCompat n0:ellipsize="end" n0:layout_gravity="end|top" n0:id="@id/promo_primary_button" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:singleLine="true" style="@style/FilledButton.Flat" />
+            <org.chromium.ui.widget.ButtonCompat n0:ellipsize="end" n0:id="@id/promo_secondary_button" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:singleLine="true" style="@style/TextButton" />
+        </org.chromium.components.browser_ui.widget.DualControlLayout>
+    </LinearLayout>
+</org.chromium.components.browser_ui.widget.promo.PromoCardView>

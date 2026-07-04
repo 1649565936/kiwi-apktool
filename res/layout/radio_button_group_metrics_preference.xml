@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<org.chromium.components.browser_ui.widget.RadioButtonWithDescriptionLayout n0:focusable="false" n0:layout_width="match_parent" n0:layout_height="wrap_content"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <org.chromium.components.browser_ui.widget.RadioButtonWithDescription n0:id="@id/extended_metrics" n0:layout_width="match_parent" n0:layout_height="wrap_content" n1:descriptionText="@string/metrics_settings_extended_summary" n1:primaryText="@string/metrics_settings_extended_title"
+      xmlns:n1="http://schemas.android.com/apk/res-auto" />
+    <org.chromium.components.browser_ui.widget.RadioButtonWithDescription n0:id="@id/basic_metrics" n0:layout_width="match_parent" n0:layout_height="wrap_content" n2:descriptionText="@string/metrics_settings_basic_summary" n2:primaryText="@string/metrics_settings_basic_title"
+      xmlns:n2="http://schemas.android.com/apk/res-auto" />
+    <org.chromium.components.browser_ui.widget.RadioButtonWithDescription n0:id="@id/no_metrics" n0:layout_width="match_parent" n0:layout_height="wrap_content" n3:descriptionText="@string/metrics_settings_none_summary" n3:primaryText="@string/metrics_settings_none_title"
+      xmlns:n3="http://schemas.android.com/apk/res-auto" />
+</org.chromium.components.browser_ui.widget.RadioButtonWithDescriptionLayout>

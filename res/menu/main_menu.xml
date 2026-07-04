@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu>
+    <group n0:id="@id/PAGE_MENU" n0:visible="false"
+      xmlns:n0="http://schemas.android.com/apk/res/android">
+        <item n0:id="@id/icon_row_menu_id" n0:title="@null">
+            <menu>
+                <item n0:icon="@drawable/btn_forward" n0:id="@id/forward_menu_id" n0:title="@string/accessibility_menu_forward" n0:titleCondensed="@string/menu_forward" />
+                <item n0:icon="@drawable/btn_star" n0:id="@id/bookmark_this_page_id" n0:title="@string/accessibility_menu_bookmark" n0:titleCondensed="@string/menu_bookmark" />
+                <item n0:icon="@drawable/ic_file_download_white_24dp" n0:id="@id/offline_page_id" n0:title="@string/download_page" n0:titleCondensed="@string/menu_download" />
+                <item n0:icon="@drawable/btn_info" n0:id="@id/info_menu_id" n0:title="@string/accessibility_menu_info" n0:titleCondensed="@string/menu_page_info" />
+                <item n0:icon="@drawable/btn_reload_stop" n0:id="@id/reload_menu_id" n0:title="@string/accessibility_btn_refresh" n0:titleCondensed="@string/refresh" />
+            </menu>
+        </item>
+        <item n0:icon="@drawable/menu_update" n0:id="@id/update_menu_id" n0:title="@string/menu_update" />
+        <item n0:icon="@drawable/ic_add_box_rounded_corner" n0:id="@id/new_tab_menu_id" n0:title="@string/menu_new_tab" />
+        <item n0:icon="@drawable/incognito_simple" n0:id="@id/new_incognito_tab_menu_id" n0:title="@string/menu_new_incognito_tab" />
+        <item n0:icon="@drawable/ic_new_window" n0:id="@id/new_window_menu_id" n0:title="@string/menu_new_window" />
+        <item n0:icon="@drawable/ic_open_in_browser" n0:id="@id/move_to_other_window_menu_id" n0:title="@string/menu_move_to_other_window" />
+        <item n0:icon="@drawable/ic_select_window" n0:id="@id/manage_all_windows_menu_id" n0:title="@string/menu_manage_all_windows" />
+        <item n0:id="@id/divider_line_id" n0:title="@null" />
+        <item n0:icon="@drawable/ic_history_googblue_24dp" n0:id="@id/open_history_menu_id" n0:title="@string/menu_history" />
+        <item n0:icon="@drawable/quick_delete_trash_bin_icon_24dp" n0:id="@id/quick_delete_menu_id" n0:title="@string/menu_quick_delete" />
+        <item n0:icon="@drawable/ic_folder_downloads" n0:id="@id/downloads_menu_id" n0:title="@string/menu_downloads" />
+        <item n0:icon="@drawable/ic_folder_bookmarks" n0:id="@id/all_bookmarks_menu_id" n0:title="@string/menu_bookmarks" />
+        <item n0:icon="@drawable/ic_recent_tabs" n0:id="@id/recent_tabs_menu_id" n0:title="@string/menu_recent_tabs" />
+        <item n0:icon="@drawable/ic_extensions" n0:id="@id/extensions_id" n0:title="@string/main_menu_extensions" />
+        <item n0:id="@id/divider_line_id" n0:title="@null" />
+        <item n0:icon="@drawable/ic_zoom" n0:id="@id/page_zoom_id" n0:title="@string/page_zoom_menu_title" />
+        <item n0:id="@id/share_row_menu_id" n0:title="@null">
+            <menu>
+                <item n0:icon="@drawable/ic_share" n0:id="@id/share_menu_id" n0:title="@string/menu_share_page" />
+                <item n0:id="@id/direct_share_menu_id" n0:title="@null" />
+            </menu>
+        </item>
+        <item n0:icon="@drawable/btn_star" n0:id="@id/add_bookmark_menu_id" n0:title="@string/menu_add_bookmark" />
+        <item n0:icon="@drawable/btn_star_filled" n0:id="@id/edit_bookmark_menu_id" n0:title="@string/menu_edit_bookmark" />
+        <item n0:icon="@drawable/price_tracking_disabled" n0:id="@id/enable_price_tracking_menu_id" n0:title="@string/enable_price_tracking_menu_item" />
+        <item n0:icon="@drawable/price_tracking_enabled_filled" n0:id="@id/disable_price_tracking_menu_id" n0:title="@string/disable_price_tracking_menu_item" />
+        <item n0:icon="@drawable/ic_find_in_page" n0:id="@id/find_in_page_id" n0:title="@string/menu_find_in_page" />
+        <item n0:icon="@drawable/ic_translate" n0:id="@id/translate_id" n0:title="@string/menu_translate" />
+        <item n0:icon="@drawable/ic_add_to_home_screen" n0:id="@id/add_to_homescreen_id" n0:title="@string/menu_add_to_homescreen" />
+        <item n0:icon="@drawable/ic_install_webapp" n0:id="@id/install_webapp_id" n0:title="@string/menu_install_webapp" />
+        <item n0:icon="@drawable/ic_open_webapk" n0:id="@id/open_webapk_id" n0:title="@string/menu_open_webapk" />
+        <item n0:id="@id/request_desktop_site_row_menu_id" n0:title="@null">
+            <menu>
+                <item n0:icon="@drawable/ic_desktop_windows" n0:id="@id/request_desktop_site_id" n0:title="@string/menu_request_desktop_site" />
+                <item n0:id="@id/request_desktop_site_check_id" n0:title="@null" n0:checkable="true" />
+            </menu>
+        </item>
+        <item n0:id="@id/auto_dark_web_contents_row_menu_id" n0:title="@null">
+            <menu>
+                <item n0:icon="@drawable/ic_brightness_medium_24dp" n0:id="@id/auto_dark_web_contents_id" n0:title="@string/menu_auto_dark_web_contents" />
+                <item n0:id="@id/auto_dark_web_contents_check_id" n0:title="@null" n0:checkable="true" />
+            </menu>
+        </item>
+        <item n0:id="@id/adblock_row_menu_id" n0:title="@null">
+            <menu>
+                <item n0:id="@id/adblock_id" n0:title="@string/main_menu_adblock" />
+                <item n0:id="@id/adblock_check_id" n0:title="@null" n0:checkable="true" />
+            </menu>
+        </item>
+        <item n0:icon="@drawable/ic_photo_camera" n0:id="@id/paint_preview_show_id" n0:title="@string/menu_paint_preview_show" />
+        <item n0:icon="@drawable/ic_image_descriptions" n0:id="@id/get_image_descriptions_id" n0:title="@string/menu_get_image_descriptions" />
+        <item n0:id="@id/divider_line_id" n0:title="@null" />
+        <item n0:icon="@drawable/reader_mode_prefs_icon" n0:id="@id/reader_mode_prefs_id" n0:title="@string/menu_reader_mode_prefs" />
+        <item n0:id="@id/night_mode_switcher_id" n0:title="@string/main_menu_turn_on_night_mode" />
+        <item n0:icon="@drawable/ic_devtools" n0:id="@id/developer_tools_id" n0:title="@string/main_menu_developer_tools" />
+        <item n0:icon="@drawable/settings_cog" n0:id="@id/preferences_id" n0:title="@string/menu_settings" />
+        <item n0:icon="@drawable/help_outline" n0:id="@id/help_id" n0:title="@string/menu_help" />
+        <item n0:id="@id/managed_by_divider_line_id" n0:title="@null" />
+        <item n0:icon="@drawable/ic_business" n0:id="@id/managed_by_menu_id" n0:title="@string/managed_browser" />
+        <item n0:icon="@drawable/ic_clear_data" n0:id="@id/clear_data_menu_id" n0:title="@string/main_menu_clear_data" />
+        <item n0:icon="@drawable/ic_exit_to_app_white_24dp" n0:id="@id/exit_id" n0:title="@string/main_menu_exit" />
+        <item n0:icon="@drawable/ic_link_grey600_36dp" n0:id="@id/disable_proxy_id" n0:title="@string/main_menu_disable_proxy" />
+    </group>
+    <group n1:id="@id/OVERVIEW_MODE_MENU" n1:visible="false"
+      xmlns:n1="http://schemas.android.com/apk/res/android">
+        <item n1:icon="@drawable/ic_add_box_rounded_corner" n1:id="@id/new_tab_menu_id" n1:title="@string/menu_new_tab" />
+        <item n1:icon="@drawable/incognito_simple" n1:id="@id/new_incognito_tab_menu_id" n1:title="@string/menu_new_incognito_tab" />
+        <item n1:icon="@drawable/btn_close_white" n1:id="@id/close_all_tabs_menu_id" n1:title="@string/menu_close_all_tabs" />
+        <item n1:icon="@drawable/btn_close_white" n1:id="@id/close_all_incognito_tabs_menu_id" n1:title="@string/menu_close_all_incognito_tabs" />
+        <item n1:icon="@drawable/quick_delete_trash_bin_icon_24dp" n1:id="@id/quick_delete_menu_id" n1:title="@string/menu_quick_delete" />
+        <item n1:icon="@drawable/ic_select_tabs" n1:id="@id/menu_select_tabs" n1:title="@string/menu_select_tabs" />
+        <item n1:icon="@drawable/settings_cog" n1:id="@id/preferences_id" n1:title="@string/menu_settings" />
+    </group>
+    <group n2:id="@id/TABLET_EMPTY_MODE_MENU" n2:visible="false"
+      xmlns:n2="http://schemas.android.com/apk/res/android">
+        <item n2:icon="@drawable/ic_add_box_rounded_corner" n2:id="@id/new_tab_menu_id" n2:title="@string/menu_new_tab" />
+        <item n2:icon="@drawable/incognito_simple" n2:id="@id/new_incognito_tab_menu_id" n2:title="@string/menu_new_incognito_tab" />
+        <item n2:icon="@drawable/settings_cog" n2:id="@id/preferences_id" n2:title="@string/menu_settings" />
+    </group>
+</menu>

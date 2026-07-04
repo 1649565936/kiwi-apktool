@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout n0:layout_gravity="center_horizontal" n0:orientation="vertical" n0:layout_width="wrap_content" n0:layout_height="wrap_content"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <org.chromium.ui.widget.TextViewWithLeading n0:textAppearance="@style/TextAppearance.TextMedium.Secondary" n0:layout_gravity="center_horizontal" n0:id="@id/migration_warning_sheet_subtitle" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:layout_marginBottom="@dimen/pwd_migration_warning_margin" />
+    <org.chromium.ui.widget.ButtonCompat n0:ellipsize="end" n0:layout_gravity="center_horizontal" n0:id="@id/acknowledge_password_migration_button" n0:descendantFocusability="blocksDescendants" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginBottom="@dimen/pwd_migration_warning_button_spacing" n0:minHeight="@dimen/pwd_migration_warning_button_height" n0:text="@string/password_migration_warning_acknowledge" n0:singleLine="true" style="@style/FilledButton.Flat" />
+    <org.chromium.ui.widget.ButtonCompat n0:ellipsize="end" n0:layout_gravity="center_horizontal" n0:id="@id/password_migration_more_options_button" n0:descendantFocusability="blocksDescendants" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:layout_marginBottom="@dimen/pwd_migration_warning_margin" n0:minHeight="@dimen/pwd_migration_warning_button_height" n0:text="@string/password_migration_warning_other_options" n0:singleLine="true" style="@style/TextButton" />
+</LinearLayout>

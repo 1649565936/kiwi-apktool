@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout n0:orientation="vertical" n0:background="@drawable/sheet_background" n0:layout_width="match_parent" n0:layout_height="wrap_content"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <LinearLayout n0:layout_width="match_parent" n0:layout_height="wrap_content">
+        <LinearLayout n0:gravity="center" n0:id="@id/page_info_url_wrapper" n0:paddingLeft="@dimen/page_info_popup_padding_sides" n0:paddingRight="@dimen/page_info_popup_padding_sides" n0:layout_width="0.0dp" n0:layout_height="wrap_content" n0:minHeight="48.0dp" n0:layout_weight="1.0" n0:paddingHorizontal="@dimen/page_info_popup_padding_sides">
+            <org.chromium.components.browser_ui.widget.text.TextViewWithCompoundDrawables n0:textAppearance="@style/TextAppearance.TextLarge.Primary" n0:id="@id/page_info_truncated_url" n0:paddingTop="@dimen/page_info_popup_padding_vertical" n0:paddingBottom="@dimen/page_info_popup_padding_vertical" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:includeFontPadding="false" n0:drawablePadding="@dimen/page_info_popup_button_padding_sides" n0:lineSpacingExtra="6.0dp" n0:paddingVertical="@dimen/page_info_popup_padding_vertical" n1:drawableHeight="@dimen/page_info_favicon_size" n1:drawableWidth="@dimen/page_info_favicon_size"
+              xmlns:n1="http://schemas.android.com/apk/res-auto" />
+            <view n0:textAppearance="@style/TextAppearance.TextLarge.Primary" n0:ellipsize="end" n0:id="@id/page_info_url" n0:paddingTop="@dimen/page_info_popup_padding_vertical" n0:paddingBottom="@dimen/page_info_popup_padding_vertical" n0:visibility="gone" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:includeFontPadding="false" n0:lineSpacingExtra="6.0dp" n0:textAlignment="center" n0:paddingVertical="@dimen/page_info_popup_padding_vertical" class="org.chromium.ui.ElidedUrlTextView" />
+        </LinearLayout>
+        <org.chromium.ui.widget.ChromeImageButton n0:id="@id/page_info_close" n0:background="?selectableItemBackgroundBorderless" n0:visibility="gone" n0:layout_width="48.0dp" n0:layout_height="48.0dp" n0:src="@drawable/btn_close" n0:contentDescription="@string/close" n2:tint="?colorOnSurface"
+          xmlns:n2="http://schemas.android.com/apk/res-auto" />
+    </LinearLayout>
+    <LinearLayout n0:orientation="vertical" n0:id="@id/page_info_wrapper" n0:layout_width="match_parent" n0:layout_height="wrap_content">
+        <LinearLayout n0:gravity="center_vertical" n0:orientation="horizontal" n0:id="@id/page_info_subpage_header" n0:paddingLeft="@dimen/page_info_popup_padding_sides" n0:paddingRight="@dimen/page_info_popup_padding_sides" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:paddingHorizontal="@dimen/page_info_popup_padding_sides">
+            <org.chromium.ui.widget.ChromeImageButton n0:id="@id/subpage_back_button" n0:background="?selectableItemBackgroundBorderless" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:src="@drawable/ic_arrow_back_24dp" n0:minWidth="@dimen/min_touch_target_size" n0:minHeight="@dimen/min_touch_target_size" n0:contentDescription="@string/back" n0:layout_marginStart="-12.0dp" n0:layout_marginEnd="20.0dp" n3:tint="?colorOnSurface"
+              xmlns:n3="http://schemas.android.com/apk/res-auto" />
+            <TextView n0:textAppearance="@style/TextAppearance.TextLarge.Primary" n0:id="@id/page_info_subpage_title" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginTop="@dimen/page_info_popup_padding_vertical" n0:layout_marginBottom="@dimen/page_info_popup_padding_vertical" n0:layout_marginVertical="@dimen/page_info_popup_padding_vertical" />
+        </LinearLayout>
+        <FrameLayout n0:id="@id/page_info_content" n0:layout_width="match_parent" n0:layout_height="wrap_content" />
+    </LinearLayout>
+</LinearLayout>

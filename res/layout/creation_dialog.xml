@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout n0:orientation="vertical" n0:id="@id/dialog_layout" n0:background="?colorSurface" n0:layout_width="match_parent" n0:layout_height="match_parent" n0:contentDescription="@string/content_creation_note_dialog_description" n0:importantForAccessibility="yes"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/top_bar" />
+    <RelativeLayout n0:orientation="vertical" n0:id="@id/main_content" n0:background="@color/carousel_bg_color" n0:layout_width="match_parent" n0:layout_height="match_parent">
+        <TextView n0:textAppearance="@style/TextAppearance.TextSmall" n0:id="@id/title" n0:background="@drawable/note_title_outline" n0:paddingLeft="18.0dp" n0:paddingTop="4.0dp" n0:paddingRight="18.0dp" n0:paddingBottom="4.0dp" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:layout_marginBottom="24.0dp" n0:layout_centerHorizontal="true" />
+        <androidx.recyclerview.widget.RecyclerView n0:orientation="horizontal" n0:id="@id/note_carousel" n0:layout_width="match_parent" n0:layout_height="match_parent" n0:layout_below="@id/title" n0:layout_alignParentBottom="true" />
+    </RelativeLayout>
+</LinearLayout>

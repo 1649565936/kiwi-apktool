@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout n0:orientation="vertical" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginBottom="16.0dp"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <ImageView n0:layout_gravity="center_horizontal" n0:id="@id/touch_to_fill_sheet_header_image" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:importantForAccessibility="no" />
+    <org.chromium.ui.widget.TextViewWithLeading n0:textAppearance="@style/TextAppearance.Headline.Primary" n0:layout_gravity="center_horizontal" n0:id="@id/touch_to_fill_sheet_title" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:textAlignment="center" />
+    <org.chromium.ui.widget.TextViewWithLeading n0:textAppearance="@style/TextAppearance.TextMedium.Secondary" n0:layout_gravity="center_horizontal" n0:id="@id/touch_to_fill_sheet_subtitle" n0:layout_width="wrap_content" n0:layout_height="wrap_content" />
+</LinearLayout>

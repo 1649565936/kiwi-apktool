@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout n0:orientation="vertical" n0:layout_width="match_parent" n0:layout_height="wrap_content" style="@style/PreferenceLayout"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <TextView n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:text="@string/page_zoom_title" style="@style/PreferenceTitle" />
+    <TextView n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:text="@string/page_zoom_summary" style="@style/PreferenceSummary" />
+    <TextView n0:id="@id/page_zoom_current_value_text" n0:paddingTop="@dimen/page_zoom_view_level_padding_large" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:textAlignment="center" style="@style/TextAppearance.TextSmall.Secondary" />
+    <include layout="@layout/page_zoom_slider" />
+    <TextView n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:layout_marginTop="@dimen/page_zoom_view_level_margin" n0:text="@string/page_zoom_preview_title" style="@style/PreferenceTitle" />
+    <LinearLayout n0:orientation="vertical" n0:background="@drawable/rounded_rectangle_surface_1" n0:padding="@dimen/page_zoom_view_level_padding_large" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginTop="10.0dp">
+        <ImageView n0:id="@id/page_zoom_preview_image" n0:background="@drawable/ic_business" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:importantForAccessibility="no" n1:tint="?colorPrimary"
+          xmlns:n1="http://schemas.android.com/apk/res-auto" />
+        <TextView n0:id="@id/page_zoom_preview_large_text" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginTop="@dimen/page_zoom_view_level_margin" n0:layout_marginBottom="@dimen/page_zoom_view_level_margin" n0:text="@string/page_zoom_preview_text_title" style="@style/TextAppearance.TextLarge.Primary" />
+        <TextView n0:id="@id/page_zoom_preview_medium_text" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginBottom="@dimen/page_zoom_view_level_margin" n0:text="@string/page_zoom_preview_text_summary" style="@style/TextAppearance.TextMedium.Primary" />
+        <TextView n0:id="@id/page_zoom_preview_small_text" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:text="@string/page_zoom_preview_text_item" style="@style/TextAppearance.TextSmall.Secondary" />
+    </LinearLayout>
+</LinearLayout>

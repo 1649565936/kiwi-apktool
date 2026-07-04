@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen>
+    <org.chromium.components.browser_ui.settings.ChromeSwitchPreference n0:persistent="false" n0:title="@string/allow_chrome_signin_title" n0:key="allow_signin" n0:summary="@string/allow_chrome_signin_summary"
+      xmlns:n0="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.ChromeBasePreference n1:title="@string/manage_metrics_settings" n1:key="metrics_settings" n1:fragment="org.chromium.chrome.browser.metrics_settings.MetricsSettingsFragment"
+      xmlns:n1="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.ChromeSwitchPreference n2:persistent="false" n2:title="@string/usage_and_crash_reports_title" n2:key="usage_and_crash_reports" n2:summary="@string/usage_and_crash_reports_summary"
+      xmlns:n2="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.ChromeSwitchPreference n3:persistent="false" n3:title="@string/improve_search_suggestions_title" n3:key="search_suggestions" n3:summary="@string/improve_search_suggestions_summary"
+      xmlns:n3="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.ChromeSwitchPreference n4:persistent="false" n4:title="@string/track_prices_on_tabs" n4:key="price_tracking_annotations" n4:summary="@string/track_prices_on_tabs_description"
+      xmlns:n4="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.ChromeBasePreference n5:title="@string/price_notifications_settings_title" n5:key="price_notifications_section" n5:summary="@string/price_notifications_settings_description" n5:fragment="org.chromium.chrome.browser.commerce.PriceNotificationPreferenceFragment" n6:isPreferenceVisible="false"
+      xmlns:n5="http://schemas.android.com/apk/res/android" xmlns:n6="http://schemas.android.com/apk/res-auto" />
+    <org.chromium.components.browser_ui.settings.ChromeBasePreference n7:title="@string/usage_stats_setting_title" n7:key="usage_stats_reporting" n8:isPreferenceVisible="false"
+      xmlns:n7="http://schemas.android.com/apk/res/android" xmlns:n8="http://schemas.android.com/apk/res-auto" />
+    <org.chromium.components.browser_ui.settings.ChromeBasePreference n9:title="@string/contextual_search_title" n9:key="contextual_search" n9:fragment="org.chromium.chrome.browser.contextualsearch.ContextualSearchPreferenceFragment"
+      xmlns:n9="http://schemas.android.com/apk/res/android" />
+</PreferenceScreen>

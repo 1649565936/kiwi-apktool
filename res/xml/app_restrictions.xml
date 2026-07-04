@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="utf-8"?>
+<restrictions>
+    <restriction n0:description="@string/CloudManagementEnrollmentTokenDesc" n0:title="@string/CloudManagementEnrollmentTokenTitle" n0:key="CloudManagementEnrollmentToken" n0:restrictionType="string"
+      xmlns:n0="http://schemas.android.com/apk/res/android" />
+    <restriction n1:description="@string/AccessControlAllowMethodsInCORSPreflightSpecConformantDesc" n1:entries="@array/AccessControlAllowMethodsInCORSPreflightSpecConformantEntries" n1:title="@string/AccessControlAllowMethodsInCORSPreflightSpecConformantTitle" n1:key="AccessControlAllowMethodsInCORSPreflightSpecConformant" n1:entryValues="@array/AccessControlAllowMethodsInCORSPreflightSpecConformantValues" n1:restrictionType="bool"
+      xmlns:n1="http://schemas.android.com/apk/res/android" />
+    <restriction n2:description="@string/AdditionalDnsQueryTypesEnabledDesc" n2:entries="@array/AdditionalDnsQueryTypesEnabledEntries" n2:title="@string/AdditionalDnsQueryTypesEnabledTitle" n2:key="AdditionalDnsQueryTypesEnabled" n2:entryValues="@array/AdditionalDnsQueryTypesEnabledValues" n2:restrictionType="bool"
+      xmlns:n2="http://schemas.android.com/apk/res/android" />
+    <restriction n3:description="@string/AllHttpAuthSchemesAllowedForOriginsDesc" n3:title="@string/AllHttpAuthSchemesAllowedForOriginsTitle" n3:key="AllHttpAuthSchemesAllowedForOrigins" n3:restrictionType="string"
+      xmlns:n3="http://schemas.android.com/apk/res/android" />
+    <restriction n4:description="@string/AllowBackForwardCacheForCacheControlNoStorePageEnabledDesc" n4:entries="@array/AllowBackForwardCacheForCacheControlNoStorePageEnabledEntries" n4:title="@string/AllowBackForwardCacheForCacheControlNoStorePageEnabledTitle" n4:key="AllowBackForwardCacheForCacheControlNoStorePageEnabled" n4:entryValues="@array/AllowBackForwardCacheForCacheControlNoStorePageEnabledValues" n4:restrictionType="bool"
+      xmlns:n4="http://schemas.android.com/apk/res/android" />
+    <restriction n5:description="@string/AllowDeletingBrowserHistoryDesc" n5:entries="@array/AllowDeletingBrowserHistoryEntries" n5:title="@string/AllowDeletingBrowserHistoryTitle" n5:key="AllowDeletingBrowserHistory" n5:entryValues="@array/AllowDeletingBrowserHistoryValues" n5:restrictionType="bool"
+      xmlns:n5="http://schemas.android.com/apk/res/android" />
+    <restriction n6:description="@string/AllowFileSelectionDialogsDesc" n6:entries="@array/AllowFileSelectionDialogsEntries" n6:title="@string/AllowFileSelectionDialogsTitle" n6:key="AllowFileSelectionDialogs" n6:entryValues="@array/AllowFileSelectionDialogsValues" n6:restrictionType="bool"
+      xmlns:n6="http://schemas.android.com/apk/res/android" />
+    <restriction n7:description="@string/AllowWebAuthnWithBrokenTlsCertsDesc" n7:entries="@array/AllowWebAuthnWithBrokenTlsCertsEntries" n7:title="@string/AllowWebAuthnWithBrokenTlsCertsTitle" n7:key="AllowWebAuthnWithBrokenTlsCerts" n7:entryValues="@array/AllowWebAuthnWithBrokenTlsCertsValues" n7:restrictionType="bool"
+      xmlns:n7="http://schemas.android.com/apk/res/android" />
+    <restriction n8:description="@string/AllowedDomainsForAppsDesc" n8:title="@string/AllowedDomainsForAppsTitle" n8:key="AllowedDomainsForApps" n8:restrictionType="string"
+      xmlns:n8="http://schemas.android.com/apk/res/android" />
+    <restriction n9:description="@string/AlternateErrorPagesEnabledDesc" n9:entries="@array/AlternateErrorPagesEnabledEntries" n9:title="@string/AlternateErrorPagesEnabledTitle" n9:key="AlternateErrorPagesEnabled" n9:entryValues="@array/AlternateErrorPagesEnabledValues" n9:restrictionType="bool"
+      xmlns:n9="http://schemas.android.com/apk/res/android" />
+    <restriction n10:description="@string/AuthAndroidNegotiateAccountTypeDesc" n10:title="@string/AuthAndroidNegotiateAccountTypeTitle" n10:key="AuthAndroidNegotiateAccountType" n10:restrictionType="string"
+      xmlns:n10="http://schemas.android.com/apk/res/android" />
+    <restriction n11:description="@string/AuthNegotiateDelegateAllowlistDesc" n11:title="@string/AuthNegotiateDelegateAllowlistTitle" n11:key="AuthNegotiateDelegateAllowlist" n11:restrictionType="string"
+      xmlns:n11="http://schemas.android.com/apk/res/android" />
+    <restriction n12:description="@string/AuthSchemesDesc" n12:title="@string/AuthSchemesTitle" n12:key="AuthSchemes" n12:restrictionType="string"
+      xmlns:n12="http://schemas.android.com/apk/res/android" />
+    <restriction n13:description="@string/AuthServerAllowlistDesc" n13:title="@string/AuthServerAllowlistTitle" n13:key="AuthServerAllowlist" n13:restrictionType="string"
+      xmlns:n13="http://schemas.android.com/apk/res/android" />
+    <restriction n14:description="@string/AutoLaunchProtocolsFromOriginsDesc" n14:title="@string/AutoLaunchProtocolsFromOriginsTitle" n14:key="AutoLaunchProtocolsFromOrigins" n14:restrictionType="string"
+      xmlns:n14="http://schemas.android.com/apk/res/android" />
+    <restriction n15:description="@string/AutoOpenFileTypesDesc" n15:title="@string/AutoOpenFileTypesTitle" n15:key="AutoOpenFileTypes" n15:restrictionType="string"
+      xmlns:n15="http://schemas.android.com/apk/res/android" />
+    <restriction n16:description="@string/AutofillAddressEnabledDesc" n16:entries="@array/AutofillAddressEnabledEntries" n16:title="@string/AutofillAddressEnabledTitle" n16:key="AutofillAddressEnabled" n16:entryValues="@array/AutofillAddressEnabledValues" n16:restrictionType="bool"
+      xmlns:n16="http://schemas.android.com/apk/res/android" />
+    <restriction n17:description="@string/AutofillCreditCardEnabledDesc" n17:entries="@array/AutofillCreditCardEnabledEntries" n17:title="@string/AutofillCreditCardEnabledTitle" n17:key="AutofillCreditCardEnabled" n17:entryValues="@array/AutofillCreditCardEnabledValues" n17:restrictionType="bool"
+      xmlns:n17="http://schemas.android.com/apk/res/android" />
+    <restriction n18:description="@string/BackForwardCacheEnabledDesc" n18:entries="@array/BackForwardCacheEnabledEntries" n18:title="@string/BackForwardCacheEnabledTitle" n18:key="BackForwardCacheEnabled" n18:entryValues="@array/BackForwardCacheEnabledValues" n18:restrictionType="bool"
+      xmlns:n18="http://schemas.android.com/apk/res/android" />
+    <restriction n19:description="@string/BlockExternalExtensionsDesc" n19:entries="@array/BlockExternalExtensionsEntries" n19:title="@string/BlockExternalExtensionsTitle" n19:key="BlockExternalExtensions" n19:entryValues="@array/BlockExternalExtensionsValues" n19:restrictionType="bool"
+      xmlns:n19="http://schemas.android.com/apk/res/android" />
+    <restriction n20:description="@string/BlockThirdPartyCookiesDesc" n20:entries="@array/BlockThirdPartyCookiesEntries" n20:title="@string/BlockThirdPartyCookiesTitle" n20:key="BlockThirdPartyCookies" n20:entryValues="@array/BlockThirdPartyCookiesValues" n20:restrictionType="bool"
+      xmlns:n20="http://schemas.android.com/apk/res/android" />
+    <restriction n21:description="@string/BrowserGuestModeEnabledDesc" n21:entries="@array/BrowserGuestModeEnabledEntries" n21:title="@string/BrowserGuestModeEnabledTitle" n21:key="BrowserGuestModeEnabled" n21:entryValues="@array/BrowserGuestModeEnabledValues" n21:restrictionType="bool"
+      xmlns:n21="http://schemas.android.com/apk/res/android" />
+    <restriction n22:description="@string/BrowserSigninDesc" n22:entries="@array/BrowserSigninEntries" n22:title="@string/BrowserSigninTitle" n22:key="BrowserSignin" n22:entryValues="@array/BrowserSigninValues" n22:restrictionType="choice"
+      xmlns:n22="http://schemas.android.com/apk/res/android" />
+    <restriction n23:description="@string/BrowserThemeColorDesc" n23:title="@string/BrowserThemeColorTitle" n23:key="BrowserThemeColor" n23:restrictionType="string"
+      xmlns:n23="http://schemas.android.com/apk/res/android" />
+    <restriction n24:description="@string/BrowsingDataLifetimeDesc" n24:title="@string/BrowsingDataLifetimeTitle" n24:key="BrowsingDataLifetime" n24:restrictionType="string"
+      xmlns:n24="http://schemas.android.com/apk/res/android" />
+    <restriction n25:description="@string/BuiltInDnsClientEnabledDesc" n25:entries="@array/BuiltInDnsClientEnabledEntries" n25:title="@string/BuiltInDnsClientEnabledTitle" n25:key="BuiltInDnsClientEnabled" n25:entryValues="@array/BuiltInDnsClientEnabledValues" n25:restrictionType="bool"
+      xmlns:n25="http://schemas.android.com/apk/res/android" />
+    <restriction n26:description="@string/CORSNonWildcardRequestHeadersSupportDesc" n26:entries="@array/CORSNonWildcardRequestHeadersSupportEntries" n26:title="@string/CORSNonWildcardRequestHeadersSupportTitle" n26:key="CORSNonWildcardRequestHeadersSupport" n26:entryValues="@array/CORSNonWildcardRequestHeadersSupportValues" n26:restrictionType="bool"
+      xmlns:n26="http://schemas.android.com/apk/res/android" />
+    <restriction n27:description="@string/CertificateTransparencyEnforcementDisabledForCasDesc" n27:title="@string/CertificateTransparencyEnforcementDisabledForCasTitle" n27:key="CertificateTransparencyEnforcementDisabledForCas" n27:restrictionType="string"
+      xmlns:n27="http://schemas.android.com/apk/res/android" />
+    <restriction n28:description="@string/CertificateTransparencyEnforcementDisabledForLegacyCasDesc" n28:title="@string/CertificateTransparencyEnforcementDisabledForLegacyCasTitle" n28:key="CertificateTransparencyEnforcementDisabledForLegacyCas" n28:restrictionType="string"
+      xmlns:n28="http://schemas.android.com/apk/res/android" />
+    <restriction n29:description="@string/CertificateTransparencyEnforcementDisabledForUrlsDesc" n29:title="@string/CertificateTransparencyEnforcementDisabledForUrlsTitle" n29:key="CertificateTransparencyEnforcementDisabledForUrls" n29:restrictionType="string"
+      xmlns:n29="http://schemas.android.com/apk/res/android" />
+    <restriction n30:description="@string/ChromeAppsWebViewPermissiveBehaviorAllowedDesc" n30:entries="@array/ChromeAppsWebViewPermissiveBehaviorAllowedEntries" n30:title="@string/ChromeAppsWebViewPermissiveBehaviorAllowedTitle" n30:key="ChromeAppsWebViewPermissiveBehaviorAllowed" n30:entryValues="@array/ChromeAppsWebViewPermissiveBehaviorAllowedValues" n30:restrictionType="bool"
+      xmlns:n30="http://schemas.android.com/apk/res/android" />
+    <restriction n31:description="@string/ChromeRootStoreEnabledDesc" n31:entries="@array/ChromeRootStoreEnabledEntries" n31:title="@string/ChromeRootStoreEnabledTitle" n31:key="ChromeRootStoreEnabled" n31:entryValues="@array/ChromeRootStoreEnabledValues" n31:restrictionType="bool"
+      xmlns:n31="http://schemas.android.com/apk/res/android" />
+    <restriction n32:description="@string/ChromeVariationsDesc" n32:entries="@array/ChromeVariationsEntries" n32:title="@string/ChromeVariationsTitle" n32:key="ChromeVariations" n32:entryValues="@array/ChromeVariationsValues" n32:restrictionType="choice"
+      xmlns:n32="http://schemas.android.com/apk/res/android" />
+    <restriction n33:description="@string/CloudPolicyOverridesPlatformPolicyDesc" n33:entries="@array/CloudPolicyOverridesPlatformPolicyEntries" n33:title="@string/CloudPolicyOverridesPlatformPolicyTitle" n33:key="CloudPolicyOverridesPlatformPolicy" n33:entryValues="@array/CloudPolicyOverridesPlatformPolicyValues" n33:restrictionType="bool"
+      xmlns:n33="http://schemas.android.com/apk/res/android" />
+    <restriction n34:description="@string/CloudUserPolicyMergeDesc" n34:entries="@array/CloudUserPolicyMergeEntries" n34:title="@string/CloudUserPolicyMergeTitle" n34:key="CloudUserPolicyMerge" n34:entryValues="@array/CloudUserPolicyMergeValues" n34:restrictionType="bool"
+      xmlns:n34="http://schemas.android.com/apk/res/android" />
+    <restriction n35:description="@string/CloudUserPolicyOverridesCloudMachinePolicyDesc" n35:entries="@array/CloudUserPolicyOverridesCloudMachinePolicyEntries" n35:title="@string/CloudUserPolicyOverridesCloudMachinePolicyTitle" n35:key="CloudUserPolicyOverridesCloudMachinePolicy" n35:entryValues="@array/CloudUserPolicyOverridesCloudMachinePolicyValues" n35:restrictionType="bool"
+      xmlns:n35="http://schemas.android.com/apk/res/android" />
+    <restriction n36:description="@string/ComponentUpdatesEnabledDesc" n36:entries="@array/ComponentUpdatesEnabledEntries" n36:title="@string/ComponentUpdatesEnabledTitle" n36:key="ComponentUpdatesEnabled" n36:entryValues="@array/ComponentUpdatesEnabledValues" n36:restrictionType="bool"
+      xmlns:n36="http://schemas.android.com/apk/res/android" />
+    <restriction n37:description="@string/ContextualSearchEnabledDesc" n37:entries="@array/ContextualSearchEnabledEntries" n37:title="@string/ContextualSearchEnabledTitle" n37:key="ContextualSearchEnabled" n37:entryValues="@array/ContextualSearchEnabledValues" n37:restrictionType="bool"
+      xmlns:n37="http://schemas.android.com/apk/res/android" />
+    <restriction n38:description="@string/CookiesAllowedForUrlsDesc" n38:title="@string/CookiesAllowedForUrlsTitle" n38:key="CookiesAllowedForUrls" n38:restrictionType="string"
+      xmlns:n38="http://schemas.android.com/apk/res/android" />
+    <restriction n39:description="@string/CookiesBlockedForUrlsDesc" n39:title="@string/CookiesBlockedForUrlsTitle" n39:key="CookiesBlockedForUrls" n39:restrictionType="string"
+      xmlns:n39="http://schemas.android.com/apk/res/android" />
+    <restriction n40:description="@string/CookiesSessionOnlyForUrlsDesc" n40:title="@string/CookiesSessionOnlyForUrlsTitle" n40:key="CookiesSessionOnlyForUrls" n40:restrictionType="string"
+      xmlns:n40="http://schemas.android.com/apk/res/android" />
+    <restriction n41:description="@string/DefaultCookiesSettingDesc" n41:entries="@array/DefaultCookiesSettingEntries" n41:title="@string/DefaultCookiesSettingTitle" n41:key="DefaultCookiesSetting" n41:entryValues="@array/DefaultCookiesSettingValues" n41:restrictionType="choice"
+      xmlns:n41="http://schemas.android.com/apk/res/android" />
+    <restriction n42:description="@string/DefaultDownloadDirectoryDesc" n42:title="@string/DefaultDownloadDirectoryTitle" n42:key="DefaultDownloadDirectory" n42:restrictionType="string"
+      xmlns:n42="http://schemas.android.com/apk/res/android" />
+    <restriction n43:description="@string/DefaultGeolocationSettingDesc" n43:entries="@array/DefaultGeolocationSettingEntries" n43:title="@string/DefaultGeolocationSettingTitle" n43:key="DefaultGeolocationSetting" n43:entryValues="@array/DefaultGeolocationSettingValues" n43:restrictionType="choice"
+      xmlns:n43="http://schemas.android.com/apk/res/android" />
+    <restriction n44:description="@string/DefaultJavaScriptJitSettingDesc" n44:entries="@array/DefaultJavaScriptJitSettingEntries" n44:title="@string/DefaultJavaScriptJitSettingTitle" n44:key="DefaultJavaScriptJitSetting" n44:entryValues="@array/DefaultJavaScriptJitSettingValues" n44:restrictionType="choice"
+      xmlns:n44="http://schemas.android.com/apk/res/android" />
+    <restriction n45:description="@string/DefaultJavaScriptSettingDesc" n45:entries="@array/DefaultJavaScriptSettingEntries" n45:title="@string/DefaultJavaScriptSettingTitle" n45:key="DefaultJavaScriptSetting" n45:entryValues="@array/DefaultJavaScriptSettingValues" n45:restrictionType="choice"
+      xmlns:n45="http://schemas.android.com/apk/res/android" />
+    <restriction n46:description="@string/DefaultPopupsSettingDesc" n46:entries="@array/DefaultPopupsSettingEntries" n46:title="@string/DefaultPopupsSettingTitle" n46:key="DefaultPopupsSetting" n46:entryValues="@array/DefaultPopupsSettingValues" n46:restrictionType="choice"
+      xmlns:n46="http://schemas.android.com/apk/res/android" />
+    <restriction n47:description="@string/DefaultSearchProviderAlternateURLsDesc" n47:title="@string/DefaultSearchProviderAlternateURLsTitle" n47:key="DefaultSearchProviderAlternateURLs" n47:restrictionType="string"
+      xmlns:n47="http://schemas.android.com/apk/res/android" />
+    <restriction n48:description="@string/DefaultSearchProviderEnabledDesc" n48:entries="@array/DefaultSearchProviderEnabledEntries" n48:title="@string/DefaultSearchProviderEnabledTitle" n48:key="DefaultSearchProviderEnabled" n48:entryValues="@array/DefaultSearchProviderEnabledValues" n48:restrictionType="bool"
+      xmlns:n48="http://schemas.android.com/apk/res/android" />
+    <restriction n49:description="@string/DefaultSearchProviderEncodingsDesc" n49:title="@string/DefaultSearchProviderEncodingsTitle" n49:key="DefaultSearchProviderEncodings" n49:restrictionType="string"
+      xmlns:n49="http://schemas.android.com/apk/res/android" />
+    <restriction n50:description="@string/DefaultSearchProviderIconURLDesc" n50:title="@string/DefaultSearchProviderIconURLTitle" n50:key="DefaultSearchProviderIconURL" n50:restrictionType="string"
+      xmlns:n50="http://schemas.android.com/apk/res/android" />
+    <restriction n51:description="@string/DefaultSearchProviderImageURLDesc" n51:title="@string/DefaultSearchProviderImageURLTitle" n51:key="DefaultSearchProviderImageURL" n51:restrictionType="string"
+      xmlns:n51="http://schemas.android.com/apk/res/android" />
+    <restriction n52:description="@string/DefaultSearchProviderImageURLPostParamsDesc" n52:title="@string/DefaultSearchProviderImageURLPostParamsTitle" n52:key="DefaultSearchProviderImageURLPostParams" n52:restrictionType="string"
+      xmlns:n52="http://schemas.android.com/apk/res/android" />
+    <restriction n53:description="@string/DefaultSearchProviderKeywordDesc" n53:title="@string/DefaultSearchProviderKeywordTitle" n53:key="DefaultSearchProviderKeyword" n53:restrictionType="string"
+      xmlns:n53="http://schemas.android.com/apk/res/android" />
+    <restriction n54:description="@string/DefaultSearchProviderNameDesc" n54:title="@string/DefaultSearchProviderNameTitle" n54:key="DefaultSearchProviderName" n54:restrictionType="string"
+      xmlns:n54="http://schemas.android.com/apk/res/android" />
+    <restriction n55:description="@string/DefaultSearchProviderNewTabURLDesc" n55:title="@string/DefaultSearchProviderNewTabURLTitle" n55:key="DefaultSearchProviderNewTabURL" n55:restrictionType="string"
+      xmlns:n55="http://schemas.android.com/apk/res/android" />
+    <restriction n56:description="@string/DefaultSearchProviderSearchURLDesc" n56:title="@string/DefaultSearchProviderSearchURLTitle" n56:key="DefaultSearchProviderSearchURL" n56:restrictionType="string"
+      xmlns:n56="http://schemas.android.com/apk/res/android" />
+    <restriction n57:description="@string/DefaultSearchProviderSearchURLPostParamsDesc" n57:title="@string/DefaultSearchProviderSearchURLPostParamsTitle" n57:key="DefaultSearchProviderSearchURLPostParams" n57:restrictionType="string"
+      xmlns:n57="http://schemas.android.com/apk/res/android" />
+    <restriction n58:description="@string/DefaultSearchProviderSuggestURLDesc" n58:title="@string/DefaultSearchProviderSuggestURLTitle" n58:key="DefaultSearchProviderSuggestURL" n58:restrictionType="string"
+      xmlns:n58="http://schemas.android.com/apk/res/android" />
+    <restriction n59:description="@string/DefaultSearchProviderSuggestURLPostParamsDesc" n59:title="@string/DefaultSearchProviderSuggestURLPostParamsTitle" n59:key="DefaultSearchProviderSuggestURLPostParams" n59:restrictionType="string"
+      xmlns:n59="http://schemas.android.com/apk/res/android" />
+    <restriction n60:description="@string/DefaultSensorsSettingDesc" n60:entries="@array/DefaultSensorsSettingEntries" n60:title="@string/DefaultSensorsSettingTitle" n60:key="DefaultSensorsSetting" n60:entryValues="@array/DefaultSensorsSettingValues" n60:restrictionType="choice"
+      xmlns:n60="http://schemas.android.com/apk/res/android" />
+    <restriction n61:description="@string/DefaultThirdPartyStoragePartitioningSettingDesc" n61:entries="@array/DefaultThirdPartyStoragePartitioningSettingEntries" n61:title="@string/DefaultThirdPartyStoragePartitioningSettingTitle" n61:key="DefaultThirdPartyStoragePartitioningSetting" n61:entryValues="@array/DefaultThirdPartyStoragePartitioningSettingValues" n61:restrictionType="choice"
+      xmlns:n61="http://schemas.android.com/apk/res/android" />
+    <restriction n62:description="@string/DefaultWebBluetoothGuardSettingDesc" n62:entries="@array/DefaultWebBluetoothGuardSettingEntries" n62:title="@string/DefaultWebBluetoothGuardSettingTitle" n62:key="DefaultWebBluetoothGuardSetting" n62:entryValues="@array/DefaultWebBluetoothGuardSettingValues" n62:restrictionType="choice"
+      xmlns:n62="http://schemas.android.com/apk/res/android" />
+    <restriction n63:description="@string/DefaultWebUsbGuardSettingDesc" n63:entries="@array/DefaultWebUsbGuardSettingEntries" n63:title="@string/DefaultWebUsbGuardSettingTitle" n63:key="DefaultWebUsbGuardSetting" n63:entryValues="@array/DefaultWebUsbGuardSettingValues" n63:restrictionType="choice"
+      xmlns:n63="http://schemas.android.com/apk/res/android" />
+    <restriction n64:description="@string/DeveloperToolsAvailabilityDesc" n64:entries="@array/DeveloperToolsAvailabilityEntries" n64:title="@string/DeveloperToolsAvailabilityTitle" n64:key="DeveloperToolsAvailability" n64:entryValues="@array/DeveloperToolsAvailabilityValues" n64:restrictionType="choice"
+      xmlns:n64="http://schemas.android.com/apk/res/android" />
+    <restriction n65:description="@string/DisableAuthNegotiateCnameLookupDesc" n65:entries="@array/DisableAuthNegotiateCnameLookupEntries" n65:title="@string/DisableAuthNegotiateCnameLookupTitle" n65:key="DisableAuthNegotiateCnameLookup" n65:entryValues="@array/DisableAuthNegotiateCnameLookupValues" n65:restrictionType="bool"
+      xmlns:n65="http://schemas.android.com/apk/res/android" />
+    <restriction n66:description="@string/DisableSafeBrowsingProceedAnywayDesc" n66:entries="@array/DisableSafeBrowsingProceedAnywayEntries" n66:title="@string/DisableSafeBrowsingProceedAnywayTitle" n66:key="DisableSafeBrowsingProceedAnyway" n66:entryValues="@array/DisableSafeBrowsingProceedAnywayValues" n66:restrictionType="bool"
+      xmlns:n66="http://schemas.android.com/apk/res/android" />
+    <restriction n67:description="@string/DiskCacheDirDesc" n67:title="@string/DiskCacheDirTitle" n67:key="DiskCacheDir" n67:restrictionType="string"
+      xmlns:n67="http://schemas.android.com/apk/res/android" />
+    <restriction n68:description="@string/DnsOverHttpsModeDesc" n68:entries="@array/DnsOverHttpsModeEntries" n68:title="@string/DnsOverHttpsModeTitle" n68:key="DnsOverHttpsMode" n68:entryValues="@array/DnsOverHttpsModeValues" n68:restrictionType="choice"
+      xmlns:n68="http://schemas.android.com/apk/res/android" />
+    <restriction n69:description="@string/DnsOverHttpsTemplatesDesc" n69:title="@string/DnsOverHttpsTemplatesTitle" n69:key="DnsOverHttpsTemplates" n69:restrictionType="string"
+      xmlns:n69="http://schemas.android.com/apk/res/android" />
+    <restriction n70:description="@string/DomainReliabilityAllowedDesc" n70:entries="@array/DomainReliabilityAllowedEntries" n70:title="@string/DomainReliabilityAllowedTitle" n70:key="DomainReliabilityAllowed" n70:entryValues="@array/DomainReliabilityAllowedValues" n70:restrictionType="bool"
+      xmlns:n70="http://schemas.android.com/apk/res/android" />
+    <restriction n71:description="@string/DownloadDirectoryDesc" n71:title="@string/DownloadDirectoryTitle" n71:key="DownloadDirectory" n71:restrictionType="string"
+      xmlns:n71="http://schemas.android.com/apk/res/android" />
+    <restriction n72:description="@string/EditBookmarksEnabledDesc" n72:entries="@array/EditBookmarksEnabledEntries" n72:title="@string/EditBookmarksEnabledTitle" n72:key="EditBookmarksEnabled" n72:entryValues="@array/EditBookmarksEnabledValues" n72:restrictionType="bool"
+      xmlns:n72="http://schemas.android.com/apk/res/android" />
+    <restriction n73:description="@string/EnableExperimentalPoliciesDesc" n73:title="@string/EnableExperimentalPoliciesTitle" n73:key="EnableExperimentalPolicies" n73:restrictionType="string"
+      xmlns:n73="http://schemas.android.com/apk/res/android" />
+    <restriction n74:description="@string/EnableMediaRouterDesc" n74:entries="@array/EnableMediaRouterEntries" n74:title="@string/EnableMediaRouterTitle" n74:key="EnableMediaRouter" n74:entryValues="@array/EnableMediaRouterValues" n74:restrictionType="bool"
+      xmlns:n74="http://schemas.android.com/apk/res/android" />
+    <restriction n75:description="@string/EncryptedClientHelloEnabledDesc" n75:entries="@array/EncryptedClientHelloEnabledEntries" n75:title="@string/EncryptedClientHelloEnabledTitle" n75:key="EncryptedClientHelloEnabled" n75:entryValues="@array/EncryptedClientHelloEnabledValues" n75:restrictionType="bool"
+      xmlns:n75="http://schemas.android.com/apk/res/android" />
+    <restriction n76:description="@string/EnterpriseAuthenticationAppLinkPolicyDesc" n76:title="@string/EnterpriseAuthenticationAppLinkPolicyTitle" n76:key="EnterpriseAuthenticationAppLinkPolicy" n76:restrictionType="string"
+      xmlns:n76="http://schemas.android.com/apk/res/android" />
+    <restriction n77:description="@string/EnterpriseHardwarePlatformAPIEnabledDesc" n77:entries="@array/EnterpriseHardwarePlatformAPIEnabledEntries" n77:title="@string/EnterpriseHardwarePlatformAPIEnabledTitle" n77:key="EnterpriseHardwarePlatformAPIEnabled" n77:entryValues="@array/EnterpriseHardwarePlatformAPIEnabledValues" n77:restrictionType="bool"
+      xmlns:n77="http://schemas.android.com/apk/res/android" />
+    <restriction n78:description="@string/ExplicitlyAllowedNetworkPortsDesc" n78:entries="@array/ExplicitlyAllowedNetworkPortsEntries" n78:title="@string/ExplicitlyAllowedNetworkPortsTitle" n78:key="ExplicitlyAllowedNetworkPorts" n78:entryValues="@array/ExplicitlyAllowedNetworkPortsValues" n78:restrictionType="multi-select"
+      xmlns:n78="http://schemas.android.com/apk/res/android" />
+    <restriction n79:description="@string/ExtensionAllowedTypesDesc" n79:entries="@array/ExtensionAllowedTypesEntries" n79:title="@string/ExtensionAllowedTypesTitle" n79:key="ExtensionAllowedTypes" n79:entryValues="@array/ExtensionAllowedTypesValues" n79:restrictionType="multi-select"
+      xmlns:n79="http://schemas.android.com/apk/res/android" />
+    <restriction n80:description="@string/ExtensionExtendedBackgroundLifetimeForPortConnectionsToUrlsDesc" n80:title="@string/ExtensionExtendedBackgroundLifetimeForPortConnectionsToUrlsTitle" n80:key="ExtensionExtendedBackgroundLifetimeForPortConnectionsToUrls" n80:restrictionType="string"
+      xmlns:n80="http://schemas.android.com/apk/res/android" />
+    <restriction n81:description="@string/ExtensionInstallAllowlistDesc" n81:title="@string/ExtensionInstallAllowlistTitle" n81:key="ExtensionInstallAllowlist" n81:restrictionType="string"
+      xmlns:n81="http://schemas.android.com/apk/res/android" />
+    <restriction n82:description="@string/ExtensionInstallBlocklistDesc" n82:title="@string/ExtensionInstallBlocklistTitle" n82:key="ExtensionInstallBlocklist" n82:restrictionType="string"
+      xmlns:n82="http://schemas.android.com/apk/res/android" />
+    <restriction n83:description="@string/ExtensionInstallForcelistDesc" n83:title="@string/ExtensionInstallForcelistTitle" n83:key="ExtensionInstallForcelist" n83:restrictionType="string"
+      xmlns:n83="http://schemas.android.com/apk/res/android" />
+    <restriction n84:description="@string/ExtensionInstallSourcesDesc" n84:title="@string/ExtensionInstallSourcesTitle" n84:key="ExtensionInstallSources" n84:restrictionType="string"
+      xmlns:n84="http://schemas.android.com/apk/res/android" />
+    <restriction n85:description="@string/ExtensionManifestV2AvailabilityDesc" n85:entries="@array/ExtensionManifestV2AvailabilityEntries" n85:title="@string/ExtensionManifestV2AvailabilityTitle" n85:key="ExtensionManifestV2Availability" n85:entryValues="@array/ExtensionManifestV2AvailabilityValues" n85:restrictionType="choice"
+      xmlns:n85="http://schemas.android.com/apk/res/android" />
+    <restriction n86:description="@string/ExtensionSettingsDesc" n86:title="@string/ExtensionSettingsTitle" n86:key="ExtensionSettings" n86:restrictionType="string"
+      xmlns:n86="http://schemas.android.com/apk/res/android" />
+    <restriction n87:description="@string/ExtensionUnpublishedAvailabilityDesc" n87:entries="@array/ExtensionUnpublishedAvailabilityEntries" n87:title="@string/ExtensionUnpublishedAvailabilityTitle" n87:key="ExtensionUnpublishedAvailability" n87:entryValues="@array/ExtensionUnpublishedAvailabilityValues" n87:restrictionType="choice"
+      xmlns:n87="http://schemas.android.com/apk/res/android" />
+    <restriction n88:description="@string/FirstPartySetsEnabledDesc" n88:entries="@array/FirstPartySetsEnabledEntries" n88:title="@string/FirstPartySetsEnabledTitle" n88:key="FirstPartySetsEnabled" n88:entryValues="@array/FirstPartySetsEnabledValues" n88:restrictionType="bool"
+      xmlns:n88="http://schemas.android.com/apk/res/android" />
+    <restriction n89:description="@string/FirstPartySetsOverridesDesc" n89:title="@string/FirstPartySetsOverridesTitle" n89:key="FirstPartySetsOverrides" n89:restrictionType="string"
+      xmlns:n89="http://schemas.android.com/apk/res/android" />
+    <restriction n90:description="@string/ForceGoogleSafeSearchDesc" n90:entries="@array/ForceGoogleSafeSearchEntries" n90:title="@string/ForceGoogleSafeSearchTitle" n90:key="ForceGoogleSafeSearch" n90:entryValues="@array/ForceGoogleSafeSearchValues" n90:restrictionType="bool"
+      xmlns:n90="http://schemas.android.com/apk/res/android" />
+    <restriction n91:description="@string/ForceMajorVersionToMinorPositionInUserAgentDesc" n91:entries="@array/ForceMajorVersionToMinorPositionInUserAgentEntries" n91:title="@string/ForceMajorVersionToMinorPositionInUserAgentTitle" n91:key="ForceMajorVersionToMinorPositionInUserAgent" n91:entryValues="@array/ForceMajorVersionToMinorPositionInUserAgentValues" n91:restrictionType="choice"
+      xmlns:n91="http://schemas.android.com/apk/res/android" />
+    <restriction n92:description="@string/ForceYouTubeRestrictDesc" n92:entries="@array/ForceYouTubeRestrictEntries" n92:title="@string/ForceYouTubeRestrictTitle" n92:key="ForceYouTubeRestrict" n92:entryValues="@array/ForceYouTubeRestrictValues" n92:restrictionType="choice"
+      xmlns:n92="http://schemas.android.com/apk/res/android" />
+    <restriction n93:description="@string/FullscreenAllowedDesc" n93:entries="@array/FullscreenAllowedEntries" n93:title="@string/FullscreenAllowedTitle" n93:key="FullscreenAllowed" n93:entryValues="@array/FullscreenAllowedValues" n93:restrictionType="bool"
+      xmlns:n93="http://schemas.android.com/apk/res/android" />
+    <restriction n94:description="@string/HSTSPolicyBypassListDesc" n94:title="@string/HSTSPolicyBypassListTitle" n94:key="HSTSPolicyBypassList" n94:restrictionType="string"
+      xmlns:n94="http://schemas.android.com/apk/res/android" />
+    <restriction n95:description="@string/HeadlessModeDesc" n95:entries="@array/HeadlessModeEntries" n95:title="@string/HeadlessModeTitle" n95:key="HeadlessMode" n95:entryValues="@array/HeadlessModeValues" n95:restrictionType="choice"
+      xmlns:n95="http://schemas.android.com/apk/res/android" />
+    <restriction n96:description="@string/HistoryClustersVisibleDesc" n96:entries="@array/HistoryClustersVisibleEntries" n96:title="@string/HistoryClustersVisibleTitle" n96:key="HistoryClustersVisible" n96:entryValues="@array/HistoryClustersVisibleValues" n96:restrictionType="bool"
+      xmlns:n96="http://schemas.android.com/apk/res/android" />
+    <restriction n97:description="@string/HomepageLocationDesc" n97:title="@string/HomepageLocationTitle" n97:key="HomepageLocation" n97:restrictionType="string"
+      xmlns:n97="http://schemas.android.com/apk/res/android" />
+    <restriction n98:description="@string/HttpAllowlistDesc" n98:title="@string/HttpAllowlistTitle" n98:key="HttpAllowlist" n98:restrictionType="string"
+      xmlns:n98="http://schemas.android.com/apk/res/android" />
+    <restriction n99:description="@string/HttpsOnlyModeDesc" n99:entries="@array/HttpsOnlyModeEntries" n99:title="@string/HttpsOnlyModeTitle" n99:key="HttpsOnlyMode" n99:entryValues="@array/HttpsOnlyModeValues" n99:restrictionType="choice"
+      xmlns:n99="http://schemas.android.com/apk/res/android" />
+    <restriction n100:description="@string/HttpsUpgradesEnabledDesc" n100:entries="@array/HttpsUpgradesEnabledEntries" n100:title="@string/HttpsUpgradesEnabledTitle" n100:key="HttpsUpgradesEnabled" n100:entryValues="@array/HttpsUpgradesEnabledValues" n100:restrictionType="bool"
+      xmlns:n100="http://schemas.android.com/apk/res/android" />
+    <restriction n101:description="@string/IncognitoModeAvailabilityDesc" n101:entries="@array/IncognitoModeAvailabilityEntries" n101:title="@string/IncognitoModeAvailabilityTitle" n101:key="IncognitoModeAvailability" n101:entryValues="@array/IncognitoModeAvailabilityValues" n101:restrictionType="choice"
+      xmlns:n101="http://schemas.android.com/apk/res/android" />
+    <restriction n102:description="@string/InsecureFormsWarningsEnabledDesc" n102:entries="@array/InsecureFormsWarningsEnabledEntries" n102:title="@string/InsecureFormsWarningsEnabledTitle" n102:key="InsecureFormsWarningsEnabled" n102:entryValues="@array/InsecureFormsWarningsEnabledValues" n102:restrictionType="bool"
+      xmlns:n102="http://schemas.android.com/apk/res/android" />
+    <restriction n103:description="@string/InsecureHashesInTLSHandshakesEnabledDesc" n103:entries="@array/InsecureHashesInTLSHandshakesEnabledEntries" n103:title="@string/InsecureHashesInTLSHandshakesEnabledTitle" n103:key="InsecureHashesInTLSHandshakesEnabled" n103:entryValues="@array/InsecureHashesInTLSHandshakesEnabledValues" n103:restrictionType="bool"
+      xmlns:n103="http://schemas.android.com/apk/res/android" />
+    <restriction n104:description="@string/InsecurePrivateNetworkRequestsAllowedDesc" n104:entries="@array/InsecurePrivateNetworkRequestsAllowedEntries" n104:title="@string/InsecurePrivateNetworkRequestsAllowedTitle" n104:key="InsecurePrivateNetworkRequestsAllowed" n104:entryValues="@array/InsecurePrivateNetworkRequestsAllowedValues" n104:restrictionType="bool"
+      xmlns:n104="http://schemas.android.com/apk/res/android" />
+    <restriction n105:description="@string/InsecurePrivateNetworkRequestsAllowedForUrlsDesc" n105:title="@string/InsecurePrivateNetworkRequestsAllowedForUrlsTitle" n105:key="InsecurePrivateNetworkRequestsAllowedForUrls" n105:restrictionType="string"
+      xmlns:n105="http://schemas.android.com/apk/res/android" />
+    <restriction n106:description="@string/IntensiveWakeUpThrottlingEnabledDesc" n106:entries="@array/IntensiveWakeUpThrottlingEnabledEntries" n106:title="@string/IntensiveWakeUpThrottlingEnabledTitle" n106:key="IntensiveWakeUpThrottlingEnabled" n106:entryValues="@array/IntensiveWakeUpThrottlingEnabledValues" n106:restrictionType="bool"
+      xmlns:n106="http://schemas.android.com/apk/res/android" />
+    <restriction n107:description="@string/IsolateOriginsAndroidDesc" n107:title="@string/IsolateOriginsAndroidTitle" n107:key="IsolateOriginsAndroid" n107:restrictionType="string"
+      xmlns:n107="http://schemas.android.com/apk/res/android" />
+    <restriction n108:description="@string/JavaScriptAllowedForUrlsDesc" n108:title="@string/JavaScriptAllowedForUrlsTitle" n108:key="JavaScriptAllowedForUrls" n108:restrictionType="string"
+      xmlns:n108="http://schemas.android.com/apk/res/android" />
+    <restriction n109:description="@string/JavaScriptBlockedForUrlsDesc" n109:title="@string/JavaScriptBlockedForUrlsTitle" n109:key="JavaScriptBlockedForUrls" n109:restrictionType="string"
+      xmlns:n109="http://schemas.android.com/apk/res/android" />
+    <restriction n110:description="@string/JavaScriptJitAllowedForSitesDesc" n110:title="@string/JavaScriptJitAllowedForSitesTitle" n110:key="JavaScriptJitAllowedForSites" n110:restrictionType="string"
+      xmlns:n110="http://schemas.android.com/apk/res/android" />
+    <restriction n111:description="@string/JavaScriptJitBlockedForSitesDesc" n111:title="@string/JavaScriptJitBlockedForSitesTitle" n111:key="JavaScriptJitBlockedForSites" n111:restrictionType="string"
+      xmlns:n111="http://schemas.android.com/apk/res/android" />
+    <restriction n112:description="@string/LegacySameSiteCookieBehaviorEnabledForDomainListDesc" n112:title="@string/LegacySameSiteCookieBehaviorEnabledForDomainListTitle" n112:key="LegacySameSiteCookieBehaviorEnabledForDomainList" n112:restrictionType="string"
+      xmlns:n112="http://schemas.android.com/apk/res/android" />
+    <restriction n113:description="@string/LensCameraAssistedSearchEnabledDesc" n113:entries="@array/LensCameraAssistedSearchEnabledEntries" n113:title="@string/LensCameraAssistedSearchEnabledTitle" n113:key="LensCameraAssistedSearchEnabled" n113:entryValues="@array/LensCameraAssistedSearchEnabledValues" n113:restrictionType="bool"
+      xmlns:n113="http://schemas.android.com/apk/res/android" />
+    <restriction n114:description="@string/LookalikeWarningAllowlistDomainsDesc" n114:title="@string/LookalikeWarningAllowlistDomainsTitle" n114:key="LookalikeWarningAllowlistDomains" n114:restrictionType="string"
+      xmlns:n114="http://schemas.android.com/apk/res/android" />
+    <restriction n115:description="@string/ManagedAccountsSigninRestrictionDesc" n115:entries="@array/ManagedAccountsSigninRestrictionEntries" n115:title="@string/ManagedAccountsSigninRestrictionTitle" n115:key="ManagedAccountsSigninRestriction" n115:entryValues="@array/ManagedAccountsSigninRestrictionValues" n115:restrictionType="choice"
+      xmlns:n115="http://schemas.android.com/apk/res/android" />
+    <restriction n116:description="@string/ManagedBookmarksDesc" n116:title="@string/ManagedBookmarksTitle" n116:key="ManagedBookmarks" n116:restrictionType="string"
+      xmlns:n116="http://schemas.android.com/apk/res/android" />
+    <restriction n117:description="@string/MetricsReportingEnabledDesc" n117:entries="@array/MetricsReportingEnabledEntries" n117:title="@string/MetricsReportingEnabledTitle" n117:key="MetricsReportingEnabled" n117:entryValues="@array/MetricsReportingEnabledValues" n117:restrictionType="bool"
+      xmlns:n117="http://schemas.android.com/apk/res/android" />
+    <restriction n118:description="@string/NTPContentSuggestionsEnabledDesc" n118:entries="@array/NTPContentSuggestionsEnabledEntries" n118:title="@string/NTPContentSuggestionsEnabledTitle" n118:key="NTPContentSuggestionsEnabled" n118:entryValues="@array/NTPContentSuggestionsEnabledValues" n118:restrictionType="bool"
+      xmlns:n118="http://schemas.android.com/apk/res/android" />
+    <restriction n119:description="@string/NTPCustomBackgroundEnabledDesc" n119:entries="@array/NTPCustomBackgroundEnabledEntries" n119:title="@string/NTPCustomBackgroundEnabledTitle" n119:key="NTPCustomBackgroundEnabled" n119:entryValues="@array/NTPCustomBackgroundEnabledValues" n119:restrictionType="bool"
+      xmlns:n119="http://schemas.android.com/apk/res/android" />
+    <restriction n120:description="@string/NetworkPredictionOptionsDesc" n120:entries="@array/NetworkPredictionOptionsEntries" n120:title="@string/NetworkPredictionOptionsTitle" n120:key="NetworkPredictionOptions" n120:entryValues="@array/NetworkPredictionOptionsValues" n120:restrictionType="choice"
+      xmlns:n120="http://schemas.android.com/apk/res/android" />
+    <restriction n121:description="@string/NewBaseUrlInheritanceBehaviorAllowedDesc" n121:entries="@array/NewBaseUrlInheritanceBehaviorAllowedEntries" n121:title="@string/NewBaseUrlInheritanceBehaviorAllowedTitle" n121:key="NewBaseUrlInheritanceBehaviorAllowed" n121:entryValues="@array/NewBaseUrlInheritanceBehaviorAllowedValues" n121:restrictionType="bool"
+      xmlns:n121="http://schemas.android.com/apk/res/android" />
+    <restriction n122:description="@string/NtlmV2EnabledDesc" n122:entries="@array/NtlmV2EnabledEntries" n122:title="@string/NtlmV2EnabledTitle" n122:key="NtlmV2Enabled" n122:entryValues="@array/NtlmV2EnabledValues" n122:restrictionType="bool"
+      xmlns:n122="http://schemas.android.com/apk/res/android" />
+    <restriction n123:description="@string/OffsetParentNewSpecBehaviorEnabledDesc" n123:entries="@array/OffsetParentNewSpecBehaviorEnabledEntries" n123:title="@string/OffsetParentNewSpecBehaviorEnabledTitle" n123:key="OffsetParentNewSpecBehaviorEnabled" n123:entryValues="@array/OffsetParentNewSpecBehaviorEnabledValues" n123:restrictionType="bool"
+      xmlns:n123="http://schemas.android.com/apk/res/android" />
+    <restriction n124:description="@string/OutOfProcessSystemDnsResolutionEnabledDesc" n124:entries="@array/OutOfProcessSystemDnsResolutionEnabledEntries" n124:title="@string/OutOfProcessSystemDnsResolutionEnabledTitle" n124:key="OutOfProcessSystemDnsResolutionEnabled" n124:entryValues="@array/OutOfProcessSystemDnsResolutionEnabledValues" n124:restrictionType="bool"
+      xmlns:n124="http://schemas.android.com/apk/res/android" />
+    <restriction n125:description="@string/OverrideSecurityRestrictionsOnInsecureOriginDesc" n125:title="@string/OverrideSecurityRestrictionsOnInsecureOriginTitle" n125:key="OverrideSecurityRestrictionsOnInsecureOrigin" n125:restrictionType="string"
+      xmlns:n125="http://schemas.android.com/apk/res/android" />
+    <restriction n126:description="@string/PasswordLeakDetectionEnabledDesc" n126:entries="@array/PasswordLeakDetectionEnabledEntries" n126:title="@string/PasswordLeakDetectionEnabledTitle" n126:key="PasswordLeakDetectionEnabled" n126:entryValues="@array/PasswordLeakDetectionEnabledValues" n126:restrictionType="bool"
+      xmlns:n126="http://schemas.android.com/apk/res/android" />
+    <restriction n127:description="@string/PasswordManagerEnabledDesc" n127:entries="@array/PasswordManagerEnabledEntries" n127:title="@string/PasswordManagerEnabledTitle" n127:key="PasswordManagerEnabled" n127:entryValues="@array/PasswordManagerEnabledValues" n127:restrictionType="bool"
+      xmlns:n127="http://schemas.android.com/apk/res/android" />
+    <restriction n128:description="@string/PaymentMethodQueryEnabledDesc" n128:entries="@array/PaymentMethodQueryEnabledEntries" n128:title="@string/PaymentMethodQueryEnabledTitle" n128:key="PaymentMethodQueryEnabled" n128:entryValues="@array/PaymentMethodQueryEnabledValues" n128:restrictionType="bool"
+      xmlns:n128="http://schemas.android.com/apk/res/android" />
+    <restriction n129:description="@string/PolicyAtomicGroupsEnabledDesc" n129:entries="@array/PolicyAtomicGroupsEnabledEntries" n129:title="@string/PolicyAtomicGroupsEnabledTitle" n129:key="PolicyAtomicGroupsEnabled" n129:entryValues="@array/PolicyAtomicGroupsEnabledValues" n129:restrictionType="bool"
+      xmlns:n129="http://schemas.android.com/apk/res/android" />
+    <restriction n130:description="@string/PolicyDictionaryMultipleSourceMergeListDesc" n130:entries="@array/PolicyDictionaryMultipleSourceMergeListEntries" n130:title="@string/PolicyDictionaryMultipleSourceMergeListTitle" n130:key="PolicyDictionaryMultipleSourceMergeList" n130:entryValues="@array/PolicyDictionaryMultipleSourceMergeListValues" n130:restrictionType="multi-select"
+      xmlns:n130="http://schemas.android.com/apk/res/android" />
+    <restriction n131:description="@string/PolicyListMultipleSourceMergeListDesc" n131:title="@string/PolicyListMultipleSourceMergeListTitle" n131:key="PolicyListMultipleSourceMergeList" n131:restrictionType="string"
+      xmlns:n131="http://schemas.android.com/apk/res/android" />
+    <restriction n132:description="@string/PopupsAllowedForUrlsDesc" n132:title="@string/PopupsAllowedForUrlsTitle" n132:key="PopupsAllowedForUrls" n132:restrictionType="string"
+      xmlns:n132="http://schemas.android.com/apk/res/android" />
+    <restriction n133:description="@string/PopupsBlockedForUrlsDesc" n133:title="@string/PopupsBlockedForUrlsTitle" n133:key="PopupsBlockedForUrls" n133:restrictionType="string"
+      xmlns:n133="http://schemas.android.com/apk/res/android" />
+    <restriction n134:description="@string/PostQuantumKeyAgreementEnabledDesc" n134:entries="@array/PostQuantumKeyAgreementEnabledEntries" n134:title="@string/PostQuantumKeyAgreementEnabledTitle" n134:key="PostQuantumKeyAgreementEnabled" n134:entryValues="@array/PostQuantumKeyAgreementEnabledValues" n134:restrictionType="bool"
+      xmlns:n134="http://schemas.android.com/apk/res/android" />
+    <restriction n135:description="@string/PrintingEnabledDesc" n135:entries="@array/PrintingEnabledEntries" n135:title="@string/PrintingEnabledTitle" n135:key="PrintingEnabled" n135:entryValues="@array/PrintingEnabledValues" n135:restrictionType="bool"
+      xmlns:n135="http://schemas.android.com/apk/res/android" />
+    <restriction n136:description="@string/PrivacySandboxAdMeasurementEnabledDesc" n136:entries="@array/PrivacySandboxAdMeasurementEnabledEntries" n136:title="@string/PrivacySandboxAdMeasurementEnabledTitle" n136:key="PrivacySandboxAdMeasurementEnabled" n136:entryValues="@array/PrivacySandboxAdMeasurementEnabledValues" n136:restrictionType="bool"
+      xmlns:n136="http://schemas.android.com/apk/res/android" />
+    <restriction n137:description="@string/PrivacySandboxAdTopicsEnabledDesc" n137:entries="@array/PrivacySandboxAdTopicsEnabledEntries" n137:title="@string/PrivacySandboxAdTopicsEnabledTitle" n137:key="PrivacySandboxAdTopicsEnabled" n137:entryValues="@array/PrivacySandboxAdTopicsEnabledValues" n137:restrictionType="bool"
+      xmlns:n137="http://schemas.android.com/apk/res/android" />
+    <restriction n138:description="@string/PrivacySandboxPromptEnabledDesc" n138:entries="@array/PrivacySandboxPromptEnabledEntries" n138:title="@string/PrivacySandboxPromptEnabledTitle" n138:key="PrivacySandboxPromptEnabled" n138:entryValues="@array/PrivacySandboxPromptEnabledValues" n138:restrictionType="bool"
+      xmlns:n138="http://schemas.android.com/apk/res/android" />
+    <restriction n139:description="@string/PrivacySandboxSiteEnabledAdsEnabledDesc" n139:entries="@array/PrivacySandboxSiteEnabledAdsEnabledEntries" n139:title="@string/PrivacySandboxSiteEnabledAdsEnabledTitle" n139:key="PrivacySandboxSiteEnabledAdsEnabled" n139:entryValues="@array/PrivacySandboxSiteEnabledAdsEnabledValues" n139:restrictionType="bool"
+      xmlns:n139="http://schemas.android.com/apk/res/android" />
+    <restriction n140:description="@string/PromptForDownloadLocationDesc" n140:entries="@array/PromptForDownloadLocationEntries" n140:title="@string/PromptForDownloadLocationTitle" n140:key="PromptForDownloadLocation" n140:entryValues="@array/PromptForDownloadLocationValues" n140:restrictionType="bool"
+      xmlns:n140="http://schemas.android.com/apk/res/android" />
+    <restriction n141:description="@string/ProxySettingsDesc" n141:title="@string/ProxySettingsTitle" n141:key="ProxySettings" n141:restrictionType="string"
+      xmlns:n141="http://schemas.android.com/apk/res/android" />
+    <restriction n142:description="@string/RSAKeyUsageForLocalAnchorsEnabledDesc" n142:entries="@array/RSAKeyUsageForLocalAnchorsEnabledEntries" n142:title="@string/RSAKeyUsageForLocalAnchorsEnabledTitle" n142:key="RSAKeyUsageForLocalAnchorsEnabled" n142:entryValues="@array/RSAKeyUsageForLocalAnchorsEnabledValues" n142:restrictionType="bool"
+      xmlns:n142="http://schemas.android.com/apk/res/android" />
+    <restriction n143:description="@string/RestoreOnStartupDesc" n143:entries="@array/RestoreOnStartupEntries" n143:title="@string/RestoreOnStartupTitle" n143:key="RestoreOnStartup" n143:entryValues="@array/RestoreOnStartupValues" n143:restrictionType="choice"
+      xmlns:n143="http://schemas.android.com/apk/res/android" />
+    <restriction n144:description="@string/RestrictAccountsToPatternsDesc" n144:title="@string/RestrictAccountsToPatternsTitle" n144:key="RestrictAccountsToPatterns" n144:restrictionType="string"
+      xmlns:n144="http://schemas.android.com/apk/res/android" />
+    <restriction n145:description="@string/SSLErrorOverrideAllowedDesc" n145:entries="@array/SSLErrorOverrideAllowedEntries" n145:title="@string/SSLErrorOverrideAllowedTitle" n145:key="SSLErrorOverrideAllowed" n145:entryValues="@array/SSLErrorOverrideAllowedValues" n145:restrictionType="bool"
+      xmlns:n145="http://schemas.android.com/apk/res/android" />
+    <restriction n146:description="@string/SSLErrorOverrideAllowedForOriginsDesc" n146:title="@string/SSLErrorOverrideAllowedForOriginsTitle" n146:key="SSLErrorOverrideAllowedForOrigins" n146:restrictionType="string"
+      xmlns:n146="http://schemas.android.com/apk/res/android" />
+    <restriction n147:description="@string/SafeBrowsingExtendedReportingEnabledDesc" n147:entries="@array/SafeBrowsingExtendedReportingEnabledEntries" n147:title="@string/SafeBrowsingExtendedReportingEnabledTitle" n147:key="SafeBrowsingExtendedReportingEnabled" n147:entryValues="@array/SafeBrowsingExtendedReportingEnabledValues" n147:restrictionType="bool"
+      xmlns:n147="http://schemas.android.com/apk/res/android" />
+    <restriction n148:description="@string/SafeBrowsingProtectionLevelDesc" n148:entries="@array/SafeBrowsingProtectionLevelEntries" n148:title="@string/SafeBrowsingProtectionLevelTitle" n148:key="SafeBrowsingProtectionLevel" n148:entryValues="@array/SafeBrowsingProtectionLevelValues" n148:restrictionType="choice"
+      xmlns:n148="http://schemas.android.com/apk/res/android" />
+    <restriction n149:description="@string/SafeSitesFilterBehaviorDesc" n149:entries="@array/SafeSitesFilterBehaviorEntries" n149:title="@string/SafeSitesFilterBehaviorTitle" n149:key="SafeSitesFilterBehavior" n149:entryValues="@array/SafeSitesFilterBehaviorValues" n149:restrictionType="choice"
+      xmlns:n149="http://schemas.android.com/apk/res/android" />
+    <restriction n150:description="@string/SavingBrowserHistoryDisabledDesc" n150:entries="@array/SavingBrowserHistoryDisabledEntries" n150:title="@string/SavingBrowserHistoryDisabledTitle" n150:key="SavingBrowserHistoryDisabled" n150:entryValues="@array/SavingBrowserHistoryDisabledValues" n150:restrictionType="bool"
+      xmlns:n150="http://schemas.android.com/apk/res/android" />
+    <restriction n151:description="@string/ScrollToTextFragmentEnabledDesc" n151:entries="@array/ScrollToTextFragmentEnabledEntries" n151:title="@string/ScrollToTextFragmentEnabledTitle" n151:key="ScrollToTextFragmentEnabled" n151:entryValues="@array/ScrollToTextFragmentEnabledValues" n151:restrictionType="bool"
+      xmlns:n151="http://schemas.android.com/apk/res/android" />
+    <restriction n152:description="@string/SearchSuggestEnabledDesc" n152:entries="@array/SearchSuggestEnabledEntries" n152:title="@string/SearchSuggestEnabledTitle" n152:key="SearchSuggestEnabled" n152:entryValues="@array/SearchSuggestEnabledValues" n152:restrictionType="bool"
+      xmlns:n152="http://schemas.android.com/apk/res/android" />
+    <restriction n153:description="@string/SendMouseEventsDisabledFormControlsEnabledDesc" n153:entries="@array/SendMouseEventsDisabledFormControlsEnabledEntries" n153:title="@string/SendMouseEventsDisabledFormControlsEnabledTitle" n153:key="SendMouseEventsDisabledFormControlsEnabled" n153:entryValues="@array/SendMouseEventsDisabledFormControlsEnabledValues" n153:restrictionType="bool"
+      xmlns:n153="http://schemas.android.com/apk/res/android" />
+    <restriction n154:description="@string/SensorsAllowedForUrlsDesc" n154:title="@string/SensorsAllowedForUrlsTitle" n154:key="SensorsAllowedForUrls" n154:restrictionType="string"
+      xmlns:n154="http://schemas.android.com/apk/res/android" />
+    <restriction n155:description="@string/SensorsBlockedForUrlsDesc" n155:title="@string/SensorsBlockedForUrlsTitle" n155:key="SensorsBlockedForUrls" n155:restrictionType="string"
+      xmlns:n155="http://schemas.android.com/apk/res/android" />
+    <restriction n156:description="@string/SharedClipboardEnabledDesc" n156:entries="@array/SharedClipboardEnabledEntries" n156:title="@string/SharedClipboardEnabledTitle" n156:key="SharedClipboardEnabled" n156:entryValues="@array/SharedClipboardEnabledValues" n156:restrictionType="bool"
+      xmlns:n156="http://schemas.android.com/apk/res/android" />
+    <restriction n157:description="@string/ShoppingListEnabledDesc" n157:entries="@array/ShoppingListEnabledEntries" n157:title="@string/ShoppingListEnabledTitle" n157:key="ShoppingListEnabled" n157:entryValues="@array/ShoppingListEnabledValues" n157:restrictionType="bool"
+      xmlns:n157="http://schemas.android.com/apk/res/android" />
+    <restriction n158:description="@string/SitePerProcessAndroidDesc" n158:entries="@array/SitePerProcessAndroidEntries" n158:title="@string/SitePerProcessAndroidTitle" n158:key="SitePerProcessAndroid" n158:entryValues="@array/SitePerProcessAndroidValues" n158:restrictionType="bool"
+      xmlns:n158="http://schemas.android.com/apk/res/android" />
+    <restriction n159:description="@string/StrictMimetypeCheckForWorkerScriptsEnabledDesc" n159:entries="@array/StrictMimetypeCheckForWorkerScriptsEnabledEntries" n159:title="@string/StrictMimetypeCheckForWorkerScriptsEnabledTitle" n159:key="StrictMimetypeCheckForWorkerScriptsEnabled" n159:entryValues="@array/StrictMimetypeCheckForWorkerScriptsEnabledValues" n159:restrictionType="bool"
+      xmlns:n159="http://schemas.android.com/apk/res/android" />
+    <restriction n160:description="@string/SuppressDifferentOriginSubframeDialogsDesc" n160:entries="@array/SuppressDifferentOriginSubframeDialogsEntries" n160:title="@string/SuppressDifferentOriginSubframeDialogsTitle" n160:key="SuppressDifferentOriginSubframeDialogs" n160:entryValues="@array/SuppressDifferentOriginSubframeDialogsValues" n160:restrictionType="bool"
+      xmlns:n160="http://schemas.android.com/apk/res/android" />
+    <restriction n161:description="@string/SyncTypesListDisabledDesc" n161:title="@string/SyncTypesListDisabledTitle" n161:key="SyncTypesListDisabled" n161:restrictionType="string"
+      xmlns:n161="http://schemas.android.com/apk/res/android" />
+    <restriction n162:description="@string/ThirdPartyStoragePartitioningBlockedForOriginsDesc" n162:title="@string/ThirdPartyStoragePartitioningBlockedForOriginsTitle" n162:key="ThirdPartyStoragePartitioningBlockedForOrigins" n162:restrictionType="string"
+      xmlns:n162="http://schemas.android.com/apk/res/android" />
+    <restriction n163:description="@string/ThrottleNonVisibleCrossOriginIframesAllowedDesc" n163:entries="@array/ThrottleNonVisibleCrossOriginIframesAllowedEntries" n163:title="@string/ThrottleNonVisibleCrossOriginIframesAllowedTitle" n163:key="ThrottleNonVisibleCrossOriginIframesAllowed" n163:entryValues="@array/ThrottleNonVisibleCrossOriginIframesAllowedValues" n163:restrictionType="bool"
+      xmlns:n163="http://schemas.android.com/apk/res/android" />
+    <restriction n164:description="@string/TosDialogBehaviorDesc" n164:entries="@array/TosDialogBehaviorEntries" n164:title="@string/TosDialogBehaviorTitle" n164:key="TosDialogBehavior" n164:entryValues="@array/TosDialogBehaviorValues" n164:restrictionType="choice"
+      xmlns:n164="http://schemas.android.com/apk/res/android" />
+    <restriction n165:description="@string/TranslateEnabledDesc" n165:entries="@array/TranslateEnabledEntries" n165:title="@string/TranslateEnabledTitle" n165:key="TranslateEnabled" n165:entryValues="@array/TranslateEnabledValues" n165:restrictionType="bool"
+      xmlns:n165="http://schemas.android.com/apk/res/android" />
+    <restriction n166:description="@string/URLAllowlistDesc" n166:title="@string/URLAllowlistTitle" n166:key="URLAllowlist" n166:restrictionType="string"
+      xmlns:n166="http://schemas.android.com/apk/res/android" />
+    <restriction n167:description="@string/URLBlocklistDesc" n167:title="@string/URLBlocklistTitle" n167:key="URLBlocklist" n167:restrictionType="string"
+      xmlns:n167="http://schemas.android.com/apk/res/android" />
+    <restriction n168:description="@string/UrlKeyedAnonymizedDataCollectionEnabledDesc" n168:entries="@array/UrlKeyedAnonymizedDataCollectionEnabledEntries" n168:title="@string/UrlKeyedAnonymizedDataCollectionEnabledTitle" n168:key="UrlKeyedAnonymizedDataCollectionEnabled" n168:entryValues="@array/UrlKeyedAnonymizedDataCollectionEnabledValues" n168:restrictionType="bool"
+      xmlns:n168="http://schemas.android.com/apk/res/android" />
+    <restriction n169:description="@string/UserAgentClientHintsGREASEUpdateEnabledDesc" n169:entries="@array/UserAgentClientHintsGREASEUpdateEnabledEntries" n169:title="@string/UserAgentClientHintsGREASEUpdateEnabledTitle" n169:key="UserAgentClientHintsGREASEUpdateEnabled" n169:entryValues="@array/UserAgentClientHintsGREASEUpdateEnabledValues" n169:restrictionType="bool"
+      xmlns:n169="http://schemas.android.com/apk/res/android" />
+    <restriction n170:description="@string/UserAgentReductionDesc" n170:entries="@array/UserAgentReductionEntries" n170:title="@string/UserAgentReductionTitle" n170:key="UserAgentReduction" n170:entryValues="@array/UserAgentReductionValues" n170:restrictionType="choice"
+      xmlns:n170="http://schemas.android.com/apk/res/android" />
+    <restriction n171:description="@string/VirtualKeyboardResizesLayoutByDefaultDesc" n171:entries="@array/VirtualKeyboardResizesLayoutByDefaultEntries" n171:title="@string/VirtualKeyboardResizesLayoutByDefaultTitle" n171:key="VirtualKeyboardResizesLayoutByDefault" n171:entryValues="@array/VirtualKeyboardResizesLayoutByDefaultValues" n171:restrictionType="bool"
+      xmlns:n171="http://schemas.android.com/apk/res/android" />
+    <restriction n172:description="@string/WebRtcUdpPortRangeDesc" n172:title="@string/WebRtcUdpPortRangeTitle" n172:key="WebRtcUdpPortRange" n172:restrictionType="string"
+      xmlns:n172="http://schemas.android.com/apk/res/android" />
+    <restriction n173:description="@string/WebSQLAccessDesc" n173:entries="@array/WebSQLAccessEntries" n173:title="@string/WebSQLAccessTitle" n173:key="WebSQLAccess" n173:entryValues="@array/WebSQLAccessValues" n173:restrictionType="bool"
+      xmlns:n173="http://schemas.android.com/apk/res/android" />
+    <restriction n174:description="@string/WebUsbAllowDevicesForUrlsDesc" n174:title="@string/WebUsbAllowDevicesForUrlsTitle" n174:key="WebUsbAllowDevicesForUrls" n174:restrictionType="string"
+      xmlns:n174="http://schemas.android.com/apk/res/android" />
+    <restriction n175:description="@string/WebUsbAskForUrlsDesc" n175:title="@string/WebUsbAskForUrlsTitle" n175:key="WebUsbAskForUrls" n175:restrictionType="string"
+      xmlns:n175="http://schemas.android.com/apk/res/android" />
+    <restriction n176:description="@string/WebUsbBlockedForUrlsDesc" n176:title="@string/WebUsbBlockedForUrlsTitle" n176:key="WebUsbBlockedForUrls" n176:restrictionType="string"
+      xmlns:n176="http://schemas.android.com/apk/res/android" />
+    <restriction n177:description="@string/WebXRImmersiveArEnabledDesc" n177:entries="@array/WebXRImmersiveArEnabledEntries" n177:title="@string/WebXRImmersiveArEnabledTitle" n177:key="WebXRImmersiveArEnabled" n177:entryValues="@array/WebXRImmersiveArEnabledValues" n177:restrictionType="bool"
+      xmlns:n177="http://schemas.android.com/apk/res/android" />
+</restrictions>

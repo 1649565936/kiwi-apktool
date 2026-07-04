@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<org.chromium.chrome.browser.creator.CreatorToolbarView n0:orientation="vertical" n0:layoutDirection="locale"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <com.google.android.material.appbar.MaterialToolbar n0:id="@id/action_bar" n0:layout_width="match_parent" n0:layout_height="?actionBarSize" style="@style/CreatorActivityNoActionBar">
+        <LinearLayout n0:orientation="horizontal" n0:layout_width="match_parent" n0:layout_height="wrap_content">
+            <TextView n0:textAppearance="@style/TextAppearance.Headline.Primary" n0:layout_gravity="center_vertical" n0:id="@id/creator_title_toolbar" n0:visibility="gone" n0:layout_width="0.0dp" n0:layout_height="wrap_content" n0:singleLine="true" n0:layout_weight="1.0" n0:paddingEnd="@dimen/creator_toolbar_text_padding" />
+            <FrameLayout n0:layout_gravity="end" n0:id="@id/creator_all_buttons_toolbar" n0:visibility="gone" n0:layout_width="wrap_content" n0:layout_height="@dimen/creator_toolbar_button_touch_size">
+                <org.chromium.ui.widget.ButtonCompat n0:layout_gravity="center_vertical" n0:id="@id/creator_follow_button_toolbar" n0:visibility="gone" n0:layout_width="wrap_content" n0:layout_height="@dimen/creator_toolbar_button_height" n0:text="@string/menu_follow" n0:drawableStart="@drawable/follow_add" style="@style/CreatorFollowFilledButtonToolbar" />
+                <org.chromium.ui.widget.ButtonCompat n0:layout_gravity="center_vertical" n0:id="@id/creator_following_button_toolbar" n0:visibility="gone" n0:layout_width="wrap_content" n0:layout_height="@dimen/creator_toolbar_button_height" n0:text="@string/menu_following" n0:drawableStart="@drawable/following_checkmark" style="@style/CreatorFollowReverseButtonToolbar" />
+            </FrameLayout>
+        </LinearLayout>
+    </com.google.android.material.appbar.MaterialToolbar>
+    <View n0:id="@id/creator_toolbar_bottom_border" n0:background="?globalOutlinedButtonBorderColor" n0:visibility="gone" n0:layout_width="match_parent" n0:layout_height="@dimen/creator_toolbar_bottom_border_height" n0:layout_alignParentBottom="true" />
+</org.chromium.chrome.browser.creator.CreatorToolbarView>

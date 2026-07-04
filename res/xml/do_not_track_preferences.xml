@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen>
+    <org.chromium.components.browser_ui.settings.ChromeSwitchPreference n0:key="do_not_track_switch" n0:summaryOn="@string/text_on" n0:summaryOff="@string/text_off"
+      xmlns:n0="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.TextMessagePreference n1:title="@string/do_not_track_description" n2:allowDividerBelow="false"
+      xmlns:n1="http://schemas.android.com/apk/res/android" xmlns:n2="http://schemas.android.com/apk/res-auto" />
+</PreferenceScreen>

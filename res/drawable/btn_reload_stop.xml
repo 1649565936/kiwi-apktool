@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<level-list>
+    <item n0:drawable="@drawable/btn_toolbar_reload" n0:maxLevel="@integer/reload_button_level_reload"
+      xmlns:n0="http://schemas.android.com/apk/res/android" />
+    <item n1:drawable="@drawable/btn_close" n1:maxLevel="@integer/reload_button_level_stop"
+      xmlns:n1="http://schemas.android.com/apk/res/android" />
+</level-list>

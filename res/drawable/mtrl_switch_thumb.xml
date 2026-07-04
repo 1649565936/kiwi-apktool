@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-selector n0:height="@dimen/mtrl_switch_thumb_size" n0:width="@dimen/mtrl_switch_thumb_size"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <item n0:state_pressed="true" n0:id="@id/pressed" n0:drawable="@drawable/mtrl_switch_thumb_pressed" />
+    <item n0:state_checked="true" n0:id="@id/checked" n0:drawable="@drawable/mtrl_switch_thumb_checked" />
+    <item n0:id="@id/with_icon" n0:drawable="@drawable/mtrl_switch_thumb_checked" n1:state_with_icon="true"
+      xmlns:n1="http://schemas.android.com/apk/res-auto" />
+    <item n0:id="@id/unchecked" n0:drawable="@drawable/mtrl_switch_thumb_unchecked" />
+    <transition n0:drawable="@drawable/mtrl_switch_thumb_pressed_checked" n0:toId="@id/checked" n0:fromId="@id/pressed" />
+    <transition n0:drawable="@drawable/mtrl_switch_thumb_pressed_checked" n0:toId="@id/with_icon" n0:fromId="@id/pressed" />
+    <transition n0:drawable="@drawable/mtrl_switch_thumb_pressed_unchecked" n0:toId="@id/unchecked" n0:fromId="@id/pressed" />
+    <transition n0:drawable="@drawable/mtrl_switch_thumb_checked_pressed" n0:toId="@id/pressed" n0:fromId="@id/checked" />
+    <transition n0:drawable="@drawable/mtrl_switch_thumb_checked_unchecked" n0:toId="@id/unchecked" n0:fromId="@id/checked" />
+    <transition n0:drawable="@drawable/mtrl_switch_thumb_checked_pressed" n0:toId="@id/pressed" n0:fromId="@id/with_icon" />
+    <transition n0:drawable="@drawable/mtrl_switch_thumb_unchecked_pressed" n0:toId="@id/pressed" n0:fromId="@id/unchecked" />
+    <transition n0:drawable="@drawable/mtrl_switch_thumb_unchecked_checked" n0:toId="@id/checked" n0:fromId="@id/unchecked" />
+</animated-selector>

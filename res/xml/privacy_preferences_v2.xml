@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen>
+    <PreferenceCategory n0:title="@string/privacy_section_title" n0:key="privacy_section"
+      xmlns:n0="http://schemas.android.com/apk/res/android" />
+    <Preference n1:title="@string/clear_browsing_data_title" n1:key="clear_browsing_data" n1:summary="@string/clear_browsing_data_summary" n1:fragment="org.chromium.chrome.browser.browsing_data.ClearBrowsingDataTabsFragment"
+      xmlns:n1="http://schemas.android.com/apk/res/android" />
+    <Preference n2:title="@string/privacy_guide_pref_title" n2:key="privacy_guide" n2:summary="@string/privacy_guide_pref_summary" n2:fragment="org.chromium.chrome.browser.privacy_guide.PrivacyGuideFragment"
+      xmlns:n2="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.ChromeBasePreference n3:title="@string/third_party_cookies_link_row_label" n3:key="third_party_cookies" n3:fragment="org.chromium.components.browser_ui.site_settings.SingleCategorySettings"
+      xmlns:n3="http://schemas.android.com/apk/res/android" />
+    <Preference n4:title="@string/ad_privacy_link_row_label" n4:key="privacy_sandbox" n4:summary="@string/ad_privacy_link_row_sub_label" n4:fragment="org.chromium.chrome.browser.privacy_sandbox.v4.PrivacySandboxSettingsFragmentV4"
+      xmlns:n4="http://schemas.android.com/apk/res/android" />
+    <Preference n5:title="@string/do_not_track_title" n5:key="do_not_track" n5:fragment="org.chromium.chrome.browser.privacy.settings.DoNotTrackSettings"
+      xmlns:n5="http://schemas.android.com/apk/res/android" />
+    <Preference n6:title="@string/preload_pages_title" n6:key="preload_pages" n6:summary="@string/preload_pages_summary" n6:fragment="org.chromium.chrome.browser.prefetch.settings.PreloadPagesSettingsFragment"
+      xmlns:n6="http://schemas.android.com/apk/res/android" />
+    <org.chromium.chrome.browser.incognito.reauth.IncognitoReauthSettingSwitchPreference n7:persistent="false" n7:title="@string/settings_incognito_tab_lock_title" n7:key="incognito_lock" n7:summary="@string/settings_incognito_tab_lock_summary_android_setting_off"
+      xmlns:n7="http://schemas.android.com/apk/res/android" />
+    <PreferenceCategory n8:title="@string/security_section_title" n8:key="security_section"
+      xmlns:n8="http://schemas.android.com/apk/res/android" />
+    <Preference n9:title="@string/prefs_safe_browsing_title" n9:key="safe_browsing" n9:summary="@string/prefs_safe_browsing_summary" n9:fragment="org.chromium.chrome.browser.safe_browsing.settings.SafeBrowsingSettingsFragment"
+      xmlns:n9="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.ChromeSwitchPreference n10:title="@string/settings_https_first_mode_title" n10:key="https_first_mode" n10:summary="@string/settings_https_first_mode_summary"
+      xmlns:n10="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.ChromeBasePreference n11:title="@string/settings_secure_dns_title" n11:key="secure_dns" n11:fragment="org.chromium.chrome.browser.privacy.secure_dns.SecureDnsSettings"
+      xmlns:n11="http://schemas.android.com/apk/res/android" />
+    <Preference n12:title="@string/cablev2_paask_title" n12:key="phone_as_a_security_key" n12:summary="@string/cablev2_paask_body" n12:fragment="org.chromium.chrome.browser.webauthn.PrivacySettingsFragment"
+      xmlns:n12="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.ChromeSwitchPreference n13:title="@string/can_make_payment_title" n13:key="can_make_payment" n13:summary="@string/settings_can_make_payment_toggle_label"
+      xmlns:n13="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.TextMessagePreference n14:key="sync_and_services_link" n14:summary="@string/privacy_sync_and_services_link_legacy" n15:allowDividerBelow="false"
+      xmlns:n14="http://schemas.android.com/apk/res/android" xmlns:n15="http://schemas.android.com/apk/res-auto" />
+    <org.chromium.components.browser_ui.settings.ChromeBaseCheckBoxPreference n16:title="@string/privacy_preferences_avoid_amp_websites_title" n16:key="avoid_amp_websites" n16:summary="@string/privacy_preferences_avoid_amp_websites_summary" n16:defaultValue="true"
+      xmlns:n16="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.ChromeBaseCheckBoxPreference n17:title="@string/privacy_preferences_hide_incognito_window_content_title" n17:key="hide_incognito_window_content" n17:summary="@string/privacy_preferences_hide_incognito_window_content_summary" n17:defaultValue="false"
+      xmlns:n17="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.ChromeBaseCheckBoxPreference n18:title="@string/privacy_preferences_close_tabs_on_exit_title" n18:key="close_tabs_on_exit" n18:summary="@string/privacy_preferences_close_tabs_on_exit_summary" n18:defaultValue="false"
+      xmlns:n18="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.ChromeBaseCheckBoxPreference n19:title="@string/privacy_preferences_close_browser_after_last_tab_is_closed_title" n19:key="close_browser_after_last_tab" n19:summary="@string/privacy_preferences_close_browser_after_last_tab_is_closed_summary" n19:defaultValue="false"
+      xmlns:n19="http://schemas.android.com/apk/res/android" />
+</PreferenceScreen>

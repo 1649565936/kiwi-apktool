@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView style="@style/AlertDialogContent">
+    <LinearLayout n0:orientation="vertical" n0:layout_width="match_parent" n0:layout_height="wrap_content"
+      xmlns:n0="http://schemas.android.com/apk/res/android">
+        <TextView n0:id="@id/explanation" n0:layout_width="match_parent" n0:layout_height="wrap_content" />
+        <com.google.android.material.textfield.TextInputLayout n0:id="@id/username_label" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:hint="@string/login_dialog_username_field">
+            <org.chromium.components.browser_ui.widget.text.AlertDialogEditText n0:id="@id/username" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:hint="@string/login_dialog_username_field" n0:inputType="textNoSuggestions" n0:imeOptions="flagNoExtractUi" n0:importantForAutofill="no" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout n0:id="@id/password_label" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:hint="@string/login_dialog_password_field">
+            <org.chromium.components.browser_ui.widget.text.AlertDialogEditText n0:id="@id/password" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:hint="@string/login_dialog_password_field" n0:inputType="textPassword" n0:imeOptions="flagNoExtractUi" n0:importantForAutofill="no" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+</ScrollView>

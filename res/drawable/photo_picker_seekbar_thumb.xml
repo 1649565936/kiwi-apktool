@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape n0:shape="oval"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <size n0:height="@dimen/photo_picker_seek_bar_thumb_size" n0:width="@dimen/photo_picker_seek_bar_thumb_size" />
+    <solid n0:color="@color/default_primary_color" />
+</shape>

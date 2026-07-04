@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout n0:gravity="center" n0:orientation="vertical" n0:paddingLeft="@dimen/page_zoom_view_padding" n0:paddingRight="@dimen/page_zoom_view_padding" n0:clipToPadding="false" n0:layout_width="match_parent" n0:layout_height="wrap_content"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <TextView n0:id="@id/page_zoom_current_zoom_level" n0:background="@drawable/page_zoom_background" n0:padding="@dimen/page_zoom_view_level_padding" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:layout_marginBottom="@dimen/page_zoom_view_level_margin" n0:textAlignment="center" n0:accessibilityLiveRegion="assertive" n0:elevation="@dimen/page_zoom_view_elevation" style="@style/TextAppearance.TextLarge" />
+    <include layout="@layout/page_zoom_slider" />
+</LinearLayout>

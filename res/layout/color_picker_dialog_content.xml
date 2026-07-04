@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout n0:orientation="vertical" n0:padding="15.0dp" n0:layout_width="match_parent" n0:layout_height="wrap_content"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <ScrollView n0:layout_width="match_parent" n0:layout_height="wrap_content">
+        <org.chromium.components.embedder_support.delegate.ColorPickerAdvanced n0:id="@id/color_picker_advanced" n0:layout_width="match_parent" n0:layout_height="wrap_content" />
+    </ScrollView>
+    <org.chromium.components.embedder_support.delegate.ColorPickerSimple n0:id="@id/color_picker_simple" n0:background="@drawable/color_picker_border" n0:padding="1.0px" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:divider="@color/color_picker_border_color" n0:dividerHeight="1.0px" />
+    <org.chromium.ui.widget.ButtonCompat n0:id="@id/more_colors_button" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginTop="16.0dp" n0:text="@string/color_picker_button_more" style="@style/TextButton" />
+</LinearLayout>

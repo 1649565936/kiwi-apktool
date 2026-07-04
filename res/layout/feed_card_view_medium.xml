@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<org.chromium.components.browser_ui.widget.promo.FeedCardView n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginTop="8.0dp" n0:layout_marginBottom="8.0dp"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <LinearLayout n0:orientation="vertical" n0:layout_width="match_parent" n0:layout_height="wrap_content">
+        <androidx.constraintlayout.widget.ConstraintLayout n0:id="@id/containerContent" n0:layout_width="match_parent" n0:layout_height="wrap_content">
+            <org.chromium.ui.widget.TextViewWithLeading n0:textAppearance="@style/TextAppearance.Headline.Tertiary" n0:ellipsize="end" n0:id="@id/headline" n0:background="@drawable/tile_view_highlight" n0:focusable="true" n0:clickable="true" n0:layout_width="0.0dp" n0:layout_height="wrap_content" n0:layout_marginTop="10.0dp" n0:maxLines="3" n0:layout_marginStart="0.0dp" n0:layout_marginEnd="10.0dp" n1:layout_constraintEnd_toStartOf="@id/image" n1:layout_constraintStart_toStartOf="parent" n1:layout_constraintTop_toTopOf="parent" n1:layout_goneMarginEnd="16.0dp"
+              xmlns:n1="http://schemas.android.com/apk/res-auto" />
+            <ImageView n0:layout_gravity="left" n0:id="@id/source_image" n0:layout_width="@dimen/gnt_ad_indicator_width" n0:layout_height="@dimen/gnt_ad_indicator_height" n0:layout_marginEnd="8.0dp" n2:layout_constraintBottom_toBottomOf="@id/bookmark" n2:layout_constraintStart_toStartOf="@id/headline" n2:layout_constraintTop_toTopOf="@id/bookmark"
+              xmlns:n2="http://schemas.android.com/apk/res-auto" />
+            <TextView n0:textAppearance="@style/TextAppearance.TextSmall.Secondary" n0:id="@id/source" n0:layout_width="0.0dp" n0:layout_height="wrap_content" n0:layout_marginStart="8.0dp" n0:layout_marginEnd="8.0dp" n3:layout_constraintBottom_toBottomOf="@id/bookmark" n3:layout_constraintEnd_toStartOf="@id/bookmark" n3:layout_constraintStart_toEndOf="@id/source_image" n3:layout_constraintTop_toTopOf="@id/bookmark" n3:layout_goneMarginBottom="8.0dp"
+              xmlns:n3="http://schemas.android.com/apk/res-auto" />
+            <org.chromium.components.browser_ui.widget.RoundedCornerImageView n0:id="@id/image" n0:layout_width="1.0dp" n0:layout_height="96.0dp" n0:layout_marginTop="10.0dp" n0:scaleType="centerCrop" n0:layout_marginEnd="0.0dp" n4:cornerRadiusBottomEnd="8.0dp" n4:cornerRadiusBottomStart="8.0dp" n4:cornerRadiusTopEnd="8.0dp" n4:cornerRadiusTopStart="8.0dp" n4:layout_constraintEnd_toEndOf="parent" n4:layout_constraintTop_toTopOf="parent"
+              xmlns:n4="http://schemas.android.com/apk/res-auto" />
+            <ImageView n0:id="@id/bookmark" n0:layout_width="32.0dp" n0:layout_height="32.0dp" n0:layout_marginEnd="8.0dp" n5:layout_constraintEnd_toStartOf="@id/share" n5:layout_constraintTop_toTopOf="@id/share"
+              xmlns:n5="http://schemas.android.com/apk/res-auto" />
+            <ImageView n0:id="@id/share" n0:layout_width="32.0dp" n0:layout_height="32.0dp" n0:layout_marginTop="10.0dp" n0:layout_marginBottom="10.0dp" n0:layout_marginEnd="0.0dp" n6:layout_constraintBottom_toBottomOf="parent" n6:layout_constraintEnd_toEndOf="parent" n6:layout_constraintTop_toBottomOf="@id/image"
+              xmlns:n6="http://schemas.android.com/apk/res-auto" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <View n0:layout_width="match_parent" n0:layout_height="6.0dp" n0:layout_weight="1.0" />
+        <include layout="@layout/horizontal_divider" />
+        <View n0:layout_width="match_parent" n0:layout_height="6.0dp" n0:layout_weight="1.0" />
+    </LinearLayout>
+</org.chromium.components.browser_ui.widget.promo.FeedCardView>

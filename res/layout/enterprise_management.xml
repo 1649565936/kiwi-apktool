@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<org.chromium.chrome.browser.management.ManagementView n0:background="?colorSurface" n0:layout_width="match_parent" n0:layout_height="match_parent"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <LinearLayout n0:orientation="vertical" n0:id="@id/management_container" n0:padding="@dimen/cm_padding" n0:layout_width="wrap_content" n0:layout_height="wrap_content">
+        <ImageView n0:layout_width="@dimen/cm_logo_width" n0:layout_height="@dimen/cm_logo_height" n0:src="@drawable/enterprise_icon" n0:contentDescription="@string/product_logo_enterprise_alt_text" />
+        <TextView n0:textAppearance="@style/TextAppearance.Headline.Primary" n0:id="@id/title_text" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:layout_marginTop="@dimen/cm_title_margin_top" />
+        <TextView n0:textAppearance="@style/TextAppearance.TextMedium.Secondary" n0:id="@id/description_text" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:layout_marginTop="@dimen/cm_description_margin_top" n0:text="@string/management_browser_notice" />
+        <TextView n0:textAppearance="@style/TextAppearance.TextMedium.Link" n0:id="@id/learn_more" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:layout_marginTop="@dimen/cm_learn_more_margin_top" />
+        <TextView n0:textAppearance="@style/TextAppearance.TextLarge.Primary" n0:id="@id/browser_reporting" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:layout_marginTop="@dimen/cm_browser_margin_top" n0:text="@string/management_browser_reporting" />
+        <TextView n0:textAppearance="@style/TextAppearance.TextMedium.Secondary" n0:id="@id/browser_reporting_explanation" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:text="@string/management_browser_reporting_explanation" />
+        <TextView n0:textAppearance="@style/TextAppearance.TextMedium.Secondary" n0:id="@id/extension_report_username" n0:layout_width="wrap_content" n0:layout_height="match_parent" n0:layout_marginTop="@dimen/cm_browser_item_margin_top" n0:text="@string/management_extension_report_username" n0:drawablePadding="@dimen/cm_browser_item_drawable_padding" n1:drawableLeftCompat="@drawable/enterprise_user_circle"
+          xmlns:n1="http://schemas.android.com/apk/res-auto" />
+        <TextView n0:textAppearance="@style/TextAppearance.TextMedium.Secondary" n0:id="@id/extension_report_version" n0:layout_width="wrap_content" n0:layout_height="match_parent" n0:layout_marginTop="@dimen/cm_browser_item_margin_top" n0:text="@string/management_extension_report_version" n0:drawablePadding="@dimen/cm_browser_item_drawable_padding" n2:drawableLeftCompat="@drawable/enterprise_phone"
+          xmlns:n2="http://schemas.android.com/apk/res-auto" />
+    </LinearLayout>
+</org.chromium.chrome.browser.management.ManagementView>

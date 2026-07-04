@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<org.chromium.chrome.browser.ui.signin.SyncConsentView n0:gravity="center_horizontal" n0:orientation="vertical" n0:padding="24.0dp" n0:layout_width="match_parent" n0:layout_height="match_parent"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <org.chromium.chrome.browser.ui.signin.SigninScrollView n0:id="@id/sync_consent_scroll_view" n0:scrollbars="none" n0:fadingEdgeLength="48.0dp" n0:layout_width="match_parent" n0:layout_height="0.0dp" n0:fillViewport="true" n0:layout_weight="1.0" n0:requiresFadingEdge="vertical">
+        <LinearLayout n0:gravity="center_horizontal" n0:orientation="vertical" n0:layout_width="match_parent" n0:layout_height="wrap_content">
+            <View n0:id="@id/space_above_account_image" n0:visibility="invisible" n0:layout_width="match_parent" n0:layout_height="24.0dp" n0:layout_weight="1.0" />
+            <RelativeLayout n0:layout_gravity="center" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginBottom="36.0dp">
+                <ImageView n0:id="@id/history_sync_illustration" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:scaleType="center" n0:importantForAccessibility="no" n1:srcCompat="@drawable/history_sync_illustration"
+                  xmlns:n1="http://schemas.android.com/apk/res-auto" />
+                <ImageView n0:id="@id/account_image" n0:layout_width="48.0dp" n0:layout_height="48.0dp" n0:layout_centerInParent="true" n0:layout_centerVertical="@id/history_sync_illustration" n0:importantForAccessibility="no" />
+            </RelativeLayout>
+            <org.chromium.ui.widget.TextViewWithLeading n0:textAppearance="@style/TextAppearance.Headline.Primary" n0:gravity="center" n0:id="@id/sync_consent_title" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:layout_marginBottom="8.0dp" n2:leading="@dimen/headline_size_leading"
+              xmlns:n2="http://schemas.android.com/apk/res-auto" />
+            <org.chromium.ui.widget.TextViewWithLeading n0:textAppearance="@style/TextAppearance.TextMedium.Secondary" n0:gravity="center" n0:id="@id/sync_consent_subtitle" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:layout_marginBottom="16.0dp" n3:leading="@dimen/text_size_medium_leading"
+              xmlns:n3="http://schemas.android.com/apk/res-auto" />
+            <View n0:id="@id/space_between_sync_data_types_and_buttons" n0:visibility="invisible" n0:layout_width="match_parent" n0:layout_height="24.0dp" n0:layout_weight="2.0" />
+        </LinearLayout>
+    </org.chromium.chrome.browser.ui.signin.SigninScrollView>
+    <RelativeLayout n0:id="@id/button_bar" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginBottom="16.0dp">
+        <org.chromium.ui.widget.ButtonCompat n0:id="@id/negative_button" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:layout_alignParentStart="true" style="@style/TextButton" />
+        <View n0:visibility="invisible" n0:layout_width="wrap_content" n0:layout_height="0.0dp" n0:layout_toStartOf="@id/positive_button" n0:layout_toEndOf="@id/negative_button" />
+        <org.chromium.ui.widget.ButtonCompat n0:id="@id/positive_button" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:layout_alignParentEnd="true" style="@style/FilledButton.Flat" />
+        <org.chromium.ui.widget.ButtonCompat n0:id="@id/more_button" n0:visibility="gone" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:drawablePadding="8.0dp" n0:layout_centerHorizontal="true" n0:drawableEnd="@drawable/down_arrow" n0:drawableTint="?globalFilledButtonTextColor" style="@style/FilledButton.Flat" />
+    </RelativeLayout>
+    <org.chromium.ui.widget.TextViewWithClickableSpans n0:textAppearance="@style/TextAppearance.TextSmall.Secondary" n0:gravity="center" n0:id="@id/sync_consent_details_description" n0:layout_width="match_parent" n0:layout_height="wrap_content" n4:leading="@dimen/text_size_small_leading"
+      xmlns:n4="http://schemas.android.com/apk/res-auto" />
+</org.chromium.chrome.browser.ui.signin.SyncConsentView>

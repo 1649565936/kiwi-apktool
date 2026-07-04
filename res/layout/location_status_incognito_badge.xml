@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<org.chromium.ui.widget.ChromeImageView n0:layout_gravity="center_vertical" n0:visibility="gone" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:contentDescription="@string/accessibility_incognito_badge" n0:paddingStart="@dimen/incognito_badge_lateral_padding" n1:srcCompat="@drawable/location_bar_incognito_badge" n1:tint="@color/default_icon_color_light"
+  xmlns:n0="http://schemas.android.com/apk/res/android" xmlns:n1="http://schemas.android.com/apk/res-auto" />

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<org.chromium.chrome.browser.creator.CreatorProfileView n0:layout_gravity="center_vertical" n0:orientation="horizontal" n0:background="@drawable/profile_background" n0:layout_width="match_parent" n0:layout_height="wrap_content"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <LinearLayout n0:orientation="vertical" n0:layout_width="@dimen/creator_profile_container_width" n0:layout_height="wrap_content" n0:layout_weight="1.0">
+        <TextView n0:textAppearance="@style/TextAppearance.Headline.Primary" n0:id="@id/creator_name" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:singleLine="true" n0:paddingEnd="@dimen/creator_profile_text_padding" />
+        <TextView n0:textAppearance="@style/TextAppearance.TextSmall.Primary" n0:id="@id/creator_url" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:singleLine="true" n0:paddingEnd="@dimen/creator_profile_text_padding" />
+    </LinearLayout>
+    <FrameLayout n0:layout_gravity="center_vertical" n0:layout_width="wrap_content" n0:layout_height="wrap_content">
+        <org.chromium.ui.widget.ButtonCompat n0:id="@id/creator_follow_button" n0:visibility="gone" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:text="@string/menu_follow" n0:drawableStart="@drawable/follow_add" style="@style/CreatorFollowFilledButton" />
+        <org.chromium.ui.widget.ButtonCompat n0:id="@id/creator_following_button" n0:visibility="gone" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:text="@string/menu_following" n0:drawableStart="@drawable/following_checkmark" style="@style/CreatorFollowReverseButton" />
+    </FrameLayout>
+</org.chromium.chrome.browser.creator.CreatorProfileView>

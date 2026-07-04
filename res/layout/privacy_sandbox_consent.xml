@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout n0:gravity="center_horizontal" n0:orientation="vertical" n0:id="@id/privacy_sandbox_dialog" n0:layout_width="match_parent" n0:layout_height="match_parent"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <org.chromium.components.browser_ui.widget.BoundedLinearLayout n0:orientation="vertical" n0:layout_width="match_parent" n0:layout_height="match_parent" n1:maxWidthLandscape="@dimen/privacy_sandbox_dialog_max_width" n1:maxWidthPortrait="@dimen/privacy_sandbox_dialog_max_width"
+      xmlns:n1="http://schemas.android.com/apk/res-auto">
+        <org.chromium.components.browser_ui.widget.FadingEdgeScrollView n0:layout_width="match_parent" n0:layout_height="0.0dp" n0:layout_weight="1.0">
+            <LinearLayout n0:gravity="center_horizontal" n0:orientation="vertical" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginLeft="@dimen/list_item_default_margin" n0:layout_marginRight="@dimen/list_item_default_margin" n0:animateLayoutChanges="true" n0:layout_marginHorizontal="@dimen/list_item_default_margin">
+                <ImageView n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:layout_marginTop="@dimen/privacy_sandbox_dialog_illustration_margin_top" n0:layout_marginBottom="@dimen/privacy_sandbox_dialog_illustration_margin_bottom" n0:importantForAccessibility="no" n1:srcCompat="@drawable/privacy_sandbox_dialog_illustration" />
+                <TextView n0:id="@id/privacy_sandbox_consent_title" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:layout_marginBottom="@dimen/promo_between_text_margin" n0:text="@string/privacy_sandbox_consent_title" style="@style/TextAppearance.Headline.Primary" />
+                <TextView n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginBottom="@dimen/list_item_default_margin" n0:text="@string/privacy_sandbox_consent_subtitle" n0:textAlignment="center" style="@style/TextAppearance.TextLarge.Primary" />
+                <TextView n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginBottom="@dimen/promo_between_text_margin" n0:text="@string/privacy_sandbox_consent_heading_one" style="@style/TextAppearance.TextLarge.Primary" />
+                <TextView n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginBottom="@dimen/list_item_default_margin" n0:text="@string/privacy_sandbox_consent_description_one" style="@style/TextAppearance.TextMedium.Secondary" />
+                <TextView n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginBottom="@dimen/promo_between_text_margin" n0:text="@string/privacy_sandbox_consent_heading_two" style="@style/TextAppearance.TextLarge.Primary" />
+                <TextView n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginBottom="@dimen/list_item_default_margin" n0:text="@string/privacy_sandbox_consent_description_two" style="@style/TextAppearance.TextMedium.Secondary" />
+                <LinearLayout n0:layout_gravity="center" n0:orientation="horizontal" n0:id="@id/dropdown_element" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginBottom="@dimen/list_item_default_margin">
+                    <TextView n0:layout_width="0.0dp" n0:layout_height="wrap_content" n0:minHeight="@dimen/privacy_sandbox_consent_dropdown_button_height" n0:text="@string/privacy_sandbox_consent_dropdown_button" n0:layout_weight="1.0" style="@style/TextAppearance.TextMedium.Secondary" />
+                    <org.chromium.ui.widget.CheckableImageView n0:id="@id/expand_arrow" n0:layout_width="24.0dp" n0:layout_height="@dimen/privacy_sandbox_consent_dropdown_button_height" />
+                </LinearLayout>
+                <LinearLayout n0:orientation="vertical" n0:id="@id/dropdown_container" n0:visibility="gone" n0:layout_width="match_parent" n0:layout_height="wrap_content" />
+                <TextView n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:text="@string/privacy_sandbox_consent_description_three" style="@style/TextAppearance.TextMedium.Secondary" />
+            </LinearLayout>
+        </org.chromium.components.browser_ui.widget.FadingEdgeScrollView>
+        <LinearLayout n0:orientation="horizontal" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_margin="@dimen/promo_dialog_padding" n0:weightSum="2.0">
+            <org.chromium.ui.widget.ButtonCompat n0:id="@id/no_button" n0:focusable="true" n0:layout_width="0.0dp" n0:layout_height="wrap_content" n0:text="@string/privacy_sandbox_dialog_no_button" n0:layout_weight="1.0" n0:layout_marginEnd="@dimen/privacy_sandbox_consent_button_margin_between" style="@style/OutlinedButton" />
+            <org.chromium.ui.widget.ButtonCompat n0:id="@id/yes_button" n0:focusable="true" n0:layout_width="0.0dp" n0:layout_height="wrap_content" n0:text="@string/privacy_sandbox_dialog_yes_button" n0:layout_weight="1.0" n0:layout_marginStart="@dimen/privacy_sandbox_consent_button_margin_between" style="@style/OutlinedButton" />
+        </LinearLayout>
+    </org.chromium.components.browser_ui.widget.BoundedLinearLayout>
+</LinearLayout>

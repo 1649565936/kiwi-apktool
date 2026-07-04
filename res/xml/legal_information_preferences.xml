@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen>
+    <org.chromium.chrome.browser.about_settings.HyperlinkPreference n0:title="@string/open_source_license_title" n0:key="open_source_license" n1:url="@string/open_source_license_url"
+      xmlns:n0="http://schemas.android.com/apk/res/android" xmlns:n1="http://schemas.android.com/apk/res-auto" />
+    <org.chromium.chrome.browser.about_settings.HyperlinkPreference n2:title="@string/google_terms_of_service_title" n2:key="google_terms_of_service" n3:url="@string/google_terms_of_service_url"
+      xmlns:n2="http://schemas.android.com/apk/res/android" xmlns:n3="http://schemas.android.com/apk/res-auto" />
+    <org.chromium.chrome.browser.about_settings.HyperlinkPreference n4:title="@string/chrome_additional_terms_of_service_title" n4:key="chrome_additional_terms_of_service" n5:url="@string/chrome_additional_terms_of_service_url"
+      xmlns:n4="http://schemas.android.com/apk/res/android" xmlns:n5="http://schemas.android.com/apk/res-auto" />
+    <org.chromium.chrome.browser.about_settings.HyperlinkPreference n6:title="@string/privacy_policy_title" n6:key="privacy_policy" n7:url="@string/google_privacy_policy_url"
+      xmlns:n6="http://schemas.android.com/apk/res/android" xmlns:n7="http://schemas.android.com/apk/res-auto" />
+</PreferenceScreen>

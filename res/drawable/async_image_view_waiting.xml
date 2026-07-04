@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-vector n0:drawable="@drawable/async_image_view_unavailable"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <target n0:name="circle" n0:animation="@drawable/$async_image_view_waiting__0" />
+    <target n0:name="square" n0:animation="@drawable/$async_image_view_waiting__1" />
+    <target n0:name="arc" n0:animation="@drawable/$async_image_view_waiting__2" />
+</animated-vector>

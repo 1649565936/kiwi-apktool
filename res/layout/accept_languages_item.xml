@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout n0:id="@id/language_item" n0:paddingStart="@dimen/draggable_list_item_padding" n0:paddingEnd="@dimen/draggable_list_item_padding" n0:layout_marginStart="0.0dp" style="@style/ListItemContainer"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <org.chromium.ui.widget.ChromeImageView n0:id="@id/icon_view" n0:importantForAccessibility="no" n1:tint="@color/default_icon_color_tint_list" style="@style/ListItemStartIcon"
+      xmlns:n1="http://schemas.android.com/apk/res-auto" />
+    <LinearLayout n0:layout_gravity="center_vertical" n0:orientation="vertical" n0:layout_width="0.0dp" n0:layout_height="wrap_content" n0:layout_weight="1.0">
+        <TextView n0:id="@id/title" n0:layout_width="match_parent" n0:layout_height="wrap_content" style="@style/PreferenceTitle" />
+        <TextView n0:id="@id/description" n0:layout_width="match_parent" n0:layout_height="wrap_content" style="@style/PreferenceSummary" />
+    </LinearLayout>
+    <org.chromium.components.browser_ui.widget.listmenu.ListMenuButton n0:id="@id/more" n0:background="@null" n0:layout_width="wrap_content" n0:layout_height="match_parent" n0:src="@drawable/ic_more_vert_24dp" n0:paddingStart="@dimen/default_list_row_padding" n0:paddingEnd="@dimen/default_list_row_padding" n2:menuMaxWidth="@dimen/pref_languages_item_popup_width" n2:tint="@color/default_icon_color_tint_list"
+      xmlns:n2="http://schemas.android.com/apk/res-auto" />
+</LinearLayout>

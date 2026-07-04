@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list>
+    <item n0:left="@dimen/app_menu_shadow_length" n0:top="@dimen/app_menu_shadow_length" n0:right="@dimen/app_menu_shadow_length" n0:bottom="@dimen/app_menu_shadow_length"
+      xmlns:n0="http://schemas.android.com/apk/res/android">
+        <org.chromium.components.browser_ui.widget.SurfaceColorDrawable n0:shape="rectangle" n1:surfaceElevation="@dimen/menu_bg_color_elev"
+          xmlns:n1="http://schemas.android.com/apk/res-auto">
+            <corners n0:radius="@dimen/app_menu_corner_size" />
+            <padding n0:left="@dimen/app_menu_shadow_length" n0:top="@dimen/app_menu_shadow_length" n0:right="@dimen/app_menu_shadow_length" n0:bottom="@dimen/app_menu_shadow_length" />
+        </org.chromium.components.browser_ui.widget.SurfaceColorDrawable>
+    </item>
+</layer-list>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge>
+    <RelativeLayout n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:layout_marginLeft="@dimen/pref_autofill_field_horizontal_margin" n0:layout_marginTop="@dimen/pref_autofill_field_large_top_margin" n0:layout_marginRight="@dimen/pref_autofill_field_horizontal_margin" n0:layout_marginBottom="@dimen/pref_autofill_field_bottom_margin" n0:layout_marginHorizontal="@dimen/pref_autofill_field_horizontal_margin"
+      xmlns:n0="http://schemas.android.com/apk/res/android">
+        <ImageView n0:id="@id/settings_page_card_icon" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:scaleType="fitCenter" n0:layout_centerVertical="true" n0:importantForAccessibility="no" n0:layout_marginEnd="@dimen/settings_page_card_icon_end_margin" n0:layout_alignParentStart="true" />
+        <LinearLayout n0:orientation="horizontal" n0:id="@id/card_name_and_last_four_container" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:layout_alignParentTop="true" n0:layout_toEndOf="@id/settings_page_card_icon">
+            <TextView n0:ellipsize="end" n0:id="@id/settings_page_card_name" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:maxLines="1" n0:layout_weight="1.0" style="@style/PreferenceTitle" />
+            <TextView n0:id="@id/card_last_four" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:maxLines="1" n0:layout_weight="0.0" n0:layout_marginStart="@dimen/settings_page_margin_between_card_name_and_last_four_digits" style="@style/PreferenceTitle" />
+        </LinearLayout>
+        <TextView n0:id="@id/settings_page_card_expiration" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:layout_below="@id/card_name_and_last_four_container" n0:layout_toEndOf="@id/settings_page_card_icon" style="@style/PreferenceSummary" />
+    </RelativeLayout>
+    <include layout="@layout/autofill_billing_address_dropdown" />
+    <RelativeLayout n1:layout_width="match_parent" n1:layout_height="wrap_content" n1:layout_marginTop="@dimen/pref_autofill_field_top_margin"
+      xmlns:n1="http://schemas.android.com/apk/res/android">
+        <TextView n1:textAppearance="@style/TextAppearance.TextMedium.Link" n1:id="@id/edit_server_card" n1:paddingTop="@dimen/pref_autofill_touch_target_padding" n1:paddingBottom="@dimen/pref_autofill_touch_target_padding" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:text="@string/autofill_wallet_management_link_text" n1:layout_alignParentTop="true" n1:paddingStart="@dimen/pref_autofill_touch_target_padding" n1:layout_alignParentEnd="true" />
+        <TextView n1:id="@id/server_card_label" n1:paddingTop="@dimen/pref_autofill_touch_target_padding" n1:paddingBottom="@dimen/pref_autofill_touch_target_padding" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:text="@string/autofill_from_google_account_long" n1:layout_alignParentTop="true" n1:layout_toStartOf="@id/edit_server_card" n1:layout_alignParentStart="true" style="@style/PreferenceTitle" />
+        <TextView n1:textAppearance="@style/TextAppearance.TextMedium.Link" n1:id="@id/clear_local_copy" n1:paddingTop="@dimen/pref_autofill_touch_target_padding" n1:paddingBottom="@dimen/pref_autofill_touch_target_padding" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:text="@string/autofill_clear_local_copy_button" n1:layout_below="@id/server_card_label" n1:paddingStart="@dimen/pref_autofill_touch_target_padding" n1:layout_alignParentEnd="true" />
+        <TextView n1:id="@id/local_copy_label" n1:paddingTop="@dimen/pref_autofill_touch_target_padding" n1:paddingBottom="@dimen/pref_autofill_touch_target_padding" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:text="@string/autofill_describe_local_copy" n1:layout_below="@id/server_card_label" n1:layout_toStartOf="@id/clear_local_copy" n1:layout_alignParentStart="true" style="@style/PreferenceTitle" />
+    </RelativeLayout>
+    <LinearLayout n2:id="@id/virtual_card_ui" n2:layout_width="match_parent" n2:layout_height="wrap_content" n2:layout_marginTop="@dimen/pref_autofill_field_top_margin"
+      xmlns:n2="http://schemas.android.com/apk/res/android">
+        <TextView n2:id="@id/virtual_card_enrollment_switch_label" n2:paddingTop="@dimen/pref_autofill_touch_target_padding" n2:paddingBottom="@dimen/pref_autofill_touch_target_padding" n2:layout_width="0.0dp" n2:layout_height="wrap_content" n2:text="@string/autofill_virtual_card_number_switch_label" n2:layout_weight="1.0" n2:paddingEnd="@dimen/pref_autofill_touch_target_padding" style="@style/PreferenceTitle" />
+        <TextView n2:textAppearance="@style/TextAppearance.TextMedium.Link" n2:id="@id/virtual_card_enrollment_button" n2:paddingTop="@dimen/pref_autofill_touch_target_padding" n2:paddingBottom="@dimen/pref_autofill_touch_target_padding" n2:layout_width="wrap_content" n2:layout_height="wrap_content" n2:text="@string/add" />
+    </LinearLayout>
+</merge>

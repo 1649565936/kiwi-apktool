@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu>
+    <item n0:icon="@drawable/ic_delete_white_24dp" n0:id="@id/delete_menu_id" n0:title="@string/delete" n1:iconTint="?colorOnSurface" n1:showAsAction="ifRoom"
+      xmlns:n0="http://schemas.android.com/apk/res/android" xmlns:n1="http://schemas.android.com/apk/res-auto" />
+    <item n2:icon="@drawable/ic_help_and_feedback" n2:id="@id/help_menu_id" n2:title="@string/help" n3:showAsAction="ifRoom"
+      xmlns:n2="http://schemas.android.com/apk/res/android" xmlns:n3="http://schemas.android.com/apk/res-auto" />
+</menu>

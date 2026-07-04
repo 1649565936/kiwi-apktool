@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout n0:gravity="center" n0:orientation="horizontal" n0:id="@id/back_to_top_bubble" n0:paddingTop="@dimen/back_to_top_bubble_vertical_padding" n0:paddingBottom="@dimen/back_to_top_bubble_vertical_padding" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:paddingStart="@dimen/back_to_top_bubble_horizontal_padding" n0:paddingEnd="@dimen/back_to_top_bubble_horizontal_padding"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <org.chromium.ui.widget.ChromeImageView n0:id="@id/image" n0:layout_width="@dimen/back_to_top_bubble_image_size" n0:layout_height="@dimen/back_to_top_bubble_image_size" n0:scaleType="centerInside" n0:layout_marginEnd="@dimen/back_to_top_bubble_image_margin_end" />
+    <TextView n0:textAppearance="@style/TextAppearance.TextMedium.Secondary" n0:id="@id/message" n0:layout_width="wrap_content" n0:layout_height="wrap_content" />
+</LinearLayout>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<org.chromium.chrome.browser.ui.signin.fre.SigninFirstRunView n0:gravity="center_horizontal" n0:orientation="vertical" n0:layout_width="match_parent" n0:layout_height="match_parent"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <ScrollView n0:layout_width="match_parent" n0:layout_height="0.0dp" n0:fillViewport="false" n0:layout_weight="1.0" n0:layout_above="@id/fre_footer_viewgroup" n0:layout_alignParentTop="true" n0:fadeScrollbars="false" n0:scrollIndicators="bottom">
+        <LinearLayout n0:gravity="center_horizontal" n0:orientation="vertical" n0:layout_width="match_parent" n0:layout_height="wrap_content">
+            <View n0:id="@id/fre_space_above_logo" n0:visibility="invisible" n0:layout_width="match_parent" n0:layout_height="24.0dp" n0:layout_weight="3.0" />
+            <ImageView n0:id="@id/fre_logo" n0:visibility="invisible" n0:layout_width="match_parent" n0:layout_height="20.0dp" n0:layout_marginTop="0.0dp" n0:layout_marginBottom="0.0dp" n0:src="@drawable/fre_product_logo" n0:importantForAccessibility="no" />
+            <TextView n0:textAppearance="@style/TextAppearance.Headline.Primary" n0:textColor="@color/model_selector_button_bg_color" n0:gravity="center" n0:id="@id/title" n0:paddingLeft="24.0dp" n0:paddingRight="24.0dp" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:text="@string/fre_welcome" n0:lineSpacingMultiplier="1.2" n0:paddingHorizontal="24.0dp" />
+            <org.chromium.ui.widget.TextViewWithLeading n0:textAppearance="@style/TextAppearance.TextMedium.Secondary" n0:gravity="center" n0:id="@id/subtitle" n0:paddingLeft="60.0dp" n0:paddingTop="8.0dp" n0:paddingRight="60.0dp" n0:visibility="gone" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:paddingHorizontal="60.0dp" n1:leading="@dimen/text_size_medium_leading"
+              xmlns:n1="http://schemas.android.com/apk/res-auto" />
+            <FrameLayout n0:id="@id/fre_browser_managed_by" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginTop="16.0dp">
+                <include n0:layout_gravity="center_horizontal" n0:id="@id/privacy_disclaimer" n0:layout_width="wrap_content" n0:layout_height="wrap_content" layout="@layout/fre_tos_privacy_disclaimer" />
+            </FrameLayout>
+            <View n0:id="@id/fre_space_between_header_and_bottom_group" n0:visibility="invisible" n0:layout_width="match_parent" n0:layout_height="24.0dp" n0:layout_weight="5.0" />
+            <ProgressBar n0:id="@id/fre_native_and_policy_load_progress_spinner" n0:layout_width="32.0dp" n0:layout_height="32.0dp" n0:layout_marginBottom="128.0dp" n0:alpha="0.0" style="@style/Widget.AppCompat.ProgressBar" />
+            <include layout="@layout/signin_first_run_bottom_group_view" />
+        </LinearLayout>
+    </ScrollView>
+    <FrameLayout n0:id="@id/fre_footer_viewgroup" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_alignParentBottom="true">
+        <org.chromium.ui.widget.TextViewWithClickableSpans n0:textAppearance="@style/TextAppearance.TextSmall.Secondary" n0:gravity="center_horizontal" n0:id="@id/signin_fre_footer" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginTop="12.0dp" n0:layout_marginBottom="24.0dp" n0:text="@string/signin_fre_footer" n0:layout_marginStart="24.0dp" n0:layout_marginEnd="24.0dp" n2:leading="@dimen/text_size_small_leading"
+          xmlns:n2="http://schemas.android.com/apk/res-auto" />
+    </FrameLayout>
+    <ProgressBar n0:id="@id/fre_signin_progress_spinner" n0:visibility="gone" n0:layout_width="32.0dp" n0:layout_height="32.0dp" n0:layout_marginBottom="128.0dp" n0:layout_alignParentBottom="true" n0:layout_centerHorizontal="true" style="@style/Widget.AppCompat.ProgressBar" />
+    <TextView n0:gravity="center" n0:id="@id/fre_signin_progress_text" n0:visibility="gone" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginBottom="80.0dp" n0:text="@string/fre_signing_in" n0:layout_alignParentBottom="true" style="@style/TextAppearance.TextMedium.Secondary" />
+</org.chromium.chrome.browser.ui.signin.fre.SigninFirstRunView>

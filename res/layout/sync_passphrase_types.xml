@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout n0:orientation="vertical" n0:layout_width="match_parent" n0:layout_height="wrap_content" style="@style/AlertDialogContent"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <CheckedTextView n0:textAppearance="?android:textAppearanceListItemSmall" n0:gravity="center_vertical" n0:id="@id/explicit_passphrase_checkbox" n0:paddingTop="8.0dp" n0:paddingBottom="8.0dp" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:checkMark="?android:listChoiceIndicatorSingle" n0:minHeight="?android:listPreferredItemHeightSmall" n0:text="@string/sync_passphrase_type_custom" n0:paddingStart="24.0dp" n0:paddingEnd="24.0dp" />
+    <CheckedTextView n0:textAppearance="?android:textAppearanceListItemSmall" n0:gravity="center_vertical" n0:id="@id/keystore_passphrase_checkbox" n0:paddingTop="8.0dp" n0:paddingBottom="8.0dp" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:checkMark="?android:listChoiceIndicatorSingle" n0:minHeight="?android:listPreferredItemHeightSmall" n0:text="@string/sync_passphrase_type_keystore" n0:paddingStart="24.0dp" n0:paddingEnd="24.0dp" />
+    <org.chromium.ui.widget.TextViewWithClickableSpans n0:id="@id/reset_sync_link" n0:paddingTop="25.0dp" n0:layout_width="match_parent" n0:layout_height="wrap_content" />
+</LinearLayout>

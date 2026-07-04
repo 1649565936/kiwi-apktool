@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout n0:orientation="vertical" n0:id="@id/pwd_migration_warning_sheet" n0:layout_width="match_parent" n0:layout_height="wrap_content"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <ImageView n0:layout_gravity="center_horizontal" n0:id="@id/drag_handlebar" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:layout_marginLeft="@dimen/pwd_migration_warning_margin" n0:layout_marginTop="6.0dp" n0:layout_marginRight="@dimen/pwd_migration_warning_margin" n0:layout_marginBottom="6.0dp" n0:layout_alignParentTop="true" n0:layout_centerHorizontal="true" n0:importantForAccessibility="no" n0:layout_marginHorizontal="@dimen/pwd_migration_warning_margin" n0:layout_marginVertical="6.0dp" n1:srcCompat="@drawable/drag_handlebar"
+      xmlns:n1="http://schemas.android.com/apk/res-auto" />
+    <ScrollView n0:clickable="false" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_below="@id/drag_handlebar">
+        <LinearLayout n0:orientation="vertical" n0:id="@id/sheet_item_list" n0:clipToPadding="false" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginLeft="@dimen/pwd_migration_warning_margin" n0:layout_marginRight="@dimen/pwd_migration_warning_margin" n0:divider="@null" n0:layout_marginHorizontal="@dimen/pwd_migration_warning_margin">
+            <ImageView n0:layout_gravity="center_horizontal" n0:id="@id/touch_to_fill_sheet_header_image" n0:layout_width="@dimen/pwd_migration_warning_icon_size" n0:layout_height="@dimen/pwd_migration_warning_icon_size" n0:layout_marginTop="16.0dp" n0:layout_marginBottom="16.0dp" n0:importantForAccessibility="no" n0:layout_marginVertical="16.0dp" />
+            <androidx.appcompat.widget.DialogTitle n0:textAppearance="@style/TextAppearance.AlertDialogTitleStyle" n0:layout_gravity="center_horizontal" n0:id="@id/touch_to_fill_sheet_title" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:layout_marginBottom="16.0dp" n0:text="@string/password_migration_warning_title" n0:textAlignment="center" />
+            <androidx.fragment.app.FragmentContainerView n0:layout_gravity="center_horizontal" n0:id="@id/fragment_container_view" n0:layout_width="match_parent" n0:layout_height="match_parent" />
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout n0:background="@drawable/custom_tabs_handle_view_shape" n0:layout_width="match_parent" n0:layout_height="match_parent"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <org.chromium.chrome.browser.customtabs.features.partialcustomtab.CustomTabDragBar n0:id="@id/drag_bar" n0:background="@drawable/custom_tabs_handle_view_shape" n0:layout_width="match_parent" n0:layout_height="@dimen/custom_tabs_handle_height" n0:importantForAccessibility="no" />
+    <ImageView n0:layout_gravity="center|top" n0:id="@id/drag_handle" n0:paddingTop="@dimen/custom_tabs_drag_handle_padding_top" n0:paddingBottom="@dimen/custom_tabs_drag_handle_padding_bottom" n0:focusable="true" n0:clickable="true" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:src="@drawable/drag_handlebar" n0:tint="?colorSurfaceVariant" n0:contentDescription="@string/accessibility_custom_tab_drag_handle" n0:paddingStart="@dimen/custom_tabs_drag_handle_padding_side" n0:paddingEnd="@dimen/custom_tabs_drag_handle_padding_side" />
+</FrameLayout>

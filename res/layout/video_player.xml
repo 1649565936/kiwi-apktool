@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge>
+    <ImageView n0:id="@id/back_button" n0:layout_width="24.0dp" n0:layout_height="24.0dp" n0:layout_marginTop="16.0dp" n0:contentDescription="@string/accessibility_toolbar_btn_back" n0:layout_marginStart="16.0dp" n1:srcCompat="@drawable/ic_arrow_back_white_24dp"
+      xmlns:n0="http://schemas.android.com/apk/res/android" xmlns:n1="http://schemas.android.com/apk/res-auto" />
+    <TextView n2:textAppearance="@style/TextAppearance.TextMedium.Primary.Baseline.Light" n2:id="@id/video_file_name" n2:layout_width="wrap_content" n2:layout_height="wrap_content" n2:layout_marginTop="16.0dp" n2:layout_marginStart="56.0dp"
+      xmlns:n2="http://schemas.android.com/apk/res/android" />
+    <VideoView n3:layout_gravity="center" n3:id="@id/video_player" n3:visibility="gone" n3:layout_width="match_parent" n3:layout_height="wrap_content"
+      xmlns:n3="http://schemas.android.com/apk/res/android" />
+    <FrameLayout n4:layout_gravity="center" n4:id="@id/video_overlay_container" n4:visibility="gone" n4:clickable="true" n4:layout_width="match_parent" n4:layout_height="wrap_content" n4:contentDescription="@string/accessibility_video_player"
+      xmlns:n4="http://schemas.android.com/apk/res/android">
+        <FrameLayout n4:layout_gravity="start|bottom" n4:id="@id/video_controls_gradient" n4:background="@drawable/video_player_gradient" n4:layout_width="match_parent" n4:layout_height="88.0dp" />
+        <FrameLayout n4:layout_gravity="center" n4:id="@id/video_controls" n4:paddingBottom="16.0dp" n4:layout_width="wrap_content" n4:layout_height="wrap_content">
+            <LinearLayout n4:gravity="center|top" n4:orientation="horizontal" n4:id="@id/fast_forward_message" n4:background="@drawable/fast_forward_message_gradient" n4:paddingTop="16.0dp" n4:visibility="gone" n4:layout_width="match_parent" n4:layout_height="48.0dp">
+                <ImageView n4:id="@id/fast_rewind" n4:layout_width="24.0dp" n4:layout_height="24.0dp" n4:contentDescription="@string/accessibility_pause_video" n4:layout_marginEnd="8.0dp" n5:srcCompat="@drawable/ic_fast_rewind_white_24dp"
+                  xmlns:n5="http://schemas.android.com/apk/res-auto" />
+                <TextView n4:textAppearance="@style/TextAppearance.TextMedium.Primary.Baseline.Light" n4:layout_width="wrap_content" n4:layout_height="wrap_content" n4:text="@string/fast_forward_hint" />
+                <ImageView n4:id="@id/fast_forward" n4:layout_width="24.0dp" n4:layout_height="24.0dp" n4:contentDescription="@string/accessibility_pause_video" n4:layout_marginStart="8.0dp" n6:srcCompat="@drawable/ic_fast_forward_white_24dp"
+                  xmlns:n6="http://schemas.android.com/apk/res-auto" />
+            </LinearLayout>
+            <ImageView n4:layout_gravity="center" n4:id="@id/video_player_play_button" n4:layout_width="@dimen/photo_picker_play_button_size" n4:layout_height="@dimen/photo_picker_play_button_size" n4:contentDescription="@string/accessibility_pause_video" n7:srcCompat="@drawable/ic_pause_circle_outline_white_24dp"
+              xmlns:n7="http://schemas.android.com/apk/res-auto" />
+            <TextView n4:textAppearance="@style/TextAppearance.TextLarge.Primary.Baseline.Light" n4:layout_gravity="start|bottom" n4:id="@id/remaining_time" n4:clickable="true" n4:layout_width="wrap_content" n4:layout_height="wrap_content" n4:layout_marginBottom="24.0dp" n4:layout_marginStart="16.0dp" />
+            <ImageView n4:layout_gravity="end|bottom" n4:id="@id/mute" n4:layout_width="26.0dp" n4:layout_height="26.0dp" n4:layout_marginBottom="24.0dp" n4:contentDescription="@string/accessibility_mute_video" n4:layout_marginEnd="68.0dp" n8:srcCompat="@drawable/ic_volume_on_white_24dp"
+              xmlns:n8="http://schemas.android.com/apk/res-auto" />
+            <ImageView n4:layout_gravity="end|bottom" n4:id="@id/fullscreen" n4:layout_width="26.0dp" n4:layout_height="26.0dp" n4:layout_marginBottom="24.0dp" n4:contentDescription="@string/accessibility_full_screen" n4:layout_marginEnd="16.0dp" n9:srcCompat="@drawable/ic_full_screen_white_24dp"
+              xmlns:n9="http://schemas.android.com/apk/res-auto" />
+            <SeekBar n4:layout_gravity="center|bottom" n4:id="@id/seek_bar" n4:clickable="true" n4:layout_width="match_parent" n4:layout_height="wrap_content" n4:progressDrawable="@drawable/photo_picker_seekbar_track" n4:thumb="@drawable/photo_picker_seekbar_thumb" />
+        </FrameLayout>
+    </FrameLayout>
+</merge>

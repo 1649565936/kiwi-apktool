@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list>
+    <item n0:left="@dimen/tab_indicator_padding" n0:right="@dimen/tab_indicator_padding"
+      xmlns:n0="http://schemas.android.com/apk/res/android">
+        <shape n0:shape="rectangle">
+            <corners n0:topLeftRadius="@dimen/tab_indicator_radius" n0:topRightRadius="@dimen/tab_indicator_radius" />
+        </shape>
+    </item>
+</layer-list>

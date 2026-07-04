@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen>
+    <org.chromium.components.browser_ui.settings.ChromeSwitchPreference n0:persistent="false" n0:title="@string/privacy_sandbox_trials_title" n0:key="privacy_sandbox_toggle" n0:summary="@string/privacy_sandbox_description" n1:allowDividerBelow="false"
+      xmlns:n0="http://schemas.android.com/apk/res/android" xmlns:n1="http://schemas.android.com/apk/res-auto" />
+    <org.chromium.components.browser_ui.settings.ChromeBasePreference n2:key="privacy_sandbox_learn_more" n2:fragment="org.chromium.chrome.browser.privacy_sandbox.LearnMoreFragment" n3:userAction="Settings.PrivacySandbox.AdPersonalization.LearnMoreClicked"
+      xmlns:n2="http://schemas.android.com/apk/res/android" xmlns:n3="http://schemas.android.com/apk/res-auto" />
+    <org.chromium.components.browser_ui.settings.ChromeBasePreference n4:icon="@drawable/gm_ads_click_24" n4:title="@string/privacy_sandbox_ad_personalization_title" n4:summary="@string/privacy_sandbox_ad_personalization_summary" n4:fragment="org.chromium.chrome.browser.privacy_sandbox.AdPersonalizationFragment" n5:userAction="Settings.PrivacySandbox.AdPersonalization.Opened"
+      xmlns:n4="http://schemas.android.com/apk/res/android" xmlns:n5="http://schemas.android.com/apk/res-auto" />
+    <org.chromium.components.browser_ui.settings.ChromeBasePreference n6:icon="@drawable/gm_insert_chart_24" n6:title="@string/privacy_sandbox_ad_measurement_title" n6:summary="@string/privacy_sandbox_ad_measurement_summary" n6:fragment="org.chromium.chrome.browser.privacy_sandbox.AdMeasurementFragment" n7:userAction="Settings.PrivacySandbox.AdMeasurement.Opened"
+      xmlns:n6="http://schemas.android.com/apk/res/android" xmlns:n7="http://schemas.android.com/apk/res-auto" />
+    <org.chromium.components.browser_ui.settings.ChromeBasePreference n8:icon="@drawable/ic_spam_reduction_24dp" n8:title="@string/privacy_sandbox_spam_fraud_title" n8:summary="@string/privacy_sandbox_spam_fraud_summary" n8:fragment="org.chromium.chrome.browser.privacy_sandbox.SpamFraudFragment" n9:userAction="Settings.PrivacySandbox.SpamFraud.Opened"
+      xmlns:n8="http://schemas.android.com/apk/res/android" xmlns:n9="http://schemas.android.com/apk/res-auto" />
+</PreferenceScreen>

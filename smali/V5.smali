@@ -1,0 +1,199 @@
+.class public abstract LV5;
+.super Ljava/lang/Object;
+.source "chromium-ChromePublic.apk-dev-733700004"
+
+
+# static fields
+.field public static final a:LW81;
+
+.field public static final b:LW81;
+
+.field public static final c:LW81;
+
+.field public static final d:[LU81;
+
+
+# direct methods
+.method public static constructor <clinit>()V
+    .locals 5
+
+    .line 1
+    new-instance v0, LW81;
+
+    .line 2
+    .line 3
+    const-string v1, "credential"
+
+    .line 4
+    .line 5
+    invoke-direct {v0, v1}, LU81;-><init>(Ljava/lang/String;)V
+
+    .line 6
+    .line 7
+    .line 8
+    sput-object v0, LV5;->a:LW81;
+
+    .line 9
+    .line 10
+    new-instance v1, LW81;
+
+    .line 11
+    .line 12
+    const-string v2, "on_click_listener"
+
+    .line 13
+    .line 14
+    invoke-direct {v1, v2}, LU81;-><init>(Ljava/lang/String;)V
+
+    .line 15
+    .line 16
+    .line 17
+    sput-object v1, LV5;->b:LW81;
+
+    .line 18
+    .line 19
+    new-instance v2, LW81;
+
+    .line 20
+    .line 21
+    const-string v3, "is_password_field"
+
+    .line 22
+    .line 23
+    invoke-direct {v2, v3}, LU81;-><init>(Ljava/lang/String;)V
+
+    .line 24
+    .line 25
+    .line 26
+    sput-object v2, LV5;->c:LW81;
+
+    .line 27
+    .line 28
+    const/4 v3, 0x3
+
+    .line 29
+    new-array v3, v3, [LU81;
+
+    .line 30
+    .line 31
+    const/4 v4, 0x0
+
+    .line 32
+    aput-object v0, v3, v4
+
+    .line 33
+    .line 34
+    const/4 v0, 0x1
+
+    .line 35
+    aput-object v1, v3, v0
+
+    .line 36
+    .line 37
+    const/4 v0, 0x2
+
+    .line 38
+    aput-object v2, v3, v0
+
+    .line 39
+    .line 40
+    sput-object v3, LV5;->d:[LU81;
+
+    .line 41
+    .line 42
+    return-void
+.end method
+
+.method public static a(LBI;LT5;Z)Lorg/chromium/ui/modelutil/PropertyModel;
+    .locals 3
+
+    .line 1
+    sget-object v0, LV5;->d:[LU81;
+
+    .line 2
+    .line 3
+    invoke-static {v0}, Lorg/chromium/ui/modelutil/PropertyModel;->e([LU81;)Ljava/util/HashMap;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v0
+
+    .line 7
+    sget-object v1, LV5;->a:LW81;
+
+    .line 8
+    .line 9
+    new-instance v2, LV81;
+
+    .line 10
+    .line 11
+    invoke-direct {v2}, Ljava/lang/Object;-><init>()V
+
+    .line 12
+    .line 13
+    .line 14
+    iput-object p0, v2, LV81;->a:Ljava/lang/Object;
+
+    .line 15
+    .line 16
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 17
+    .line 18
+    .line 19
+    sget-object p0, LV5;->b:LW81;
+
+    .line 20
+    .line 21
+    new-instance v1, LV81;
+
+    .line 22
+    .line 23
+    invoke-direct {v1}, Ljava/lang/Object;-><init>()V
+
+    .line 24
+    .line 25
+    .line 26
+    iput-object p1, v1, LV81;->a:Ljava/lang/Object;
+
+    .line 27
+    .line 28
+    invoke-virtual {v0, p0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 29
+    .line 30
+    .line 31
+    sget-object p0, LV5;->c:LW81;
+
+    .line 32
+    .line 33
+    new-instance p1, LP81;
+
+    .line 34
+    .line 35
+    invoke-direct {p1}, Ljava/lang/Object;-><init>()V
+
+    .line 36
+    .line 37
+    .line 38
+    iput-boolean p2, p1, LP81;->a:Z
+
+    .line 39
+    .line 40
+    invoke-virtual {v0, p0, p1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 41
+    .line 42
+    .line 43
+    new-instance p0, Lorg/chromium/ui/modelutil/PropertyModel;
+
+    .line 44
+    .line 45
+    invoke-direct {p0, v0}, Lorg/chromium/ui/modelutil/PropertyModel;-><init>(Ljava/util/Map;)V
+
+    .line 46
+    .line 47
+    .line 48
+    return-object p0
+.end method

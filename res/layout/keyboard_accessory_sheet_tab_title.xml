@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout n0:gravity="start|center" n0:orientation="vertical" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:fillViewport="true"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <org.chromium.ui.widget.TextViewWithLeading n0:textAppearance="@style/TextAppearance.TextLarge.Secondary" n0:gravity="start|center" n0:id="@id/tab_title" n0:paddingTop="@dimen/keyboard_accessory_suggestion_offset" n0:paddingBottom="@dimen/keyboard_accessory_suggestion_offset" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginTop="@dimen/keyboard_accessory_sheet_padding" n0:minHeight="@dimen/keyboard_accessory_height" n0:paddingStart="@dimen/keyboard_accessory_suggestion_padding" n0:paddingEnd="@dimen/keyboard_accessory_suggestion_padding" n1:leading="@dimen/text_size_large_leading"
+      xmlns:n1="http://schemas.android.com/apk/res-auto" />
+</LinearLayout>

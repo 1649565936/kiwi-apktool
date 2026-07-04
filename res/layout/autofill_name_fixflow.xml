@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout n0:gravity="center_vertical" n0:orientation="horizontal" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:minHeight="36.0dp"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <com.google.android.material.textfield.TextInputLayout n0:id="@id/cc_name" n0:layout_width="0.0dp" n0:layout_height="wrap_content" n0:layout_weight="1.0" n0:labelFor="@id/cc_name_edit">
+        <EditText n0:id="@id/cc_name_edit" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:hint="@string/autofill_card_holder_name" n0:inputType="textCapWords" n0:imeOptions="actionDone" n0:imeActionLabel="@string/autofill_fix_flow_prompt_save_card_label" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <ImageView n0:layout_gravity="center" n0:id="@id/cc_name_tooltip_icon" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:layout_marginTop="6.0dp" n0:src="@drawable/btn_info" n0:contentDescription="@string/learn_more" />
+</LinearLayout>

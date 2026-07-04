@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout n0:orientation="vertical" n0:layout_width="match_parent" n0:layout_height="wrap_content" style="@style/PreferenceLayout"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <org.chromium.ui.widget.TextViewWithLeading n0:id="@android:id/title" n0:paddingBottom="@dimen/long_summary_text_message_preference_padding_bottom" n0:layout_width="wrap_content" n0:layout_height="wrap_content" style="@style/PreferenceTitle" />
+    <org.chromium.ui.widget.TextViewWithLeading n0:textAppearance="@style/TextAppearance.TextMedium.Primary" n0:id="@android:id/summary" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n1:leading="@dimen/text_size_medium_leading"
+      xmlns:n1="http://schemas.android.com/apk/res-auto" />
+</LinearLayout>

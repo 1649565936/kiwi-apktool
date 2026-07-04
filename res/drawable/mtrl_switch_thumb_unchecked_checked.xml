@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-vector n0:drawable="@drawable/mtrl_switch_thumb_unchecked"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <target n0:name="@string/mtrl_switch_thumb_path_name" n0:animation="@drawable/$mtrl_switch_thumb_unchecked_checked__0" />
+    <target n0:name="@string/mtrl_switch_thumb_path_name" n0:animation="@drawable/$mtrl_switch_thumb_unchecked_checked__1" />
+</animated-vector>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge>
+    <LinearLayout n0:orientation="horizontal" n0:id="@id/content_view" n0:background="@drawable/menu_bg_tinted" n0:layout_width="match_parent" n0:layout_height="match_parent"
+      xmlns:n0="http://schemas.android.com/apk/res/android">
+        <include layout="@layout/modern_list_item_view" />
+    </LinearLayout>
+</merge>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout n0:orientation="vertical" n0:layout_width="match_parent" n0:layout_height="match_parent" style="@style/AlertDialogContent"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <TextView n0:id="@id/main_message" n0:layout_width="wrap_content" n0:layout_height="wrap_content" />
+    <TextView n0:id="@id/signed_out_text" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:layout_marginTop="16.0dp" n0:drawablePadding="12.0dp" n1:drawableStartCompat="@drawable/ic_person_24dp"
+      xmlns:n1="http://schemas.android.com/apk/res-auto" />
+    <TextView n0:id="@id/offline_text" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:layout_marginTop="12.0dp" n0:drawablePadding="12.0dp" n2:drawableStartCompat="@drawable/ic_offline_pin_24dp"
+      xmlns:n2="http://schemas.android.com/apk/res-auto" />
+    <TextView n0:id="@id/ad_personalization_text" n0:visibility="gone" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:layout_marginTop="12.0dp" n0:text="@string/webstorage_clear_data_dialog_site_settings_remove_site_ad_personalization" n0:drawablePadding="16.0dp" n3:drawableStartCompat="@drawable/ic_data_personalization_20dp"
+      xmlns:n3="http://schemas.android.com/apk/res-auto" />
+</LinearLayout>

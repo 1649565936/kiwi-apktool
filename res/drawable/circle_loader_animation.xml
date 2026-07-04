@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-vector n0:drawable="@drawable/circle_loader"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <target n0:name="circlegreen" n0:animation="@anim/circle_loader_circlegreen_animation" />
+    <target n0:name="ellipse_path_2" n0:animation="@anim/circle_loader_ellipse_path_2_animation" />
+    <target n0:name="circleyellow" n0:animation="@anim/circle_loader_circleyellow_animation" />
+    <target n0:name="ellipse_path_3" n0:animation="@anim/circle_loader_ellipse_path_3_animation" />
+    <target n0:name="circlered" n0:animation="@anim/circle_loader_circlered_animation" />
+    <target n0:name="ellipse_path_4" n0:animation="@anim/circle_loader_ellipse_path_4_animation" />
+    <target n0:name="circleblue" n0:animation="@anim/circle_loader_circleblue_animation" />
+    <target n0:name="ellipse_path_5" n0:animation="@anim/circle_loader_ellipse_path_5_animation" />
+</animated-vector>

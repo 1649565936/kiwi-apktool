@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout n0:orientation="horizontal" n0:duplicateParentState="true" n0:clipChildren="false" n0:clipToPadding="false" n0:layout_width="wrap_content" n0:layout_height="wrap_content"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <TextView n0:textAppearance="@style/TextAppearance.TabLayout" n0:ellipsize="end" n0:gravity="center" n0:id="@android:id/text1" n0:duplicateParentState="true" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:maxLines="1" />
+    <ImageView n0:layout_gravity="center_vertical" n0:id="@id/options_indicator" n0:visibility="gone" n0:layout_width="@dimen/feed_header_dropdown_size" n0:layout_height="@dimen/feed_header_dropdown_size" n0:src="@drawable/mtrl_ic_arrow_drop_down" n0:scaleType="centerInside" n0:contentDescription="@string/feed_options_dropdown_description" n1:tint="@color/tab_layout_text_color_list"
+      xmlns:n1="http://schemas.android.com/apk/res-auto" />
+</LinearLayout>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout n0:orientation="vertical" n0:id="@id/privacy_sandbox_notice_row_dropdown" n0:layout_width="match_parent" n0:layout_height="match_parent"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <TextView n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginBottom="@dimen/promo_between_text_margin" n0:text="@string/privacy_sandbox_m1_notice_row_learn_more_heading_1" style="@style/TextAppearance.TextMediumThick.Secondary" />
+    <org.chromium.ui.widget.TextViewWithLeading n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginBottom="@dimen/promo_between_text_margin" n0:text="@string/privacy_sandbox_m1_notice_row_learn_more_description_1" n1:leading="@dimen/text_size_medium_leading" style="@style/TextAppearance.TextMedium.Secondary"
+      xmlns:n1="http://schemas.android.com/apk/res-auto" />
+    <org.chromium.ui.widget.TextViewWithLeading n0:id="@id/privacy_sandbox_m1_notice_row_learn_more_bullet_one" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginBottom="@dimen/promo_between_text_margin" n2:leading="@dimen/text_size_medium_leading" style="@style/TextAppearance.TextMedium.Secondary"
+      xmlns:n2="http://schemas.android.com/apk/res-auto" />
+    <org.chromium.ui.widget.TextViewWithLeading n0:id="@id/privacy_sandbox_m1_notice_row_learn_more_bullet_two" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginBottom="@dimen/promo_between_text_margin" n3:leading="@dimen/text_size_medium_leading" style="@style/TextAppearance.TextMedium.Secondary"
+      xmlns:n3="http://schemas.android.com/apk/res-auto" />
+    <org.chromium.ui.widget.TextViewWithLeading n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginBottom="@dimen/promo_between_text_margin" n0:text="@string/privacy_sandbox_m1_notice_row_learn_more_description_2" n4:leading="@dimen/text_size_medium_leading" style="@style/TextAppearance.TextMedium.Secondary"
+      xmlns:n4="http://schemas.android.com/apk/res-auto" />
+    <org.chromium.ui.widget.TextViewWithLeading n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginBottom="@dimen/promo_between_text_margin" n0:text="@string/privacy_sandbox_m1_notice_row_learn_more_description_3" n5:leading="@dimen/text_size_medium_leading" style="@style/TextAppearance.TextMedium.Secondary"
+      xmlns:n5="http://schemas.android.com/apk/res-auto" />
+    <TextView n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginBottom="@dimen/promo_between_text_margin" n0:text="@string/privacy_sandbox_m1_notice_row_learn_more_heading_2" style="@style/TextAppearance.TextMediumThick.Secondary" />
+    <org.chromium.ui.widget.TextViewWithLeading n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginBottom="@dimen/promo_between_text_margin" n0:text="@string/privacy_sandbox_m1_notice_row_learn_more_description_4" n6:leading="@dimen/text_size_medium_leading" style="@style/TextAppearance.TextMedium.Secondary"
+      xmlns:n6="http://schemas.android.com/apk/res-auto" />
+    <org.chromium.ui.widget.TextViewWithLeading n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginBottom="@dimen/promo_between_text_margin" n0:text="@string/privacy_sandbox_m1_notice_row_learn_more_description_android" n7:leading="@dimen/text_size_medium_leading" style="@style/TextAppearance.TextMedium.Secondary"
+      xmlns:n7="http://schemas.android.com/apk/res-auto" />
+    <org.chromium.ui.widget.TextViewWithLeading n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginBottom="@dimen/promo_between_text_margin" n0:text="@string/privacy_sandbox_m1_notice_row_learn_more_description_5" n8:leading="@dimen/text_size_medium_leading" style="@style/TextAppearance.TextMedium.Secondary"
+      xmlns:n8="http://schemas.android.com/apk/res-auto" />
+</LinearLayout>

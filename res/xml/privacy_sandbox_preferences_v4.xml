@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen>
+    <org.chromium.components.browser_ui.settings.ChromeBasePreference n0:icon="@drawable/ic_interests_24dp" n0:title="@string/ad_privacy_page_topics_link_row_label" n0:key="topics" n0:fragment="org.chromium.chrome.browser.privacy_sandbox.v4.TopicsFragmentV4" n1:iconTint="?colorOnSurface" n1:userAction="Settings.PrivacySandbox.Topics.Opened"
+      xmlns:n0="http://schemas.android.com/apk/res/android" xmlns:n1="http://schemas.android.com/apk/res-auto" />
+    <org.chromium.components.browser_ui.settings.ChromeBasePreference n2:icon="@drawable/ic_checklist_24dp" n2:title="@string/ad_privacy_page_fledge_link_row_label" n2:key="fledge" n2:fragment="org.chromium.chrome.browser.privacy_sandbox.v4.FledgeFragmentV4" n3:iconTint="?colorOnSurface" n3:userAction="Settings.PrivacySandbox.Fledge.Opened"
+      xmlns:n2="http://schemas.android.com/apk/res/android" xmlns:n3="http://schemas.android.com/apk/res-auto" />
+    <org.chromium.components.browser_ui.settings.ChromeBasePreference n4:icon="@drawable/ic_bar_chart_24dp" n4:title="@string/ad_privacy_page_ad_measurement_link_row_label" n4:key="ad_measurement" n4:fragment="org.chromium.chrome.browser.privacy_sandbox.v4.AdMeasurementFragmentV4" n5:allowDividerBelow="false" n5:iconTint="?colorOnSurface" n5:userAction="Settings.PrivacySandbox.AdMeasurement.Opened"
+      xmlns:n4="http://schemas.android.com/apk/res/android" xmlns:n5="http://schemas.android.com/apk/res-auto" />
+</PreferenceScreen>

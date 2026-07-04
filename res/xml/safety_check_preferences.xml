@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen>
+    <org.chromium.components.browser_ui.settings.TextMessagePreference n0:title="@string/safety_check_description" n1:allowDividerBelow="false"
+      xmlns:n0="http://schemas.android.com/apk/res/android" xmlns:n1="http://schemas.android.com/apk/res-auto" />
+    <org.chromium.chrome.browser.safety_check.SafetyCheckElementPreference n2:icon="@drawable/ic_update_grey" n2:title="@string/safety_check_updates_title" n2:key="updates" n3:allowDividerBelow="false" n3:iconTint="?colorOnSurface"
+      xmlns:n2="http://schemas.android.com/apk/res/android" xmlns:n3="http://schemas.android.com/apk/res-auto" />
+    <org.chromium.chrome.browser.safety_check.SafetyCheckElementPreference n4:icon="@drawable/ic_vpn_key_grey" n4:title="@string/safety_check_passwords_title" n4:key="passwords" n5:allowDividerBelow="false" n5:iconTint="?colorOnSurface"
+      xmlns:n4="http://schemas.android.com/apk/res/android" xmlns:n5="http://schemas.android.com/apk/res-auto" />
+    <org.chromium.chrome.browser.safety_check.SafetyCheckElementPreference n6:icon="@drawable/ic_security_grey" n6:title="@string/safety_check_safe_browsing_title" n6:key="safe_browsing" n7:allowDividerBelow="false" n7:iconTint="?colorOnSurface"
+      xmlns:n6="http://schemas.android.com/apk/res/android" xmlns:n7="http://schemas.android.com/apk/res-auto" />
+</PreferenceScreen>

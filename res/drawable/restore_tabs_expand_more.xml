@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rotate n0:drawable="@drawable/ic_expand_more_black_24dp" n0:fromDegrees="@integer/expand_more_horizontal_rotation_degree" n0:toDegrees="@integer/expand_more_horizontal_rotation_degree"
+  xmlns:n0="http://schemas.android.com/apk/res/android" />

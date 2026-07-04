@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen>
+    <org.chromium.components.browser_ui.settings.TextMessagePreference n0:title="@string/safe_browsing_standard_protection_subtitle" n0:key="subtitle" n1:allowDividerBelow="false"
+      xmlns:n0="http://schemas.android.com/apk/res/android" xmlns:n1="http://schemas.android.com/apk/res-auto" />
+    <org.chromium.components.browser_ui.settings.TextMessagePreference n2:icon="@drawable/ic_security_grey" n2:summary="@string/safe_browsing_standard_protection_bullet_one" n3:allowDividerBelow="false" n3:iconTint="@color/default_icon_color_tint_list"
+      xmlns:n2="http://schemas.android.com/apk/res/android" xmlns:n3="http://schemas.android.com/apk/res-auto" />
+    <org.chromium.components.browser_ui.settings.TextMessagePreference n4:icon="@drawable/ic_data_viz_grey" n4:summary="@string/safe_browsing_standard_protection_bullet_two" n5:allowDividerBelow="false" n5:iconTint="@color/default_icon_color_tint_list"
+      xmlns:n4="http://schemas.android.com/apk/res/android" xmlns:n5="http://schemas.android.com/apk/res-auto" />
+    <org.chromium.components.browser_ui.settings.ChromeSwitchPreference n6:persistent="false" n6:title="@string/safe_browsing_standard_protection_extended_reporting_title" n6:key="extended_reporting" n6:summary="@string/safe_browsing_standard_protection_extended_reporting_summary" n7:allowDividerBelow="false"
+      xmlns:n6="http://schemas.android.com/apk/res/android" xmlns:n7="http://schemas.android.com/apk/res-auto" />
+    <org.chromium.components.browser_ui.settings.ChromeSwitchPreference n8:persistent="false" n8:title="@string/passwords_leak_detection_switch_title" n8:key="password_leak_detection" n9:allowDividerBelow="false"
+      xmlns:n8="http://schemas.android.com/apk/res/android" xmlns:n9="http://schemas.android.com/apk/res-auto" />
+</PreferenceScreen>

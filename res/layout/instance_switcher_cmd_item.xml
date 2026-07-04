@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout n0:layout_gravity="center_horizontal" n0:id="@id/content" n0:layout_width="match_parent" n0:layout_height="wrap_content" style="@style/ListItemContainer"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <LinearLayout n0:orientation="horizontal" n0:id="@id/new_window" n0:visibility="gone" n0:layout_width="match_parent" n0:layout_height="wrap_content">
+        <ImageView n0:layout_gravity="center_vertical" n0:id="@id/favicon" n0:layout_width="24.0dp" n0:layout_height="24.0dp" n0:layout_marginTop="20.0dp" n0:layout_marginBottom="20.0dp" n0:src="@drawable/ic_add" n0:scaleType="fitCenter" n0:importantForAccessibility="no" n0:layout_marginStart="40.0dp" n0:layout_marginEnd="16.0dp" n0:layout_marginVertical="20.0dp" n1:tint="?colorPrimary"
+          xmlns:n1="http://schemas.android.com/apk/res-auto" />
+        <org.chromium.ui.widget.TextViewWithLeading n0:textAppearance="@style/TextAppearance.TextLarge.Primary" n0:layout_gravity="center_vertical" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:text="@string/menu_new_window" n2:leading="@dimen/text_size_large_leading"
+          xmlns:n2="http://schemas.android.com/apk/res-auto" />
+    </LinearLayout>
+    <TextView n0:textAppearance="@style/TextAppearance.TextMedium.Secondary" n0:gravity="center" n0:id="@id/max_info" n0:visibility="gone" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:minHeight="64.0dp" n0:text="@string/max_number_of_windows" />
+</RelativeLayout>

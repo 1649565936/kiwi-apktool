@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView n0:orientation="vertical" n0:id="@id/share_sheet_scrollview" n0:layout_width="match_parent" n0:layout_height="match_parent"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <LinearLayout n0:orientation="vertical" n0:id="@id/share_sheet_layout" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:minHeight="@dimen/min_touch_target_size">
+        <RelativeLayout n0:layout_gravity="center" n0:id="@id/preview_header" n0:paddingTop="24.0dp" n0:paddingBottom="20.0dp" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:paddingStart="16.0dp" n0:paddingEnd="16.0dp">
+            <org.chromium.components.browser_ui.widget.RoundedCornerImageView n0:id="@id/image_preview" n0:background="@drawable/preview_icon_border_background" n0:layout_width="@dimen/sharing_hub_preview_icon_size" n0:layout_height="@dimen/sharing_hub_preview_icon_size" n1:cornerRadiusBottomEnd="@dimen/sharing_hub_preview_icon_rounded_corner_radius" n1:cornerRadiusBottomStart="@dimen/sharing_hub_preview_icon_rounded_corner_radius" n1:cornerRadiusTopEnd="@dimen/sharing_hub_preview_icon_rounded_corner_radius" n1:cornerRadiusTopStart="@dimen/sharing_hub_preview_icon_rounded_corner_radius"
+              xmlns:n1="http://schemas.android.com/apk/res-auto" />
+            <TextView n0:ellipsize="end" n0:id="@id/title_preview" n0:paddingBottom="4.0dp" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:minHeight="18.0dp" n0:maxLines="1" n0:textDirection="locale" n0:textAlignment="gravity" n0:paddingStart="12.0dp" n0:paddingEnd="16.0dp" n0:layout_toStartOf="@id/link_toggle_view" n0:layout_toEndOf="@id/image_preview" />
+            <TextView n0:textAppearance="@style/TextAppearance.TextMedium.Primary" n0:ellipsize="start" n0:id="@id/subtitle_preview" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:minHeight="18.0dp" n0:maxLines="1" n0:layout_below="@id/title_preview" n0:layout_centerVertical="true" n0:textDirection="locale" n0:textAlignment="gravity" n0:paddingStart="12.0dp" n0:paddingEnd="16.0dp" n0:layout_toStartOf="@id/link_toggle_view" n0:layout_toEndOf="@id/image_preview" />
+            <org.chromium.ui.widget.ChromeImageView n0:id="@id/link_toggle_view" n0:background="?selectableItemBackground" n0:focusable="true" n0:visibility="gone" n0:clickable="true" n0:layout_width="@dimen/sharing_hub_preview_icon_size" n0:layout_height="@dimen/sharing_hub_preview_icon_size" n0:layout_alignParentEnd="true" />
+        </RelativeLayout>
+        <View n0:id="@id/preview_divider" n0:background="?colorSurfaceVariant" n0:layout_width="match_parent" n0:layout_height="1.0dp" />
+        <androidx.recyclerview.widget.RecyclerView n0:orientation="horizontal" n0:id="@id/share_sheet_other_apps" n0:clipToPadding="false" n0:layout_width="wrap_content" n0:layout_height="113.0dp" n0:minHeight="@dimen/min_touch_target_size" n0:paddingStart="8.0dp" n0:paddingEnd="8.0dp" />
+        <View n0:id="@id/share_sheet_divider" n0:background="?colorSurfaceVariant" n0:visibility="gone" n0:layout_width="match_parent" n0:layout_height="1.0dp" />
+        <androidx.recyclerview.widget.RecyclerView n0:id="@id/share_sheet_chrome_apps" n0:paddingBottom="15.0dp" n0:visibility="gone" n0:clipToPadding="false" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:minHeight="@dimen/min_touch_target_size" n0:paddingStart="8.0dp" n0:paddingEnd="8.0dp" />
+    </LinearLayout>
+</ScrollView>

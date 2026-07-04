@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout n0:orientation="vertical" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginLeft="8.0dp" n0:layout_marginRight="8.0dp" n0:layout_marginBottom="16.0dp" n0:layout_marginHorizontal="8.0dp"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <ImageView n0:layout_gravity="center_horizontal" n0:id="@id/branding_icon" n0:layout_width="wrap_content" n0:layout_height="@dimen/ttf_for_payments_product_icon_height" n0:layout_marginTop="@dimen/ttf_for_payments_product_icon_margin_vertical" n0:layout_marginBottom="@dimen/ttf_for_payments_product_icon_margin_vertical" n0:importantForAccessibility="no" n0:layout_marginVertical="@dimen/ttf_for_payments_product_icon_margin_vertical" />
+    <androidx.appcompat.widget.DialogTitle n0:textAppearance="@style/TextAppearance.AlertDialogTitleStyle" n0:layout_gravity="center_horizontal" n0:id="@id/touch_to_fill_sheet_title" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:text="@string/autofill_credit_card_bottom_sheet_title" n0:textAlignment="center" />
+</LinearLayout>

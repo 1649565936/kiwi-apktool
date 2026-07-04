@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout n0:id="@id/transition_frame" n0:layout_width="match_parent" n0:layout_height="match_parent"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <ImageButton n0:id="@id/back_button" n0:src="@drawable/quantum_ic_close_white_24" n0:layout_alignParentTop="true" n0:layout_alignParentStart="true" style="@style/UiButton" />
+    <RelativeLayout n0:id="@id/transition_top_frame" n0:paddingBottom="48.0dp" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:layout_centerInParent="true">
+        <ImageView n0:id="@id/transition_icon" n0:padding="4.0dp" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:src="@drawable/transition" n0:scaleType="center" n0:layout_centerHorizontal="true" />
+        <TextView n0:textSize="16.0sp" n0:textColor="#ffffff" n0:gravity="center" n0:id="@id/transition_text" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginTop="32.0dp" n0:text="@string/place_your_phone_into_cardboard" n0:layout_below="@id/transition_icon" />
+    </RelativeLayout>
+    <LinearLayout n0:orientation="horizontal" n0:id="@id/transition_bottom_frame" n0:background="#ff546e7a" n0:layout_width="match_parent" n0:layout_height="@dimen/transition_bottom_bar_height" n0:layout_alignParentBottom="true">
+        <TextView n0:textSize="16.0sp" n0:textColor="#ffffff" n0:gravity="start|center" n0:id="@id/transition_question_text" n0:layout_width="wrap_content" n0:layout_height="match_parent" n0:text="@string/switch_viewer_prompt" n0:layout_below="@id/transition_icon" n0:paddingEnd="20.0dp" n0:layout_marginStart="24.0dp" />
+        <View n0:layout_width="0.0dp" n0:layout_height="0.0dp" n0:layout_weight="1.0" />
+        <View n0:id="@id/divider" n0:background="#1f000000" n0:layout_width="1.0dp" n0:layout_height="match_parent" n0:layout_marginTop="10.0dp" n0:layout_marginBottom="10.0dp" />
+        <TextView n0:textSize="16.0sp" n0:textColor="#ffffff" n0:gravity="end|center" n0:id="@id/transition_switch_action" n0:background="?android:selectableItemBackground" n0:layout_width="wrap_content" n0:layout_height="match_parent" n0:text="@string/switch_viewer_action" n0:textAllCaps="true" n0:paddingStart="20.0dp" n0:paddingEnd="24.0dp" />
+    </LinearLayout>
+</RelativeLayout>

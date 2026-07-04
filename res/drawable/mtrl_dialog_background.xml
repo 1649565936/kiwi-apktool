@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<inset n0:insetLeft="@dimen/appcompat_dialog_background_inset" n0:insetRight="@dimen/appcompat_dialog_background_inset" n0:insetTop="@dimen/appcompat_dialog_background_inset" n0:insetBottom="@dimen/appcompat_dialog_background_inset"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <shape n0:shape="rectangle">
+        <corners n0:radius="@dimen/mtrl_shape_corner_size_medium_component" />
+        <solid n0:color="?colorSurface" />
+    </shape>
+</inset>

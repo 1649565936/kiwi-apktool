@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout n0:id="@id/editor_container" n0:background="?colorSurface"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <org.chromium.chrome.browser.autofill.editors.EditorDialogToolbar n0:id="@id/action_bar" n0:layout_width="match_parent" n0:layout_height="?actionBarSize" n0:layout_alignParentTop="true" n0:layout_alignParentStart="true" n0:layout_alignParentEnd="true" style="@style/ModernToolbar" />
+    <include layout="@layout/settings_action_bar_shadow" />
+    <org.chromium.components.browser_ui.widget.FadingEdgeScrollView n0:id="@id/scroll_view" n0:layout_width="match_parent" n0:layout_height="0.0dp" n0:layout_below="@id/action_bar" n0:layout_alignParentBottom="true" n0:layout_alignParentStart="true" n0:layout_alignParentEnd="true">
+        <LinearLayout n0:orientation="vertical" n0:id="@id/contents" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginStart="@dimen/pref_autofill_content_spacing" n0:layout_marginEnd="@dimen/pref_autofill_content_spacing" />
+    </org.chromium.components.browser_ui.widget.FadingEdgeScrollView>
+</RelativeLayout>

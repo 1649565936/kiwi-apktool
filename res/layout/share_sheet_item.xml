@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout n0:layout_width="@dimen/sharing_hub_tile_width" n0:layout_height="match_parent" n0:layout_marginStart="@dimen/sharing_hub_tile_margin" n0:layout_marginEnd="@dimen/sharing_hub_tile_margin"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <LinearLayout n0:gravity="center_horizontal" n0:orientation="vertical" n0:id="@id/layout" n0:background="?selectableItemBackground" n0:paddingTop="28.0dp" n0:focusable="true" n0:clickable="true" n0:layout_width="match_parent" n0:layout_height="match_parent">
+        <ImageView n0:id="@id/icon" n0:layout_width="24.0dp" n0:layout_height="24.0dp" n0:scaleType="fitCenter" />
+        <TextView n0:textAppearance="@style/TextAppearance.TextSmall.Primary" n0:ellipsize="end" n0:gravity="center" n0:id="@id/text" n0:paddingTop="13.0dp" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:maxLines="2" n0:textAlignment="center" />
+    </LinearLayout>
+    <TextView n0:textAppearance="@style/TextAppearance.TextSmall.Accent1" n0:id="@id/display_new" n0:paddingTop="13.0dp" n0:visibility="gone" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:text="@string/new_badge" n0:maxLines="1" n0:layout_alignParentTop="true" n0:layout_alignParentEnd="true" />
+</RelativeLayout>

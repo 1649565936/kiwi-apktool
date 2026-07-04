@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout n0:id="@id/history_navigation" n0:paddingTop="@dimen/tab_strip_height" n0:layout_width="match_parent" n0:layout_height="match_parent"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <org.chromium.chrome.browser.ntp.NativePageRootFrameLayout n0:id="@id/recent_tabs_root" n0:background="?colorSurface" n0:focusable="true" n0:focusableInTouchMode="true" n0:layout_width="match_parent" n0:layout_height="match_parent" n0:layout_marginTop="@dimen/toolbar_height_no_shadow">
+        <org.chromium.chrome.browser.ntp.RecentTabsExpandableListView n0:scrollbarStyle="outsideOverlay" n0:id="@id/odp_listview" n0:background="?colorSurface" n0:paddingTop="@dimen/recent_tabs_group_view_vertical_padding" n0:layout_width="match_parent" n0:layout_height="match_parent" n0:listSelector="@android:color/transparent" n0:cacheColorHint="?colorSurface" n0:childDivider="@null" n0:divider="@null" />
+    </org.chromium.chrome.browser.ntp.NativePageRootFrameLayout>
+</FrameLayout>

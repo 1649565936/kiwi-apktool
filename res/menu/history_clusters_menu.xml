@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu>
+    <group n0:id="@id/normal_menu_group"
+      xmlns:n0="http://schemas.android.com/apk/res/android">
+        <item n0:icon="@drawable/btn_info" n0:id="@id/info_menu_id" n0:visible="false" n0:title="@string/show_info" n1:showAsAction="ifRoom"
+          xmlns:n1="http://schemas.android.com/apk/res-auto" />
+        <item n0:icon="@drawable/ic_search" n0:id="@id/search_menu_id" n0:visible="false" n0:title="@string/search" n2:iconTint="@color/default_icon_color_secondary_tint_list" n2:showAsAction="ifRoom"
+          xmlns:n2="http://schemas.android.com/apk/res-auto" />
+        <item n0:icon="@drawable/btn_close" n0:id="@id/close_menu_id" n0:title="@string/close" n3:iconTint="@color/default_icon_color_secondary_tint_list" n3:showAsAction="ifRoom"
+          xmlns:n3="http://schemas.android.com/apk/res-auto" />
+        <item n0:id="@id/optout_menu_id" n0:title="@string/history_clusters_disable_menu_item_label" n4:showAsAction="never"
+          xmlns:n4="http://schemas.android.com/apk/res-auto" />
+    </group>
+    <group n5:id="@id/selection_mode_menu_group" n5:visible="false"
+      xmlns:n5="http://schemas.android.com/apk/res/android">
+        <item n5:icon="@drawable/ic_delete_white_24dp" n5:id="@id/selection_mode_delete_menu_id" n5:title="@string/remove" n6:iconTint="@color/default_icon_color_secondary_tint_list" n6:showAsAction="ifRoom"
+          xmlns:n6="http://schemas.android.com/apk/res-auto" />
+        <item n5:id="@id/selection_mode_open_in_new_tab" n5:title="@string/contextmenu_open_in_new_tab" n7:showAsAction="never"
+          xmlns:n7="http://schemas.android.com/apk/res-auto" />
+        <item n5:id="@id/selection_mode_open_in_incognito" n5:title="@string/contextmenu_open_in_incognito_tab" n8:showAsAction="never"
+          xmlns:n8="http://schemas.android.com/apk/res-auto" />
+        <item n5:id="@id/selection_mode_open_in_tab_group" n5:title="@string/history_clusters_open_all_in_tabgroup" n9:showAsAction="never"
+          xmlns:n9="http://schemas.android.com/apk/res-auto" />
+        <item n5:id="@id/selection_mode_copy_link" n5:title="@string/copy_link" n10:showAsAction="never"
+          xmlns:n10="http://schemas.android.com/apk/res-auto" />
+    </group>
+</menu>

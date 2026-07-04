@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout n0:id="@id/list_content" n0:paddingTop="14.0dp" n0:layout_width="match_parent" n0:layout_height="match_parent"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <androidx.recyclerview.widget.RecyclerView n0:id="@id/language_ask_prompt_content_recycler_view" n0:layout_width="match_parent" n0:layout_height="match_parent" />
+    <ImageView n0:layout_gravity="top" n0:id="@id/top_shadow" n0:visibility="invisible" n0:layout_width="match_parent" n0:layout_height="@dimen/toolbar_shadow_height" n0:src="@drawable/modern_toolbar_shadow" n0:scaleType="fitXY" n0:importantForAccessibility="no" />
+    <ImageView n0:layout_gravity="bottom" n0:id="@id/bottom_shadow" n0:layout_width="match_parent" n0:layout_height="@dimen/toolbar_shadow_height" n0:src="@drawable/modern_toolbar_shadow" n0:scaleType="fitXY" n0:scaleY="-1.0" n0:importantForAccessibility="no" />
+</FrameLayout>

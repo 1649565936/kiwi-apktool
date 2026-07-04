@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout n0:layout_gravity="center_horizontal" n0:orientation="vertical" n0:id="@id/mv_tiles_container" n0:visibility="gone" n0:layout_width="1.0dp" n0:layout_height="1.0dp" n1:layout_scrollFlags="scroll"
+  xmlns:n0="http://schemas.android.com/apk/res/android" xmlns:n1="http://schemas.android.com/apk/res-auto">
+    <ViewStub n0:id="@id/mv_tiles_carousel_stub" n0:visibility="invisible" n0:layout="@layout/mv_tiles_carousel" n0:layout_width="1.0dp" n0:layout_height="1.0dp" />
+    <ViewStub n0:id="@id/mv_tiles_grid_stub" n0:visibility="invisible" n0:layout="@layout/mv_tiles_grid" n0:layout_width="1.0dp" n0:layout_height="1.0dp" />
+    <ViewStub n0:id="@id/tile_grid_placeholder_stub" n0:visibility="invisible" n0:layout="@layout/new_tab_page_tile_grid_placeholder" n0:inflatedId="@id/tile_grid_placeholder" n0:layout_width="1.0dp" n0:layout_height="1.0dp" />
+</FrameLayout>

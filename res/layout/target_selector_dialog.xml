@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout>
+    <include layout="@layout/instance_switcher_list" />
+</FrameLayout>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge>
+    <View n0:layout_gravity="center_horizontal" n0:id="@id/tile_view_icon_background" n0:background="?tileViewIconBackgroundModern" n0:layout_width="@dimen/tile_view_icon_size" n0:layout_height="@dimen/tile_view_icon_size" n0:layout_marginTop="@dimen/tile_view_icon_background_margin_top_modern"
+      xmlns:n0="http://schemas.android.com/apk/res/android" />
+    <ImageView n1:layout_gravity="center_horizontal" n1:id="@id/tile_view_icon" n1:layout_width="@dimen/tile_view_icon_size_modern" n1:layout_height="@dimen/tile_view_icon_size_modern" n1:layout_marginTop="@dimen/tile_view_icon_margin_top_modern"
+      xmlns:n1="http://schemas.android.com/apk/res/android" />
+    <View n2:layout_gravity="center_horizontal" n2:id="@id/tile_view_highlight" n2:background="@drawable/tile_view_highlight" n2:layout_width="@dimen/tile_view_icon_size" n2:layout_height="@dimen/tile_view_icon_size" n2:layout_marginTop="@dimen/tile_view_icon_background_margin_top_modern"
+      xmlns:n2="http://schemas.android.com/apk/res/android" />
+    <ImageView n3:layout_gravity="end|top" n3:id="@id/offline_badge" n3:visibility="gone" n3:layout_width="@dimen/tile_view_offline_badge_size_modern" n3:layout_height="@dimen/tile_view_offline_badge_size_modern" n3:layout_marginTop="@dimen/tile_view_offline_badge_margin_top_modern_condensed" n3:contentDescription="@string/accessibility_ntp_offline_badge" n3:layout_marginEnd="@dimen/tile_view_offline_badge_margin_end_modern_condensed" n4:srcCompat="@drawable/ic_offline_pin_blue_white"
+      xmlns:n3="http://schemas.android.com/apk/res/android" xmlns:n4="http://schemas.android.com/apk/res-auto" />
+</merge>

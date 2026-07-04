@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout n0:gravity="center_vertical" n0:layout_gravity="center" n0:orientation="horizontal" n0:id="@id/text_container" n0:background="@drawable/modern_toolbar_text_box_background_with_primary_color" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:alpha="0.9"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <TextView n0:gravity="center_vertical" n0:id="@id/title" n0:layout_width="0.0dp" n0:layout_height="48.0dp" n0:hint="@string/search_widget_default" n0:singleLine="true" n0:layout_weight="1.0" n0:textAlignment="viewStart" n0:paddingStart="12.0dp" style="@style/TextAppearance.SearchBoxText.Widget" />
+    <ImageView n0:id="@id/microphone_icon" n0:layout_width="48.0dp" n0:layout_height="48.0dp" n0:src="@drawable/btn_mic" n0:scaleType="centerInside" n0:tint="@color/default_icon_color_baseline" n0:contentDescription="@string/accessibility_toolbar_btn_mic" />
+</LinearLayout>

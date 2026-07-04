@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout n0:gravity="center_vertical" n0:orientation="horizontal" n0:layout_width="match_parent" n0:layout_height="?android:listPreferredItemHeightSmall"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <org.chromium.components.browser_ui.widget.text.TextViewWithCompoundDrawables n0:id="@id/title" n0:background="?listChoiceBackgroundIndicator" n0:layout_width="0.0dp" n0:layout_height="match_parent" n0:maxLines="2" n0:singleLine="false" n0:layout_weight="1.0" n0:paddingStart="16.0dp" style="@style/AppMenuItemTextViewWithCompoundDrawables" />
+    <org.chromium.chrome.browser.ui.appmenu.AppMenuItemIcon n0:id="@id/checkbox" n0:background="?listChoiceBackgroundIndicator" n0:paddingTop="8.0dp" n0:paddingBottom="8.0dp" n0:layout_width="56.0dp" n0:layout_height="match_parent" n0:src="?android:listChoiceIndicatorMultiple" n0:scaleType="fitCenter" n0:paddingStart="12.0dp" n0:paddingEnd="12.0dp" />
+    <org.chromium.ui.widget.ChromeImageButton n0:id="@id/button" n0:background="?listChoiceBackgroundIndicator" n0:paddingTop="12.0dp" n0:paddingBottom="12.0dp" n0:layout_width="56.0dp" n0:layout_height="match_parent" n0:scaleType="fitCenter" n0:paddingStart="16.0dp" n0:paddingEnd="16.0dp" />
+</LinearLayout>

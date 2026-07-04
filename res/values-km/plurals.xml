@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="accessibility_dialog_back_button">
+        <item quantity="one">បង្រួមផ្ទាំង %1$d។</item>
+        <item quantity="other">បង្រួមក្រុមផ្ទាំង​ដែលមាន %1$dផ្ទាំង។</item>
+    </plurals>
+    <plurals name="accessibility_dialog_back_button_with_group_name">
+        <item quantity="one">បង្រួមផ្ទាំង %1$d។</item>
+        <item quantity="other">បង្រួមក្រុមផ្ទាំង %1$s ដែលមាន %2$dផ្ទាំង។</item>
+    </plurals>
+    <plurals name="accessibility_download_manager_ui_audio">
+        <item quantity="one">ឯកសារសំឡេង %d</item>
+        <item quantity="other">ឯកសារ​សំឡេង %d</item>
+    </plurals>
+    <plurals name="accessibility_download_manager_ui_generic">
+        <item quantity="one">ឯកសារ %d</item>
+        <item quantity="other">ឯកសារ %d</item>
+    </plurals>
+    <plurals name="accessibility_download_manager_ui_images">
+        <item quantity="one">រូបភាព %d</item>
+        <item quantity="other">រូបភាព %d</item>
+    </plurals>
+    <plurals name="accessibility_download_manager_ui_pages">
+        <item quantity="one">%d ទំព័រ</item>
+        <item quantity="other">%d ទំព័រ</item>
+    </plurals>
+    <plurals name="accessibility_download_manager_ui_video">
+        <item quantity="one">វីដេអូ %d</item>
+        <item quantity="other">វីដេអូ %d</item>
+    </plurals>
+    <plurals name="accessibility_merchant_viewer_message_description">
+        <item quantity="one">" ការវាយតម្លៃដោយដាក់ផ្កាយ %1$s/%2$s, មតិវាយតម្លៃ %3$d"</item>
+        <item quantity="other">ការវាយតម្លៃដោយដាក់ផ្កាយ %1$s/%2$s, មតិវាយតម្លៃ %3$d</item>
+    </plurals>
+    <plurals name="accessibility_remove_selected_items">
+        <item quantity="one">លុបធាតុដែលបានជ្រើសរើស 1</item>
+        <item quantity="other">លុបធាតុដែលបានជ្រើសរើស %d</item>
+    </plurals>
+    <plurals name="accessibility_share_selected_items">
+        <item quantity="one">ចែករំលែកធាតុដែលបានជ្រើសរើស 1</item>
+        <item quantity="other">ចែករំលែកធាតុដែលបានជ្រើសរើស %d</item>
+    </plurals>
+    <plurals name="accessibility_tab_selection_editor_bookmark_tabs_action_button">
+        <item quantity="one">ចំណាំ​ផ្ទាំង​ដែល​បាន​ជ្រើសរើស %1$d</item>
+        <item quantity="other">ចំណាំ​ផ្ទាំង​ដែល​បាន​ជ្រើសរើស %1$d</item>
+    </plurals>
+    <plurals name="accessibility_tab_selection_editor_close_tabs">
+        <item quantity="one">បិទ​ផ្ទាំង​ដែលបាន​ជ្រើសរើស %1$d</item>
+        <item quantity="other">បិទ​ផ្ទាំង​ដែលបាន​ជ្រើសរើស %1$d</item>
+    </plurals>
+    <plurals name="accessibility_tab_selection_editor_group_tabs">
+        <item quantity="one">បញ្ចូលផ្ទាំង​ដែលបានជ្រើសរើស %1$d ​ទៅក្នុងក្រុម</item>
+        <item quantity="other">បញ្ចូលផ្ទាំង​ដែលបានជ្រើសរើស %1$d ​ទៅក្នុងក្រុម</item>
+    </plurals>
+    <plurals name="accessibility_tab_selection_editor_share_tabs_action_button">
+        <item quantity="one">ចែករំលែក​ផ្ទាំង​ដែល​បាន​ជ្រើសរើស %1$d</item>
+        <item quantity="other">ចែករំលែក​ផ្ទាំង​ដែល​បាន​ជ្រើសរើស %1$d</item>
+    </plurals>
+    <plurals name="accessibility_tab_selection_editor_ungroup_tabs">
+        <item quantity="one">បំបែក​ក្រុម​ផ្ទាំង​ដែល​បាន​ជ្រើសរើស %1$d</item>
+        <item quantity="other">បំបែកក្រុម​ផ្ទាំង​ដែល​បាន​ជ្រើសរើស %1$d</item>
+    </plurals>
+    <plurals name="allsites_fps_list_summary">
+        <item quantity="one">បានអនុញ្ញាត​ខូគី​សម្រាប់​គេហទំព័រ %2$s ចំនួន %1$s</item>
+        <item quantity="other">បានអនុញ្ញាត​ខូគី​សម្រាប់​គេហទំព័រ %2$s ចំនួន %1$s</item>
+    </plurals>
+    <plurals name="allsites_fps_summary">
+        <item quantity="one">គេហទំព័រ %1$s នៅក្នុងក្រុម​គេហទំព័រ​របស់ %2$s ដែលអាចមើលឃើញ​សកម្មភាព​របស់អ្នក​នៅក្នុង​ក្រុម</item>
+        <item quantity="other">គេហទំព័រ %1$s នៅក្នុង​ក្រុម​គេហទំព័រ​របស់ %2$s ដែលអាចមើលឃើញ​សកម្មភាពរបស់អ្នក​នៅក្នុង​ក្រុម</item>
+    </plurals>
+    <plurals name="bookmarks_count">
+        <item quantity="one">ចំណាំ %1$d</item>
+        <item quantity="other">ចំណាំ %1$d</item>
+    </plurals>
+    <plurals name="bottom_tab_grid_title_placeholder">
+        <item quantity="one">ផ្ទាំង %1$d</item>
+        <item quantity="other">ផ្ទាំង %1$d</item>
+    </plurals>
+    <plurals name="contacts_picker_more_details">
+        <item quantity="one">(+ 1 ទៀត)</item>
+        <item quantity="other">(+ %d ទៀត)</item>
+    </plurals>
+    <plurals name="cookie_controls_blocked_cookies">
+        <item quantity="one">បាន​ទប់ស្កាត់​ខូគី 1</item>
+        <item quantity="other">បាន​ទប់ស្កាត់​ខូគី %d</item>
+    </plurals>
+    <plurals name="cookies_count">
+        <item quantity="one">ខូគី %d</item>
+        <item quantity="other">ខូគី %d</item>
+    </plurals>
+    <plurals name="download_manager_n_hours">
+        <item quantity="one">%d ម៉ោង​</item>
+        <item quantity="other">%d ម៉ោង</item>
+    </plurals>
+    <plurals name="download_message_multiple_download_complete">
+        <item quantity="one">បានទាញយកឯកសារ</item>
+        <item quantity="other">បាន​បញ្ចប់ការទាញយក %d</item>
+    </plurals>
+    <plurals name="download_message_multiple_download_failed">
+        <item quantity="one">ការទាញយក 1 បាន​បរាជ័យ</item>
+        <item quantity="other">ការទាញយក %d បាន​បរាជ័យ</item>
+    </plurals>
+    <plurals name="download_message_multiple_download_in_progress">
+        <item quantity="one">កំពុង​ទាញយក​ឯកសារ…</item>
+        <item quantity="other">កំពុង​ទាញយក​ឯកសារ %d…</item>
+    </plurals>
+    <plurals name="download_message_multiple_download_pending">
+        <item quantity="one">ការទាញយក 1 មិនទាន់​សម្រេចទេ</item>
+        <item quantity="other">ការទាញយក %d មិនទាន់​សម្រេចទេ</item>
+    </plurals>
+    <plurals name="download_ui_files_downloaded">
+        <item quantity="one">បានទាញយកឯកសារ %1$d</item>
+        <item quantity="other">បានទាញយកឯកសារ %1$d</item>
+    </plurals>
+    <plurals name="history_clusters_n_matches">
+        <item quantity="one">ត្រូវគ្នា %d</item>
+        <item quantity="other">ត្រូវគ្នា %d</item>
+    </plurals>
+    <plurals name="instance_switcher_close_confirm_deleted_incognito">
+        <item quantity="one">ផ្ទាំង​ឯកជន %1$s នឹងត្រូវបានបិទ</item>
+        <item quantity="other">ផ្ទាំង​ឯកជន %1$s នឹងត្រូវបានបិទ</item>
+    </plurals>
+    <plurals name="instance_switcher_close_confirm_deleted_incognito_mixed">
+        <item quantity="one">ផ្ទាំង​ឯកជន %1$s និងផ្ទាំង %2$s ទៀតនឹង​ត្រូវបានបិទ</item>
+        <item quantity="other">ផ្ទាំង​ឯកជន %1$s និងផ្ទាំង %2$s ទៀតនឹង​ត្រូវបានបិទ</item>
+    </plurals>
+    <plurals name="instance_switcher_close_confirm_deleted_tabs_many">
+        <item quantity="one">%1$s និងផ្ទាំង %2$s ទៀតនឹង​ត្រូវបានបិទ</item>
+        <item quantity="other">%1$s និងផ្ទាំង %2$s ទៀតនឹង​ត្រូវបានបិទ</item>
+    </plurals>
+    <plurals name="instance_switcher_desc_incognito">
+        <item quantity="one">ផ្ទាំងឯកជន %1$s</item>
+        <item quantity="other">ផ្ទាំងឯកជន %1$s</item>
+    </plurals>
+    <plurals name="instance_switcher_desc_mixed">
+        <item quantity="one">ផ្ទាំង %1$s</item>
+        <item quantity="other">ផ្ទាំង %2$s, ឯកជន %1$s</item>
+    </plurals>
+    <plurals name="instance_switcher_tab_count_nonzero">
+        <item quantity="one">ផ្ទាំង 1</item>
+        <item quantity="other">ផ្ទាំង %d</item>
+    </plurals>
+    <plurals name="merchant_viewer_message_description_reviews">
+        <item quantity="one">(មតិវាយតម្លៃ %1$s)</item>
+        <item quantity="other">(មតិវាយតម្លៃ %1$s)</item>
+    </plurals>
+    <plurals name="merchant_viewer_message_description_reviews_from_google">
+        <item quantity="one">ការវាយតម្លៃ %1$s ពី Geometry</item>
+        <item quantity="other">ការវាយតម្លៃ %1$s ពី Geometry</item>
+    </plurals>
+    <plurals name="mtrl_badge_content_description">
+        <item quantity="one">ការជូនដំណឹងថ្មី %d</item>
+        <item quantity="other">ការជូនដំណឹងថ្មី %d</item>
+    </plurals>
+    <plurals name="n_days_ago">
+        <item quantity="one">%d ថ្ងៃមុន</item>
+        <item quantity="other">%d ថ្ងៃមុន</item>
+    </plurals>
+    <plurals name="n_hours_ago">
+        <item quantity="one">%d ម៉ោងមុន</item>
+        <item quantity="other">%d ម៉ោងមុន</item>
+    </plurals>
+    <plurals name="n_minutes_ago">
+        <item quantity="one">%d នាទីមុន</item>
+        <item quantity="other">%d នាទីមុន</item>
+    </plurals>
+    <plurals name="offline_pages_auto_fetch_in_progress_notification_text">
+        <item quantity="one">Kiwi Browser នឹងផ្ទុកទំព័រ​របស់អ្នក នៅពេលរួចរាល់</item>
+        <item quantity="other">Kiwi Browser នឹងផ្ទុកទំព័រ​របស់អ្នក នៅពេលរួចរាល់</item>
+    </plurals>
+    <plurals name="page_info_cookies_in_use">
+        <item quantity="one">កំពុងប្រើខូគី 1</item>
+        <item quantity="other">កំពុងប្រើខូគី %d</item>
+    </plurals>
+    <plurals name="page_info_permissions_summary_more_allowed">
+        <item quantity="one">បានអនុញ្ញាត %1$s, %2$s និង %3$s ទៀត</item>
+        <item quantity="other">បានអនុញ្ញាត %1$s, %2$s និង %3$s ទៀត</item>
+    </plurals>
+    <plurals name="page_info_permissions_summary_more_blocked">
+        <item quantity="one">បានទប់ស្កាត់ %1$s, %2$s និង %3$s ទៀត</item>
+        <item quantity="other">បានទប់ស្កាត់ %1$s, %2$s និង %3$s ទៀត</item>
+    </plurals>
+    <plurals name="page_info_permissions_summary_more_mixed">
+        <item quantity="one">%1$s, %2$s និង %3$s ទៀត</item>
+        <item quantity="other">%1$s, %2$s និង %3$s ទៀត</item>
+    </plurals>
+    <plurals name="password_check_status_message_idle_with_leaks">
+        <item quantity="one">ពាក្យសម្ងាត់ដែល​រងការលុកលុយ %d</item>
+        <item quantity="other">ពាក្យសម្ងាត់​ដែលរង​ការលុកលុយ %d</item>
+    </plurals>
+    <plurals name="payment_request_contacts_preview">
+        <item quantity="one">%1$s… និង %2$s ទៀត</item>
+        <item quantity="other">%1$s… និង %2$s ទៀត</item>
+    </plurals>
+    <plurals name="payment_request_payment_methods_preview">
+        <item quantity="one">%1$s… និង %2$s ទៀត</item>
+        <item quantity="other">%1$s… និង %2$s ទៀត</item>
+    </plurals>
+    <plurals name="payment_request_shipping_addresses_preview">
+        <item quantity="one">%1$s… និង %2$s ទៀត</item>
+        <item quantity="other">%1$s… និង %2$s ទៀត</item>
+    </plurals>
+    <plurals name="payment_request_shipping_options_preview">
+        <item quantity="one">%1$s… និង %2$s ទៀត</item>
+        <item quantity="other">%1$s… និង %2$s ទៀត</item>
+    </plurals>
+    <plurals name="quick_delete_dialog_tabs_closed_text">
+        <item quantity="one">ផ្ទាំង 1 នៅលើ​ឧបករណ៍នេះ</item>
+        <item quantity="other">ផ្ទាំង %d នៅលើ​ឧបករណ៍នេះ</item>
+    </plurals>
+    <plurals name="reading_list_unread_page_count">
+        <item quantity="one">ទំព័រមិន​ទាន់អាន %1$d</item>
+        <item quantity="other">ទំព័រមិន​ទាន់អាន %1$d</item>
+    </plurals>
+    <plurals name="restore_tabs_open_tabs">
+        <item quantity="one">បើក​ផ្ទាំង %1$s</item>
+        <item quantity="other">បើក​ផ្ទាំង %1$s</item>
+    </plurals>
+    <plurals name="restore_tabs_promo_sheet_device_info">
+        <item quantity="one">ផ្ទាំង %1$s បានធ្វើ​បច្ចុប្បន្នភាព​ចុងក្រោយ៖ %2$s</item>
+        <item quantity="other">ផ្ទាំង %1$s បានធ្វើ​បច្ចុប្បន្នភាព​ចុងក្រោយ៖ %2$s</item>
+    </plurals>
+    <plurals name="safety_check_passwords_compromised_exist">
+        <item quantity="one">ពាក្យសម្ងាត់​ដែលរង​ការលុកលុយ 1</item>
+        <item quantity="other">ពាក្យសម្ងាត់​ដែលរង​ការលុកលុយ %d</item>
+    </plurals>
+    <plurals name="safety_check_timestamp_after_days">
+        <item quantity="one">បានពិនិត្យមើល​កាលពី 1 ថ្ងៃមុន</item>
+        <item quantity="other">បានពិនិត្យមើល​កាលពី %d ថ្ងៃមុន</item>
+    </plurals>
+    <plurals name="safety_check_timestamp_after_hours">
+        <item quantity="one">បានពិនិត្យមើល​កាលពី 1 ម៉ោងមុន</item>
+        <item quantity="other">បានពិនិត្យមើល​កាលពី %d ម៉ោងមុន</item>
+    </plurals>
+    <plurals name="safety_check_timestamp_after_mins">
+        <item quantity="one">បាន​ពិនិត្យមើល​កាលពី 1 នាទីមុន</item>
+        <item quantity="other">បាន​ពិនិត្យមើល​កាលពី %d នាទីមុន</item>
+    </plurals>
+    <plurals name="selected_items">
+        <item quantity="one">បានជ្រើសរើស 1</item>
+        <item quantity="other">បានជ្រើសរើស %d</item>
+    </plurals>
+    <plurals name="signal_strength_level_n_bars">
+        <item quantity="one">កម្រិត​កម្លាំង​រលកសញ្ញា៖ %d កាំ</item>
+        <item quantity="other">កម្រិត​កម្លាំង​រលកសញ្ញា៖ %d កាំ</item>
+    </plurals>
+    <plurals name="tab_selection_editor_bookmark_tabs_action_button">
+        <item quantity="one">ចំណាំ​ផ្ទាំង</item>
+        <item quantity="other">ចំណាំ​ផ្ទាំង</item>
+    </plurals>
+    <plurals name="tab_selection_editor_close_tabs">
+        <item quantity="one">បិទផ្ទាំង</item>
+        <item quantity="other">បិទផ្ទាំង</item>
+    </plurals>
+    <plurals name="tab_selection_editor_group_tabs">
+        <item quantity="one">ដាក់​​ផ្ទាំងជាក្រុម</item>
+        <item quantity="other">ដាក់ផ្ទាំងជាក្រុម</item>
+    </plurals>
+    <plurals name="tab_selection_editor_share_sheet_preview_message">
+        <item quantity="one">តំណ %1$d ពី Kiwi Browser</item>
+        <item quantity="other">តំណ %1$d ពី Kiwi Browser</item>
+    </plurals>
+    <plurals name="tab_selection_editor_share_tabs_action_button">
+        <item quantity="one">ចែករំលែក​ផ្ទាំង</item>
+        <item quantity="other">ចែករំលែក​ផ្ទាំង</item>
+    </plurals>
+    <plurals name="tab_selection_editor_tabs_count">
+        <item quantity="one">ផ្ទាំង %1$d</item>
+        <item quantity="other">ផ្ទាំង %1$d</item>
+    </plurals>
+    <plurals name="tab_selection_editor_ungroup_tabs">
+        <item quantity="one">បំបែក​ក្រុម​ផ្ទាំង</item>
+        <item quantity="other">បំបែក​ក្រុម​ផ្ទាំង</item>
+    </plurals>
+</resources>

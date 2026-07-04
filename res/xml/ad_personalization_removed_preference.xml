@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen>
+    <org.chromium.components.browser_ui.settings.LongSummaryTextMessagePreference n0:selectable="false" n0:summary="@string/privacy_sandbox_remove_interest_description" n1:allowDividerBelow="false"
+      xmlns:n0="http://schemas.android.com/apk/res/android" xmlns:n1="http://schemas.android.com/apk/res-auto" />
+    <PreferenceCategory n2:title="@string/privacy_sandbox_topic_interests_subtitle" n2:key="topic_interests"
+      xmlns:n2="http://schemas.android.com/apk/res/android" />
+    <Preference n3:selectable="false" n3:key="empty_topics" n3:summary="@string/privacy_sandbox_removed_topics_empty_state" n4:allowDividerBelow="false"
+      xmlns:n3="http://schemas.android.com/apk/res/android" xmlns:n4="http://schemas.android.com/apk/res-auto" />
+    <PreferenceCategory n5:title="@string/privacy_sandbox_fledge_subtitle" n5:key="fledge_interests"
+      xmlns:n5="http://schemas.android.com/apk/res/android" />
+    <Preference n6:selectable="false" n6:key="empty_fledge" n6:summary="@string/privacy_sandbox_removed_sites_empty_state" n7:allowDividerBelow="false"
+      xmlns:n6="http://schemas.android.com/apk/res/android" xmlns:n7="http://schemas.android.com/apk/res-auto" />
+</PreferenceScreen>

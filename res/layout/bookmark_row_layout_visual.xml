@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout n0:id="@id/content" style="@style/ListItemContainerV2"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <ImageView n0:id="@id/start_icon" n0:background="@drawable/list_item_icon_modern_bg_rect" n0:importantForAccessibility="no" style="@style/ListItemStartIconV2" />
+    <include layout="@layout/title_and_description_layout" />
+    <org.chromium.ui.widget.ChromeImageButton n0:id="@id/end_icon" n0:visibility="gone" style="@style/ListItemEndIconV2" />
+    <include layout="@layout/list_menu_button" />
+    <org.chromium.ui.widget.ChromeImageButton n0:id="@id/drag_handle" n0:visibility="gone" n0:src="@drawable/ic_drag_handle_grey600_24dp" n0:tint="@color/default_icon_color_tint_list" style="@style/ListItemEndIconV2" />
+</LinearLayout>

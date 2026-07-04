@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout n0:orientation="vertical" n0:background="?colorSurface" n0:layout_width="match_parent" n0:layout_height="match_parent"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <com.google.android.material.tabs.TabLayout n0:id="@id/tab_layout" n0:layout_width="match_parent" n0:layout_height="wrap_content" n1:tabGravity="center" n1:tabIndicatorFullWidth="true" n1:tabPaddingEnd="20.0dp" n1:tabPaddingStart="20.0dp" style="@style/TabLayoutStyle"
+      xmlns:n1="http://schemas.android.com/apk/res-auto">
+        <com.google.android.material.tabs.TabItem n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:text="@string/qr_code_share_tab_label" />
+        <com.google.android.material.tabs.TabItem n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:text="@string/qr_code_scan_tab_label" />
+    </com.google.android.material.tabs.TabLayout>
+    <org.chromium.ui.widget.ChromeImageButton n0:id="@id/close_button" n0:layout_height="@dimen/toolbar_button_width" n0:src="@drawable/btn_close" n0:contentDescription="@string/close" n2:tint="@color/default_icon_color_tint_list" style="@style/ToolbarButton"
+      xmlns:n2="http://schemas.android.com/apk/res-auto" />
+    <androidx.viewpager.widget.ViewPager n0:id="@id/qrcode_view_pager" n0:layout_width="match_parent" n0:layout_height="match_parent" n0:layout_below="@id/tab_layout" />
+</RelativeLayout>

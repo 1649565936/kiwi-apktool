@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector>
+    <item n0:state_enabled="true" n0:state_hovered="true"
+      xmlns:n0="http://schemas.android.com/apk/res/android">
+        <objectAnimator n0:duration="@integer/m3_chip_anim_duration" n0:valueTo="@dimen/m3_chip_hovered_translation_z" n0:valueType="floatType" n0:propertyName="translationZ" />
+    </item>
+    <item n1:state_enabled="true"
+      xmlns:n1="http://schemas.android.com/apk/res/android">
+        <objectAnimator n1:duration="@integer/m3_chip_anim_duration" n1:valueTo="0" n1:valueType="floatType" n1:propertyName="translationZ" />
+    </item>
+    <item>
+        <objectAnimator n2:duration="0" n2:valueTo="@dimen/m3_chip_disabled_translation_z" n2:valueType="floatType" n2:propertyName="translationZ"
+          xmlns:n2="http://schemas.android.com/apk/res/android" />
+    </item>
+</selector>

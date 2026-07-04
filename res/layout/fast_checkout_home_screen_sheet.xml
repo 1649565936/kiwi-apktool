@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView n0:paddingLeft="@dimen/fast_checkout_sheet_padding_content" n0:paddingRight="@dimen/fast_checkout_sheet_padding_content" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginTop="18.0dp"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <LinearLayout n0:orientation="vertical" n0:focusable="true" n0:clickable="true" n0:layout_width="match_parent" n0:layout_height="wrap_content">
+        <ImageView n0:layout_gravity="center_horizontal" n0:layout_width="wrap_content" n0:layout_height="@dimen/fast_checkout_product_icon_height" n0:importantForAccessibility="no" n1:srcCompat="@drawable/fre_product_logo"
+          xmlns:n1="http://schemas.android.com/apk/res-auto" />
+        <LinearLayout n0:orientation="vertical" n0:focusable="true" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginTop="12.0dp">
+            <TextView n0:textAppearance="@style/TextAppearance.Headline" n0:gravity="center_horizontal" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:text="@string/fast_checkout_home_sheet_title" />
+            <TextView n0:textAppearance="@style/TextAppearance.TextMedium.Secondary" n0:gravity="center_horizontal" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:text="@string/fast_checkout_home_sheet_subtitle" />
+        </LinearLayout>
+        <LinearLayout n0:orientation="vertical" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginTop="16.0dp">
+            <LinearLayout n0:orientation="horizontal" n0:id="@id/selected_address_profile_view" n0:background="@drawable/fast_checkout_background_top" n0:paddingTop="@dimen/fast_checkout_home_sheet_address_card_padding" n0:paddingBottom="@dimen/fast_checkout_home_sheet_address_card_padding" n0:layout_width="match_parent" n0:layout_height="wrap_content">
+                <ImageView n0:background="@null" n0:layout_width="@dimen/fast_checkout_address_icon" n0:layout_height="@dimen/fast_checkout_address_icon" n0:importantForAccessibility="no" n0:layout_marginStart="@dimen/fast_checkout_address_icon_margin_horizontal" n0:layout_marginEnd="@dimen/fast_checkout_address_icon_margin_horizontal" n2:srcCompat="@drawable/gm_filled_location_on_24"
+                  xmlns:n2="http://schemas.android.com/apk/res-auto" />
+                <LinearLayout n0:orientation="vertical" n0:layout_width="0.0dp" n0:layout_height="wrap_content" n0:layout_weight="1.0">
+                    <TextView n0:textAppearance="@style/TextAppearance.TextMedium.Primary" n0:id="@id/fast_checkout_home_sheet_profile_name" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:textAlignment="viewStart" />
+                    <TextView n0:textAppearance="@style/TextAppearance.TextMedium.Primary" n0:id="@id/fast_checkout_home_sheet_profile_street" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:textAlignment="viewStart" />
+                    <LinearLayout n0:orientation="vertical" n0:id="@id/fast_checkout_home_sheet_profile_sub_section" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginTop="@dimen/fast_checkout_address_item_email_margin_top">
+                        <TextView n0:textAppearance="@style/TextAppearance.TextMedium.Primary" n0:id="@id/fast_checkout_home_sheet_profile_email" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:textAlignment="viewStart" />
+                        <TextView n0:textAppearance="@style/TextAppearance.TextMedium.Primary" n0:id="@id/fast_checkout_home_sheet_profile_phone_number" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:textAlignment="viewStart" />
+                    </LinearLayout>
+                </LinearLayout>
+                <ImageView n0:layout_gravity="center_vertical" n0:id="@id/fast_checkout_expand_icon_autofill_profile" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:contentDescription="@string/fast_checkout_home_sheet_expand_icon_autofill_profile_description" n0:layout_marginStart="@dimen/fast_checkout_home_sheet_expand_option_icon_margin_start" n0:layout_marginEnd="@dimen/fast_checkout_home_sheet_expand_option_icon_margin_end" n3:srcCompat="@drawable/ic_expand_more_horizontal_black_24dp" n3:tint="@color/default_icon_color_secondary_tint_list"
+                  xmlns:n3="http://schemas.android.com/apk/res-auto" />
+            </LinearLayout>
+            <View n0:layout_width="match_parent" n0:layout_height="2.0dp" />
+            <LinearLayout n0:gravity="center_vertical" n0:id="@id/selected_credit_card_view" n0:background="@drawable/fast_checkout_background_bottom" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:minHeight="@dimen/fast_checkout_sheet_home_screen_cc_min_height">
+                <ImageView n0:id="@id/fast_checkout_credit_card_icon" n0:layout_width="@dimen/fast_checkout_credit_card_icon_width" n0:layout_height="@dimen/fast_checkout_credit_card_icon_height" n0:importantForAccessibility="no" n0:layout_marginStart="@dimen/fast_checkout_credit_card_icon_margin_horizontal" n0:layout_marginEnd="@dimen/fast_checkout_credit_card_icon_margin_horizontal" n4:srcCompat="@drawable/mc_card"
+                  xmlns:n4="http://schemas.android.com/apk/res-auto" />
+                <LinearLayout n0:gravity="center_vertical" n0:orientation="horizontal" n0:layout_width="0.0dp" n0:layout_height="wrap_content" n0:layout_weight="1.0">
+                    <TextView n0:textAppearance="@style/TextAppearance.TextMedium.Primary" n0:id="@id/fast_checkout_sheet_selected_credit_card_header" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:textAlignment="viewStart" />
+                    <ImageView n0:id="@id/fast_checkout_gpay_icon" n0:paddingTop="@dimen/fast_checkout_google_pay_icon_margin_padding_top" n0:layout_width="@dimen/fast_checkout_google_pay_icon_width" n0:layout_height="@dimen/fast_checkout_google_pay_icon_height" n0:importantForAccessibility="no" n5:srcCompat="@drawable/google_pay"
+                      xmlns:n5="http://schemas.android.com/apk/res-auto" />
+                </LinearLayout>
+                <ImageView n0:id="@id/fast_checkout_expand_icon_credit_card" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:contentDescription="@string/fast_checkout_home_sheet_expand_icon_credit_card_description" n0:layout_marginStart="@dimen/fast_checkout_home_sheet_expand_option_icon_margin_start" n0:layout_marginEnd="@dimen/fast_checkout_home_sheet_expand_option_icon_margin_end" n6:srcCompat="@drawable/ic_expand_more_horizontal_black_24dp" n6:tint="@color/default_icon_color_secondary_tint_list"
+                  xmlns:n6="http://schemas.android.com/apk/res-auto" />
+            </LinearLayout>
+        </LinearLayout>
+        <org.chromium.ui.widget.ButtonCompat n0:ellipsize="end" n0:gravity="center" n0:id="@id/fast_checkout_button_accept" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginTop="@dimen/fast_checkout_home_sheet_items_spacing" n0:layout_marginBottom="@dimen/fast_checkout_home_sheet_action_button_bottom_margin" n0:text="@string/fast_checkout_home_sheet_accept" n0:singleLine="true" style="@style/FilledButton.Flat" />
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout n0:paddingTop="15.0dp" n0:paddingBottom="15.0dp" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:paddingStart="20.0dp" n0:paddingEnd="20.0dp"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <TextView n0:textColor="#33b5e5" n0:ellipsize="end" n0:id="@id/title" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:singleLine="true" n0:layout_centerVertical="true" n0:layout_toStartOf="@id/selected_color_view_border" style="?android:textAppearanceLarge" />
+    <FrameLayout n0:id="@id/selected_color_view_border" n0:background="@drawable/color_picker_border" n0:padding="2.0dp" n0:layout_width="40.0dp" n0:layout_height="40.0dp" n0:layout_alignParentEnd="true">
+        <View n0:id="@id/selected_color_view" n0:background="@android:color/black" n0:layout_width="match_parent" n0:layout_height="match_parent" />
+    </FrameLayout>
+</RelativeLayout>

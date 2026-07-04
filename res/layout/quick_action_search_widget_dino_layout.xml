@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout n0:orientation="vertical" n0:id="@id/dino_quick_action_area" n0:layout_width="match_parent" n0:layout_height="match_parent"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <LinearLayout n0:gravity="fill" n0:orientation="vertical" n0:id="@id/dino_quick_action_button" n0:background="@drawable/quick_action_search_widget_dino_background" n0:paddingTop="@dimen/quick_action_search_widget_dino_padding_vertical" n0:paddingBottom="@dimen/quick_action_search_widget_dino_padding_vertical" n0:layout_width="match_parent" n0:layout_height="match_parent" n0:paddingStart="@dimen/quick_action_search_widget_dino_padding_start">
+        <ImageView n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:src="@drawable/quick_action_search_widget_dino_content" n0:scaleType="fitCenter" n0:adjustViewBounds="true" n0:importantForAccessibility="no" />
+        <TextView n0:textAppearance="@style/TextAppearance.TextLarge.Primary.Baseline" n0:gravity="bottom" n0:id="@id/dino_quick_action_text" n0:layout_width="match_parent" n0:layout_height="0.0dp" n0:text="@string/dino_widget_text" n0:maxLines="1" n0:layout_weight="1.0" n0:textAlignment="viewStart" />
+    </LinearLayout>
+</FrameLayout>

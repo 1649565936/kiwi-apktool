@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen n0:title="@string/all_sites"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <org.chromium.components.browser_ui.settings.TextMessagePreference n0:key="info_text" />
+    <org.chromium.components.browser_ui.settings.ChromeSwitchPreference n0:key="binary_toggle" n0:defaultValue="true" />
+    <org.chromium.components.browser_ui.site_settings.TriStateSiteSettingsPreference n0:key="tri_state_toggle" />
+    <org.chromium.components.browser_ui.site_settings.FourStateCookieSettingsPreference n0:key="four_state_cookie_toggle" />
+    <org.chromium.components.browser_ui.site_settings.TriStateCookieSettingsPreference n0:key="tri_state_cookie_toggle" />
+    <org.chromium.components.browser_ui.settings.ChromeBaseCheckBoxPreference n0:persistent="false" n0:title="@string/website_settings_category_notifications_quiet" n0:key="notifications_quiet_ui" n0:defaultValue="false" />
+    <org.chromium.components.browser_ui.settings.ChromeBaseCheckBoxPreference n0:title="@string/enable_notifications_vibrate_title" n0:key="notifications_vibrate" n0:summary="@string/enable_notifications_vibrate_summary" n0:defaultValue="true" />
+    <org.chromium.components.browser_ui.settings.ChromeBaseCheckBoxPreference n0:persistent="false" n0:title="@string/enable_desktop_site_peripheral_title" n0:key="desktop_site_peripheral" n0:summary="@string/enable_desktop_site_peripheral_summary" n0:defaultValue="false" />
+    <org.chromium.components.browser_ui.settings.ChromeBaseCheckBoxPreference n0:persistent="false" n0:title="@string/enable_desktop_site_external_display_title" n0:key="desktop_site_display" n0:summary="@string/enable_desktop_site_external_display_summary" n0:defaultValue="false" />
+    <org.chromium.components.browser_ui.settings.LearnMorePreference n0:key="protected_content_learn_more" />
+    <org.chromium.components.browser_ui.settings.ExpandablePreferenceGroup n0:key="managed_group" />
+    <org.chromium.components.browser_ui.settings.ExpandablePreferenceGroup n0:key="blocked_group" />
+    <org.chromium.components.browser_ui.settings.ExpandablePreferenceGroup n0:key="allowed_group" />
+    <PreferenceCategory n0:title="@string/anti_abuse_when_on_header" n0:key="anti_abuse_when_on_header" />
+    <org.chromium.components.browser_ui.settings.TextMessagePreference n0:icon="@drawable/ic_archive" n0:key="anti_abuse_when_on_section_one" n0:summary="@string/anti_abuse_when_on_section_one" n1:allowDividerBelow="false"
+      xmlns:n1="http://schemas.android.com/apk/res-auto" />
+    <org.chromium.components.browser_ui.settings.TextMessagePreference n0:icon="@drawable/ic_dashboard" n0:key="anti_abuse_when_on_section_two" n0:summary="@string/anti_abuse_when_on_section_two" n2:allowDividerBelow="false"
+      xmlns:n2="http://schemas.android.com/apk/res-auto" />
+    <org.chromium.components.browser_ui.settings.TextMessagePreference n0:icon="@drawable/ic_timer" n0:key="anti_abuse_when_on_section_three" n0:summary="@string/anti_abuse_when_on_section_three" n3:allowDividerBelow="false"
+      xmlns:n3="http://schemas.android.com/apk/res-auto" />
+    <PreferenceCategory n0:title="@string/anti_abuse_things_to_consider_header" n0:key="anti_abuse_things_to_consider_header" />
+    <org.chromium.components.browser_ui.settings.TextMessagePreference n0:icon="@drawable/ic_background_replace" n0:key="anti_abuse_things_to_consider_section_one" n0:summary="@string/anti_abuse_things_to_consider_section_one" n4:allowDividerBelow="false"
+      xmlns:n4="http://schemas.android.com/apk/res-auto" />
+</PreferenceScreen>

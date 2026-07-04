@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout n0:orientation="vertical" n0:layout_width="match_parent" n0:layout_height="wrap_content"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <ScrollView n0:orientation="vertical" n0:id="@id/restore_tabs_promo_sheet_scrollview" n0:scrollbars="none" n0:layout_width="match_parent" n0:layout_height="wrap_content">
+        <LinearLayout n0:orientation="vertical" n0:paddingLeft="@dimen/restore_tabs_sheet_padding" n0:paddingRight="@dimen/restore_tabs_sheet_padding" n0:focusable="true" n0:clickable="true" n0:layout_width="match_parent" n0:layout_height="wrap_content">
+            <ImageView n0:layout_gravity="center_horizontal" n0:layout_width="wrap_content" n0:layout_height="@dimen/restore_tabs_fre_logo_height" n0:layout_marginTop="24.0dp" n0:importantForAccessibility="no" n1:srcCompat="@drawable/restore_tabs_fre_logo"
+              xmlns:n1="http://schemas.android.com/apk/res-auto" />
+            <LinearLayout n0:orientation="vertical" n0:focusable="true" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginTop="24.0dp" n0:accessibilityHeading="true">
+                <TextView n0:textAppearance="@style/TextAppearance.Headline" n0:gravity="center_horizontal" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:text="@string/restore_tabs_promo_sheet_title" />
+                <TextView n0:textAppearance="@style/TextAppearance.TextMedium.Secondary" n0:gravity="center_horizontal" n0:id="@id/restore_tabs_promo_sheet_subtitle" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginTop="4.0dp" />
+            </LinearLayout>
+            <LinearLayout n0:orientation="horizontal" n0:id="@id/restore_tabs_selected_device_view" n0:background="@drawable/restore_tabs_single_item_background" n0:paddingTop="@dimen/restore_tabs_promo_sheet_device_card_padding" n0:paddingBottom="@dimen/restore_tabs_promo_sheet_device_card_padding" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginTop="24.0dp" n0:layout_marginBottom="8.0dp">
+                <ImageView n0:layout_gravity="center_vertical" n0:id="@id/restore_tabs_promo_sheet_device_icon" n0:background="@null" n0:layout_width="@dimen/restore_tabs_device_icon" n0:layout_height="@dimen/restore_tabs_device_icon" n0:importantForAccessibility="no" n0:layout_marginStart="@dimen/restore_tabs_device_icon_margin_horizontal" n0:layout_marginEnd="@dimen/restore_tabs_device_icon_margin_horizontal" n2:tint="?colorOnSurface"
+                  xmlns:n2="http://schemas.android.com/apk/res-auto" />
+                <LinearLayout n0:orientation="vertical" n0:layout_width="0.0dp" n0:layout_height="wrap_content" n0:layout_weight="1.0">
+                    <TextView n0:textAppearance="@style/TextAppearance.TextMedium.Primary" n0:id="@id/restore_tabs_promo_sheet_device_name" n0:focusable="false" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:textAlignment="viewStart" />
+                    <TextView n0:textAppearance="@style/TextAppearance.TextSmall.Secondary" n0:id="@id/restore_tabs_promo_sheet_session_info" n0:focusable="false" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:textAlignment="viewStart" />
+                </LinearLayout>
+                <ImageView n0:layout_gravity="center_vertical" n0:id="@id/restore_tabs_expand_icon_device_selection" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:contentDescription="@string/restore_tabs_promo_sheet_expand_icon_device_info_description" n0:layout_marginStart="@dimen/restore_tabs_promo_sheet_expand_option_icon_margin_start" n0:layout_marginEnd="@dimen/restore_tabs_promo_sheet_expand_option_icon_margin_end" n3:tint="@color/default_icon_color_secondary_tint_list"
+                  xmlns:n3="http://schemas.android.com/apk/res-auto" />
+            </LinearLayout>
+            <org.chromium.ui.widget.ButtonCompat n0:ellipsize="end" n0:gravity="center" n0:id="@id/restore_tabs_button_open_tabs" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginTop="8.0dp" n0:singleLine="true" style="@style/FilledButton.Flat" />
+            <org.chromium.ui.widget.ButtonCompat n0:ellipsize="end" n0:gravity="center" n0:id="@id/restore_tabs_button_review_tabs" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginTop="4.0dp" n0:layout_marginBottom="@dimen/restore_tabs_bottom_sheet_padding" n0:text="@string/restore_tabs_promo_sheet_review_tabs" n0:singleLine="true" style="@style/TextButton" />
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

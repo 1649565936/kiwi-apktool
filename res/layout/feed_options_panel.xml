@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<org.chromium.chrome.browser.feed.sort_ui.FeedOptionsView n0:orientation="vertical" n0:id="@id/options_content" n0:background="?colorSurface" n0:paddingLeft="@dimen/ntp_header_lateral_paddings_v2" n0:paddingTop="@dimen/feed_options_vertical_margins" n0:paddingRight="@dimen/ntp_header_lateral_paddings_v2" n0:paddingBottom="@dimen/feed_options_vertical_margins" n0:focusable="true" n0:visibility="gone" n0:clickable="true" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginBottom="@dimen/feed_options_vertical_margins" n0:paddingHorizontal="@dimen/ntp_header_lateral_paddings_v2" n0:paddingVertical="@dimen/feed_options_vertical_margins"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <TextView n0:paddingTop="@dimen/feed_options_vertical_margins" n0:paddingBottom="@dimen/feed_options_vertical_margins" n0:focusableInTouchMode="true" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:text="@string/sort_by" n0:paddingVertical="@dimen/feed_options_vertical_margins" style="@style/TextAppearance.TextAccentMediumThick.Secondary" />
+    <LinearLayout n0:orientation="horizontal" n0:id="@id/chips_container" n0:layout_width="match_parent" n0:layout_height="wrap_content" />
+</org.chromium.chrome.browser.feed.sort_ui.FeedOptionsView>

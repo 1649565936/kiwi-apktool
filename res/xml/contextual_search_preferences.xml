@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen>
+    <org.chromium.components.browser_ui.settings.ChromeSwitchPreference n0:key="contextual_search_switch" n0:summaryOn="@string/text_on" n0:summaryOff="@string/text_off"
+      xmlns:n0="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.ChromeSwitchPreference n1:title="@string/contextual_search_see_better_results_title" n1:key="see_better_results_switch" n1:summary="@string/contextual_search_see_better_results_summary"
+      xmlns:n1="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.TextMessagePreference n2:title="@string/contextual_search_description" n2:key="contextual_search_description" n3:allowDividerBelow="false"
+      xmlns:n2="http://schemas.android.com/apk/res/android" xmlns:n3="http://schemas.android.com/apk/res-auto" />
+</PreferenceScreen>

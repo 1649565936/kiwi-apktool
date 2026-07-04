@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout n0:orientation="vertical" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:paddingStart="@dimen/infobar_padding" n0:paddingEnd="@dimen/infobar_padding"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <View n0:background="?colorSurfaceVariant" n0:layout_width="match_parent" style="@style/HorizontalDivider" />
+    <LinearLayout n0:orientation="horizontal" n0:paddingTop="@dimen/infobar_small_icon_margin" n0:paddingBottom="@dimen/infobar_small_icon_margin" n0:layout_width="match_parent" n0:layout_height="wrap_content">
+        <org.chromium.components.browser_ui.widget.RoundedCornerImageView n0:id="@id/infobar_footer_profile_pic" n0:layout_width="wrap_content" n0:layout_height="wrap_content" />
+        <TextView n0:textAppearance="@style/TextAppearance.TextMedium.Secondary" n0:ellipsize="middle" n0:id="@id/infobar_footer_email" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:singleLine="true" n0:paddingStart="@dimen/infobar_small_icon_margin" />
+    </LinearLayout>
+</LinearLayout>

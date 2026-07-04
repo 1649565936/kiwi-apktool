@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView n0:layout_width="match_parent" n0:layout_height="match_parent"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <RelativeLayout n0:focusable="true" n0:focusableInTouchMode="true" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:importantForAccessibility="no" n0:textDirection="locale">
+        <org.chromium.ui.widget.ChromeImageButton n0:id="@id/edit_button" n0:background="?selectableItemBackground" n0:padding="@dimen/address_prompt_edit_button_padding" n0:layout_width="@dimen/address_prompt_edit_button_size" n0:layout_height="@dimen/address_prompt_edit_button_size" n0:scaleType="fitCenter" n0:contentDescription="@string/autofill_save_address_prompt_edit_button_tooltip" n0:layout_marginEnd="@dimen/address_prompt_end_margin" n0:layout_alignParentEnd="true" n1:srcCompat="@drawable/edit_icon" n1:tint="@color/default_icon_color_tint_list"
+          xmlns:n1="http://schemas.android.com/apk/res-auto" />
+        <LinearLayout n0:orientation="vertical" n0:id="@id/address_data" n0:paddingTop="@dimen/dialog_padding_top" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:paddingStart="@dimen/dialog_padding_sides" n0:layout_toStartOf="@id/edit_button">
+            <org.chromium.ui.widget.TextViewWithLeading n0:textAppearance="@style/TextAppearance.TextLarge.Secondary" n0:id="@id/address" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginBottom="12.0dp" n2:leading="@dimen/text_size_large_leading"
+              xmlns:n2="http://schemas.android.com/apk/res-auto" />
+            <TextView n0:textAppearance="@style/TextAppearance.TextLarge.Secondary" n0:id="@id/email" n0:layout_width="match_parent" n0:layout_height="wrap_content" />
+            <TextView n0:textAppearance="@style/TextAppearance.TextLarge.Secondary" n0:id="@id/phone" n0:layout_width="match_parent" n0:layout_height="wrap_content" />
+        </LinearLayout>
+        <com.google.android.material.textfield.TextInputLayout n0:id="@id/nickname_input_layout" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginTop="12.0dp" n0:layout_marginBottom="6.0dp" n0:hint="Add a label" n0:layout_below="@id/address_data" n0:paddingStart="0.0dp" n0:paddingEnd="0.0dp" n0:layout_marginStart="21.0dp" n0:layout_marginEnd="21.0dp" n3:placeholderText="Home, Work, etc." n3:placeholderTextAppearance="@style/TextAppearance.TextMedium.Secondary"
+          xmlns:n3="http://schemas.android.com/apk/res-auto">
+            <com.google.android.material.textfield.TextInputEditText n0:textAppearance="@style/TextAppearance.TextLarge.Secondary" n0:id="@id/nickname_input" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:minHeight="48.0dp" n0:singleLine="true" n0:imeOptions="flagNoExtractUi" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <TextView n0:textAppearance="@style/TextAppearance.TextMedium.Secondary" n0:id="@id/autofill_address_profile_prompt_source_notice" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginTop="20.0dp" n0:layout_below="@id/nickname_input_layout" n0:layout_marginStart="@dimen/dialog_padding_sides" n0:layout_marginEnd="@dimen/address_prompt_end_margin" n0:breakStrategy="balanced" />
+    </RelativeLayout>
+</ScrollView>

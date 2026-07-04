@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout n0:gravity="start" n0:orientation="vertical" style="@style/AlertDialogContent"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <TextView n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:layout_marginBottom="16.0dp" n0:text="@string/quick_delete_dialog_description" />
+    <org.chromium.components.browser_ui.widget.text.TextViewWithCompoundDrawables n0:textAppearance="@style/TextAppearance.TextMedium.Secondary" n0:gravity="center_vertical" n0:paddingBottom="24.0dp" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:text="@string/clear_history_title" n0:drawablePadding="12.0dp" n0:drawableStart="@drawable/ic_history_24dp" n0:textDirection="locale" n1:chromeDrawableTint="?colorOnSurface"
+      xmlns:n1="http://schemas.android.com/apk/res-auto" />
+    <org.chromium.components.browser_ui.widget.text.TextViewWithCompoundDrawables n0:textAppearance="@style/TextAppearance.TextMedium.Secondary" n0:gravity="center_vertical" n0:id="@id/quick_delete_tabs_close_row" n0:paddingBottom="24.0dp" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:drawablePadding="12.0dp" n0:drawableStart="@drawable/quick_delete_dialog_tab_icon_24dp" n0:textDirection="locale" n2:chromeDrawableTint="?colorOnSurface"
+      xmlns:n2="http://schemas.android.com/apk/res-auto" />
+    <org.chromium.components.browser_ui.widget.text.TextViewWithCompoundDrawables n0:textAppearance="@style/TextAppearance.TextMedium.Secondary" n0:gravity="center_vertical" n0:paddingBottom="24.0dp" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:text="@string/quick_delete_dialog_cookies_cache_and_other_site_data_text" n0:drawablePadding="12.0dp" n0:drawableStart="@drawable/quick_delete_cookies_24dp" n0:textDirection="locale" n3:chromeDrawableTint="?colorOnSurface"
+      xmlns:n3="http://schemas.android.com/apk/res-auto" />
+    <org.chromium.ui.widget.TextViewWithClickableSpans n0:id="@id/search_history_disambiguation" n0:visibility="gone" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginBottom="16.0dp" />
+</LinearLayout>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<org.chromium.chrome.browser.tab.SadTabView n0:scrollbarStyle="outsideOverlay" n0:background="@color/modern_grey_100" n0:layout_width="match_parent" n0:layout_height="match_parent" n0:fillViewport="true"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <LinearLayout n0:gravity="center" n0:layout_gravity="center_horizontal" n0:orientation="vertical" n0:paddingTop="24.0dp" n0:paddingBottom="24.0dp" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:paddingStart="24.0dp" n0:paddingEnd="24.0dp">
+        <ImageView n0:layout_gravity="start" n0:id="@id/sad_tab_image" n0:paddingBottom="26.0dp" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:src="@drawable/sad_tab" />
+        <org.chromium.ui.widget.TextViewWithLeading n0:textAppearance="@style/TextAppearance.Headline.Primary" n0:layout_gravity="start" n0:id="@id/sad_tab_title" n0:paddingBottom="16.0dp" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n1:leading="@dimen/text_size_large_leading"
+          xmlns:n1="http://schemas.android.com/apk/res-auto" />
+        <TextView n0:id="@id/sad_tab_suggestions_title" n0:visibility="gone" n0:layout_width="wrap_content" n0:layout_height="wrap_content" style="@style/SadTabBodyText" />
+        <TextView n0:id="@id/sad_tab_suggestions" n0:visibility="gone" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:paddingStart="16.0dp" style="@style/SadTabBodyText" />
+        <org.chromium.ui.widget.TextViewWithClickableSpans n0:id="@id/sad_tab_message" n0:paddingBottom="22.0dp" n0:layout_width="wrap_content" n0:layout_height="wrap_content" style="@style/SadTabBodyText" />
+        <org.chromium.ui.widget.ButtonCompat n0:layout_gravity="end" n0:id="@id/sad_tab_button" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:minWidth="222.0dp" style="@style/FilledButton" />
+    </LinearLayout>
+</org.chromium.chrome.browser.tab.SadTabView>

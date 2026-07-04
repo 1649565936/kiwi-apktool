@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector n0:height="96.0dp" n0:width="96.0dp" n0:viewportWidth="100.0" n0:viewportHeight="100.0"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <group n0:name="gradientGroup" n0:translateY="0.0">
+        <path n0:name="gradientPath" n0:fillColor="@drawable/$$quick_delete_animation__0__0" n0:pathData="M1,1 H99 V99 H1Z" />
+    </group>
+</vector>

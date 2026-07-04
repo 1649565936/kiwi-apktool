@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<appwidget-provider n0:minWidth="@dimen/quick_action_search_widget_width" n0:minHeight="@dimen/quick_action_search_widget_xsmall_height" n0:initialLayout="@layout/quick_action_search_widget_small_layout" n0:previewImage="@drawable/quick_action_search_widget_small_preview" n0:resizeMode="horizontal|vertical" n0:minResizeWidth="@dimen/quick_action_search_widget_width" n0:minResizeHeight="@dimen/quick_action_search_widget_xsmall_height" n0:widgetCategory="home_screen|searchbox" n0:previewLayout="@layout/quick_action_search_widget_small_preview_layout"
+  xmlns:n0="http://schemas.android.com/apk/res/android" />

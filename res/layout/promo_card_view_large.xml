@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<org.chromium.components.browser_ui.widget.promo.PromoCardView n0:layout_width="match_parent" n0:layout_height="wrap_content" style="@style/MaterialCardStyle"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <LinearLayout n0:gravity="center_horizontal" n0:orientation="vertical" n0:paddingTop="@dimen/promo_large_padding_vertical" n0:paddingBottom="@dimen/promo_large_padding_vertical" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:paddingVertical="@dimen/promo_large_padding_vertical">
+        <ImageView n0:layout_gravity="center" n0:id="@id/promo_image" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginBottom="@dimen/promo_large_illustration_margin_bottom" n0:scaleType="fitCenter" n0:adjustViewBounds="true" n0:importantForAccessibility="no" />
+        <LinearLayout n0:orientation="vertical" n0:paddingLeft="@dimen/promo_large_padding_horizontal" n0:paddingRight="@dimen/promo_large_padding_horizontal" n0:layout_width="match_parent" n0:layout_height="match_parent" n0:paddingHorizontal="@dimen/promo_large_padding_horizontal">
+            <org.chromium.ui.widget.TextViewWithLeading n0:textAppearance="@style/TextAppearance.TextLarge.Primary" n0:gravity="center" n0:id="@id/promo_title" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginBottom="@dimen/promo_between_text_margin" n1:leading="@dimen/text_size_large_leading"
+              xmlns:n1="http://schemas.android.com/apk/res-auto" />
+            <org.chromium.ui.widget.TextViewWithLeading n0:textAppearance="@style/TextAppearance.TextSmall.Secondary" n0:gravity="center" n0:id="@id/promo_description" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginBottom="@dimen/promo_large_text_group_bottom_margin" n2:leading="@dimen/text_size_small_leading"
+              xmlns:n2="http://schemas.android.com/apk/res-auto" />
+            <org.chromium.ui.widget.ButtonCompat n0:ellipsize="end" n0:id="@id/promo_primary_button" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:singleLine="true" style="@style/FilledButton.Flat" />
+            <org.chromium.ui.widget.ButtonCompat n0:ellipsize="end" n0:id="@id/promo_secondary_button" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:singleLine="true" style="@style/TextButton" />
+        </LinearLayout>
+    </LinearLayout>
+</org.chromium.components.browser_ui.widget.promo.PromoCardView>

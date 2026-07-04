@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<org.chromium.components.browser_ui.widget.SurfaceColorDrawable n0:shape="rectangle" n1:surfaceElevation="@dimen/default_elevation_1"
+  xmlns:n0="http://schemas.android.com/apk/res/android" xmlns:n1="http://schemas.android.com/apk/res-auto">
+    <corners n0:radius="@dimen/card_rounded_corner_radius" />
+    <padding n0:left="16.0dp" n0:top="10.0dp" n0:right="16.0dp" n0:bottom="10.0dp" />
+</org.chromium.components.browser_ui.widget.SurfaceColorDrawable>

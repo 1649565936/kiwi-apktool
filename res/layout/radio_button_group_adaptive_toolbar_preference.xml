@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout n0:orientation="vertical" n0:focusable="false" n0:layout_width="match_parent" n0:layout_height="wrap_content"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <org.chromium.components.browser_ui.widget.RadioButtonWithDescriptionLayout n0:id="@id/adaptive_radio_group" n0:layout_width="match_parent" n0:layout_height="match_parent">
+        <org.chromium.components.browser_ui.widget.RadioButtonWithDescription n0:id="@id/adaptive_option_based_on_usage" n0:paddingTop="10.0dp" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:minHeight="@dimen/min_touch_target_size" n1:iconSrc="@drawable/ic_auto_awesome" n1:primaryText="@string/adaptive_toolbar_button_preference_based_on_your_usage"
+          xmlns:n1="http://schemas.android.com/apk/res-auto" />
+        <org.chromium.components.browser_ui.widget.RadioButtonWithDescription n0:id="@id/adaptive_option_new_tab" n0:paddingTop="10.0dp" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:minHeight="@dimen/min_touch_target_size" n2:iconSrc="@drawable/new_tab_icon" n2:primaryText="@string/adaptive_toolbar_button_preference_new_tab"
+          xmlns:n2="http://schemas.android.com/apk/res-auto" />
+        <org.chromium.components.browser_ui.widget.RadioButtonWithDescription n0:id="@id/adaptive_option_share" n0:paddingTop="10.0dp" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:minHeight="@dimen/min_touch_target_size" n3:iconSrc="@drawable/ic_share_white_24dp" n3:primaryText="@string/adaptive_toolbar_button_preference_share"
+          xmlns:n3="http://schemas.android.com/apk/res-auto" />
+        <org.chromium.components.browser_ui.widget.RadioButtonWithDescription n0:id="@id/adaptive_option_voice_search" n0:paddingTop="10.0dp" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:minHeight="@dimen/min_touch_target_size" n4:iconSrc="@drawable/btn_mic" n4:primaryText="@string/adaptive_toolbar_button_preference_voice_search"
+          xmlns:n4="http://schemas.android.com/apk/res-auto" />
+        <org.chromium.components.browser_ui.widget.RadioButtonWithDescription n0:id="@id/adaptive_option_translate" n0:paddingTop="10.0dp" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:minHeight="@dimen/min_touch_target_size" n5:iconSrc="@drawable/ic_translate" n5:primaryText="@string/adaptive_toolbar_button_preference_translate"
+          xmlns:n5="http://schemas.android.com/apk/res-auto" />
+        <org.chromium.components.browser_ui.widget.RadioButtonWithDescription n0:id="@id/adaptive_option_add_to_bookmarks" n0:paddingTop="10.0dp" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:minHeight="@dimen/min_touch_target_size" n6:iconSrc="@drawable/btn_star" n6:primaryText="@string/adaptive_toolbar_button_preference_add_to_bookmarks"
+          xmlns:n6="http://schemas.android.com/apk/res-auto" />
+        <org.chromium.components.browser_ui.widget.RadioButtonWithDescription n0:id="@id/adaptive_option_extensions" n0:paddingTop="10.0dp" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:minHeight="@dimen/min_touch_target_size" n7:iconSrc="@drawable/ic_extensions" n7:primaryText="@string/main_menu_extensions"
+          xmlns:n7="http://schemas.android.com/apk/res-auto" />
+        <org.chromium.components.browser_ui.widget.RadioButtonWithDescription n0:id="@id/adaptive_option_hand" n0:paddingTop="10.0dp" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:minHeight="@dimen/min_touch_target_size" n8:iconSrc="@drawable/btn_hand" n8:primaryText="@string/adaptive_toolbar_button_preference_hand"
+          xmlns:n8="http://schemas.android.com/apk/res-auto" />
+    </org.chromium.components.browser_ui.widget.RadioButtonWithDescriptionLayout>
+    <LinearLayout n0:orientation="vertical" n0:id="@id/custom_script_layout" n0:layout_width="match_parent" n0:layout_height="wrap_content">
+        <androidx.recyclerview.widget.RecyclerView n0:id="@id/script_list" n0:layout_width="match_parent" n0:layout_height="wrap_content" />
+        <Button n0:id="@id/create_button" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginLeft="8.0dp" n0:layout_marginTop="16.0dp" n0:layout_marginRight="8.0dp" n0:text="@string/custom_script_create_script" />
+    </LinearLayout>
+</LinearLayout>

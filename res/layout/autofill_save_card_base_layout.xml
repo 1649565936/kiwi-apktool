@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout n0:orientation="vertical" n0:paddingTop="16.0dp" n0:focusable="true" n0:focusableInTouchMode="true" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginTop="6.0dp" n0:layout_marginBottom="32.0dp" n0:minHeight="36.0dp" style="@style/AlertDialogContent"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <TextView n0:textAppearance="@style/TextAppearance.TextMedium.Secondary" n0:id="@id/description" n0:visibility="gone" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginBottom="24.0dp" n0:inputType="textMultiLine" />
+    <include layout="@layout/autofill_cc_details" />
+    <ViewStub n0:id="@id/autofill_save_card_content_stub" n0:inflatedId="@id/autofill_save_card_content" n0:layout_width="match_parent" n0:layout_height="wrap_content" />
+    <TextView n0:textAppearance="@style/TextAppearance.AutofillCardErrorMessage" n0:gravity="start" n0:id="@id/error_message" n0:visibility="gone" n0:layout_width="match_parent" n0:layout_height="wrap_content" />
+    <TextView n0:textAppearance="@style/TextAppearance.TextMedium.Secondary" n0:id="@id/legal_message" n0:visibility="gone" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginTop="10.0dp" n0:inputType="textMultiLine" />
+</LinearLayout>

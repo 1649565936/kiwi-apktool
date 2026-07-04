@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-selector>
+    <item n0:state_checked="true" n0:id="@id/checked" n0:drawable="@drawable/btn_checkbox_checked_mtrl"
+      xmlns:n0="http://schemas.android.com/apk/res/android" />
+    <item n1:id="@id/unchecked" n1:drawable="@drawable/btn_checkbox_unchecked_mtrl"
+      xmlns:n1="http://schemas.android.com/apk/res/android" />
+    <transition n2:drawable="@drawable/btn_checkbox_unchecked_to_checked_mtrl_animation" n2:toId="@id/checked" n2:fromId="@id/unchecked"
+      xmlns:n2="http://schemas.android.com/apk/res/android" />
+    <transition n3:drawable="@drawable/btn_checkbox_checked_to_unchecked_mtrl_animation" n3:toId="@id/unchecked" n3:fromId="@id/checked"
+      xmlns:n3="http://schemas.android.com/apk/res/android" />
+</animated-selector>

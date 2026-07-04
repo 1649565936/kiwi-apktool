@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView n0:id="@id/msbb_view" n0:layout_width="match_parent" n0:layout_height="match_parent"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <LinearLayout n0:gravity="center_horizontal" n0:orientation="vertical" n0:id="@id/msbb_main_layout" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:animateLayoutChanges="true">
+        <ImageView n0:id="@id/image" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginLeft="@dimen/standard_illustration_marginHorizontal" n0:layout_marginRight="@dimen/standard_illustration_marginHorizontal" n0:src="@drawable/privacy_guide_msbb_image" n0:adjustViewBounds="true" n0:maxHeight="@dimen/illustration_maxHeight" n0:importantForAccessibility="no" n0:layout_marginHorizontal="@dimen/standard_illustration_marginHorizontal" />
+        <com.google.android.material.switchmaterial.SwitchMaterial n0:textAppearance="@style/TextAppearance.TextLarge.Primary" n0:id="@id/msbb_switch" n0:background="@null" n0:paddingLeft="@dimen/all_content_marginHorizontal" n0:paddingRight="@dimen/all_content_marginHorizontal" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:foreground="?selectableItemBackground" n0:text="@string/url_keyed_anonymized_data_title" n0:showText="false" n0:paddingHorizontal="@dimen/all_content_marginHorizontal" />
+        <LinearLayout n0:orientation="vertical" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginLeft="@dimen/all_content_marginHorizontal" n0:layout_marginRight="@dimen/all_content_marginHorizontal" n0:layout_marginHorizontal="@dimen/all_content_marginHorizontal">
+            <org.chromium.chrome.browser.privacy_guide.PrivacyGuideExplanationHeading n0:layout_width="match_parent" n0:layout_height="wrap_content" n1:titleText="@string/privacy_guide_when_on"
+              xmlns:n1="http://schemas.android.com/apk/res-auto" />
+            <org.chromium.chrome.browser.privacy_guide.PrivacyGuideExplanationItem n0:layout_width="match_parent" n0:layout_height="wrap_content" n2:iconImage="@drawable/ic_flash_on_24dp" n2:summaryText="@string/privacy_guide_msbb_item_one"
+              xmlns:n2="http://schemas.android.com/apk/res-auto" />
+            <org.chromium.chrome.browser.privacy_guide.PrivacyGuideExplanationItem n0:layout_width="match_parent" n0:layout_height="wrap_content" n3:iconImage="@drawable/ic_lightbulb_24dp" n3:summaryText="@string/privacy_guide_msbb_item_two"
+              xmlns:n3="http://schemas.android.com/apk/res-auto" />
+            <org.chromium.chrome.browser.privacy_guide.PrivacyGuideExplanationHeading n0:layout_width="match_parent" n0:layout_height="wrap_content" n4:titleText="@string/privacy_guide_things_to_consider"
+              xmlns:n4="http://schemas.android.com/apk/res-auto" />
+            <org.chromium.chrome.browser.privacy_guide.PrivacyGuideExplanationItem n0:layout_width="match_parent" n0:layout_height="wrap_content" n5:iconImage="@drawable/ic_link_24dp" n5:summaryText="@string/privacy_guide_msbb_item_three"
+              xmlns:n5="http://schemas.android.com/apk/res-auto" />
+            <org.chromium.chrome.browser.privacy_guide.PrivacyGuideExplanationItem n0:layout_width="match_parent" n0:layout_height="wrap_content" n6:iconImage="@drawable/ic_bar_chart_24dp" n6:summaryText="@string/privacy_guide_msbb_item_four"
+              xmlns:n6="http://schemas.android.com/apk/res-auto" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

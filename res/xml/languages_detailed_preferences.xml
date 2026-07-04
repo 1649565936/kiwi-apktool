@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen>
+    <PreferenceCategory n0:key="app_language_section" n0:order="1"
+      xmlns:n0="http://schemas.android.com/apk/res/android">
+        <org.chromium.chrome.browser.language.settings.LanguageItemPickerPreference n0:key="app_language_preference" />
+    </PreferenceCategory>
+    <PreferenceCategory n1:title="@string/languages_content_title" n1:key="content_languages_section" n1:order="2" n2:allowDividerAbove="true"
+      xmlns:n1="http://schemas.android.com/apk/res/android" xmlns:n2="http://schemas.android.com/apk/res-auto">
+        <org.chromium.chrome.browser.language.settings.ContentLanguagesPreference n1:layout="@layout/languages_preference" n1:key="content_languages_preference" n1:widgetLayout="@layout/accept_languages_list" />
+    </PreferenceCategory>
+    <PreferenceCategory n3:title="@string/languages_settings_translation_title" n3:key="translation_settings_section" n3:order="3" n4:allowDividerAbove="true" n4:allowDividerBelow="false"
+      xmlns:n3="http://schemas.android.com/apk/res/android" xmlns:n4="http://schemas.android.com/apk/res-auto">
+        <org.chromium.components.browser_ui.settings.ChromeSwitchPreference n3:key="translate_switch" n3:summaryOn="@string/languages_send_translate_switch" n3:summaryOff="@string/languages_send_translate_switch" n4:allowDividerAbove="false" n4:allowDividerBelow="true" />
+        <PreferenceCategory n3:layout="@layout/preference_category_no_title_or_padding" n3:key="translation_advanced_settings_section" n4:allowDividerAbove="true" n4:allowDividerBelow="false" n4:initialExpandedChildrenCount="0">
+            <org.chromium.chrome.browser.language.settings.LanguageItemPickerPreference n3:title="@string/languages_settings_target" n3:key="translate_settings_target_language" n4:allowDividerAbove="false" n4:allowDividerBelow="false" />
+            <org.chromium.chrome.browser.language.settings.LanguageItemListPreference n3:title="@string/languages_settings_automatic" n3:key="translate_settings_always_languages" n4:allowDividerAbove="false" n4:allowDividerBelow="false" />
+            <org.chromium.chrome.browser.language.settings.LanguageItemListPreference n3:title="@string/languages_settings_dont_offer_langs" n3:key="translate_settings_never_languages" n4:allowDividerAbove="false" n4:allowDividerBelow="false" />
+        </PreferenceCategory>
+    </PreferenceCategory>
+</PreferenceScreen>

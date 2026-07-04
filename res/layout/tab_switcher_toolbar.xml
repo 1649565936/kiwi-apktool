@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<org.chromium.chrome.browser.toolbar.top.TabSwitcherModeTopToolbar n0:id="@id/tab_switcher_toolbar" n0:focusable="true" n0:clickable="true" n0:layout_width="match_parent" n0:layout_height="@dimen/toolbar_height_no_shadow"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <LinearLayout n0:orientation="horizontal" n0:id="@id/new_tab_view" n0:background="?selectableItemBackground" n0:visibility="gone" n0:layout_width="wrap_content" n0:layout_height="match_parent">
+        <ImageView n0:layout_gravity="start|top" n0:id="@id/new_tab_view_button" n0:duplicateParentState="true" n0:layout_width="wrap_content" n0:layout_height="56.0dp" n0:scaleType="center" n0:contentDescription="@string/accessibility_toolbar_btn_new_tab" n0:paddingStart="16.0dp" n0:paddingEnd="16.0dp" n1:srcCompat="@drawable/new_tab_icon" n1:tint="?colorOnSurface"
+          xmlns:n1="http://schemas.android.com/apk/res-auto" />
+        <TextView n0:textAppearance="@style/TextAppearance.TextMediumThick.Primary" n0:gravity="center_vertical" n0:id="@id/new_tab_view_desc" n0:duplicateParentState="true" n0:layout_width="wrap_content" n0:layout_height="match_parent" n0:text="@string/button_new_tab" n0:paddingEnd="16.0dp" />
+    </LinearLayout>
+    <org.chromium.chrome.browser.toolbar.NewTabButton n0:layout_gravity="start|top" n0:id="@id/new_tab_button" n0:layout_width="wrap_content" n0:contentDescription="@string/accessibility_toolbar_btn_new_tab" n0:paddingStart="16.0dp" n0:paddingEnd="16.0dp" style="@style/ToolbarButton" />
+    <ImageView n0:layout_gravity="center" n0:id="@id/logo" n0:visibility="gone" n0:layout_width="wrap_content" n0:layout_height="32.0dp" n0:scaleType="centerInside" n0:contentDescription="@null" n2:srcCompat="@drawable/google_logo"
+      xmlns:n2="http://schemas.android.com/apk/res-auto" />
+    <ViewStub n0:layout_gravity="center" n0:id="@id/incognito_tabs_stub" n0:layout="@layout/incognito_toggle_tabs" n0:inflatedId="@id/incognito_toggle_tabs" n0:layout_width="wrap_content" n0:layout_height="match_parent" n0:layout_marginBottom="4.0dp" />
+    <LinearLayout n0:layout_gravity="end|center" n0:orientation="horizontal" n0:id="@id/tab_switcher_switches_and_menu" n0:layout_width="wrap_content" n0:layout_height="match_parent">
+        <Switch n0:layout_gravity="center" n0:id="@id/incognito_switch" n0:visibility="gone" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:thumb="@drawable/incognito_switch" n0:track="@drawable/incognito_switch_track" n0:paddingStart="16.0dp" n0:paddingEnd="16.0dp" />
+        <include layout="@layout/menu_button" />
+    </LinearLayout>
+</org.chromium.chrome.browser.toolbar.top.TabSwitcherModeTopToolbar>

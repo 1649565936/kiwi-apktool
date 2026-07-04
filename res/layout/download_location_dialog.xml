@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<org.chromium.chrome.browser.download.dialogs.DownloadLocationCustomView n0:layout_width="match_parent" n0:layout_height="wrap_content"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <LinearLayout n0:orientation="vertical" n0:layout_width="match_parent" n0:layout_height="wrap_content" style="@style/AlertDialogContent">
+        <TextView n0:textAppearance="@style/TextAppearance.DownloadDialogTitle" n0:id="@id/title" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginBottom="@dimen/download_dialog_title_margin_bottom" />
+        <TextView n0:textAppearance="@style/TextAppearance.TextMedium.Secondary" n0:id="@id/subtitle" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginBottom="@dimen/download_dialog_subtitle_margin_bottom" />
+        <TextView n0:textAppearance="@style/TextAppearance.TextMedium.Secondary" n0:id="@id/incognito_warning" n0:visibility="gone" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginBottom="@dimen/download_dialog_subtitle_margin_bottom" n0:text="@string/download_location_incognito_warning" />
+        <LinearLayout n0:orientation="vertical" n0:layout_width="match_parent" n0:layout_height="wrap_content">
+            <LinearLayout n0:orientation="horizontal" n0:layout_width="match_parent" n0:layout_height="wrap_content">
+                <org.chromium.components.browser_ui.widget.text.AlertDialogEditText n0:textAppearance="@style/TextAppearance.TextLarge.Primary" n0:id="@id/file_name" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:singleLine="true" />
+            </LinearLayout>
+            <TextView n0:textAppearance="@style/TextAppearance.TextSmall.Primary" n0:id="@id/file_size" n0:visibility="gone" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginStart="@dimen/download_dialog_location_space_margin_start" />
+        </LinearLayout>
+        <LinearLayout n0:orientation="vertical" n0:layout_width="match_parent" n0:layout_height="wrap_content">
+            <LinearLayout n0:orientation="horizontal" n0:layout_width="match_parent" n0:layout_height="wrap_content">
+                <Spinner n0:id="@id/file_location" n0:layout_width="match_parent" n0:layout_height="wrap_content" style="@android:style/Widget.EditText" />
+            </LinearLayout>
+            <TextView n0:textAppearance="@style/TextAppearance.TextSmall.Primary" n0:id="@id/location_available_space" n0:visibility="gone" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:maxLines="2" n0:layout_marginStart="@dimen/download_dialog_location_space_margin_start" />
+        </LinearLayout>
+        <CheckBox n0:id="@id/show_again_checkbox" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginTop="@dimen/download_dialog_checkbox_margin_top" n0:text="@string/download_location_dialog_checkbox" n0:layout_marginStart="@dimen/download_dialog_checkbox_margin_start" style="@style/DefaultCheckboxStyle" />
+    </LinearLayout>
+</org.chromium.chrome.browser.download.dialogs.DownloadLocationCustomView>

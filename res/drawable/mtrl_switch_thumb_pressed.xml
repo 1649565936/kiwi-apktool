@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector n0:height="@dimen/mtrl_switch_thumb_size" n0:width="@dimen/mtrl_switch_thumb_size" n0:viewportWidth="@integer/mtrl_switch_thumb_viewport_size" n0:viewportHeight="@integer/mtrl_switch_thumb_viewport_size"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <group n0:name="@string/mtrl_switch_thumb_group_name" n0:pivotX="@integer/mtrl_switch_thumb_viewport_center_coordinate" n0:pivotY="@integer/mtrl_switch_thumb_viewport_center_coordinate">
+        <path n0:name="@string/mtrl_switch_thumb_path_name" n0:fillColor="#ffffffff" n0:pathData="@string/mtrl_switch_thumb_path_pressed" />
+    </group>
+</vector>

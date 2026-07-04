@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<org.chromium.chrome.browser.multiwindow.CloseConfirmationDialogView n0:orientation="vertical" n0:layout_width="@dimen/confirmation_dialog_width" n0:layout_height="wrap_content"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <include n0:id="@id/title_container" layout="@layout/modal_dialog_title" />
+    <TextView n0:textAppearance="@style/TextAppearance.TextLarge.Primary" n0:id="@id/message" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginLeft="@dimen/dialog_padding_sides" n0:layout_marginTop="16.0dp" n0:layout_marginRight="@dimen/dialog_padding_sides" n0:layout_marginBottom="16.0dp" n0:layout_marginHorizontal="@dimen/dialog_padding_sides" n0:layout_marginVertical="16.0dp" />
+    <LinearLayout n0:orientation="horizontal" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:layout_marginStart="@dimen/dialog_padding_sides">
+        <CheckBox n0:id="@id/no_more_check" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:layout_marginBottom="12.0dp" />
+        <TextView n0:textAppearance="@style/TextAppearance.TextLarge.Secondary" n0:id="@id/no_more" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:text="@string/dont_ask_again" />
+    </LinearLayout>
+    <org.chromium.components.browser_ui.widget.DualControlLayout n0:id="@id/button_bar" n0:paddingLeft="?dualControlLayoutHorizontalPadding" n0:paddingTop="?dualControlLayoutVerticalPadding" n0:paddingRight="?dualControlLayoutHorizontalPadding" n0:paddingBottom="?dualControlLayoutVerticalPadding" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:paddingHorizontal="?dualControlLayoutHorizontalPadding" n0:paddingVertical="?dualControlLayoutVerticalPadding" n1:buttonAlignment="end" n1:stackedMargin="@dimen/button_bar_stacked_margin"
+      xmlns:n1="http://schemas.android.com/apk/res-auto">
+        <org.chromium.ui.widget.ButtonCompat n0:id="@id/positive_button" n0:layout_width="wrap_content" n0:layout_height="wrap_content" style="?buttonBarPositiveButtonStyle" />
+        <org.chromium.ui.widget.ButtonCompat n0:id="@id/negative_button" n0:layout_width="wrap_content" n0:layout_height="wrap_content" style="?buttonBarNegativeButtonStyle" />
+    </org.chromium.components.browser_ui.widget.DualControlLayout>
+</org.chromium.chrome.browser.multiwindow.CloseConfirmationDialogView>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<org.chromium.chrome.browser.payments.ui.PaymentRequestBottomBar n0:id="@id/bottom_bar" n0:background="@drawable/sheet_background" n0:paddingTop="@dimen/payments_request_bottom_bar_vertical_padding" n0:paddingBottom="@dimen/payments_request_bottom_bar_vertical_padding" n0:visibility="gone" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:paddingStart="@dimen/payments_request_bottom_bar_horizontal_padding" n0:paddingEnd="@dimen/payments_request_bottom_bar_horizontal_padding"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <ImageView n0:id="@id/logo_name" n0:layout_width="72.0dp" n0:layout_height="20.0dp" />
+    <ImageView n0:id="@id/logo" n0:layout_width="20.0dp" n0:layout_height="20.0dp" />
+    <Space n0:id="@id/space" n0:layout_width="0.0dp" n0:layout_height="0.0dp" />
+    <org.chromium.ui.widget.ButtonCompat n0:id="@id/button_secondary" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:text="@string/payments_edit_button" style="@style/TextButton" />
+    <org.chromium.ui.widget.ButtonCompat n0:id="@id/button_primary" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:text="@string/payments_pay_button" style="@style/FilledButton.Flat" />
+</org.chromium.chrome.browser.payments.ui.PaymentRequestBottomBar>

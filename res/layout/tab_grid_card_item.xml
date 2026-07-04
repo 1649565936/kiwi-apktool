@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge>
+    <org.chromium.ui.widget.ChromeImageView n0:id="@id/background_view" n0:background="@drawable/tab_grid_card_background" n0:visibility="gone" n0:layout_width="match_parent" n0:layout_height="match_parent" n0:layout_margin="@dimen/tab_grid_card_margin" n0:importantForAccessibility="no"
+      xmlns:n0="http://schemas.android.com/apk/res/android" />
+    <FrameLayout n1:id="@id/content_view" n1:layout_width="match_parent" n1:layout_height="match_parent"
+      xmlns:n1="http://schemas.android.com/apk/res/android">
+        <RelativeLayout n1:layout_gravity="center" n1:id="@id/card_view" n1:background="@drawable/tab_grid_card_background" n1:layout_width="match_parent" n1:layout_height="match_parent" n1:layout_margin="@dimen/tab_grid_card_margin">
+            <ImageView n1:id="@id/tab_favicon" n1:layout_width="wrap_content" n1:layout_height="@dimen/tab_grid_card_header_height" n1:adjustViewBounds="true" n1:minWidth="@dimen/tab_grid_card_favicon_padding" n1:importantForAccessibility="no" n2:srcCompat="@drawable/ic_globe_24dp"
+              xmlns:n2="http://schemas.android.com/apk/res-auto" />
+            <TextView n1:textAppearance="@style/TextAppearance.TextMediumThick.Primary" n1:ellipsize="none" n1:gravity="center_vertical" n1:id="@id/tab_title" n1:fadingEdgeLength="@dimen/tab_grid_card_title_fading_length" n1:layout_width="match_parent" n1:layout_height="wrap_content" n1:minHeight="@dimen/tab_grid_card_header_height" n1:singleLine="true" n1:requiresFadingEdge="horizontal" n1:layout_marginEnd="@dimen/tab_grid_card_title_end_margin" n1:layout_toEndOf="@id/tab_favicon" />
+            <org.chromium.chrome.browser.tasks.tab_management.TabGridThumbnailView n1:gravity="center_horizontal" n1:id="@id/tab_thumbnail" n1:layout_width="match_parent" n1:layout_height="match_parent" n1:layout_marginLeft="@dimen/tab_grid_card_thumbnail_margin" n1:layout_marginRight="@dimen/tab_grid_card_thumbnail_margin" n1:layout_marginBottom="@dimen/tab_grid_card_thumbnail_margin" n1:src="@color/thumbnail_placeholder_on_primary_bg" n1:scaleType="fitCenter" n1:adjustViewBounds="false" n1:layout_below="@id/tab_title" n1:importantForAccessibility="no" n3:cornerRadiusBottomEnd="@dimen/tab_grid_card_thumbnail_corner_radius_bottom" n3:cornerRadiusBottomStart="@dimen/tab_grid_card_thumbnail_corner_radius_bottom" n3:cornerRadiusTopEnd="@dimen/tab_grid_card_thumbnail_corner_radius_top" n3:cornerRadiusTopStart="@dimen/tab_grid_card_thumbnail_corner_radius_top"
+              xmlns:n3="http://schemas.android.com/apk/res-auto" />
+            <org.chromium.chrome.browser.tasks.tab_management.PriceCardView n1:id="@id/price_info_box_outer" n1:background="@drawable/price_card_scrim" n1:visibility="gone" n1:layout_width="match_parent" n1:layout_height="56.0dp" n1:layout_below="@id/tab_title" n1:layout_marginStart="4.0dp" />
+            <org.chromium.ui.widget.ButtonCompat n1:id="@id/create_group_button" n1:visibility="gone" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_margin="8.0dp" n1:text="@string/tabswitcher_create_group" n1:layout_alignParentBottom="true" n1:layout_centerHorizontal="true" n1:elevation="4.0dp" style="@style/FilledButton" />
+        </RelativeLayout>
+        <org.chromium.ui.widget.ChromeImageView n1:layout_gravity="end" n1:id="@id/action_button" n1:layout_width="@dimen/tab_list_card_action_button_size" n1:layout_height="@dimen/tab_list_card_action_button_size" n1:layout_margin="@dimen/tab_list_card_action_button_margin" n1:scaleType="center" n1:tint="?colorOnSurface" />
+    </FrameLayout>
+</merge>

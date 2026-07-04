@@ -1,0 +1,11 @@
+.class public final LMk1;
+.super Ljava/lang/Object;
+.source "chromium-ChromePublic.apk-dev-733700004"
+
+
+# instance fields
+.field public a:I
+
+.field public b:F
+
+.field public c:I

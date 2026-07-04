@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout n0:orientation="vertical" n0:background="@drawable/sheet_background" n0:paddingTop="20.0dp" n0:paddingBottom="12.0dp" n0:layout_width="match_parent" n0:layout_height="match_parent"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/device_item_list" />
+    <org.chromium.components.browser_ui.widget.DualControlLayout n0:id="@id/button_bar" n0:paddingTop="6.0dp" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:paddingStart="16.0dp" n0:paddingEnd="16.0dp" n1:buttonAlignment="end" n1:stackedMargin="@dimen/button_bar_stacked_margin"
+      xmlns:n1="http://schemas.android.com/apk/res-auto">
+        <org.chromium.ui.widget.ButtonCompat n0:layout_gravity="end" n0:id="@id/allow" n0:layout_width="wrap_content" n0:layout_height="wrap_content" style="@style/FilledButton" />
+        <org.chromium.ui.widget.ButtonCompat n0:layout_gravity="end" n0:id="@id/block" n0:layout_width="wrap_content" n0:layout_height="wrap_content" style="@style/TextButton" />
+    </org.chromium.components.browser_ui.widget.DualControlLayout>
+</LinearLayout>

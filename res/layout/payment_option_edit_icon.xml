@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout n0:id="@id/payments_open_editor_pencil_button" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:contentDescription="@string/payments_edit_button"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <View n0:layout_gravity="center_vertical" n0:layout_width="1.0dp" n0:layout_height="48.0dp" n0:layout_marginStart="@dimen/editor_dialog_section_large_spacing" n0:layout_marginEnd="@dimen/editor_dialog_section_large_spacing" style="@style/VerticalDivider" />
+    <org.chromium.ui.widget.ChromeImageView n0:layout_gravity="center_vertical" n0:layout_width="24.0dp" n0:layout_height="24.0dp" n0:src="@drawable/ic_edit_24dp" n0:importantForAccessibility="no" n1:tint="?colorOnSurface"
+      xmlns:n1="http://schemas.android.com/apk/res-auto" />
+</LinearLayout>

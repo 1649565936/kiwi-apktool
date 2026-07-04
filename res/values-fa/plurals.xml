@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="accessibility_dialog_back_button">
+        <item quantity="one">جمع کردن %1$d برگه.</item>
+        <item quantity="other">جمع کردن گروه برگه با %1$d برگه.</item>
+    </plurals>
+    <plurals name="accessibility_dialog_back_button_with_group_name">
+        <item quantity="one">جمع کردن %1$d برگه.</item>
+        <item quantity="other">جمع کردن گروه برگه %1$s با %2$d برگه.</item>
+    </plurals>
+    <plurals name="accessibility_download_manager_ui_audio">
+        <item quantity="one">%d فایل صوتی</item>
+        <item quantity="other">%d فایل صوتی</item>
+    </plurals>
+    <plurals name="accessibility_download_manager_ui_generic">
+        <item quantity="one">%d فایل</item>
+        <item quantity="other">%d فایل</item>
+    </plurals>
+    <plurals name="accessibility_download_manager_ui_images">
+        <item quantity="one">%d تصویر</item>
+        <item quantity="other">%d تصویر</item>
+    </plurals>
+    <plurals name="accessibility_download_manager_ui_pages">
+        <item quantity="one">%d صفحه</item>
+        <item quantity="other">%d صفحه</item>
+    </plurals>
+    <plurals name="accessibility_download_manager_ui_video">
+        <item quantity="one">%d ویدیو</item>
+        <item quantity="other">%d ویدیو</item>
+    </plurals>
+    <plurals name="accessibility_merchant_viewer_message_description">
+        <item quantity="one">" رده‌بندی %1$s/%2$s، %3$d مرور"</item>
+        <item quantity="other">رده‌بندی %1$s/%2$s، %3$d مرور</item>
+    </plurals>
+    <plurals name="accessibility_remove_selected_items">
+        <item quantity="one">حذف ۱ مورد انتخاب‌شده</item>
+        <item quantity="other">حذف %d مورد انتخاب‌شده</item>
+    </plurals>
+    <plurals name="accessibility_share_selected_items">
+        <item quantity="one">اشتراک‌گذاری ۱ مورد انتخاب‌شده</item>
+        <item quantity="other">اشتراک‌گذاری %d مورد انتخاب‌شده</item>
+    </plurals>
+    <plurals name="accessibility_tab_selection_editor_bookmark_tabs_action_button">
+        <item quantity="one">نشانک‌گذاری %1$d برگه انتخاب‌شده</item>
+        <item quantity="other">نشانک‌گذاری %1$d برگه انتخاب‌شده</item>
+    </plurals>
+    <plurals name="accessibility_tab_selection_editor_close_tabs">
+        <item quantity="one">بستن %1$d برگه انتخابی</item>
+        <item quantity="other">بستن %1$d برگه انتخابی</item>
+    </plurals>
+    <plurals name="accessibility_tab_selection_editor_group_tabs">
+        <item quantity="one">گروه‌بندی %1$d برگه انتخابی</item>
+        <item quantity="other">گروه‌بندی %1$d برگه انتخابی</item>
+    </plurals>
+    <plurals name="accessibility_tab_selection_editor_share_tabs_action_button">
+        <item quantity="one">هم‌رسانی %1$d برگه انتخاب‌شده</item>
+        <item quantity="other">هم‌رسانی %1$d برگه انتخاب‌شده</item>
+    </plurals>
+    <plurals name="accessibility_tab_selection_editor_ungroup_tabs">
+        <item quantity="one">لغو گروه‌بندی %1$d برگه انتخاب‌شده</item>
+        <item quantity="other">لغو گروه‌بندی %1$d برگه انتخاب‌شده</item>
+    </plurals>
+    <plurals name="allsites_fps_list_summary">
+        <item quantity="one">کوکی‌ها برای %1$s سایت %2$s مجاز هستند</item>
+        <item quantity="other">کوکی‌ها برای %1$s سایت %2$s مجاز هستند</item>
+    </plurals>
+    <plurals name="allsites_fps_summary">
+        <item quantity="one">%1$s سایت در گروه سایت‌های %2$s قرار دارد که می‌توانند فعالیت شما را در گروه ببینند</item>
+        <item quantity="other">%1$s سایت در گروه سایت‌های %2$s قرار دارد که می‌توانند فعالیت شما را در گروه ببینند</item>
+    </plurals>
+    <plurals name="bookmarks_count">
+        <item quantity="one">%1$d نشانک</item>
+        <item quantity="other">%1$d نشانک</item>
+    </plurals>
+    <plurals name="bottom_tab_grid_title_placeholder">
+        <item quantity="one">%1$d برگه</item>
+        <item quantity="other">%1$d برگه</item>
+    </plurals>
+    <plurals name="contacts_picker_more_details">
+        <item quantity="one">(+ ۱ مورد دیگر)</item>
+        <item quantity="other">(+ %d مورد دیگر)</item>
+    </plurals>
+    <plurals name="cookie_controls_blocked_cookies">
+        <item quantity="one">۱ کوکی مسدود شده است</item>
+        <item quantity="other">%d کوکی مسدود شده است</item>
+    </plurals>
+    <plurals name="cookies_count">
+        <item quantity="one">%d کوکی</item>
+        <item quantity="other">%d کوکی</item>
+    </plurals>
+    <plurals name="download_manager_n_hours">
+        <item quantity="one">%d ساعت</item>
+        <item quantity="other">%d ساعت</item>
+    </plurals>
+    <plurals name="download_message_multiple_download_complete">
+        <item quantity="one">فایل بارگیری شد</item>
+        <item quantity="other">%d بارگیری کامل شد</item>
+    </plurals>
+    <plurals name="download_message_multiple_download_failed">
+        <item quantity="one">۱ بارگیری انجام نشد</item>
+        <item quantity="other">%d بارگیری انجام نشد</item>
+    </plurals>
+    <plurals name="download_message_multiple_download_in_progress">
+        <item quantity="one">درحال بارگیری فایل…</item>
+        <item quantity="other">درحال بارگیری %d فایل…</item>
+    </plurals>
+    <plurals name="download_message_multiple_download_pending">
+        <item quantity="one">۱ بارگیری در انتظار</item>
+        <item quantity="other">%d بارگیری در انتظار</item>
+    </plurals>
+    <plurals name="download_ui_files_downloaded">
+        <item quantity="one">%1$d فایل بارگیری شد</item>
+        <item quantity="other">%1$d فایل بارگیری شد</item>
+    </plurals>
+    <plurals name="history_clusters_n_matches">
+        <item quantity="one">%d مورد منطبق</item>
+        <item quantity="other">%d مورد منطبق</item>
+    </plurals>
+    <plurals name="instance_switcher_close_confirm_deleted_incognito">
+        <item quantity="one">%1$s برگه ناشناس بسته خواهد شد</item>
+        <item quantity="other">%1$s برگه ناشناس بسته خواهد شد</item>
+    </plurals>
+    <plurals name="instance_switcher_close_confirm_deleted_incognito_mixed">
+        <item quantity="one">%1$s برگه ناشناس و %2$s برگه دیگر بسته خواهند شد</item>
+        <item quantity="other">%1$s برگه ناشناس و %2$s برگه دیگر بسته خواهند شد</item>
+    </plurals>
+    <plurals name="instance_switcher_close_confirm_deleted_tabs_many">
+        <item quantity="one">%1$s و %2$s برگه دیگر بسته خواهند شد</item>
+        <item quantity="other">%1$s و %2$s برگه دیگر بسته خواهند شد</item>
+    </plurals>
+    <plurals name="instance_switcher_desc_incognito">
+        <item quantity="one">%1$s برگه ناشناس</item>
+        <item quantity="other">%1$s برگه ناشناس</item>
+    </plurals>
+    <plurals name="instance_switcher_desc_mixed">
+        <item quantity="one">%1$s برگه</item>
+        <item quantity="other">%2$s برگه، %1$s برگه ناشناس</item>
+    </plurals>
+    <plurals name="instance_switcher_tab_count_nonzero">
+        <item quantity="one">یک برگه</item>
+        <item quantity="other">%d برگه</item>
+    </plurals>
+    <plurals name="merchant_viewer_message_description_reviews">
+        <item quantity="one">(%1$s مرور)</item>
+        <item quantity="other">(%1$s مرور)</item>
+    </plurals>
+    <plurals name="merchant_viewer_message_description_reviews_from_google">
+        <item quantity="one">‏%1$s مرور از Geometry</item>
+        <item quantity="other">‏%1$s مرور از Geometry</item>
+    </plurals>
+    <plurals name="mtrl_badge_content_description">
+        <item quantity="one">%d اعلان جدید</item>
+        <item quantity="other">%d اعلان جدید</item>
+    </plurals>
+    <plurals name="n_days_ago">
+        <item quantity="one">۱ روز قبل</item>
+        <item quantity="other">"%d  روز قبل"</item>
+    </plurals>
+    <plurals name="n_hours_ago">
+        <item quantity="one">۱ ساعت قبل</item>
+        <item quantity="other">%d ساعت قبل</item>
+    </plurals>
+    <plurals name="n_minutes_ago">
+        <item quantity="one">%d دقیقه قبل</item>
+        <item quantity="other">%d دقیقه قبل</item>
+    </plurals>
+    <plurals name="offline_pages_auto_fetch_in_progress_notification_text">
+        <item quantity="one">‏وقتی آماده شدید، Kiwi Browser صفحه را بار می‌کند</item>
+        <item quantity="other">‏وقتی آماده شدید، Kiwi Browser صفحه‌ها را بار می‌کند</item>
+    </plurals>
+    <plurals name="page_info_cookies_in_use">
+        <item quantity="one">۱ کوکی درحال استفاده است</item>
+        <item quantity="other">%d کوکی درحال استفاده است</item>
+    </plurals>
+    <plurals name="page_info_permissions_summary_more_allowed">
+        <item quantity="one">%1$s، %2$s، و %3$s اجازه دیگر مجاز هستند</item>
+        <item quantity="other">%1$s، %2$s، و %3$s اجازه دیگر مجاز هستند</item>
+    </plurals>
+    <plurals name="page_info_permissions_summary_more_blocked">
+        <item quantity="one">%1$s، %2$s، و %3$s اجازه دیگر مسدود هستند</item>
+        <item quantity="other">%1$s، %2$s، و %3$s اجازه دیگر مسدود هستند</item>
+    </plurals>
+    <plurals name="page_info_permissions_summary_more_mixed">
+        <item quantity="one">%1$s، %2$s، و %3$s اجازه دیگر</item>
+        <item quantity="other">%1$s، %2$s، و %3$s اجازه دیگر</item>
+    </plurals>
+    <plurals name="password_check_status_message_idle_with_leaks">
+        <item quantity="one">%d گذرواژه لورفته</item>
+        <item quantity="other">%d گذرواژه لورفته</item>
+    </plurals>
+    <plurals name="payment_request_contacts_preview">
+        <item quantity="one">‏%1$s… و %2$s گزینه تماس دیگر</item>
+        <item quantity="other">‏%1$s… و %2$s گزینه تماس دیگر</item>
+    </plurals>
+    <plurals name="payment_request_payment_methods_preview">
+        <item quantity="one">‏%1$s… و %2$s روش پرداخت دیگر</item>
+        <item quantity="other">‏%1$s… و %2$s روش پرداخت دیگر</item>
+    </plurals>
+    <plurals name="payment_request_shipping_addresses_preview">
+        <item quantity="one">‏%1$s… و %2$s نشانی دیگر</item>
+        <item quantity="other">‏%1$s… و %2$s نشانی دیگر</item>
+    </plurals>
+    <plurals name="payment_request_shipping_options_preview">
+        <item quantity="one">‏%1$s… و %2$s گزینه دیگر</item>
+        <item quantity="other">‏%1$s… و %2$s گزینه دیگر</item>
+    </plurals>
+    <plurals name="quick_delete_dialog_tabs_closed_text">
+        <item quantity="one">یک برگه در این دستگاه</item>
+        <item quantity="other">%d برگه در این دستگاه</item>
+    </plurals>
+    <plurals name="reading_list_unread_page_count">
+        <item quantity="one">%1$d صفحه خوانده‌نشده</item>
+        <item quantity="other">%1$d صفحه خوانده‌نشده</item>
+    </plurals>
+    <plurals name="restore_tabs_open_tabs">
+        <item quantity="one">باز کردن %1$s برگه</item>
+        <item quantity="other">باز کردن %1$s برگه</item>
+    </plurals>
+    <plurals name="restore_tabs_promo_sheet_device_info">
+        <item quantity="one">%1$s برگه، آخرین به‌روزرسانی: %2$s</item>
+        <item quantity="other">%1$s برگه، آخرین به‌روزرسانی: %2$s</item>
+    </plurals>
+    <plurals name="safety_check_passwords_compromised_exist">
+        <item quantity="one">۱ گذرواژه لورفته</item>
+        <item quantity="other">%d گذرواژه لورفته</item>
+    </plurals>
+    <plurals name="safety_check_timestamp_after_days">
+        <item quantity="one">آخرین بررسی: ۱ روز قبل</item>
+        <item quantity="other">آخرین بررسی: %d روز قبل</item>
+    </plurals>
+    <plurals name="safety_check_timestamp_after_hours">
+        <item quantity="one">آخرین بررسی: ۱ ساعت قبل</item>
+        <item quantity="other">آخرین بررسی: %d ساعت قبل</item>
+    </plurals>
+    <plurals name="safety_check_timestamp_after_mins">
+        <item quantity="one">آخرین بررسی: ۱ دقیقه قبل</item>
+        <item quantity="other">آخرین بررسی: %d دقیقه قبل</item>
+    </plurals>
+    <plurals name="selected_items">
+        <item quantity="one">۱ مورد انتخاب شد</item>
+        <item quantity="other">%d مورد انتخاب شد</item>
+    </plurals>
+    <plurals name="signal_strength_level_n_bars">
+        <item quantity="one">سطح قدرت سیگنال: %d نوار</item>
+        <item quantity="other">سطح قدرت سیگنال: %d نوار</item>
+    </plurals>
+    <plurals name="tab_selection_editor_bookmark_tabs_action_button">
+        <item quantity="one">نشانک‌گذاری برگه</item>
+        <item quantity="other">نشانک‌گذاری برگه‌ها</item>
+    </plurals>
+    <plurals name="tab_selection_editor_close_tabs">
+        <item quantity="one">بستن برگه</item>
+        <item quantity="other">بستن برگه‌ها</item>
+    </plurals>
+    <plurals name="tab_selection_editor_group_tabs">
+        <item quantity="one">گروه‌بندی برگه</item>
+        <item quantity="other">گروه‌بندی برگه‌ها</item>
+    </plurals>
+    <plurals name="tab_selection_editor_share_sheet_preview_message">
+        <item quantity="one">‏%1$d پیوند از Kiwi Browser</item>
+        <item quantity="other">‏%1$d پیوند از Kiwi Browser</item>
+    </plurals>
+    <plurals name="tab_selection_editor_share_tabs_action_button">
+        <item quantity="one">هم‌رسانی برگه</item>
+        <item quantity="other">هم‌رسانی برگه‌ها</item>
+    </plurals>
+    <plurals name="tab_selection_editor_tabs_count">
+        <item quantity="one">%1$d برگه</item>
+        <item quantity="other">%1$d برگه</item>
+    </plurals>
+    <plurals name="tab_selection_editor_ungroup_tabs">
+        <item quantity="one">لغو گروه‌بندی برگه</item>
+        <item quantity="other">لغو گروه‌بندی برگه‌ها</item>
+    </plurals>
+</resources>

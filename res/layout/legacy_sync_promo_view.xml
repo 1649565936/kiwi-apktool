@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<org.chromium.chrome.browser.signin.LegacySyncPromoView n0:layout_width="match_parent" n0:layout_height="wrap_content"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <org.chromium.components.browser_ui.widget.MaterialCardViewNoShadow n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginStart="@dimen/list_item_default_margin" n0:layout_marginEnd="@dimen/list_item_default_margin" style="@style/MaterialCardStyle">
+        <LinearLayout n0:orientation="vertical" n0:padding="@dimen/legacy_sync_promo_view_padding" n0:layout_width="match_parent" n0:layout_height="wrap_content">
+            <TextView n0:textAppearance="@style/TextAppearance.TextLarge.Primary" n0:id="@id/title" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:layout_marginBottom="8.0dp" />
+            <TextView n0:textAppearance="@style/TextAppearance.TextMedium.Secondary" n0:gravity="center" n0:id="@id/description" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:lineSpacingExtra="6.0sp" />
+            <LinearLayout n0:gravity="center_vertical" n0:layout_gravity="end" n0:orientation="horizontal" n0:layout_width="wrap_content" n0:layout_height="wrap_content">
+                <org.chromium.ui.widget.ButtonCompat n0:id="@id/sign_in" n0:layout_width="wrap_content" n0:layout_height="wrap_content" style="@style/FilledButton" />
+            </LinearLayout>
+        </LinearLayout>
+    </org.chromium.components.browser_ui.widget.MaterialCardViewNoShadow>
+</org.chromium.chrome.browser.signin.LegacySyncPromoView>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen n0:orderingFromXml="false"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <org.chromium.chrome.browser.sync.settings.SyncPromoPreference n0:key="sync_promo" n0:order="0" />
+    <PreferenceCategory n0:title="@string/prefs_section_basics" n0:key="basics_section" n0:order="5" />
+    <PreferenceCategory n0:title="@string/preferences_autofill" n0:key="autofill_section" n0:order="8" />
+    <PreferenceCategory n0:title="@string/appearance_preferences" n0:key="appearence_section" n0:order="10" />
+    <PreferenceCategory n0:title="@string/prefs_privacy_security" n0:key="privacy_section" n0:order="12" />
+    <org.chromium.chrome.browser.sync.settings.SignInPreference n0:title="@string/sign_in_to_chrome" n0:key="sign_in" n0:order="2" />
+    <org.chromium.components.browser_ui.settings.ChromeBasePreference n0:layout="@layout/account_management_account_row" n0:title="@string/sync_category_title" n0:key="manage_sync" n0:order="3" />
+    <org.chromium.components.browser_ui.settings.ChromeBasePreference n0:icon="@drawable/ics_services" n0:visibility="gone" n0:title="@string/prefs_google_services" n0:key="google_services" n0:order="13" n0:fragment="org.chromium.chrome.browser.sync.settings.GoogleServicesSettings" n1:iconTint="@color/default_icon_color_tint_list"
+      xmlns:n1="http://schemas.android.com/apk/res-auto" />
+    <org.chromium.components.browser_ui.settings.ChromeBasePreference n0:icon="@drawable/ics_search_engine" n0:title="@string/search_engine_settings" n0:key="search_engine" n0:order="6" n0:fragment="org.chromium.chrome.browser.search_engines.settings.SearchEngineSettings" n2:iconTint="@color/default_icon_color_tint_list"
+      xmlns:n2="http://schemas.android.com/apk/res-auto" />
+    <org.chromium.components.browser_ui.settings.ChromeBasePreference n0:icon="@drawable/ics_passwords" n0:title="@string/password_settings_title" n0:key="passwords" n0:order="9" n0:fragment="org.chromium.chrome.browser.password_manager.settings.PasswordSettings" n3:iconTint="@color/default_icon_color_tint_list"
+      xmlns:n3="http://schemas.android.com/apk/res-auto" />
+    <org.chromium.components.browser_ui.settings.ChromeBasePreference n0:icon="@drawable/ics_payments" n0:title="@string/autofill_payment_methods" n0:key="autofill_payment_methods" n0:order="9" n0:fragment="org.chromium.chrome.browser.autofill.settings.AutofillPaymentMethodsFragment" n4:iconTint="@color/default_icon_color_tint_list"
+      xmlns:n4="http://schemas.android.com/apk/res-auto" />
+    <org.chromium.components.browser_ui.settings.ChromeBasePreference n0:icon="@drawable/ics_addresses" n0:title="@string/autofill_addresses_settings_title" n0:key="autofill_addresses" n0:order="9" n0:fragment="org.chromium.chrome.browser.autofill.settings.AutofillProfilesFragment" n5:iconTint="@color/default_icon_color_tint_list"
+      xmlns:n5="http://schemas.android.com/apk/res-auto" />
+    <org.chromium.components.browser_ui.settings.ChromeBasePreference n0:icon="@drawable/ics_privacy_security" n0:title="@string/prefs_privacy_security" n0:key="privacy" n0:order="13" n0:fragment="org.chromium.chrome.browser.privacy.settings.PrivacySettings" n6:iconTint="@color/default_icon_color_tint_list"
+      xmlns:n6="http://schemas.android.com/apk/res-auto" />
+    <org.chromium.components.browser_ui.settings.ChromeBasePreference n0:icon="@drawable/ics_clear_data" n0:title="@string/clear_browsing_data_title" n0:key="clear_browsing_data" n0:order="13" n0:fragment="org.chromium.chrome.browser.browsing_data.ClearBrowsingDataTabsFragment" n7:iconTint="@color/default_icon_color_tint_list"
+      xmlns:n7="http://schemas.android.com/apk/res-auto" />
+    <org.chromium.components.browser_ui.settings.ChromeBasePreference n0:icon="@drawable/ics_notifications" n0:title="@string/prefs_notifications" n0:key="notifications" n0:order="22" n8:iconTint="@color/default_icon_color_tint_list"
+      xmlns:n8="http://schemas.android.com/apk/res-auto" />
+    <org.chromium.components.browser_ui.settings.ChromeBasePreference n0:icon="@drawable/ics_night_mode" n0:title="@string/preferences_nightmode" n0:key="nightmode" n0:order="11" n0:fragment="org.chromium.chrome.browser.settings.NightModeSettings" n9:iconTint="@color/default_icon_color_tint_list"
+      xmlns:n9="http://schemas.android.com/apk/res-auto" />
+    <org.chromium.components.browser_ui.settings.ChromeBasePreference n0:icon="@drawable/ics_theme" n0:title="@string/theme_settings" n0:key="ui_theme" n0:order="11" n0:fragment="org.chromium.chrome.browser.night_mode.settings.ThemeSettingsFragment" n10:iconTint="@color/default_icon_color_tint_list"
+      xmlns:n10="http://schemas.android.com/apk/res-auto" />
+    <org.chromium.components.browser_ui.settings.ChromeBasePreference n0:icon="@drawable/ics_tab_switcher" n0:title="@string/preferences_tabswitcher" n0:key="tabswitcher" n0:order="11" n0:fragment="org.chromium.chrome.browser.settings.TabSwitcherSettings" n11:iconTint="@color/default_icon_color_tint_list"
+      xmlns:n11="http://schemas.android.com/apk/res-auto" />
+    <org.chromium.components.browser_ui.settings.ChromeBasePreference n0:icon="@drawable/ics_toolbar" n0:title="@string/preferences_toolbar" n0:key="toolbar_options" n0:order="11" n0:fragment="org.chromium.chrome.browser.settings.ToolbarSettings" n12:iconTint="@color/default_icon_color_tint_list"
+      xmlns:n12="http://schemas.android.com/apk/res-auto" />
+    <PreferenceCategory n0:title="@string/prefs_section_advanced" n0:key="advanced_section" n0:order="14" />
+    <org.chromium.components.browser_ui.settings.ChromeBasePreference n0:icon="@drawable/ics_edit_homepage" n0:title="@string/options_homepage_title" n0:key="homepage" n0:order="7" n0:fragment="org.chromium.chrome.browser.homepage.settings.HomepageSettings" n13:iconTint="@color/default_icon_color_tint_list"
+      xmlns:n13="http://schemas.android.com/apk/res-auto" />
+    <org.chromium.components.browser_ui.settings.ChromeBasePreference n0:icon="@drawable/ics_toolbar_shortcut" n0:title="@string/toolbar_shortcut" n0:key="toolbar_shortcut" n0:order="11" n0:fragment="org.chromium.chrome.browser.toolbar.adaptive.settings.AdaptiveToolbarPreferenceFragment" n14:iconTint="@color/default_icon_color_tint_list"
+      xmlns:n14="http://schemas.android.com/apk/res-auto" />
+    <org.chromium.components.browser_ui.settings.ChromeBasePreference n0:icon="@drawable/ics_accessibility" n0:title="@string/prefs_accessibility" n0:key="accessibility" n0:order="11" n0:fragment="org.chromium.components.browser_ui.accessibility.AccessibilitySettings" n15:iconTint="@color/default_icon_color_tint_list"
+      xmlns:n15="http://schemas.android.com/apk/res-auto" />
+    <org.chromium.components.browser_ui.settings.ChromeBasePreference n0:icon="@drawable/ics_website_settings" n0:title="@string/prefs_site_settings" n0:key="content_settings" n0:order="15" n0:fragment="org.chromium.components.browser_ui.site_settings.SiteSettings" n16:iconTint="@color/default_icon_color_tint_list"
+      xmlns:n16="http://schemas.android.com/apk/res-auto" />
+    <org.chromium.components.browser_ui.settings.ChromeBasePreference n0:icon="@drawable/ic_translate_r" n0:title="@string/main_menu_translate" n0:key="translate" n0:order="20" n0:fragment="org.chromium.chrome.browser.translate.TranslateSettings" n17:iconTint="@color/default_icon_color_tint_list"
+      xmlns:n17="http://schemas.android.com/apk/res-auto" />
+    <org.chromium.components.browser_ui.settings.ChromeBasePreference n0:icon="@drawable/ics_languages" n0:title="@string/language_settings" n0:key="languages" n0:order="20" n0:fragment="org.chromium.chrome.browser.language.settings.LanguageSettings" n18:iconTint="@color/default_icon_color_tint_list"
+      xmlns:n18="http://schemas.android.com/apk/res-auto" />
+    <org.chromium.components.browser_ui.settings.ChromeBasePreference n0:icon="@drawable/ic_file_download_white_24dp" n0:title="@string/menu_downloads" n0:key="downloads" n0:order="21" n0:fragment="org.chromium.chrome.browser.download.settings.DownloadSettings" n19:iconTint="@color/default_icon_color_tint_list"
+      xmlns:n19="http://schemas.android.com/apk/res-auto" />
+    <org.chromium.components.browser_ui.settings.ChromeBasePreference n0:icon="@drawable/ics_dev_options" n0:title="Developer options" n0:key="developer" n0:order="22" n0:fragment="org.chromium.chrome.browser.tracing.settings.DeveloperSettings" n20:iconTint="@color/default_icon_color_tint_list"
+      xmlns:n20="http://schemas.android.com/apk/res-auto" />
+    <org.chromium.components.browser_ui.settings.ChromeBasePreference n0:icon="@drawable/btn_info" n0:title="@string/prefs_about_chrome" n0:key="about_chrome" n0:order="24" n0:fragment="org.chromium.chrome.browser.about_settings.AboutChromeSettings" n21:iconTint="@color/default_icon_color_tint_list"
+      xmlns:n21="http://schemas.android.com/apk/res-auto" />
+</PreferenceScreen>

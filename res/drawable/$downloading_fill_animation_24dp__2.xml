@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set n0:ordering="sequentially"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <objectAnimator n0:interpolator="@android:interpolator/linear" n0:duration="0" n0:valueFrom="?colorPrimary" n0:valueTo="?colorPrimary" n0:propertyName="fillColor" />
+    <objectAnimator n0:interpolator="@android:interpolator/linear" n0:duration="@integer/download_infobar_fill_out_delay" n0:startOffset="@integer/download_infobar_fill_in_delay" n0:valueFrom="?colorPrimary" n0:valueTo="@android:color/transparent" n0:propertyName="fillColor" />
+</set>

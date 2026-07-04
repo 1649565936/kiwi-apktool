@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout n0:orientation="vertical" n0:layout_width="match_parent" n0:layout_height="wrap_content"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <ImageView n0:layout_gravity="center_horizontal" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:importantForAccessibility="no" n1:srcCompat="@drawable/ic_warning_red_24dp"
+      xmlns:n1="http://schemas.android.com/apk/res-auto" />
+    <TextView n0:textAppearance="@style/TextAppearance.TextLarge.Primary" n0:gravity="center_horizontal" n0:id="@id/account_picker_auth_error_title" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginTop="12.0dp" n0:layout_marginBottom="8.0dp" n0:text="@string/signin_account_picker_bottom_sheet_error_title" />
+    <org.chromium.ui.widget.TextViewWithLeading n0:textAppearance="@style/TextAppearance.TextMedium.Secondary" n0:gravity="center_horizontal" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginBottom="16.0dp" n0:text="@string/signin_account_picker_auth_error_subtitle" n0:layout_marginStart="24.0dp" n0:layout_marginEnd="24.0dp" n2:leading="@dimen/text_size_medium_leading"
+      xmlns:n2="http://schemas.android.com/apk/res-auto" />
+    <include layout="@layout/account_picker_bottom_sheet_continue_button" />
+</LinearLayout>

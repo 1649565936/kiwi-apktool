@@ -1,0 +1,792 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest n0:versionCode="733700004" n0:versionName="137.0.7337.0" n0:compileSdkVersion="33" n0:compileSdkVersionCodename="13" package="com.kiwibrowser.browser.dev" platformBuildVersionCode="33" platformBuildVersionName="13"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <uses-feature n0:glEsVersion="0x20000" />
+    <uses-permission n0:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission n0:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission-sdk-23 n0:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission n0:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission-sdk-23 n0:name="android.permission.ACCESS_ADSERVICES_ATTRIBUTION" />
+    <uses-permission-sdk-23 n0:name="android.permission.BLUETOOTH_ADMIN" n0:maxSdkVersion="30" />
+    <uses-permission-sdk-23 n0:name="android.permission.BLUETOOTH_CONNECT" />
+    <uses-permission-sdk-23 n0:name="android.permission.BLUETOOTH_ADVERTISE" />
+    <uses-permission-sdk-23 n0:name="android.permission.BLUETOOTH" />
+    <uses-permission-sdk-23 n0:name="android.permission.BLUETOOTH_SCAN" n0:usesPermissionFlags="neverForLocation" />
+    <uses-permission-sdk-23 n0:name="android.permission.REORDER_TASKS" />
+    <uses-permission-sdk-23 n0:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <uses-permission n0:name="com.google.android.gms.permission.AD_ID" />
+    <uses-permission n0:name="android.permission.CAMERA" />
+    <uses-permission n0:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
+    <uses-permission n0:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission n0:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
+    <uses-permission n0:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
+    <uses-permission n0:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission n0:name="android.permission.INTERNET" />
+    <uses-permission n0:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission n0:name="android.permission.NFC" />
+    <uses-permission n0:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission n0:name="android.permission.QUERY_ALL_PACKAGES" />
+    <uses-permission n0:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission n0:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission n0:name="android.permission.RECORD_AUDIO" />
+    <uses-permission n0:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission-sdk-23 n0:name="android.permission.USE_BIOMETRIC" />
+    <uses-permission-sdk-23 n0:name="android.permission.USE_FINGERPRINT" />
+    <uses-permission n0:name="android.permission.VIBRATE" />
+    <uses-permission n0:name="android.permission.WAKE_LOCK" />
+    <uses-permission n0:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission n0:name="android.permission.CREDENTIAL_MANAGER_QUERY_CANDIDATE_CREDENTIALS" />
+    <uses-permission n0:name="android.permission.CREDENTIAL_MANAGER_SET_ALLOWED_PROVIDERS" />
+    <uses-permission n0:name="android.permission.CREDENTIAL_MANAGER_SET_ORIGIN" />
+    <uses-feature n0:name="android.software.vr.mode" n0:required="false" />
+    <uses-feature n0:name="android.hardware.vr.high_performance" n0:required="false" />
+    <uses-feature n0:name="android.hardware.screen.landscape" n0:required="false" />
+    <uses-feature n0:name="android.hardware.vr.headtracking" n0:required="false" n0:version="1" />
+    <uses-feature n0:name="android.hardware.sensor.gyroscope" n0:required="false" />
+    <uses-feature n0:name="android.hardware.sensor.accelerometer" n0:required="false" />
+    <permission n0:name="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:protectionLevel="signature" />
+    <permission n0:name="com.kiwibrowser.browser.dev.permission.READ_WRITE_BOOKMARK_FOLDERS" n0:protectionLevel="signatureOrSystem" />
+    <permission n0:name="com.kiwibrowser.browser.dev.TOS_ACKED" n0:protectionLevel="signatureOrSystem" />
+    <permission n0:name="com.kiwibrowser.browser.dev.permission.C2D_MESSAGE" n0:protectionLevel="signature" />
+    <permission n0:label="Debug web pages" n0:name="com.kiwibrowser.browser.dev.permission.DEBUG" n0:protectionLevel="signature" />
+    <permission n0:name="com.kiwibrowser.browser.dev.permission.TRANSLATE" n0:protectionLevel="signature" />
+    <uses-permission n0:name="com.kiwibrowser.browser.dev.permission.C2D_MESSAGE" />
+    <uses-permission n0:name="com.kiwibrowser.browser.dev.permission.READ_WRITE_BOOKMARK_FOLDERS" />
+    <uses-permission n0:name="com.kiwibrowser.browser.dev.TOS_ACKED" />
+    <uses-permission n0:name="com.chrome.permission.DEVICE_EXTRAS" />
+    <uses-permission n0:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission n0:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+    <uses-permission n0:name="com.google.android.apps.now.CURRENT_ACCOUNT_ACCESS" />
+    <uses-permission n0:name="com.samsung.android.providers.context.permission.WRITE_USE_APP_FEATURE_SURVEY" />
+    <uses-feature n0:name="android.hardware.location.gps" n0:required="false" />
+    <uses-feature n0:name="android.hardware.camera" n0:required="false" />
+    <uses-feature n0:name="android.hardware.camera.autofocus" n0:required="false" />
+    <uses-feature n0:name="android.hardware.microphone" n0:required="false" />
+    <uses-feature n0:name="android.hardware.touchscreen" n0:required="false" />
+    <queries>
+        <package n0:name="com.google.ar.core" />
+    </queries>
+    <application n0:label="@string/app_name" n0:icon="@mipmap/ic_launcher" n0:name="org.chromium.chrome.browser.base.SplitChromeApplication" n0:manageSpaceActivity="@string/manage_space_activity" n0:allowBackup="false" n0:largeHeap="false" n0:supportsRtl="true" n0:networkSecurityConfig="@xml/network_security_config" n0:roundIcon="@mipmap/ic_launcher_round" n0:appComponentFactory="org.chromium.chrome.browser.base.SplitCompatAppComponentFactory" n0:zygotePreloadName="org.chromium.content_public.app.ZygotePreload" n0:allowAudioPlaybackCapture="false" n0:requestLegacyExternalStorage="true" n0:memtagMode="async" n0:enableOnBackInvokedCallback="false">
+        <profileable n0:shell="true" />
+        <activity n0:theme="@style/LauncherTheme" n0:name="org.chromium.chrome.browser.document.ChromeLauncherActivity" n0:taskAffinity="" n0:excludeFromRecents="true" n0:configChanges="mcc|mnc|keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|density" n0:relinquishTaskIdentity="true" />
+        <activity-alias n0:name="com.google.android.apps.chrome.TranslateDispatcher" n0:exported="true" n0:targetActivity="org.chromium.chrome.browser.document.ChromeLauncherActivity">
+            <intent-filter>
+                <action n0:name="org.chromium.chrome.browser.translate.TRANSLATE_TAB" />
+                <category n0:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity-alias>
+        <activity-alias n0:name="com.google.android.apps.chrome.IntentDispatcher" n0:exported="true" n0:targetActivity="org.chromium.chrome.browser.document.ChromeLauncherActivity">
+            <intent-filter>
+                <action n0:name="android.intent.action.MAIN" />
+                <category n0:name="android.intent.category.NOTIFICATION_PREFERENCES" />
+            </intent-filter>
+            <intent-filter>
+                <action n0:name="android.intent.action.VIEW" />
+                <category n0:name="android.intent.category.DEFAULT" />
+                <data n0:scheme="http" />
+                <data n0:scheme="https" />
+                <data n0:scheme="about" />
+                <category n0:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+            <intent-filter>
+                <action n0:name="android.intent.action.VIEW" />
+                <category n0:name="android.intent.category.DEFAULT" />
+                <data n0:scheme="http" />
+                <data n0:scheme="https" />
+                <data n0:scheme="about" />
+                <category n0:name="android.intent.category.BROWSABLE" />
+                <data n0:mimeType="text/html" />
+                <data n0:mimeType="text/plain" />
+                <data n0:mimeType="application/xhtml+xml" />
+            </intent-filter>
+            <intent-filter>
+                <action n0:name="android.intent.action.SEND" />
+                <category n0:name="android.intent.category.DEFAULT" />
+                <data n0:mimeType="text/plain" />
+            </intent-filter>
+            <intent-filter>
+                <action n0:name="android.intent.action.VIEW" />
+                <category n0:name="android.intent.category.DEFAULT" />
+                <data n0:scheme="content" />
+                <data n0:mimeType="text/html" />
+                <data n0:mimeType="text/plain" />
+                <data n0:mimeType="application/xhtml+xml" />
+            </intent-filter>
+            <intent-filter>
+                <action n0:name="android.intent.action.VIEW" />
+                <category n0:name="android.intent.category.DEFAULT" />
+                <category n0:name="android.intent.category.BROWSABLE" />
+                <data n0:scheme="file" />
+                <data n0:mimeType="multipart/related" />
+            </intent-filter>
+            <intent-filter>
+                <action n0:name="android.intent.action.VIEW" />
+                <category n0:name="android.intent.category.DEFAULT" />
+                <data n0:scheme="content" />
+                <data n0:mimeType="multipart/related" />
+            </intent-filter>
+            <intent-filter>
+                <action n0:name="android.intent.action.VIEW" />
+                <category n0:name="android.intent.category.DEFAULT" />
+                <data n0:scheme="file" />
+                <data n0:scheme="content" />
+                <data n0:mimeType="message/rfc822" />
+            </intent-filter>
+            <intent-filter>
+                <action n0:name="android.intent.action.VIEW" />
+                <category n0:name="android.intent.category.DEFAULT" />
+                <category n0:name="android.intent.category.BROWSABLE" />
+                <data n0:scheme="file" />
+                <data n0:host="*" />
+                <data n0:pathPattern="/.*\\.mhtml" />
+                <data n0:pathPattern="/.*\\.mht" />
+                <data n0:pathPattern="/.*\\..*\\.mhtml" />
+                <data n0:pathPattern="/.*\\..*\\.mht" />
+                <data n0:pathPattern="/.*\\..*\\..*\\.mhtml" />
+                <data n0:pathPattern="/.*\\..*\\..*\\.mht" />
+                <data n0:pathPattern="/.*\\..*\\..*\\..*\\.mhtml" />
+                <data n0:pathPattern="/.*\\..*\\..*\\..*\\.mht" />
+                <data n0:pathPattern="/.*\\..*\\..*\\..*\\..*\\.mhtml" />
+                <data n0:pathPattern="/.*\\..*\\..*\\..*\\..*\\.mht" />
+                <data n0:pathPattern="/.*\\..*\\..*\\..*\\..*\\..*\\.mhtml" />
+                <data n0:pathPattern="/.*\\..*\\..*\\..*\\..*\\..*\\.mht" />
+                <data n0:pathPattern="/.*\\..*\\..*\\..*\\..*\\..*\\..*\\.mhtml" />
+                <data n0:pathPattern="/.*\\..*\\..*\\..*\\..*\\..*\\..*\\.mht" />
+                <data n0:pathPattern="/.*\\..*\\..*\\..*\\..*\\..*\\..*\\..*\\.mhtml" />
+                <data n0:pathPattern="/.*\\..*\\..*\\..*\\..*\\..*\\..*\\..*\\.mht" />
+                <data n0:pathPattern="/.*\\..*\\..*\\..*\\..*\\..*\\..*\\..*\\..*\\.mhtml" />
+                <data n0:pathPattern="/.*\\..*\\..*\\..*\\..*\\..*\\..*\\..*\\..*\\.mht" />
+                <data n0:pathPattern="/.*\\..*\\..*\\..*\\..*\\..*\\..*\\..*\\..*\\..*\\.mhtml" />
+                <data n0:pathPattern="/.*\\..*\\..*\\..*\\..*\\..*\\..*\\..*\\..*\\..*\\.mht" />
+            </intent-filter>
+            <intent-filter>
+                <action n0:name="android.intent.action.VIEW" />
+                <category n0:name="android.intent.category.DEFAULT" />
+                <category n0:name="android.intent.category.BROWSABLE" />
+                <data n0:scheme="file" />
+                <data n0:host="*" />
+                <data n0:pathPattern="/.*\\.mhtml" />
+                <data n0:pathPattern="/.*\\.mht" />
+                <data n0:pathPattern="/.*\\..*\\.mhtml" />
+                <data n0:pathPattern="/.*\\..*\\.mht" />
+                <data n0:pathPattern="/.*\\..*\\..*\\.mhtml" />
+                <data n0:pathPattern="/.*\\..*\\..*\\.mht" />
+                <data n0:pathPattern="/.*\\..*\\..*\\..*\\.mhtml" />
+                <data n0:pathPattern="/.*\\..*\\..*\\..*\\.mht" />
+                <data n0:pathPattern="/.*\\..*\\..*\\..*\\..*\\.mhtml" />
+                <data n0:pathPattern="/.*\\..*\\..*\\..*\\..*\\.mht" />
+                <data n0:pathPattern="/.*\\..*\\..*\\..*\\..*\\..*\\.mhtml" />
+                <data n0:pathPattern="/.*\\..*\\..*\\..*\\..*\\..*\\.mht" />
+                <data n0:pathPattern="/.*\\..*\\..*\\..*\\..*\\..*\\..*\\.mhtml" />
+                <data n0:pathPattern="/.*\\..*\\..*\\..*\\..*\\..*\\..*\\.mht" />
+                <data n0:pathPattern="/.*\\..*\\..*\\..*\\..*\\..*\\..*\\..*\\.mhtml" />
+                <data n0:pathPattern="/.*\\..*\\..*\\..*\\..*\\..*\\..*\\..*\\.mht" />
+                <data n0:pathPattern="/.*\\..*\\..*\\..*\\..*\\..*\\..*\\..*\\..*\\.mhtml" />
+                <data n0:pathPattern="/.*\\..*\\..*\\..*\\..*\\..*\\..*\\..*\\..*\\.mht" />
+                <data n0:pathPattern="/.*\\..*\\..*\\..*\\..*\\..*\\..*\\..*\\..*\\..*\\.mhtml" />
+                <data n0:pathPattern="/.*\\..*\\..*\\..*\\..*\\..*\\..*\\..*\\..*\\..*\\.mht" />
+                <data n0:mimeType="*/*" />
+            </intent-filter>
+            <intent-filter>
+                <action n0:name="android.intent.action.VIEW" />
+                <category n0:name="android.intent.category.DEFAULT" />
+                <category n0:name="android.intent.category.BROWSABLE" />
+                <data n0:scheme="file" />
+                <data n0:host="*" />
+                <data n0:pathPattern="/.*\\.wbn" />
+                <data n0:pathPattern="/.*\\..*\\.wbn" />
+                <data n0:pathPattern="/.*\\..*\\..*\\.wbn" />
+                <data n0:pathPattern="/.*\\..*\\..*\\..*\\.wbn" />
+                <data n0:pathPattern="/.*\\..*\\..*\\..*\\..*\\.wbn" />
+                <data n0:pathPattern="/.*\\..*\\..*\\..*\\..*\\..*\\.wbn" />
+                <data n0:pathPattern="/.*\\..*\\..*\\..*\\..*\\..*\\..*\\.wbn" />
+                <data n0:pathPattern="/.*\\..*\\..*\\..*\\..*\\..*\\..*\\..*\\.wbn" />
+                <data n0:pathPattern="/.*\\..*\\..*\\..*\\..*\\..*\\..*\\..*\\..*\\.wbn" />
+                <data n0:pathPattern="/.*\\..*\\..*\\..*\\..*\\..*\\..*\\..*\\..*\\..*\\.wbn" />
+            </intent-filter>
+            <intent-filter>
+                <action n0:name="android.intent.action.VIEW" />
+                <category n0:name="android.intent.category.DEFAULT" />
+                <category n0:name="android.intent.category.BROWSABLE" />
+                <data n0:scheme="file" />
+                <data n0:host="*" />
+                <data n0:pathPattern="/.*\\.wbn" />
+                <data n0:pathPattern="/.*\\..*\\.wbn" />
+                <data n0:pathPattern="/.*\\..*\\..*\\.wbn" />
+                <data n0:pathPattern="/.*\\..*\\..*\\..*\\.wbn" />
+                <data n0:pathPattern="/.*\\..*\\..*\\..*\\..*\\.wbn" />
+                <data n0:pathPattern="/.*\\..*\\..*\\..*\\..*\\..*\\.wbn" />
+                <data n0:pathPattern="/.*\\..*\\..*\\..*\\..*\\..*\\..*\\.wbn" />
+                <data n0:pathPattern="/.*\\..*\\..*\\..*\\..*\\..*\\..*\\..*\\.wbn" />
+                <data n0:pathPattern="/.*\\..*\\..*\\..*\\..*\\..*\\..*\\..*\\..*\\.wbn" />
+                <data n0:pathPattern="/.*\\..*\\..*\\..*\\..*\\..*\\..*\\..*\\..*\\..*\\.wbn" />
+                <data n0:mimeType="*/*" />
+            </intent-filter>
+            <intent-filter>
+                <action n0:name="android.intent.action.VIEW" />
+                <category n0:name="android.intent.category.DEFAULT" />
+                <data n0:scheme="content" />
+                <data n0:mimeType="application/webbundle" />
+            </intent-filter>
+            <intent-filter>
+                <action n0:name="android.intent.action.MEDIA_SEARCH" />
+                <category n0:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action n0:name="android.speech.action.VOICE_SEARCH_RESULTS" />
+                <category n0:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action n0:name="android.nfc.action.NDEF_DISCOVERED" />
+                <category n0:name="android.intent.category.DEFAULT" />
+                <data n0:scheme="http" />
+                <data n0:scheme="https" />
+            </intent-filter>
+            <intent-filter>
+                <action n0:name="android.intent.action.SEARCH" />
+            </intent-filter>
+            <intent-filter>
+                <action n0:name="com.sec.android.airview.HOVER" />
+            </intent-filter>
+            <meta-data n0:name="android.app.searchable" n0:resource="@xml/searchable" />
+        </activity-alias>
+        <activity n0:theme="@style/Theme.BrowserUI.NoDisplay" n0:name="org.chromium.chrome.browser.media.MediaLauncherActivity" n0:enabled="false" n0:exported="true" n0:excludeFromRecents="true">
+            <intent-filter>
+                <action n0:name="android.intent.action.VIEW" />
+                <category n0:name="android.intent.category.DEFAULT" />
+                <data n0:mimeType="image/*" />
+                <data n0:mimeType="video/*" />
+                <data n0:scheme="file" />
+                <data n0:scheme="content" />
+            </intent-filter>
+        </activity>
+        <activity-alias n0:theme="@style/Theme.BrowserUI.NoDisplay" n0:name="org.chromium.chrome.browser.media.AudioLauncherActivity" n0:enabled="false" n0:exported="true" n0:excludeFromRecents="true" n0:targetActivity="org.chromium.chrome.browser.media.MediaLauncherActivity">
+            <intent-filter>
+                <action n0:name="android.intent.action.VIEW" />
+                <category n0:name="android.intent.category.DEFAULT" />
+                <data n0:mimeType="audio/*" />
+                <data n0:scheme="file" />
+                <data n0:scheme="content" />
+            </intent-filter>
+        </activity-alias>
+        <activity n0:theme="@style/Theme.Chromium.Activity" n0:name="org.chromium.chrome.browser.media.PictureInPictureActivity" n0:exported="false" n0:excludeFromRecents="true" n0:configChanges="orientation|screenLayout|screenSize|smallestScreenSize" n0:noHistory="true" n0:resizeableActivity="true" n0:supportsPictureInPicture="true" />
+        <activity n0:theme="@style/Theme.BrowserUI.NoDisplay" n0:name="org.chromium.chrome.browser.LauncherShortcutActivity" n0:exported="false" n0:taskAffinity="" n0:excludeFromRecents="true" />
+        <activity n0:theme="@style/LauncherTheme" n0:name="org.chromium.chrome.browser.DragAndDropLauncherActivity" n0:exported="false" n0:taskAffinity="" n0:excludeFromRecents="true" n0:launchMode="singleInstancePerTask">
+            <intent-filter>
+                <action n0:name="org.chromium.chrome.browser.dragdrop.action.VIEW" />
+                <category n0:name="android.intent.category.BROWSABLE" />
+                <data n0:scheme="http" />
+                <data n0:scheme="https" />
+            </intent-filter>
+        </activity>
+        <activity n0:theme="@style/Theme.BrowserUI.NoDisplay" n0:name="org.chromium.chrome.browser.incognito.IncognitoTabLauncher" n0:enabled="false" n0:exported="true" n0:taskAffinity="" n0:excludeFromRecents="true">
+            <intent-filter>
+                <action n0:name="org.chromium.chrome.browser.incognito.OPEN_PRIVATE_TAB" />
+                <category n0:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity n0:theme="@style/Theme.BrowserUI.Translucent" n0:name="org.chromium.chrome.browser.app.reengagement.ReengagementActivity" n0:exported="false" n0:taskAffinity="" n0:excludeFromRecents="true" />
+        <receiver n0:name="org.chromium.chrome.browser.sharing.click_to_call.ClickToCallMessageHandler$PhoneUnlockedReceiver" n0:exported="true">
+            <intent-filter>
+                <action n0:name="android.intent.action.USER_PRESENT" />
+            </intent-filter>
+        </receiver>
+        <receiver n0:name="org.chromium.chrome.browser.safe_browsing.PasswordProtectionBroadcastReceiver" n0:permission="com.google.android.gms.permission.INTERNAL_BROADCAST" n0:exported="true">
+            <intent-filter>
+                <action n0:name="com.android.chrome.safe_browsing.LOGIN" />
+            </intent-filter>
+        </receiver>
+        <receiver n0:name="org.chromium.chrome.browser.upgrade.PackageReplacedBroadcastReceiver" n0:exported="false">
+            <intent-filter>
+                <action n0:name="android.intent.action.MY_PACKAGE_REPLACED" />
+            </intent-filter>
+        </receiver>
+        <receiver n0:name="org.chromium.chrome.browser.notifications.channels.LocaleChangedBroadcastReceiver" n0:exported="true">
+            <intent-filter>
+                <action n0:name="android.intent.action.LOCALE_CHANGED" />
+            </intent-filter>
+        </receiver>
+        <activity n0:theme="@style/Theme.Chromium.Activity" n0:name="org.chromium.chrome.browser.customtabs.CustomTabActivity" n0:exported="false" n0:configChanges="mcc|mnc|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" n0:windowSoftInputMode="adjustResize" n0:hardwareAccelerated="false" n0:resizeableActivity="true" n0:supportsPictureInPicture="true">
+            <intent-filter>
+                <action n0:name="org.chromium.chrome.browser.dummy.action" />
+                <category n0:name="com.google.intent.category.DAYDREAM" />
+                <category n0:name="com.google.intent.category.CARDBOARD" />
+            </intent-filter>
+        </activity>
+        <activity n0:theme="@style/Theme.Chromium.Activity.FakeTranslucent" n0:name="org.chromium.chrome.browser.customtabs.TranslucentCustomTabActivity" n0:exported="false" n0:configChanges="mcc|mnc|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" n0:windowSoftInputMode="adjustResize" n0:hardwareAccelerated="false" n0:resizeableActivity="true" n0:supportsPictureInPicture="true">
+            <intent-filter>
+                <action n0:name="org.chromium.chrome.browser.dummy.action" />
+                <category n0:name="com.google.intent.category.DAYDREAM" />
+                <category n0:name="com.google.intent.category.CARDBOARD" />
+            </intent-filter>
+        </activity>
+        <activity n0:theme="@style/Theme.Chromium.TabbedMode" n0:name="org.chromium.chrome.browser.ChromeTabbedActivity" n0:exported="true" n0:launchMode="singleTask" n0:configChanges="mcc|mnc|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" n0:windowSoftInputMode="adjustResize" n0:hardwareAccelerated="false" n0:resizeableActivity="true" n0:supportsPictureInPicture="true">
+            <meta-data n0:name="android.activity.launch_mode" n0:value="singleInstancePerTask" />
+            <intent-filter>
+                <action n0:name="org.chromium.chrome.browser.dummy.action" />
+                <category n0:name="com.google.intent.category.DAYDREAM" />
+                <category n0:name="com.google.intent.category.CARDBOARD" />
+            </intent-filter>
+        </activity>
+        <activity-alias n0:name="com.google.android.apps.chrome.Main" n0:exported="true" n0:targetActivity="org.chromium.chrome.browser.ChromeTabbedActivity">
+            <intent-filter>
+                <action n0:name="android.intent.action.MAIN" />
+                <category n0:name="android.intent.category.DEFAULT" />
+                <category n0:name="android.intent.category.LAUNCHER" />
+                <category n0:name="android.intent.category.BROWSABLE" />
+                <category n0:name="android.intent.category.APP_BROWSER" />
+                <category n0:name="android.intent.category.MULTIWINDOW_LAUNCHER" />
+            </intent-filter>
+            <meta-data n0:name="android.app.shortcuts" n0:resource="@xml/launchershortcuts" />
+            <intent-filter>
+                <action n0:name="org.chromium.chrome.browser.dummy.action" />
+                <category n0:name="com.google.intent.category.DAYDREAM" />
+                <category n0:name="com.google.intent.category.CARDBOARD" />
+            </intent-filter>
+        </activity-alias>
+        <activity n0:theme="@style/Theme.Chromium.TabbedMode" n0:name="org.chromium.chrome.browser.ChromeTabbedActivity2" n0:exported="false" n0:taskAffinity="com.kiwibrowser.browser.dev.ChromeTabbedActivity2" n0:launchMode="singleTask" n0:configChanges="mcc|mnc|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" n0:windowSoftInputMode="adjustResize" n0:hardwareAccelerated="false" n0:resizeableActivity="true" n0:supportsPictureInPicture="true">
+            <intent-filter>
+                <action n0:name="org.chromium.chrome.browser.dummy.action" />
+                <category n0:name="com.google.intent.category.DAYDREAM" />
+                <category n0:name="com.google.intent.category.CARDBOARD" />
+            </intent-filter>
+        </activity>
+        <activity n0:theme="@style/Theme.Chromium.TabbedMode" n0:name="org.chromium.chrome.browser.multiwindow.MultiInstanceChromeTabbedActivity" n0:exported="false" n0:configChanges="mcc|mnc|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" n0:windowSoftInputMode="adjustResize" n0:hardwareAccelerated="false" />
+        <activity n0:theme="@style/Theme.MaterialComponents" n0:name="org.chromium.chrome.browser.sync.ui.SyncTrustedVaultProxyActivity" n0:exported="false" n0:excludeFromRecents="true" />
+        <activity n0:theme="@style/Theme.Chromium.Activity" n0:name="org.chromium.chrome.browser.sync.ui.PassphraseActivity" n0:autoRemoveFromRecents="true" />
+        <activity n0:theme="@style/Theme.BrowserUI.AlertDialog.NoActionBar.DayNight" n0:label="@string/fre_activity_label" n0:name="org.chromium.chrome.browser.firstrun.LightweightFirstRunActivity" n0:excludeFromRecents="true" n0:launchMode="singleInstance" n0:configChanges="mcc|mnc|keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" n0:windowSoftInputMode="stateHidden|adjustPan" n0:autoRemoveFromRecents="true" />
+        <activity n0:theme="@style/Theme.BrowserUI.AlertDialog.NoActionBar.DayNight" n0:label="@string/fre_activity_label" n0:name="org.chromium.chrome.browser.firstrun.FirstRunActivity" n0:excludeFromRecents="true" n0:launchMode="singleTop" n0:configChanges="mcc|mnc|keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" n0:windowSoftInputMode="stateHidden|adjustPan" n0:autoRemoveFromRecents="true" />
+        <activity n0:theme="@style/Theme.Chromium.TabbedMode" n0:label="@string/fre_activity_label" n0:name="org.chromium.chrome.browser.firstrun.TabbedModeFirstRunActivity" n0:excludeFromRecents="true" n0:launchMode="singleTop" n0:configChanges="mcc|mnc|keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" n0:windowSoftInputMode="stateHidden|adjustPan" n0:autoRemoveFromRecents="true" />
+        <activity n0:theme="@style/Theme.Chromium.DialogWhenLarge" n0:name="org.chromium.chrome.browser.signin.SyncConsentActivity" n0:exported="false" n0:configChanges="mcc|mnc|keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" />
+        <activity n0:theme="@style/Theme.Chromium.DialogWhenLarge" n0:name="org.chromium.chrome.browser.device_lock.DeviceLockActivity" n0:exported="false" n0:configChanges="mcc|mnc|keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" />
+        <activity n0:theme="@style/Theme.Chromium.Settings" n0:label="@string/settings" n0:name="org.chromium.chrome.browser.settings.SettingsActivity" n0:exported="false" n0:configChanges="mcc|mnc|keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" />
+        <activity n0:theme="@style/Theme.Chromium.Settings.ManageSpace" n0:label="@string/storage_management_activity_label" n0:name="org.chromium.chrome.browser.site_settings.ManageSpaceActivity" n0:exported="false" n0:configChanges="mcc|mnc|keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" />
+        <activity n0:theme="@style/Theme.Chromium.Activity.Fullscreen" n0:name="org.chromium.chrome.browser.app.bookmarks.BookmarkActivity" n0:exported="false" n0:configChanges="mcc|mnc|keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" n0:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+        <activity n0:theme="@style/Theme.Chromium.DialogWhenLarge" n0:label="@string/edit_bookmark" n0:name="org.chromium.chrome.browser.app.bookmarks.BookmarkEditActivity" n0:exported="false" n0:configChanges="mcc|mnc|keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" n0:windowSoftInputMode="stateHidden" />
+        <activity n0:theme="@style/Theme.Chromium.DialogWhenLarge" n0:name="org.chromium.chrome.browser.app.bookmarks.BookmarkAddEditFolderActivity" n0:exported="false" n0:configChanges="mcc|mnc|keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" />
+        <activity n0:theme="@style/Theme.Chromium.DialogWhenLarge" n0:label="@string/bookmark_choose_folder" n0:name="org.chromium.chrome.browser.app.bookmarks.BookmarkFolderSelectActivity" n0:exported="false" n0:configChanges="mcc|mnc|keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" n0:windowSoftInputMode="stateAlwaysHidden" />
+        <activity n0:theme="@style/Theme.Chromium.Activity.Fullscreen" n0:name="org.chromium.chrome.browser.app.download.home.DownloadActivity" n0:exported="false" n0:configChanges="mcc|mnc|keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" n0:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+        <activity-alias n0:theme="@style/Theme.Chromium.Activity.Fullscreen" n0:name="org.chromium.chrome.browser.download.DownloadActivity" n0:exported="false" n0:configChanges="mcc|mnc|keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" n0:targetActivity="org.chromium.chrome.browser.app.download.home.DownloadActivity" n0:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+        <activity n0:theme="@style/Theme.Chromium.Settings" n0:name="org.chromium.chrome.browser.app.feed.feedmanagement.FeedManagementActivity" n0:exported="false" n0:configChanges="mcc|mnc|keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" n0:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+        <activity n0:theme="@style/Theme.Chromium.Settings" n0:name="org.chromium.chrome.browser.app.feed.followmanagement.FollowManagementActivity" n0:exported="false" n0:configChanges="mcc|mnc|keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" n0:windowSoftInputMode="stateAlwaysHidden|adjustResize">
+            <intent-filter>
+                <action n0:name="org.chromium.chrome.browser.app.feed.followmanagement.FollowManagementActivity.ACTIVATE" />
+                <category n0:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity n0:theme="@style/Theme.Chromium.Activity.Fullscreen" n0:name="org.chromium.chrome.browser.app.creator.CreatorActivity" n0:exported="false" n0:configChanges="mcc|mnc|keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" n0:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+        <activity n0:theme="@style/Theme.Chromium.Activity.Fullscreen" n0:name="org.chromium.chrome.browser.history.HistoryActivity" n0:exported="false" n0:configChanges="mcc|mnc|keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" n0:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+        <activity n0:theme="@style/Theme.BrowserUI.NoDisplay" n0:name="org.chromium.chrome.browser.webapps.WebappLauncherActivity" n0:exported="true" n0:taskAffinity="" n0:excludeFromRecents="true">
+            <intent-filter>
+                <action n0:name="com.google.android.apps.chrome.webapps.WebappManager.ACTION_START_WEBAPP" />
+                <category n0:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action n0:name="org.webapk.ACTION_START_WEBAPK" />
+                <category n0:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity-alias n0:name="com.google.android.apps.chrome.webapps.WebappManager" n0:targetActivity="org.chromium.chrome.browser.webapps.WebappLauncherActivity" />
+        <activity-alias n0:name="org.chromium.chrome.browser.webapps.SecureWebAppLauncher" n0:exported="false" n0:targetActivity="org.chromium.chrome.browser.webapps.WebappLauncherActivity">
+            <intent-filter>
+                <action n0:name="org.chromium.chrome.browser.webapps.WebappManager.ACTION_START_SECURE_WEBAPP" />
+                <category n0:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity-alias>
+        <activity n0:theme="@style/Theme.Chromium.Webapp" n0:label="@string/webapp_activity_title" n0:name="org.chromium.chrome.browser.webapps.WebappActivity" n0:exported="false" n0:launchMode="singleTop" n0:configChanges="mcc|mnc|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" n0:windowSoftInputMode="adjustResize" n0:hardwareAccelerated="false" n0:persistableMode="persistNever" n0:documentLaunchMode="intoExisting" n0:resizeableActivity="true" n0:supportsPictureInPicture="true">
+            <intent-filter>
+                <action n0:name="org.chromium.chrome.browser.dummy.action" />
+                <category n0:name="com.google.intent.category.DAYDREAM" />
+                <category n0:name="com.google.intent.category.CARDBOARD" />
+            </intent-filter>
+        </activity>
+        <activity-alias n0:label="@string/webapp_activity_title" n0:name="com.google.android.apps.chrome.webapps.WebappActivity" n0:targetActivity="org.chromium.chrome.browser.webapps.WebappActivity" n0:resizeableActivity="true" n0:supportsPictureInPicture="true" />
+        <activity n0:theme="@style/Theme.Chromium.Webapp.Translucent" n0:label="@string/webapp_activity_title" n0:name="org.chromium.chrome.browser.webapps.SameTaskWebApkActivity" n0:exported="false" n0:configChanges="mcc|mnc|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" n0:windowSoftInputMode="adjustResize" n0:hardwareAccelerated="false" n0:persistableMode="persistNever" n0:resizeableActivity="true" n0:supportsPictureInPicture="true">
+            <intent-filter>
+                <action n0:name="org.chromium.chrome.browser.dummy.action" />
+                <category n0:name="com.google.intent.category.DAYDREAM" />
+                <category n0:name="com.google.intent.category.CARDBOARD" />
+            </intent-filter>
+        </activity>
+        <activity n0:theme="@style/Theme.BrowserUI.NoDisplay" n0:name="org.chromium.chrome.browser.webapps.ActivateWebApkActivity" n0:exported="true">
+            <intent-filter>
+                <action n0:name="org.chromium.chrome.browser.webapps.ActivateWebApkActivity.ACTIVATE" />
+                <category n0:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity n0:theme="@style/Theme.Chromium.Activity" n0:label="Chrome.CafExpandedControllerActivity" n0:name="org.chromium.components.media_router.caf.remoting.CafExpandedControllerActivity" n0:excludeFromRecents="true" n0:launchMode="singleTask" n0:configChanges="mcc|mnc|keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" n0:noHistory="true" n0:hardwareAccelerated="true" />
+        <activity n0:theme="@style/Theme.BrowserUI.Translucent.NoTitleBar" n0:name="org.chromium.chrome.browser.BrowserRestartActivity" n0:exported="false" n0:process=":browser_restart_process" n0:excludeFromRecents="true" n0:launchMode="singleInstance" />
+        <activity n0:theme="@style/Theme.BrowserUI.Translucent.NoTitleBar" n0:name="org.chromium.chrome.browser.init.LaunchFailedActivity" n0:exported="false" n0:excludeFromRecents="true" n0:launchMode="singleInstance" />
+        <receiver n0:name="org.chromium.chrome.browser.browserservices.InstalledWebappBroadcastReceiver" n0:exported="true">
+            <intent-filter>
+                <data n0:scheme="package" />
+                <action n0:name="android.intent.action.PACKAGE_FULLY_REMOVED" />
+                <action n0:name="android.intent.action.PACKAGE_DATA_CLEARED" />
+            </intent-filter>
+        </receiver>
+        <activity n0:theme="@style/Theme.Chromium.ClearDataDialogActivity" n0:name="org.chromium.chrome.browser.browserservices.ClearDataDialogActivity" n0:exported="false" />
+        <activity n0:theme="@style/Theme.Chromium.Activity.Fullscreen.Transparent" n0:name="org.chromium.chrome.browser.browserservices.ManageTrustedWebActivityDataActivity" n0:exported="true">
+            <intent-filter>
+                <action n0:name="android.support.customtabs.action.ACTION_MANAGE_TRUSTED_WEB_ACTIVITY_DATA" />
+                <category n0:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action n0:name="android.support.customtabs.action.ACTION_MANAGE_TRUSTED_WEB_ACTIVITY_DATA" />
+                <category n0:name="android.intent.category.DEFAULT" />
+                <data n0:scheme="https" />
+            </intent-filter>
+        </activity>
+        <activity n0:theme="@style/Theme.Chromium.Activity.Fullscreen" n0:label="@string/cablev2_activity_title" n0:name="org.chromium.chrome.browser.webauth.authenticator.CableAuthenticatorActivity" n0:permission="com.google.android.gms.auth.cryptauth.permission.CABLEV2_SERVER_LINK" n0:exported="true" n0:excludeFromRecents="true" n0:launchMode="singleTop" n0:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|density|layoutDirection|fontScale" />
+        <activity n0:theme="@style/Theme.Chromium.Activity.Fullscreen" n0:label="@string/cablev2_activity_title" n0:name="org.chromium.chrome.browser.webauth.authenticator.CableAuthenticatorUSBActivity" n0:exported="false" n0:excludeFromRecents="true" n0:launchMode="singleTop" n0:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|density|layoutDirection|fontScale">
+            <intent-filter>
+                <action n0:name="android.hardware.usb.action.USB_ACCESSORY_ATTACHED" />
+            </intent-filter>
+            <meta-data n0:name="android.hardware.usb.action.USB_ACCESSORY_ATTACHED" n0:resource="@xml/phone_as_a_security_key_accessory_filter" />
+        </activity>
+        <receiver n0:name="org.chromium.chrome.browser.browserservices.ui.trustedwebactivity.DisclosureAcceptanceBroadcastReceiver" n0:exported="false" />
+        <receiver n0:name="org.chromium.chrome.browser.webapps.WebApkInstallBroadcastReceiver" n0:exported="false" />
+        <service n0:name="org.chromium.chrome.browser.photo_picker.DecoderService" n0:exported="false" n0:process=":decoder_service" n0:description="@string/decoder_description" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.chrome.browser.download.DownloadForegroundService" n0:exported="false" n0:foregroundServiceType="dataSync" />
+        <service n0:name="org.chromium.chrome.browser.download.DownloadBroadcastManager" n0:exported="false" />
+        <receiver n0:label="@string/quick_action_search_widget_title" n0:name="org.chromium.chrome.browser.quickactionsearchwidget.QuickActionSearchWidgetProvider$QuickActionSearchWidgetProviderSearch" n0:exported="true">
+            <intent-filter>
+                <action n0:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data n0:name="android.appwidget.provider" n0:resource="@xml/quick_action_search_widget_small_info" />
+        </receiver>
+        <receiver n0:label="@string/dino_widget_text" n0:name="org.chromium.chrome.browser.quickactionsearchwidget.QuickActionSearchWidgetProvider$QuickActionSearchWidgetProviderDino" n0:exported="true">
+            <intent-filter>
+                <action n0:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data n0:name="android.appwidget.provider" n0:resource="@xml/quick_action_search_widget_dino_info" />
+        </receiver>
+        <receiver n0:label="@string/bookmark_widget_title" n0:name="com.google.android.apps.chrome.appwidget.bookmarks.BookmarkThumbnailWidgetProvider" n0:exported="true">
+            <intent-filter>
+                <action n0:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action n0:name=".BOOKMARK_APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data n0:name="android.appwidget.provider" n0:resource="@xml/bookmark_widget_info" />
+        </receiver>
+        <service n0:name="org.chromium.chrome.browser.bookmarkswidget.BookmarkWidgetService" n0:permission="android.permission.BIND_REMOTEVIEWS" n0:exported="false" />
+        <activity n0:theme="@style/Theme.BrowserUI.NoDisplay" n0:name="org.chromium.chrome.browser.bookmarkswidget.BookmarkWidgetProxy" n0:exported="false" n0:taskAffinity="" n0:excludeFromRecents="true" n0:noHistory="true" />
+        <receiver n0:label="@string/search_widget_title" n0:name="org.chromium.chrome.browser.searchwidget.SearchWidgetProvider" n0:exported="true">
+            <intent-filter>
+                <action n0:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data n0:name="android.appwidget.provider" n0:resource="@xml/search_widget_info" />
+        </receiver>
+        <activity n0:theme="@style/Theme.Chromium.SearchActivity" n0:label="Search" n0:name="org.chromium.chrome.browser.searchwidget.SearchActivity" n0:exported="false" n0:taskAffinity="" n0:clearTaskOnLaunch="true" n0:excludeFromRecents="true" n0:launchMode="singleTask" n0:configChanges="mcc|mnc|keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" n0:windowSoftInputMode="adjustResize" n0:hardwareAccelerated="false" />
+        <service n0:name="com.google.ipc.invalidation.ticl.android2.channel.GcmRegistrationTaskService" n0:permission="com.google.android.gms.permission.BIND_NETWORK_TASK_SERVICE" n0:exported="true">
+            <intent-filter>
+                <action n0:name="com.google.android.gms.gcm.ACTION_TASK_READY" />
+            </intent-filter>
+        </service>
+        <service n0:name="org.chromium.chrome.browser.services.gcm.ChromeGcmListenerService" n0:exported="false">
+            <intent-filter>
+                <action n0:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service n0:name="org.chromium.chrome.browser.services.gcm.GCMBackgroundService" n0:exported="false" />
+        <service n0:name="org.chromium.chrome.browser.services.gcm.InvalidationGcmUpstreamSender" n0:exported="false" />
+        <service n0:name="org.chromium.chrome.browser.notifications.NotificationService" n0:exported="false" />
+        <receiver n0:name="org.chromium.chrome.browser.notifications.NotificationService$Receiver" n0:exported="false" />
+        <receiver n0:name="org.chromium.chrome.browser.notifications.NotificationServiceImpl$Receiver" n0:exported="false">
+            <intent-filter>
+                <action n0:name="org.chromium.chrome.browser.notifications.CLICK_NOTIFICATION" />
+                <action n0:name="org.chromium.chrome.browser.notifications.CLOSE_NOTIFICATION" />
+            </intent-filter>
+        </receiver>
+        <receiver n0:name="org.chromium.chrome.browser.notifications.permissions.NotificationPermissionChangeReceiver" n0:exported="false">
+            <intent-filter>
+                <action n0:name="android.app.action.APP_BLOCK_STATE_CHANGED" />
+            </intent-filter>
+        </receiver>
+        <service n0:name="org.chromium.chrome.browser.notifications.NotificationJobService" n0:permission="android.permission.BIND_JOB_SERVICE" n0:exported="false" />
+        <service n0:name="org.chromium.components.background_task_scheduler.internal.BackgroundTaskJobService" n0:permission="android.permission.BIND_JOB_SERVICE" n0:exported="false" />
+        <receiver n0:name="org.chromium.components.background_task_scheduler.internal.BackgroundTaskBroadcastReceiver" n0:exported="false" />
+        <service n0:name="org.chromium.chrome.browser.ChromeBackgroundService" n0:permission="com.google.android.gms.permission.BIND_NETWORK_TASK_SERVICE" n0:exported="true">
+            <intent-filter>
+                <action n0:name="com.google.android.gms.gcm.ACTION_TASK_READY" />
+            </intent-filter>
+        </service>
+        <service n0:name="org.chromium.chrome.browser.prerender.ChromePrerenderService" n0:exported="true" />
+        <service n0:name="org.chromium.chrome.browser.customtabs.CustomTabsConnectionService" n0:exported="true">
+            <intent-filter>
+                <action n0:name="android.support.customtabs.action.CustomTabsService" />
+                <category n0:name="androidx.browser.customtabs.category.ColorSchemeCustomization" />
+                <category n0:name="androidx.browser.customtabs.category.NavBarColorCustomization" />
+                <category n0:name="androidx.browser.trusted.category.ImmersiveMode" />
+                <category n0:name="androidx.browser.trusted.category.LaunchSiteSettings" />
+                <category n0:name="androidx.browser.trusted.category.LaunchWebApkSiteSettings" />
+                <category n0:name="androidx.browser.trusted.category.TrustedWebActivities" />
+                <category n0:name="androidx.browser.trusted.category.TrustedWebActivitySplashScreensV1" />
+                <category n0:name="androidx.browser.trusted.category.WebShareTargetV2" />
+            </intent-filter>
+        </service>
+        <service n0:name="androidx.browser.customtabs.PostMessageService" />
+        <service n0:name="org.chromium.chrome.browser.crash.ChromeMinidumpUploadJobService" n0:permission="android.permission.BIND_JOB_SERVICE" n0:exported="false" />
+        <service n0:name="org.chromium.chrome.browser.crash.MinidumpUploadService" n0:exported="false" />
+        <service n0:name="org.chromium.chrome.browser.incognito.IncognitoNotificationService" n0:exported="false" />
+        <service n0:name="org.chromium.components.payments.PaymentDetailsUpdateService" n0:exported="true">
+            <intent-filter>
+                <action n0:name="org.chromium.intent.action.UPDATE_PAYMENT_DETAILS" />
+            </intent-filter>
+        </service>
+        <service n0:name="org.chromium.chrome.browser.webapps.WebApkInstallCoordinatorService" n0:exported="true">
+            <intent-filter>
+                <action n0:name="org.chromium.intent.action.INSTALL_WEB_APK" />
+            </intent-filter>
+        </service>
+        <receiver n0:name="org.chromium.chrome.browser.announcement.AnnouncementNotificationManager$Receiver" n0:exported="false" />
+        <receiver n0:name="org.chromium.chrome.browser.notifications.NotificationIntentInterceptor$Receiver" n0:exported="false" />
+        <activity n0:theme="@style/Theme.BrowserUI.NoDisplay" n0:name="org.chromium.chrome.browser.notifications.NotificationIntentInterceptor$TrampolineActivity" n0:exported="false" n0:excludeFromRecents="true" n0:noHistory="true" n0:documentLaunchMode="always" n0:autoRemoveFromRecents="true" />
+        <activity n0:theme="@style/Theme.BrowserUI.NoDisplay" n0:name="org.chromium.chrome.browser.price_tracking.PriceDropNotificationManagerImpl$TrampolineActivity" n0:exported="false" n0:excludeFromRecents="true" n0:noHistory="true" n0:documentLaunchMode="always" n0:autoRemoveFromRecents="true" />
+        <activity n0:theme="@style/Theme.BrowserUI.NoDisplay" n0:name="org.chromium.chrome.browser.price_tracking.PriceDropNotificationManagerImpl$DismissNotificationChromeActivity" n0:exported="false" n0:excludeFromRecents="true" n0:noHistory="true" n0:documentLaunchMode="always" n0:autoRemoveFromRecents="true" />
+        <receiver n0:name="org.chromium.chrome.browser.notifications.scheduler.DisplayAgent$Receiver" n0:exported="false" />
+        <receiver n0:name="org.chromium.chrome.browser.app.send_tab_to_self.SendTabToSelfNotificationReceiver" n0:exported="false" />
+        <receiver n0:name="org.chromium.chrome.browser.customtabs.CustomTabsShareBroadcastReceiver" n0:exported="false" />
+        <receiver n0:name="org.chromium.chrome.browser.sharing.click_to_call.ClickToCallMessageHandler$TapReceiver" n0:exported="false" />
+        <receiver n0:name="org.chromium.chrome.browser.sharing.shared_clipboard.SharedClipboardMessageHandler$TapReceiver" n0:exported="false" />
+        <receiver n0:name="org.chromium.chrome.browser.sharing.shared_clipboard.SharedClipboardMessageHandler$TryAgainReceiver" n0:exported="false" />
+        <receiver n0:name="org.chromium.chrome.browser.sharing.sms_fetcher.SmsFetcherMessageHandler$NotificationReceiver" n0:exported="false" />
+        <receiver n0:name="org.chromium.chrome.browser.offlinepages.AutoFetchNotifier$CompleteNotificationReceiver" n0:exported="false" />
+        <receiver n0:name="org.chromium.chrome.browser.offlinepages.AutoFetchNotifier$InProgressCancelReceiver" n0:exported="false" />
+        <service n0:name="org.chromium.chrome.browser.media.MediaCaptureNotificationService" n0:exported="false" />
+        <service n0:name="org.chromium.chrome.browser.media.ui.ChromeMediaNotificationControllerServices$PlaybackListenerService" n0:exported="false" n0:foregroundServiceType="mediaPlayback">
+            <intent-filter>
+                <action n0:name="android.intent.action.MEDIA_BUTTON" />
+            </intent-filter>
+        </service>
+        <service n0:name="org.chromium.chrome.browser.media.ui.ChromeMediaNotificationControllerServices$PresentationListenerService" n0:exported="false" n0:foregroundServiceType="mediaPlayback">
+            <intent-filter>
+                <action n0:name="android.intent.action.MEDIA_BUTTON" />
+            </intent-filter>
+        </service>
+        <service n0:name="org.chromium.chrome.browser.media.ui.ChromeMediaNotificationControllerServices$CastListenerService" n0:exported="false" n0:foregroundServiceType="mediaPlayback">
+            <intent-filter>
+                <action n0:name="android.intent.action.MEDIA_BUTTON" />
+            </intent-filter>
+        </service>
+        <service n0:name="org.chromium.chrome.browser.tracing.TracingNotificationService" n0:exported="false" />
+        <service n0:name="org.chromium.chrome.browser.app.bluetooth.BluetoothNotificationService" n0:exported="false" />
+        <service n0:name="org.chromium.chrome.browser.app.usb.UsbNotificationService" n0:exported="false" />
+        <meta-data n0:name="org.chromium.content.browser.SMART_CLIP_PROVIDER" n0:value="org.chromium.content_public.browser.SmartClipProvider" />
+        <activity n0:theme="@style/Theme.MaterialComponents" n0:name="org.chromium.chrome.browser.test_dummy.TestDummyActivity" n0:exported="true" n0:excludeFromRecents="true" n0:configChanges="mcc|mnc|keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" n0:noHistory="true" />
+        <meta-data n0:name="org.chromium.content.browser.NUM_SANDBOXED_SERVICES" n0:value="150" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService0" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process0" n0:isolatedProcess="true" n0:useAppZygote="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService1" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process1" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService2" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process2" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService3" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process3" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService4" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process4" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService5" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process5" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService6" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process6" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService7" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process7" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService8" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process8" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService9" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process9" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService10" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process10" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService11" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process11" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService12" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process12" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService13" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process13" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService14" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process14" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService15" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process15" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService16" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process16" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService17" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process17" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService18" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process18" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService19" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process19" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService20" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process20" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService21" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process21" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService22" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process22" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService23" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process23" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService24" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process24" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService25" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process25" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService26" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process26" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService27" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process27" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService28" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process28" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService29" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process29" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService30" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process30" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService31" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process31" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService32" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process32" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService33" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process33" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService34" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process34" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService35" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process35" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService36" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process36" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService37" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process37" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService38" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process38" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService39" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process39" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService40" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process40" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService41" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process41" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService42" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process42" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService43" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process43" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService44" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process44" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService45" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process45" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService46" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process46" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService47" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process47" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService48" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process48" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService49" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process49" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService50" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process50" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService51" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process51" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService52" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process52" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService53" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process53" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService54" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process54" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService55" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process55" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService56" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process56" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService57" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process57" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService58" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process58" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService59" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process59" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService60" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process60" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService61" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process61" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService62" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process62" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService63" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process63" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService64" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process64" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService65" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process65" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService66" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process66" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService67" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process67" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService68" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process68" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService69" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process69" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService70" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process70" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService71" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process71" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService72" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process72" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService73" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process73" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService74" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process74" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService75" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process75" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService76" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process76" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService77" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process77" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService78" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process78" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService79" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process79" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService80" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process80" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService81" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process81" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService82" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process82" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService83" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process83" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService84" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process84" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService85" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process85" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService86" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process86" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService87" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process87" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService88" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process88" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService89" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process89" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService90" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process90" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService91" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process91" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService92" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process92" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService93" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process93" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService94" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process94" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService95" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process95" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService96" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process96" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService97" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process97" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService98" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process98" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService99" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process99" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService100" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process100" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService101" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process101" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService102" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process102" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService103" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process103" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService104" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process104" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService105" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process105" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService106" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process106" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService107" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process107" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService108" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process108" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService109" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process109" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService110" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process110" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService111" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process111" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService112" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process112" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService113" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process113" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService114" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process114" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService115" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process115" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService116" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process116" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService117" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process117" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService118" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process118" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService119" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process119" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService120" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process120" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService121" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process121" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService122" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process122" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService123" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process123" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService124" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process124" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService125" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process125" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService126" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process126" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService127" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process127" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService128" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process128" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService129" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process129" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService130" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process130" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService131" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process131" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService132" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process132" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService133" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process133" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService134" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process134" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService135" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process135" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService136" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process136" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService137" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process137" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService138" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process138" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService139" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process139" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService140" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process140" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService141" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process141" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService142" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process142" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService143" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process143" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService144" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process144" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService145" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process145" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService146" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process146" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService147" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process147" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService148" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process148" n0:isolatedProcess="true" />
+        <service n0:name="org.chromium.content.app.SandboxedProcessService149" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":sandboxed_process149" n0:isolatedProcess="true" />
+        <meta-data n0:name="org.chromium.content.browser.NUM_PRIVILEGED_SERVICES" n0:value="20" />
+        <service n0:name="org.chromium.content.app.PrivilegedProcessService0" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":privileged_process0" n0:isolatedProcess="false" />
+        <service n0:name="org.chromium.content.app.PrivilegedProcessService1" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":privileged_process1" n0:isolatedProcess="false" />
+        <service n0:name="org.chromium.content.app.PrivilegedProcessService2" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":privileged_process2" n0:isolatedProcess="false" />
+        <service n0:name="org.chromium.content.app.PrivilegedProcessService3" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":privileged_process3" n0:isolatedProcess="false" />
+        <service n0:name="org.chromium.content.app.PrivilegedProcessService4" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":privileged_process4" n0:isolatedProcess="false" />
+        <service n0:name="org.chromium.content.app.PrivilegedProcessService5" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":privileged_process5" n0:isolatedProcess="false" />
+        <service n0:name="org.chromium.content.app.PrivilegedProcessService6" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":privileged_process6" n0:isolatedProcess="false" />
+        <service n0:name="org.chromium.content.app.PrivilegedProcessService7" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":privileged_process7" n0:isolatedProcess="false" />
+        <service n0:name="org.chromium.content.app.PrivilegedProcessService8" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":privileged_process8" n0:isolatedProcess="false" />
+        <service n0:name="org.chromium.content.app.PrivilegedProcessService9" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":privileged_process9" n0:isolatedProcess="false" />
+        <service n0:name="org.chromium.content.app.PrivilegedProcessService10" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":privileged_process10" n0:isolatedProcess="false" />
+        <service n0:name="org.chromium.content.app.PrivilegedProcessService11" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":privileged_process11" n0:isolatedProcess="false" />
+        <service n0:name="org.chromium.content.app.PrivilegedProcessService12" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":privileged_process12" n0:isolatedProcess="false" />
+        <service n0:name="org.chromium.content.app.PrivilegedProcessService13" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":privileged_process13" n0:isolatedProcess="false" />
+        <service n0:name="org.chromium.content.app.PrivilegedProcessService14" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":privileged_process14" n0:isolatedProcess="false" />
+        <service n0:name="org.chromium.content.app.PrivilegedProcessService15" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":privileged_process15" n0:isolatedProcess="false" />
+        <service n0:name="org.chromium.content.app.PrivilegedProcessService16" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":privileged_process16" n0:isolatedProcess="false" />
+        <service n0:name="org.chromium.content.app.PrivilegedProcessService17" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":privileged_process17" n0:isolatedProcess="false" />
+        <service n0:name="org.chromium.content.app.PrivilegedProcessService18" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":privileged_process18" n0:isolatedProcess="false" />
+        <service n0:name="org.chromium.content.app.PrivilegedProcessService19" n0:permission="com.kiwibrowser.browser.dev.permission.CHILD_SERVICE" n0:exported="false" n0:process=":privileged_process19" n0:isolatedProcess="false" />
+        <meta-data n0:name="android.allow_multiple_resumed_activities" n0:value="true" />
+        <meta-data n0:name="com.samsung.android.sdk.multiwindow.enable" n0:value="true" />
+        <meta-data n0:name="com.samsung.android.sdk.multiwindow.penwindow.enable" n0:value="true" />
+        <meta-data n0:name="com.sec.android.support.multiwindow" n0:value="true" />
+        <meta-data n0:name="android.content.APP_RESTRICTIONS" n0:resource="@xml/app_restrictions" />
+        <meta-data n0:name="com.google.ar.core" n0:value="optional" />
+        <meta-data n0:name="com.google.ar.core.session_settings" n0:value="allow_front_facing_motion_tracking_6dof," />
+        <meta-data n0:name="com.google.android.gms.cast.framework.OPTIONS_PROVIDER_CLASS_NAME" n0:value="org.chromium.components.media_router.caf.CastOptionsProvider" />
+        <meta-data n0:name="com.google.android.gms.ads.APPLICATION_ID" n0:value="ca-app-pub-6270590005670211~5038553661" />
+        <provider n0:name="org.chromium.chrome.browser.util.ChromeFileProvider" n0:exported="false" n0:authorities="com.kiwibrowser.browser.dev.FileProvider" n0:grantUriPermissions="true">
+            <meta-data n0:name="android.support.FILE_PROVIDER_PATHS" n0:resource="@xml/file_paths" />
+        </provider>
+        <provider n0:name="org.chromium.chrome.browser.download.DownloadFileProvider" n0:exported="false" n0:authorities="com.kiwibrowser.browser.dev.DownloadFileProvider" n0:grantUriPermissions="true">
+            <meta-data n0:name="android.support.FILE_PROVIDER_PATHS" n0:resource="@xml/file_paths" />
+        </provider>
+        <provider n0:name="org.chromium.ui.dragdrop.DropDataContentProvider" n0:exported="false" n0:authorities="com.kiwibrowser.browser.dev.DropDataProvider" n0:grantUriPermissions="true" />
+        <provider n0:name="org.chromium.chrome.browser.provider.ChromeBrowserProvider" n0:exported="true" n0:authorities="com.kiwibrowser.browser.dev.ChromeBrowserProvider;com.kiwibrowser.browser.dev.browser;com.kiwibrowser.browser.dev">
+            <path-permission n0:readPermission="android.permission.GLOBAL_SEARCH" n0:path="/bookmarks/search_suggest_query" />
+        </provider>
+        <activity n0:theme="@style/Theme.PlayCore.Transparent" n0:name="com.google.android.play.core.common.PlayCoreDialogWrapperActivity" n0:exported="false" n0:stateNotNeeded="true" />
+        <provider n0:name="com.google.firebase.provider.FirebaseInitProvider" n0:exported="false" n0:authorities="com.kiwibrowser.browser.dev.firebaseinitprovider" n0:initOrder="100" n0:directBootAware="true" />
+        <service n0:name="com.google.firebase.components.ComponentDiscoveryService" n0:exported="false" n0:directBootAware="true">
+            <meta-data n0:name="com.google.firebase.components:com.google.firebase.dynamicloading.DynamicLoadingRegistrar" n0:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data n0:name="com.google.firebase.components:com.google.firebase.iid.Registrar" n0:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data n0:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar" n0:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data n0:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar" n0:value="com.google.firebase.components.ComponentRegistrar" />
+        </service>
+        <receiver n0:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" n0:permission="com.google.android.c2dm.permission.SEND" n0:exported="true">
+            <intent-filter>
+                <action n0:name="com.google.android.c2dm.intent.RECEIVE" />
+            </intent-filter>
+        </receiver>
+        <service n0:name="com.google.firebase.messaging.FirebaseMessagingService" n0:exported="false" n0:directBootAware="true">
+            <intent-filter n0:priority="-500">
+                <action n0:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <activity n0:theme="@android:style/Theme.Translucent.NoTitleBar" n0:name="com.google.android.gms.common.api.GoogleApiActivity" n0:exported="false" />
+        <meta-data n0:name="com.google.android.gms.version" n0:value="@integer/google_play_services_version" />
+        <receiver n0:name="com.google.android.gms.cast.framework.media.MediaIntentReceiver" n0:exported="false" />
+        <service n0:name="com.google.android.gms.cast.framework.media.MediaNotificationService" n0:exported="false" />
+        <service n0:name="com.google.android.gms.cast.framework.ReconnectionService" n0:exported="false" />
+        <meta-data n0:name="com.google.ar.core.min_apk_version" n0:value="221020000" />
+        <activity n0:theme="@android:style/Theme.Material.Light.Dialog.Alert" n0:name="com.google.ar.core.InstallActivity" n0:exported="false" n0:excludeFromRecents="true" n0:launchMode="singleTop" n0:configChanges="keyboardHidden|orientation|screenSize" />
+    </application>
+</manifest>

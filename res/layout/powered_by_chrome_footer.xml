@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout n0:paddingTop="4.0dp" n0:layout_width="match_parent" n0:layout_height="wrap_content"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <org.chromium.components.browser_ui.widget.text.TextViewWithCompoundDrawables n0:ellipsize="end" n0:gravity="start|center" n0:id="@id/running_in_chrome_footer_text" n0:paddingTop="@dimen/custom_tabs_menu_footer_margin_vertical" n0:paddingBottom="@dimen/custom_tabs_menu_footer_margin_vertical" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:maxLines="1" n0:drawablePadding="@dimen/custom_tabs_menu_footer_margin_horizontal" n0:drawableStart="@mipmap/ic_launcher" n0:paddingStart="16.0dp" n0:paddingEnd="16.0dp" n1:drawableHeight="@dimen/custom_tabs_menu_footer_icon_size" n1:drawableWidth="@dimen/custom_tabs_menu_footer_icon_size" style="@style/TextAppearance.TextSmall.Secondary"
+      xmlns:n1="http://schemas.android.com/apk/res-auto" />
+    <View n0:background="?colorSurfaceVariant" n0:layout_width="match_parent" n0:layout_height="1.0dp" />
+</FrameLayout>

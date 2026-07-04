@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout n0:orientation="vertical" n0:paddingLeft="@dimen/fast_checkout_sheet_padding" n0:paddingRight="@dimen/fast_checkout_sheet_padding" n0:layout_width="match_parent" n0:layout_height="wrap_content"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <ImageView n0:layout_gravity="center_horizontal" n0:id="@id/drag_handlebar" n0:layout_width="32.0dp" n0:layout_height="wrap_content" n0:layout_marginTop="6.0dp" n0:importantForAccessibility="no" n1:srcCompat="@drawable/drag_handlebar"
+      xmlns:n1="http://schemas.android.com/apk/res-auto" />
+    <ViewFlipper n0:id="@id/fast_checkout_bottom_sheet_view_flipper" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:measureAllChildren="false" n0:inAnimation="@anim/fast_checkout_view_flipper_fade_in" n0:outAnimation="@anim/fast_checkout_view_flipper_fade_out">
+        <include n0:id="@id/fast_checkout_home_screen_sheet" layout="@layout/fast_checkout_home_screen_sheet" />
+        <include n0:id="@id/fast_checkout_detail_screen_sheet" layout="@layout/fast_checkout_detail_screen_sheet" />
+    </ViewFlipper>
+</LinearLayout>

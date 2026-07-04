@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector>
+    <item n0:state_enabled="false"
+      xmlns:n0="http://schemas.android.com/apk/res/android">
+        <org.chromium.components.browser_ui.widget.SurfaceColorDrawable n0:shape="rectangle" n1:surfaceElevation="@dimen/default_elevation_1"
+          xmlns:n1="http://schemas.android.com/apk/res-auto">
+            <corners n0:radius="@dimen/feed_header_background_corner_radius" />
+        </org.chromium.components.browser_ui.widget.SurfaceColorDrawable>
+    </item>
+    <item n2:state_enabled="true"
+      xmlns:n2="http://schemas.android.com/apk/res/android">
+        <org.chromium.components.browser_ui.widget.SurfaceColorDrawable n2:shape="rectangle" n3:surfaceElevation="@dimen/feed_header_section_tab_bg_elevation_enabled"
+          xmlns:n3="http://schemas.android.com/apk/res-auto">
+            <corners n2:radius="@dimen/feed_header_background_corner_radius" />
+        </org.chromium.components.browser_ui.widget.SurfaceColorDrawable>
+    </item>
+</selector>

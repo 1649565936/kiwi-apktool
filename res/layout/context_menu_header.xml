@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout n0:orientation="horizontal" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:paddingStart="@dimen/context_menu_list_lateral_padding" n0:paddingEnd="@dimen/context_menu_list_lateral_padding"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <FrameLayout n0:id="@id/menu_header_image_container" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:layout_marginTop="@dimen/context_menu_header_vertical_padding" n0:layout_marginBottom="@dimen/context_menu_bottom_padding" n0:layout_marginEnd="16.0dp">
+        <View n0:id="@id/circle_background" n0:background="?tileViewIconBackgroundModern" n0:visibility="invisible" n0:layout_width="@dimen/context_menu_header_circle_bg_diameter" n0:layout_height="@dimen/context_menu_header_circle_bg_diameter" n0:layout_margin="@dimen/context_menu_header_circle_bg_margin" />
+        <ImageView n0:id="@id/menu_header_image" n0:layout_width="@dimen/context_menu_header_image_max_size" n0:layout_height="@dimen/context_menu_header_image_max_size" n0:src="@color/thumbnail_placeholder_on_primary_bg" n0:scaleType="centerInside" n0:importantForAccessibility="no" />
+    </FrameLayout>
+    <LinearLayout n0:layout_gravity="center_vertical" n0:orientation="vertical" n0:id="@id/title_and_url" n0:paddingTop="@dimen/context_menu_header_vertical_padding" n0:paddingBottom="@dimen/context_menu_bottom_padding" n0:layout_width="match_parent" n0:layout_height="wrap_content">
+        <org.chromium.ui.widget.TextViewWithLeading n0:textAppearance="@style/TextAppearance.TextSmall.Primary" n0:ellipsize="end" n0:id="@id/menu_header_title" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:maxLines="1" n0:textAlignment="viewStart" n1:leading="@dimen/text_size_small_leading"
+          xmlns:n1="http://schemas.android.com/apk/res-auto" />
+        <org.chromium.ui.widget.TextViewWithLeading n0:textAppearance="@style/TextAppearance.TextSmall.Secondary" n0:ellipsize="end" n0:id="@id/menu_header_url" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:maxLines="1" n0:textDirection="ltr" n0:textAlignment="viewStart" n2:leading="@dimen/text_size_small_leading"
+          xmlns:n2="http://schemas.android.com/apk/res-auto" />
+    </LinearLayout>
+</LinearLayout>

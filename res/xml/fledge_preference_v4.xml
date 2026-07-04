@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen>
+    <org.chromium.components.browser_ui.settings.ChromeSwitchPreference n0:title="@string/settings_fledge_page_toggle_label" n0:key="fledge_toggle" n0:summary="@string/settings_fledge_page_toggle_sub_label"
+      xmlns:n0="http://schemas.android.com/apk/res/android" />
+    <org.chromium.chrome.browser.privacy_sandbox.v4.PreferenceCategoryWithClickableSummary n1:title="@string/settings_fledge_page_current_sites_heading" n1:key="fledge_heading" n1:summary="@string/settings_fledge_page_current_sites_description"
+      xmlns:n1="http://schemas.android.com/apk/res/android" />
+    <PreferenceCategory n2:layout="@layout/preference_category_no_title_or_padding" n2:key="current_fledge_sites"
+      xmlns:n2="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.TextMessagePreference n3:key="fledge_disabled" n3:summary="@string/settings_fledge_page_current_sites_description_disabled"
+      xmlns:n3="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.TextMessagePreference n4:key="fledge_empty" n4:summary="@string/settings_fledge_page_current_sites_description_empty"
+      xmlns:n4="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.ChromeBasePreference n5:title="@string/settings_fledge_page_see_all_sites_label" n5:key="fledge_all_sites" n5:fragment="org.chromium.chrome.browser.privacy_sandbox.v4.FledgeAllSitesFragmentV4" n6:userAction="Settings.PrivacySandbox.Fledge.AllSitesOpened"
+      xmlns:n5="http://schemas.android.com/apk/res/android" xmlns:n6="http://schemas.android.com/apk/res-auto" />
+    <org.chromium.components.browser_ui.settings.ChromeBasePreference n7:title="@string/settings_fledge_page_blocked_sites_heading" n7:key="fledge_blocked_sites" n7:fragment="org.chromium.chrome.browser.privacy_sandbox.v4.FledgeBlockedSitesFragmentV4" n8:userAction="Settings.PrivacySandbox.Fledge.BlockedSitesOpened"
+      xmlns:n7="http://schemas.android.com/apk/res/android" xmlns:n8="http://schemas.android.com/apk/res-auto" />
+    <org.chromium.components.browser_ui.settings.ClickableSpansTextMessagePreference n9:key="fledge_page_footer" n9:summary="@string/settings_fledge_page_footer"
+      xmlns:n9="http://schemas.android.com/apk/res/android" />
+</PreferenceScreen>

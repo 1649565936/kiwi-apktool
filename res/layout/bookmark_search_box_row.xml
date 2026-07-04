@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<org.chromium.chrome.browser.bookmarks.BookmarkSearchBoxRow n0:id="@id/bookmark_toolbar" n0:background="@drawable/search_row_modern_bg" n0:layout_width="match_parent" n0:layout_height="40.0dp" n0:layout_marginBottom="18.0dp"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <EditText n0:textAppearance="@style/TextAppearance.TextLarge.Primary" n0:textColorHint="?colorOnSurfaceVariant" n0:id="@id/search_text" n0:background="@null" n0:paddingLeft="@dimen/bookmark_search_hint_horizontal_padding" n0:paddingRight="@dimen/bookmark_search_hint_horizontal_padding" n0:layout_width="match_parent" n0:layout_height="match_parent" n0:hint="@string/bookmark_toolbar_search" n0:singleLine="true" n0:inputType="text" n0:imeOptions="actionSearch|flagNoExtractUi" n0:paddingHorizontal="@dimen/bookmark_search_hint_horizontal_padding" />
+</org.chromium.chrome.browser.bookmarks.BookmarkSearchBoxRow>

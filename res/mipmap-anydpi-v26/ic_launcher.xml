@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<adaptive-icon>
+    <background n0:drawable="@drawable/ic_launcher_background"
+      xmlns:n0="http://schemas.android.com/apk/res/android" />
+    <foreground n1:drawable="@drawable/ic_launcher_foreground"
+      xmlns:n1="http://schemas.android.com/apk/res/android" />
+    <monochrome n2:drawable="@drawable/ic_launcher_monochrome"
+      xmlns:n2="http://schemas.android.com/apk/res/android" />
+</adaptive-icon>

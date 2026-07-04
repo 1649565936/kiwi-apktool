@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector>
+    <item n0:state_checkable="false" n0:state_pressed="true" n0:color="?colorOnContainer" n0:alpha="@dimen/m3_ripple_pressed_alpha"
+      xmlns:n0="http://schemas.android.com/apk/res/android" />
+    <item n1:state_focused="true" n1:state_checkable="false" n1:color="?colorOnContainer" n1:alpha="@dimen/m3_ripple_focused_alpha"
+      xmlns:n1="http://schemas.android.com/apk/res/android" />
+    <item n2:state_checkable="false" n2:color="?colorOnContainer" n2:alpha="@dimen/m3_ripple_hovered_alpha" n2:state_hovered="true"
+      xmlns:n2="http://schemas.android.com/apk/res/android" />
+    <item n3:state_checkable="false" n3:color="?colorOnContainer" n3:alpha="@dimen/m3_ripple_default_alpha"
+      xmlns:n3="http://schemas.android.com/apk/res/android" />
+    <item n4:state_checked="true" n4:state_pressed="true" n4:color="?colorOnSurface" n4:alpha="@dimen/m3_ripple_selectable_pressed_alpha"
+      xmlns:n4="http://schemas.android.com/apk/res/android" />
+    <item n5:state_focused="true" n5:state_checked="true" n5:color="?colorOnSecondaryContainer" n5:alpha="@dimen/m3_ripple_focused_alpha"
+      xmlns:n5="http://schemas.android.com/apk/res/android" />
+    <item n6:state_checked="true" n6:color="?colorOnSecondaryContainer" n6:alpha="@dimen/m3_ripple_hovered_alpha" n6:state_hovered="true"
+      xmlns:n6="http://schemas.android.com/apk/res/android" />
+    <item n7:state_checked="true" n7:color="?colorOnSecondaryContainer" n7:alpha="@dimen/m3_ripple_default_alpha"
+      xmlns:n7="http://schemas.android.com/apk/res/android" />
+    <item n8:state_pressed="true" n8:color="?colorOnSecondaryContainer" n8:alpha="@dimen/m3_ripple_selectable_pressed_alpha"
+      xmlns:n8="http://schemas.android.com/apk/res/android" />
+    <item n9:state_focused="true" n9:color="?colorOnSurface" n9:alpha="@dimen/m3_ripple_focused_alpha"
+      xmlns:n9="http://schemas.android.com/apk/res/android" />
+    <item n10:color="?colorOnSurface" n10:alpha="@dimen/m3_ripple_hovered_alpha" n10:state_hovered="true"
+      xmlns:n10="http://schemas.android.com/apk/res/android" />
+    <item n11:color="?colorOnSurface" n11:alpha="@dimen/m3_ripple_default_alpha"
+      xmlns:n11="http://schemas.android.com/apk/res/android" />
+</selector>

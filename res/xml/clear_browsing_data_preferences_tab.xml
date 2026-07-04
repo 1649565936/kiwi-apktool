@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen>
+    <org.chromium.components.browser_ui.settings.SpinnerPreference n0:persistent="false" n0:title="@string/clear_browsing_data_tab_period_title" n0:key="time_period_spinner" n1:singleLine="true"
+      xmlns:n0="http://schemas.android.com/apk/res/android" xmlns:n1="http://schemas.android.com/apk/res-auto" />
+    <org.chromium.chrome.browser.browsing_data.ClearBrowsingDataCheckBoxPreference n2:persistent="false" n2:title="@string/clear_history_title" n2:key="clear_history_checkbox" n2:summary="@string/clear_browsing_history_summary"
+      xmlns:n2="http://schemas.android.com/apk/res/android" />
+    <org.chromium.chrome.browser.browsing_data.ClearBrowsingDataCheckBoxPreference n3:persistent="false" n3:title="@string/clear_cookies_and_site_data_title" n3:key="clear_cookies_checkbox" n3:summary="@string/clear_cookies_and_site_data_summary_basic"
+      xmlns:n3="http://schemas.android.com/apk/res/android" />
+    <org.chromium.chrome.browser.browsing_data.ClearBrowsingDataCheckBoxPreference n4:persistent="false" n4:title="@string/clear_cache_title" n4:key="clear_cache_checkbox"
+      xmlns:n4="http://schemas.android.com/apk/res/android" />
+    <org.chromium.chrome.browser.browsing_data.ClearBrowsingDataCheckBoxPreference n5:persistent="false" n5:title="@string/clear_passwords_title" n5:key="clear_passwords_checkbox"
+      xmlns:n5="http://schemas.android.com/apk/res/android" />
+    <org.chromium.chrome.browser.browsing_data.ClearBrowsingDataCheckBoxPreference n6:persistent="false" n6:title="@string/clear_form_data_title" n6:key="clear_form_data_checkbox"
+      xmlns:n6="http://schemas.android.com/apk/res/android" />
+    <org.chromium.chrome.browser.browsing_data.ClearBrowsingDataCheckBoxPreference n7:persistent="false" n7:title="@string/prefs_site_settings" n7:key="clear_site_settings_checkbox"
+      xmlns:n7="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.ClickableSpansTextMessagePreference n8:key="clear_google_data_text"
+      xmlns:n8="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.TextMessagePreference n9:key="clear_search_history_non_google_text"
+      xmlns:n9="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.ClickableSpansTextMessagePreference n10:key="sign_out_of_chrome_text"
+      xmlns:n10="http://schemas.android.com/apk/res/android" />
+</PreferenceScreen>

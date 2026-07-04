@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<org.chromium.components.browser_ui.widget.RadioButtonWithDescriptionLayout n0:focusable="false" n0:layout_width="match_parent" n0:layout_height="wrap_content"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <org.chromium.components.browser_ui.widget.RadioButtonWithDescriptionAndAuxButton n0:id="@id/enhanced_protection" n0:visibility="gone" n0:layout_width="match_parent" n0:layout_height="wrap_content" n1:descriptionText="@string/safe_browsing_enhanced_protection_summary" n1:primaryText="@string/safe_browsing_enhanced_protection_title"
+      xmlns:n1="http://schemas.android.com/apk/res-auto" />
+    <org.chromium.components.browser_ui.widget.RadioButtonWithDescriptionAndAuxButton n0:id="@id/standard_protection" n0:layout_width="match_parent" n0:layout_height="wrap_content" n2:descriptionText="@string/safe_browsing_standard_protection_summary" n2:primaryText="@string/safe_browsing_standard_protection_title"
+      xmlns:n2="http://schemas.android.com/apk/res-auto" />
+    <org.chromium.components.browser_ui.widget.RadioButtonWithDescription n0:id="@id/no_protection" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:paddingEnd="@dimen/radio_button_with_description_and_aux_button_aux_button_length" n3:descriptionText="@string/safe_browsing_no_protection_summary" n3:primaryText="@string/safe_browsing_no_protection_title"
+      xmlns:n3="http://schemas.android.com/apk/res-auto" />
+</org.chromium.components.browser_ui.widget.RadioButtonWithDescriptionLayout>

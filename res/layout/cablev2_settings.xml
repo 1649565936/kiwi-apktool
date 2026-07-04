@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:overScrollMode="ifContentScrolls"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <LinearLayout n0:orientation="vertical" n0:layout_width="match_parent" n0:layout_height="wrap_content">
+        <TextView n0:textAppearance="@style/TextAppearance.TextLarge.Primary" n0:gravity="start" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginLeft="16.0dp" n0:layout_marginTop="16.0dp" n0:layout_marginRight="16.0dp" n0:text="@string/cablev2_your_devices" />
+        <TextView n0:textAppearance="@style/TextAppearance.TextMedium.Secondary" n0:gravity="start" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginLeft="16.0dp" n0:layout_marginRight="16.0dp" n0:text="@string/cablev2_your_devices_body" />
+        <TextView n0:textAppearance="@style/TextAppearance.TextLarge.Primary" n0:gravity="start" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginLeft="16.0dp" n0:layout_marginTop="16.0dp" n0:layout_marginRight="16.0dp" n0:text="@string/cablev2_linked_devices" />
+        <TextView n0:textAppearance="@style/TextAppearance.TextMedium.Secondary" n0:gravity="start" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginLeft="16.0dp" n0:layout_marginRight="16.0dp" n0:text="@string/cablev2_linked_devices_body" />
+        <org.chromium.ui.widget.ButtonCompat n0:layout_gravity="end" n0:id="@id/unlink_button" n0:focusable="true" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:layout_margin="16.0dp" n0:text="@string/cablev2_unlink_button" style="@style/FilledButton.Flat" />
+    </LinearLayout>
+</ScrollView>

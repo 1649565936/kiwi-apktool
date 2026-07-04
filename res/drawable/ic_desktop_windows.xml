@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector n0:height="24.0dp" n0:width="24.0dp" n0:viewportWidth="675.84" n0:viewportHeight="675.84"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <group n0:translateX="49.0" n0:translateY="81.0">
+        <path n0:fillColor="@android:color/black" n0:pathData="M64 32C46.3 32 32 46.3 32 64V352c0 17.7 14.3 32 32 32H231.7c0.2 0 0.4 0 0.6 0H343.7c0.2 0 0.4 0 0.6 0H512c17.7 0 32-14.3 32-32V64c0-17.7-14.3-32-32-32H64zM213.1 416H64c-35.3 0-64-28.7-64-64V64C0 28.7 28.7 0 64 0H512c35.3 0 64 28.7 64 64V352c0 35.3-28.7 64-64 64H362.9l10.7 64H432c8.8 0 16 7.2 16 16s-7.2 16-16 16H360 216 144c-8.8 0-16-7.2-16-16s7.2-16 16-16h58.4l10.7-64zm32.4 0l-10.7 64H341.1l-10.7-64H245.6z" n0:fillType="nonZero" />
+    </group>
+</vector>

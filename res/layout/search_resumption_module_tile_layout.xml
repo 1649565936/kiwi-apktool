@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<org.chromium.chrome.browser.search_resumption.SearchResumptionTileView n0:orientation="vertical" n0:id="@id/suggestion_tile" n0:background="@drawable/search_resumption_module_background_middle" n0:paddingTop="@dimen/search_resumption_module_header_padding_top" n0:paddingBottom="@dimen/search_resumption_module_header_padding_top" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginBottom="@dimen/search_resumption_module_suggestion_margin_bottom" n0:paddingStart="@dimen/search_resumption_module_suggestion_padding_start" n0:paddingEnd="@dimen/search_resumption_module_suggestion_padding_start"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <ImageView n0:id="@id/tile_icon" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:src="@drawable/ic_suggestion_magnifier" n0:layout_centerVertical="true" n0:contentDescription="@string/DefaultSearchProviderSuggestURLDesc" n0:layout_marginEnd="@dimen/search_resumption_module_suggestion_padding_start" n0:layout_alignParentStart="true" n1:tint="?colorOnSurfaceVariant"
+      xmlns:n1="http://schemas.android.com/apk/res-auto" />
+    <TextView n0:textAppearance="@style/TextAppearance.TextMedium.Primary" n0:id="@id/tile_content" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:singleLine="true" n0:layout_centerVertical="true" n0:layout_toEndOf="@id/tile_icon" />
+</org.chromium.chrome.browser.search_resumption.SearchResumptionTileView>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<org.chromium.chrome.browser.toolbar.top.StartSurfaceToolbarView n0:id="@id/tab_switcher_toolbar" n0:visibility="gone" n0:clickable="true" n0:layout_width="match_parent" n0:layout_height="@dimen/toolbar_height_no_shadow"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <ViewStub n0:id="@id/incognito_tabs_stub" n0:layout="@layout/incognito_toggle_tabs" n0:inflatedId="@id/incognito_toggle_tabs" n0:layout_width="wrap_content" n0:layout_height="match_parent" n0:layout_marginBottom="4.0dp" n0:layout_centerHorizontal="true" />
+    <org.chromium.chrome.browser.logo.LogoView n0:id="@id/logo" n0:visibility="gone" n0:layout_width="match_parent" n0:layout_height="40.0dp" n0:layout_alignParentBottom="true" n0:layout_centerHorizontal="true" />
+    <LinearLayout n0:orientation="horizontal" n0:id="@id/new_tab_view" n0:background="?selectableItemBackground" n0:visibility="gone" n0:layout_width="wrap_content" n0:layout_height="match_parent">
+        <ImageView n0:layout_gravity="start|top" n0:layout_width="wrap_content" n0:layout_height="56.0dp" n0:scaleType="center" n0:contentDescription="@string/accessibility_toolbar_btn_new_tab" n0:paddingStart="16.0dp" n0:paddingEnd="16.0dp" n1:srcCompat="@drawable/new_tab_icon" n1:tint="?colorOnSurface"
+          xmlns:n1="http://schemas.android.com/apk/res-auto" />
+        <TextView n0:textAppearance="@style/TextAppearance.TextMediumThick.Primary" n0:gravity="center_vertical" n0:layout_width="wrap_content" n0:layout_height="match_parent" n0:text="@string/button_new_tab" n0:paddingEnd="16.0dp" />
+    </LinearLayout>
+    <org.chromium.chrome.browser.toolbar.NewTabButton n0:layout_gravity="start|top" n0:id="@id/new_tab_button" n0:layout_width="wrap_content" n0:contentDescription="@string/accessibility_toolbar_btn_new_tab" n0:paddingStart="16.0dp" n0:paddingEnd="16.0dp" style="@style/ToolbarButton" />
+    <org.chromium.ui.widget.ChromeImageButton n0:id="@id/identity_disc_button" n0:visibility="gone" n0:layout_marginStart="@dimen/identity_disc_button_margin_start" n0:layout_toStartOf="@id/menu_anchor" style="@style/ToolbarButton" />
+    <org.chromium.chrome.browser.toolbar.TabSwitcherButtonView n0:id="@id/start_tab_switcher_button" n0:background="?selectableItemBackgroundBorderless" n0:visibility="gone" n0:contentDescription="@string/accessibility_toolbar_btn_tabswitcher_toggle_default" n0:paddingStart="8.0dp" n0:layout_toStartOf="@id/menu_anchor" n2:menuMaxWidth="@dimen/tab_switcher_menu_width" n2:menuVerticalOverlapAnchor="false" style="@style/ToolbarButton"
+      xmlns:n2="http://schemas.android.com/apk/res-auto" />
+    <FrameLayout n0:id="@id/menu_anchor" n0:layout_width="wrap_content" n0:layout_height="match_parent" n0:layout_alignParentStart="false" n0:layout_alignParentEnd="true">
+        <include layout="@layout/menu_button" />
+    </FrameLayout>
+</org.chromium.chrome.browser.toolbar.top.StartSurfaceToolbarView>

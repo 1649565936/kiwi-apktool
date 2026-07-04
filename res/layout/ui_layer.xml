@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout n0:layout_width="match_parent" n0:layout_height="match_parent"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <FrameLayout n0:id="@id/ui_back_button_holder" n0:layout_width="84.0dp" n0:layout_height="84.0dp" n0:layout_alignParentTop="true" n0:layout_alignParentStart="true">
+        <ImageButton n0:layout_gravity="start|top" n0:id="@id/ui_back_button" n0:src="@drawable/quantum_ic_close_white_24" n0:contentDescription="@string/back_button_content_description" style="@style/UiButton" />
+    </FrameLayout>
+    <RelativeLayout n0:id="@id/ui_alignment_marker" n0:background="@color/alignment_marker_color" n0:layout_width="@dimen/alignment_marker_thickness" n0:layout_height="@dimen/alignment_marker_height" n0:layout_alignParentBottom="true" n0:layout_centerHorizontal="true" />
+    <FrameLayout n0:id="@id/ui_settings_button_holder" n0:layout_width="84.0dp" n0:layout_height="84.0dp" n0:layout_alignParentTop="true" n0:layout_alignParentEnd="true">
+        <ImageButton n0:layout_gravity="end|top" n0:id="@id/ui_settings_button" n0:src="@drawable/quantum_ic_settings_white_24" n0:contentDescription="@string/settings_button_content_description" style="@style/UiButton" />
+    </FrameLayout>
+</RelativeLayout>

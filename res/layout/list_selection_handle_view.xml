@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge>
+    <org.chromium.ui.widget.ChromeImageView n0:id="@id/check" n0:background="@drawable/list_item_icon_modern_bg" n0:visibility="gone" n0:layout_width="match_parent" n0:layout_height="match_parent" n0:scaleType="center" n1:layout_gravity="center" n1:tint="?colorOnSurfaceInverse"
+      xmlns:n0="http://schemas.android.com/apk/res/android" xmlns:n1="http://schemas.android.com/apk/res-auto" />
+    <org.chromium.ui.widget.ChromeImageView n2:layout_gravity="center" n2:id="@id/circle" n2:background="@null" n2:visibility="gone" n2:layout_width="match_parent" n2:layout_height="match_parent" n2:src="@drawable/circle_white" n3:tint="@null"
+      xmlns:n2="http://schemas.android.com/apk/res/android" xmlns:n3="http://schemas.android.com/apk/res-auto" />
+</merge>

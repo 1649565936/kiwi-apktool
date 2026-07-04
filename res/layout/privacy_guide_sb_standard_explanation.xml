@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView n0:layout_width="match_parent" n0:layout_height="wrap_content"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <LinearLayout n0:orientation="vertical" n0:id="@id/sb_standard_sheet" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginLeft="@dimen/all_content_marginHorizontal" n0:layout_marginRight="@dimen/all_content_marginHorizontal" n0:layout_marginHorizontal="@dimen/all_content_marginHorizontal">
+        <TextView n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:layout_marginTop="@dimen/bottom_sheet_title_marginTop" n0:layout_marginBottom="@dimen/bottom_sheet_title_marginBottom" n0:text="@string/privacy_guide_safe_browsing_standard_title" style="@style/TextAppearance.Headline.Primary" />
+        <org.chromium.chrome.browser.privacy_guide.PrivacyGuideExplanationHeading n0:layout_width="match_parent" n0:layout_height="wrap_content" n1:titleText="@string/privacy_guide_when_on"
+          xmlns:n1="http://schemas.android.com/apk/res-auto" />
+        <org.chromium.chrome.browser.privacy_guide.PrivacyGuideExplanationItem n0:layout_width="match_parent" n0:layout_height="wrap_content" n2:iconImage="@drawable/ic_security_grey" n2:iconTint="?colorOnSurface" n2:summaryText="@string/privacy_guide_sb_standard_item_one"
+          xmlns:n2="http://schemas.android.com/apk/res-auto" />
+        <org.chromium.chrome.browser.privacy_guide.PrivacyGuideExplanationItem n0:layout_width="match_parent" n0:layout_height="wrap_content" n3:iconImage="@drawable/ic_bar_chart_24dp" n3:summaryText="@string/privacy_guide_sb_standard_item_two"
+          xmlns:n3="http://schemas.android.com/apk/res-auto" />
+        <org.chromium.chrome.browser.privacy_guide.PrivacyGuideExplanationHeading n0:layout_width="match_parent" n0:layout_height="wrap_content" n4:titleText="@string/privacy_guide_things_to_consider"
+          xmlns:n4="http://schemas.android.com/apk/res-auto" />
+        <org.chromium.chrome.browser.privacy_guide.PrivacyGuideExplanationItem n0:layout_width="match_parent" n0:layout_height="wrap_content" n5:iconImage="@drawable/ic_web_asset_24dp" n5:summaryText="@string/privacy_guide_sb_standard_item_three"
+          xmlns:n5="http://schemas.android.com/apk/res-auto" />
+    </LinearLayout>
+</ScrollView>

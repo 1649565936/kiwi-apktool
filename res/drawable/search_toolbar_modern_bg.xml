@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list>
+    <item>
+        <shape n0:shape="rectangle"
+          xmlns:n0="http://schemas.android.com/apk/res/android">
+            <solid n0:color="?colorSurface" />
+        </shape>
+    </item>
+    <item n1:drawable="@drawable/modern_toolbar_text_box_background" n1:top="@dimen/search_toolbar_modern_bg_vertical_inset" n1:bottom="@dimen/search_toolbar_modern_bg_vertical_inset" n1:start="@dimen/search_toolbar_modern_bg_horizontal_inset" n1:end="@dimen/search_toolbar_modern_bg_horizontal_inset"
+      xmlns:n1="http://schemas.android.com/apk/res/android" />
+</layer-list>

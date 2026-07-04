@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout n0:orientation="vertical" n0:id="@id/automotive_base_linear_layout" n0:layout_width="match_parent" n0:layout_height="match_parent"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <androidx.appcompat.widget.Toolbar n0:id="@id/back_button_toolbar" n0:background="@android:color/black" n0:layout_width="match_parent" n0:layout_height="?actionBarSize" n1:navigationContentDescription="@string/back" n1:navigationIcon="@drawable/ic_arrow_back_24dp" n1:theme="@style/DarkModeActionBarTheme"
+      xmlns:n1="http://schemas.android.com/apk/res-auto" />
+    <ViewStub n0:id="@id/original_layout" n0:layout_width="match_parent" n0:layout_height="match_parent" />
+</LinearLayout>

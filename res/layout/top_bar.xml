@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<org.chromium.chrome.browser.content_creation.notes.top_bar.TopBarView n0:id="@id/top_bar" n0:background="?colorSurface" n0:layout_width="match_parent" n0:layout_height="wrap_content"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <LinearLayout n0:orientation="horizontal" n0:layout_width="match_parent" n0:layout_height="56.0dp" n0:baselineAligned="false" n0:layout_weight="2.0">
+        <LinearLayout n0:gravity="start|center" n0:orientation="horizontal" n0:layout_width="match_parent" n0:layout_height="match_parent" n0:layout_weight="1.0">
+            <org.chromium.ui.widget.ChromeImageButton n0:gravity="start|center" n0:id="@id/close" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:src="@drawable/btn_close" n0:contentDescription="@string/close" n0:layout_marginStart="24.0dp" n1:tint="@color/default_icon_color_tint_list" style="@style/ToolbarButton"
+              xmlns:n1="http://schemas.android.com/apk/res-auto" />
+        </LinearLayout>
+        <LinearLayout n0:gravity="center_vertical" n0:orientation="horizontal" n0:layout_width="match_parent" n0:layout_height="match_parent" n0:layout_weight="1.0">
+            <org.chromium.ui.widget.ButtonCompat n0:ellipsize="end" n0:gravity="center" n0:id="@id/publish" n0:visibility="invisible" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:text="@string/save" n0:layout_marginEnd="24.0dp" style="@style/TextButton" />
+        </LinearLayout>
+        <LinearLayout n0:gravity="end|center" n0:orientation="horizontal" n0:layout_width="match_parent" n0:layout_height="match_parent" n0:layout_weight="1.0">
+            <org.chromium.ui.widget.ButtonCompat n0:ellipsize="end" n0:gravity="end|center" n0:id="@id/next" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:minWidth="0.0dp" n0:text="@string/next" n0:paddingStart="10.0dp" n0:paddingEnd="10.0dp" n0:layout_marginEnd="24.0dp" style="@style/TextButton" />
+        </LinearLayout>
+    </LinearLayout>
+</org.chromium.chrome.browser.content_creation.notes.top_bar.TopBarView>

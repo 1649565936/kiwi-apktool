@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<org.chromium.chrome.browser.ntp.NewTabPageLayout n0:gravity="center" n0:layout_gravity="center_horizontal" n0:orientation="vertical" n0:id="@id/ntp_content" n0:paddingTop="@dimen/toolbar_height_no_shadow" n0:visibility="gone" n0:layout_width="match_parent" n0:layout_height="wrap_content"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <FrameLayout n0:id="@id/logo_holder" n0:visibility="invisible" n0:layout_width="1.0dp" n0:layout_height="1.0dp">
+        <ViewStub n0:layout_gravity="start|bottom" n0:id="@id/cryptid_holder" n0:layout="@layout/new_tab_page_cryptid_holder" n0:layout_width="@dimen/cryptid_width_in_logo_wrapper" n0:layout_height="@dimen/cryptid_height_in_logo_wrapper" />
+        <include layout="@layout/logo_view_layout" />
+    </FrameLayout>
+    <include layout="@layout/fake_search_box_layout" />
+    <FrameLayout n0:id="@id/query_tiles" n0:visibility="gone" n0:layout_width="1.0dp" n0:layout_height="1.0dp" n0:layout_marginTop="1.0dp" />
+    <View n0:id="@id/ntp_middle_spacer" n0:visibility="invisible" n0:layout_width="0.0dp" n0:layout_height="0.0dp" n0:layout_weight="0.0" />
+    <ViewStub n0:id="@id/tile_grid_placeholder_stub" n0:visibility="invisible" n0:layout="@layout/new_tab_page_tile_grid_placeholder" n0:inflatedId="@id/tile_grid_placeholder" n0:layout_width="1.0dp" n0:layout_height="1.0dp" />
+    <ViewStub n0:id="@id/tab_switcher_module_container_stub" n0:visibility="invisible" n0:layout="@layout/tab_switcher_module_container" n0:layout_width="1.0dp" n0:layout_height="1.0dp" />
+    <org.chromium.chrome.browser.ntp.draggableitem.DragListView n0:gravity="center" n0:layout_gravity="center" n0:id="@id/drag_list_view" n0:padding="10.0dp" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_weight="1.0" />
+    <ViewStub n0:id="@id/search_resumption_module_container_stub" n0:visibility="invisible" n0:layout="@layout/search_resumption_module_layout" n0:layout_width="1.0dp" n0:layout_height="1.0dp" n0:layout_marginTop="1.0dp" />
+    <View n0:id="@id/no_search_logo_spacer" n0:visibility="gone" n0:layout_width="match_parent" n0:layout_height="0.0dp" n0:layout_weight="1.0" />
+</org.chromium.chrome.browser.ntp.NewTabPageLayout>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<org.chromium.chrome.browser.tasks.tab_management.TabGroupUiToolbarView n0:id="@id/tab_group_toolbar" n0:background="@drawable/tab_grid_dialog_background" n0:layout_width="match_parent" n0:layout_height="wrap_content"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <LinearLayout n0:gravity="center_vertical" n0:orientation="horizontal" n0:id="@id/main_content" n0:paddingLeft="@dimen/tab_grid_dialog_app_bar_padding" n0:paddingRight="@dimen/tab_grid_dialog_app_bar_padding" n0:focusable="true" n0:focusableInTouchMode="true" n0:layout_width="match_parent" n0:layout_height="@dimen/bottom_sheet_peek_height">
+        <org.chromium.ui.widget.ChromeImageView n0:id="@id/toolbar_left_button" n0:src="@drawable/ic_expand_more_black_24dp" n0:contentDescription="@string/accessibility_bottom_tab_grid_close_tab_sheet" n1:tint="@color/default_icon_color_tint_list" style="@style/BottomToolbarButton"
+          xmlns:n1="http://schemas.android.com/apk/res-auto" />
+        <EditText n0:theme="@style/TabGridDialogTitleTheme" n0:textAppearance="@style/TextAppearance.TextLarge.Primary" n0:ellipsize="end" n0:gravity="center" n0:id="@id/title" n0:layout_width="0.0dp" n0:layout_height="@dimen/bottom_sheet_peek_height" n0:cursorVisible="false" n0:singleLine="true" n0:selectAllOnFocus="true" n0:layout_weight="1.0" n0:inputType="textNoSuggestions" n0:imeOptions="actionDone" />
+        <org.chromium.ui.widget.ChromeImageView n0:id="@id/toolbar_right_button" n0:src="@drawable/plus" n0:contentDescription="@string/bottom_tab_grid_new_tab" n2:tint="@color/default_icon_color_tint_list" style="@style/BottomToolbarButton"
+          xmlns:n2="http://schemas.android.com/apk/res-auto" />
+        <org.chromium.ui.widget.ChromeImageView n0:layout_gravity="center" n0:id="@id/toolbar_menu_button" n0:src="@drawable/ic_more_vert_24dp" n0:contentDescription="@string/accessibility_toolbar_btn_menu" n3:tint="@color/default_icon_color_tint_list" style="@style/ToolbarMenuButton"
+          xmlns:n3="http://schemas.android.com/apk/res-auto" />
+    </LinearLayout>
+</org.chromium.chrome.browser.tasks.tab_management.TabGroupUiToolbarView>

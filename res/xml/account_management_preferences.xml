@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen>
+    <org.chromium.components.browser_ui.settings.TextMessagePreference n0:key="parent_account_category"
+      xmlns:n0="http://schemas.android.com/apk/res/android" />
+    <PreferenceCategory n1:title="@string/account_management_title" n1:key="accounts_category"
+      xmlns:n1="http://schemas.android.com/apk/res/android" />
+    <Preference n2:layout="@layout/divider_preference"
+      xmlns:n2="http://schemas.android.com/apk/res/android" />
+    <Preference n3:title="@string/account_management_sign_out" n3:key="sign_out"
+      xmlns:n3="http://schemas.android.com/apk/res/android" />
+    <Preference n4:layout="@layout/divider_preference" n4:key="sign_out_divider"
+      xmlns:n4="http://schemas.android.com/apk/res/android" />
+</PreferenceScreen>

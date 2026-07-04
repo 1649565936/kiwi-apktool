@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<org.chromium.components.browser_ui.widget.FadingEdgeScrollView n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:fadeScrollbars="false"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <LinearLayout n0:orientation="vertical" n0:id="@id/image_descriptions_dialog_container" n0:layout_width="match_parent" n0:layout_height="wrap_content">
+        <TextView n0:textAppearance="@style/TextAppearance.TextMedium.Secondary" n0:id="@id/image_descriptions_dialog_content" n0:paddingTop="10.0dp" n0:paddingBottom="10.0dp" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:text="@string/image_descriptions_dialog_content" n0:paddingStart="24.0dp" n0:paddingEnd="24.0dp" />
+        <org.chromium.components.browser_ui.widget.RadioButtonWithDescriptionLayout n0:id="@id/image_descriptions_dialog_radio_button_group" n0:layout_width="match_parent" n0:layout_height="wrap_content">
+            <org.chromium.components.browser_ui.widget.RadioButtonWithDescription n0:id="@id/image_descriptions_dialog_radio_button_just_once" n0:layout_width="match_parent" n0:layout_height="wrap_content" n1:primaryText="@string/just_once"
+              xmlns:n1="http://schemas.android.com/apk/res-auto" />
+            <org.chromium.components.browser_ui.widget.RadioButtonWithDescription n0:id="@id/image_descriptions_dialog_radio_button_always" n0:layout_width="match_parent" n0:layout_height="wrap_content" n2:primaryText="@string/always"
+              xmlns:n2="http://schemas.android.com/apk/res-auto" />
+        </org.chromium.components.browser_ui.widget.RadioButtonWithDescriptionLayout>
+        <CheckBox n0:textAppearance="@style/TextAppearance.TextLarge.Primary" n0:id="@id/image_descriptions_dialog_check_box" n0:paddingTop="@dimen/radio_button_with_description_vertical_padding" n0:paddingBottom="@dimen/radio_button_with_description_vertical_padding" n0:visibility="gone" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:text="@string/image_descriptions_dialog_option_only_on_wifi" n0:paddingStart="@dimen/radio_button_with_description_lateral_padding" n0:paddingEnd="@dimen/radio_button_with_description_lateral_padding" n0:layout_marginStart="16.0dp" />
+    </LinearLayout>
+</org.chromium.components.browser_ui.widget.FadingEdgeScrollView>

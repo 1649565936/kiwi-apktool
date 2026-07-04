@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple n0:color="?android:colorControlHighlight"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <item n0:id="@android:id/mask">
+        <shape n0:shape="rectangle">
+            <corners n0:radius="@dimen/quick_action_search_widget_medium_search_bar_corner_radius" />
+            <size n0:height="@dimen/quick_action_search_widget_medium_search_bar_height" />
+            <solid n0:color="@color/default_chip_ripple_color" />
+        </shape>
+    </item>
+    <item>
+        <shape n0:shape="rectangle">
+            <corners n0:radius="@dimen/quick_action_search_widget_medium_search_bar_corner_radius" />
+            <size n0:height="@dimen/quick_action_search_widget_medium_search_bar_height" />
+            <solid n0:color="@color/omnibox_bg_color" />
+        </shape>
+    </item>
+</ripple>

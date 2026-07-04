@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<org.chromium.chrome.browser.gesturenav.NavigationBubble n0:gravity="center_vertical" n0:orientation="horizontal" n0:background="@drawable/navigation_bubble_shadow" n0:layout_width="wrap_content" n0:minHeight="@dimen/navigation_bubble_size" n0:animateLayoutChanges="true"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <org.chromium.ui.widget.ChromeImageView n0:id="@id/navigation_bubble_arrow" n0:paddingTop="@dimen/navigation_bubble_top_padding" n0:paddingBottom="@dimen/navigation_bubble_bottom_padding" n0:visibility="gone" n0:layout_width="@dimen/navigation_bubble_arrow_size" n0:layout_height="@dimen/navigation_bubble_arrow_size" n0:importantForAccessibility="no" n0:paddingStart="@dimen/navigation_bubble_start_padding" n1:srcCompat="@drawable/ic_arrow_back_24dp"
+      xmlns:n1="http://schemas.android.com/apk/res-auto" />
+    <TextView n0:textAppearance="@style/TextAppearance.TextMediumThick.Accent1" n0:gravity="center" n0:id="@id/navigation_bubble_text" n0:paddingTop="@dimen/navigation_bubble_text_top_padding" n0:paddingBottom="@dimen/navigation_bubble_text_bottom_padding" n0:visibility="gone" n0:layout_width="wrap_content" n0:layout_height="match_parent" n0:maxLines="1" n0:paddingStart="@dimen/navigation_bubble_text_start_padding" n0:paddingEnd="@dimen/navigation_bubble_text_end_padding" />
+</org.chromium.chrome.browser.gesturenav.NavigationBubble>

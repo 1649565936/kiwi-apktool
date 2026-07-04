@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<org.chromium.chrome.browser.suggestions.tile.TopSitesTileView n0:layout_width="@dimen/tile_view_width" n0:layout_height="wrap_content" n0:paddingStart="@dimen/tile_view_padding" n0:paddingEnd="@dimen/tile_view_padding"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <ImageView n0:layout_gravity="center_horizontal" n0:id="@id/tile_view_icon" n0:layout_width="@dimen/tile_view_icon_size_modern" n0:layout_height="@dimen/tile_view_icon_size_modern" n0:layout_marginTop="@dimen/tile_view_icon_margin_top_modern" n0:importantForAccessibility="no" />
+    <View n0:layout_gravity="center_horizontal" n0:id="@id/tile_view_highlight" n0:background="@drawable/tile_view_highlight" n0:layout_width="@dimen/tile_view_icon_size" n0:layout_height="@dimen/tile_view_icon_size" n0:layout_marginTop="@dimen/tile_view_icon_background_margin_top_modern" />
+    <View n0:layout_gravity="center_horizontal" n0:background="@drawable/tile_view_hairline_border_background" n0:layout_width="@dimen/tile_view_icon_size" n0:layout_height="@dimen/tile_view_icon_size" n0:layout_marginTop="@dimen/tile_view_icon_background_margin_top_modern" />
+    <ImageView n0:layout_gravity="end|top" n0:id="@id/offline_badge" n0:visibility="gone" n0:layout_width="@dimen/tile_view_offline_badge_size_modern" n0:layout_height="@dimen/tile_view_offline_badge_size_modern" n0:layout_marginTop="@dimen/tile_view_offline_badge_margin_top_modern" n0:contentDescription="@string/accessibility_ntp_offline_badge" n0:layout_marginEnd="@dimen/tile_view_offline_badge_margin_end_modern" n1:srcCompat="@drawable/ic_offline_pin_blue_white"
+      xmlns:n1="http://schemas.android.com/apk/res-auto" />
+    <org.chromium.ui.widget.TextViewWithLeading n0:textAppearance="@style/TextAppearance.TextSmall.Secondary" n0:ellipsize="end" n0:gravity="center_horizontal" n0:id="@id/tile_view_title" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginTop="@dimen/tile_view_title_margin_top_modern" n0:lines="2" n2:leading="@dimen/text_size_small_leading"
+      xmlns:n2="http://schemas.android.com/apk/res-auto" />
+</org.chromium.chrome.browser.suggestions.tile.TopSitesTileView>

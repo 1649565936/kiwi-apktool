@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen>
+    <org.chromium.components.browser_ui.settings.ChromeBasePreference n0:icon="@drawable/settings_all_sites" n0:title="@string/all_sites" n0:key="all_sites" n0:fragment="org.chromium.components.browser_ui.site_settings.AllSiteSettings" n1:iconTint="?colorOnSurface"
+      xmlns:n0="http://schemas.android.com/apk/res/android" xmlns:n1="http://schemas.android.com/apk/res-auto" />
+    <PreferenceCategory n2:title="@string/site_settings_permission_category"
+      xmlns:n2="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.ChromeBasePreference n3:key="device_location" n3:fragment="org.chromium.components.browser_ui.site_settings.SingleCategorySettings"
+      xmlns:n3="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.ChromeBasePreference n4:key="camera" n4:fragment="org.chromium.components.browser_ui.site_settings.SingleCategorySettings"
+      xmlns:n4="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.ChromeBasePreference n5:key="microphone" n5:fragment="org.chromium.components.browser_ui.site_settings.SingleCategorySettings"
+      xmlns:n5="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.ChromeBasePreference n6:key="sensors" n6:fragment="org.chromium.components.browser_ui.site_settings.SingleCategorySettings"
+      xmlns:n6="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.ChromeBasePreference n7:key="notifications" n7:fragment="org.chromium.components.browser_ui.site_settings.SingleCategorySettings"
+      xmlns:n7="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.ChromeBasePreference n8:key="nfc" n8:fragment="org.chromium.components.browser_ui.site_settings.SingleCategorySettings"
+      xmlns:n8="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.ChromeBasePreference n9:key="usb" n9:fragment="org.chromium.components.browser_ui.site_settings.SingleCategorySettings"
+      xmlns:n9="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.ChromeBasePreference n10:key="clipboard" n10:fragment="org.chromium.components.browser_ui.site_settings.SingleCategorySettings"
+      xmlns:n10="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.ChromeBasePreference n11:key="bluetooth" n11:fragment="org.chromium.components.browser_ui.site_settings.SingleCategorySettings"
+      xmlns:n11="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.ChromeBasePreference n12:key="bluetooth_scanning" n12:fragment="org.chromium.components.browser_ui.site_settings.SingleCategorySettings"
+      xmlns:n12="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.ChromeBasePreference n13:key="virtual_reality" n13:fragment="org.chromium.components.browser_ui.site_settings.SingleCategorySettings"
+      xmlns:n13="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.ChromeBasePreference n14:key="augmented_reality" n14:fragment="org.chromium.components.browser_ui.site_settings.SingleCategorySettings"
+      xmlns:n14="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.ChromeBasePreference n15:key="idle_detection" n15:fragment="org.chromium.components.browser_ui.site_settings.SingleCategorySettings"
+      xmlns:n15="http://schemas.android.com/apk/res/android" />
+    <PreferenceCategory n16:title="@string/site_settings_content_category"
+      xmlns:n16="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.ChromeBasePreference n17:icon="@drawable/permission_cookie" n17:key="third_party_cookies" n17:fragment="org.chromium.components.browser_ui.site_settings.SingleCategorySettings" n18:iconTint="?colorOnSurface"
+      xmlns:n17="http://schemas.android.com/apk/res/android" xmlns:n18="http://schemas.android.com/apk/res-auto" />
+    <org.chromium.components.browser_ui.settings.ChromeBasePreference n19:key="javascript" n19:fragment="org.chromium.components.browser_ui.site_settings.SingleCategorySettings"
+      xmlns:n19="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.ChromeBasePreference n20:key="popups" n20:fragment="org.chromium.components.browser_ui.site_settings.SingleCategorySettings"
+      xmlns:n20="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.ChromeBasePreference n21:key="sound" n21:fragment="org.chromium.components.browser_ui.site_settings.SingleCategorySettings"
+      xmlns:n21="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.ChromeBasePreference n22:key="ads" n22:fragment="org.chromium.components.browser_ui.site_settings.SingleCategorySettings"
+      xmlns:n22="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.ChromeBasePreference n23:key="protected_content" n23:fragment="org.chromium.components.browser_ui.site_settings.SingleCategorySettings"
+      xmlns:n23="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.ChromeBasePreference n24:key="federated_identity_api" n24:fragment="org.chromium.components.browser_ui.site_settings.SingleCategorySettings"
+      xmlns:n24="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.ChromeBasePreference n25:key="anti_abuse" n25:fragment="org.chromium.components.browser_ui.site_settings.SingleCategorySettings"
+      xmlns:n25="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.ChromeBasePreference n26:key="site_data" n26:fragment="org.chromium.components.browser_ui.site_settings.SingleCategorySettings"
+      xmlns:n26="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.ChromeBasePreference n27:key="request_desktop_site" n27:fragment="org.chromium.components.browser_ui.site_settings.SingleCategorySettings"
+      xmlns:n27="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.ChromeBasePreference n28:key="auto_dark_web_content" n28:fragment="org.chromium.components.browser_ui.site_settings.SingleCategorySettings"
+      xmlns:n28="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.ChromeBasePreference n29:key="background_sync" n29:fragment="org.chromium.components.browser_ui.site_settings.SingleCategorySettings"
+      xmlns:n29="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.ChromeBasePreference n30:key="automatic_downloads" n30:fragment="org.chromium.components.browser_ui.site_settings.SingleCategorySettings"
+      xmlns:n30="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.ChromeBasePreference n31:icon="@drawable/ic_storage" n31:title="@string/website_settings_storage" n31:key="use_storage" n31:fragment="org.chromium.components.browser_ui.site_settings.AllSiteSettings" n32:iconTint="?colorOnSurface"
+      xmlns:n31="http://schemas.android.com/apk/res/android" xmlns:n32="http://schemas.android.com/apk/res-auto" />
+</PreferenceScreen>

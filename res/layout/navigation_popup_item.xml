@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout n0:gravity="center_vertical" n0:orientation="horizontal" n0:background="?selectableItemBackground" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:paddingStart="@dimen/navigation_popup_default_padding" n0:paddingEnd="@dimen/navigation_popup_default_padding"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <FrameLayout n0:layout_width="wrap_content" n0:layout_height="match_parent">
+        <View n0:layout_gravity="center" n0:id="@id/favicon_bg" n0:background="?tileViewIconBackgroundModern" n0:layout_width="@dimen/navigation_popup_favicon_bg_size" n0:layout_height="@dimen/navigation_popup_favicon_bg_size" />
+        <ImageView n0:layout_gravity="center" n0:id="@id/favicon_img" n0:layout_width="@dimen/default_favicon_size" n0:layout_height="@dimen/default_favicon_size" />
+    </FrameLayout>
+    <TextView n0:textAppearance="@style/TextAppearance.TextLarge.Primary" n0:gravity="center_vertical" n0:id="@id/entry_title" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:minHeight="@dimen/navigation_popup_item_height" n0:singleLine="true" n0:layout_marginStart="@dimen/navigation_popup_default_padding" />
+</LinearLayout>

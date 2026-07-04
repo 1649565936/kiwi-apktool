@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge>
+    <LinearLayout n0:gravity="center_vertical" n0:orientation="horizontal" n0:id="@id/signin_fre_selected_account" n0:background="?selectableItemBackground" n0:paddingBottom="8.0dp" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:paddingStart="24.0dp" n0:paddingEnd="24.0dp"
+      xmlns:n0="http://schemas.android.com/apk/res/android">
+        <include layout="@layout/account_row" />
+        <ImageView n0:id="@id/signin_fre_selected_account_expand_icon" n0:layout_width="24.0dp" n0:layout_height="24.0dp" n0:importantForAccessibility="no" n0:layout_marginStart="16.0dp" n1:srcCompat="@drawable/ic_expand_more_in_circle_24dp"
+          xmlns:n1="http://schemas.android.com/apk/res-auto" />
+    </LinearLayout>
+    <include n2:id="@id/signin_fre_continue_button" layout="@layout/account_picker_bottom_sheet_continue_button"
+      xmlns:n2="http://schemas.android.com/apk/res/android" />
+    <org.chromium.ui.widget.ButtonCompat n3:id="@id/signin_fre_dismiss_button" n3:layout_width="match_parent" n3:layout_height="wrap_content" n3:text="@string/signin_fre_dismiss_button" n3:layout_marginStart="24.0dp" n3:layout_marginEnd="24.0dp" style="@style/TextButton"
+      xmlns:n3="http://schemas.android.com/apk/res/android" />
+</merge>

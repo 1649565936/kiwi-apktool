@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<org.chromium.chrome.features.tasks.TasksView n0:layout_width="match_parent" n0:layout_height="match_parent"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <com.google.android.material.appbar.AppBarLayout n0:id="@id/task_surface_header" n0:layout_width="match_parent" n0:layout_height="wrap_content" n1:elevation="0.0dp"
+      xmlns:n1="http://schemas.android.com/apk/res-auto">
+        <LinearLayout n0:orientation="vertical" n0:id="@id/top_toolbar_placeholder" n0:background="@android:color/transparent" n0:layout_width="match_parent" n0:layout_height="wrap_content" n1:layout_scrollFlags="scroll|snap" />
+        <LinearLayout n0:orientation="vertical" n0:id="@id/logo_container" n0:visibility="gone" n0:layout_width="match_parent" n0:layout_height="wrap_content" n1:layout_scrollFlags="scroll|snap">
+            <include layout="@layout/logo_view_layout" />
+        </LinearLayout>
+        <LinearLayout n0:orientation="vertical" n0:id="@id/fake_search_box" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n1:layout_scrollFlags="scroll">
+            <include layout="@layout/tasks_surface_search_box_layout" />
+        </LinearLayout>
+        <FrameLayout n0:id="@id/query_tiles_container" n0:paddingTop="6.0dp" n0:visibility="gone" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:paddingStart="6.0dp" n0:paddingEnd="6.0dp" n1:layout_scrollFlags="scroll">
+            <include layout="@layout/query_tiles_layout" />
+        </FrameLayout>
+        <include layout="@layout/mv_tiles_container" />
+        <LinearLayout n0:orientation="horizontal" n0:id="@id/tab_switcher_title" n0:paddingTop="10.0dp" n0:paddingBottom="10.0dp" n0:visibility="gone" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:paddingStart="16.0dp" n0:paddingEnd="4.0dp" n1:layout_scrollFlags="scroll">
+            <TextView n0:gravity="start|center" n0:layout_gravity="center_vertical" n0:id="@id/tab_switcher_title_description" n0:layout_width="0.0dp" n0:layout_height="wrap_content" n0:text="@string/tab_switcher_carousel_title" n0:singleLine="true" n0:layout_weight="1.0" n0:textAlignment="viewStart" />
+            <TextView n0:id="@id/more_tabs" n0:paddingTop="16.0dp" n0:paddingBottom="16.0dp" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:layout_marginTop="-16.0dp" n0:layout_marginBottom="-16.0dp" n0:text="@string/tab_switcher_carousel_view_all" n0:paddingEnd="16.0dp" />
+        </LinearLayout>
+        <include layout="@layout/tab_switcher_module_container" />
+    </com.google.android.material.appbar.AppBarLayout>
+    <ViewStub n0:id="@id/incognito_description_container_layout_stub" n0:layout="@layout/incognito_description_container_layout" n0:layout_width="match_parent" n0:layout_height="match_parent" n2:layout_behavior="@string/appbar_scrolling_view_behavior"
+      xmlns:n2="http://schemas.android.com/apk/res-auto" />
+    <FrameLayout n0:id="@id/tasks_surface_body" n0:layout_width="match_parent" n0:layout_height="match_parent" n3:layout_behavior="@string/appbar_scrolling_view_behavior"
+      xmlns:n3="http://schemas.android.com/apk/res-auto" />
+</org.chromium.chrome.features.tasks.TasksView>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge>
+    <include layout="@layout/location_status" />
+    <include n0:layout_gravity="center_vertical" n0:id="@id/url_bar" n0:layout_width="match_parent" n0:layout_height="match_parent" n0:nextFocusForward="@id/menu_button" n0:layout_marginStart="@dimen/location_bar_icon_width" n0:layout_marginEnd="80.0dp" layout="@layout/url_bar"
+      xmlns:n0="http://schemas.android.com/apk/res/android" />
+    <include layout="@layout/url_action_container" />
+</merge>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout n0:orientation="vertical" n0:id="@id/privacy_sandbox_consent_dropdown" n0:layout_width="match_parent" n0:layout_height="match_parent"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <TextView n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginBottom="@dimen/promo_between_text_margin" n0:text="@string/privacy_sandbox_consent_dropdown_topics_heading" style="@style/TextAppearance.TextMedium.Primary" />
+    <TextView n0:id="@id/privacy_sandbox_consent_dropdown_topics_one" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginBottom="@dimen/promo_between_text_margin" style="@style/TextAppearance.TextMedium.Secondary" />
+    <TextView n0:id="@id/privacy_sandbox_consent_dropdown_topics_two" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginBottom="@dimen/promo_between_text_margin" style="@style/TextAppearance.TextMedium.Secondary" />
+    <TextView n0:id="@id/privacy_sandbox_consent_dropdown_topics_three" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginBottom="@dimen/list_item_default_margin" style="@style/TextAppearance.TextMedium.Secondary" />
+    <TextView n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginBottom="@dimen/promo_between_text_margin" n0:text="@string/privacy_sandbox_consent_dropdown_fledge_heading" style="@style/TextAppearance.TextMedium.Primary" />
+    <TextView n0:id="@id/privacy_sandbox_consent_dropdown_fledge_one" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginBottom="@dimen/promo_between_text_margin" style="@style/TextAppearance.TextMedium.Secondary" />
+    <TextView n0:id="@id/privacy_sandbox_consent_dropdown_fledge_two" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginBottom="@dimen/promo_between_text_margin" style="@style/TextAppearance.TextMedium.Secondary" />
+    <TextView n0:id="@id/privacy_sandbox_consent_dropdown_fledge_three" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginBottom="@dimen/list_item_default_margin" style="@style/TextAppearance.TextMedium.Secondary" />
+</LinearLayout>

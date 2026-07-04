@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout n0:orientation="vertical" n0:id="@id/long_screenshots_area_selection_dialog" n0:layout_width="match_parent" n0:layout_height="match_parent"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <LinearLayout n0:gravity="center" n0:orientation="horizontal" n0:id="@id/footer" n0:paddingLeft="@dimen/long_screenshots_button_margin" n0:paddingRight="@dimen/long_screenshots_button_margin" n0:layout_width="match_parent" n0:layout_height="56.0dp" n0:layout_alignParentBottom="true" n0:paddingHorizontal="@dimen/long_screenshots_button_margin">
+        <org.chromium.ui.widget.ChromeImageButton n0:id="@id/close_button" n0:paddingLeft="@dimen/long_screenshots_button_padding" n0:paddingRight="@dimen/long_screenshots_button_padding" n0:layout_width="@dimen/long_screenshots_button_size" n0:layout_height="match_parent" n0:src="@drawable/btn_close" n0:contentDescription="@string/close" n0:paddingHorizontal="@dimen/long_screenshots_button_padding" n1:tint="@color/default_icon_color_tint_list" style="@style/ToolbarButton"
+          xmlns:n1="http://schemas.android.com/apk/res-auto" />
+        <TextView n0:textAppearance="@style/TextAppearance.TextMedium.Secondary" n0:gravity="center" n0:layout_gravity="center" n0:id="@id/sharing_long_screenshot_dialog_title" n0:layout_width="0.0dp" n0:layout_height="wrap_content" n0:text="@string/sharing_long_screenshot" n0:layout_weight="1.0" />
+        <org.chromium.ui.widget.ChromeImageButton n0:id="@id/done_button" n0:paddingLeft="@dimen/long_screenshots_button_padding" n0:paddingRight="@dimen/long_screenshots_button_padding" n0:layout_width="@dimen/long_screenshots_button_size" n0:layout_height="match_parent" n0:src="@drawable/ic_check_googblue_24dp" n0:contentDescription="@string/screenshot_save_title" n0:paddingHorizontal="@dimen/long_screenshots_button_padding" n2:tint="@color/default_icon_color_tint_list" style="@style/ToolbarButton"
+          xmlns:n2="http://schemas.android.com/apk/res-auto" />
+    </LinearLayout>
+    <View n0:id="@id/divider" n0:background="?colorSurfaceVariant" n0:layout_width="match_parent" n0:layout_height="1.0dp" n0:layout_above="@id/footer" />
+    <TextView n0:textAppearance="@style/TextAppearance.TextSmall.Primary.Baseline.Light" n0:gravity="center_horizontal" n0:layout_gravity="center_horizontal" n0:id="@id/sharing_long_screenshot_dialog_instructions" n0:background="@color/default_scrim_color" n0:paddingBottom="6.0dp" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:text="@string/sharing_long_screenshot_instructions" n0:layout_above="@id/divider" />
+    <ScrollView n0:orientation="vertical" n0:id="@id/long_screenshot_scroll_view" n0:background="@color/default_scrim_color" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_above="@id/divider">
+        <RelativeLayout n0:id="@id/bitmap_container_inner" n0:clipChildren="false" n0:layout_width="match_parent" n0:layout_height="wrap_content">
+            <ImageView n0:id="@id/screenshot_image" n0:background="@color/modern_white" n0:padding="1.0dp" n0:layout_width="match_parent" n0:layout_height="match_parent" n0:layout_marginLeft="30.0dp" n0:layout_marginTop="20.0dp" n0:layout_marginRight="30.0dp" n0:layout_marginBottom="20.0dp" n0:contentDescription="@string/sharing_long_screenshot" n0:layout_marginHorizontal="30.0dp" n0:layout_marginVertical="20.0dp" />
+            <LinearLayout n0:gravity="center|bottom" n0:orientation="vertical" n0:id="@id/region_selection_top" n0:background="@color/black_alpha_65" n0:clipChildren="false" n0:layout_width="match_parent" n0:layout_height="150.0dp" n0:layout_marginLeft="30.0dp" n0:layout_marginRight="30.0dp" n0:layout_alignParentTop="true" n0:layout_marginHorizontal="30.0dp">
+                <org.chromium.ui.widget.ChromeImageButton n0:id="@id/up_button" n0:layout_width="@dimen/long_screenshots_button_size" n0:src="@drawable/arrow_up" n0:contentDescription="@string/sharing_long_screenshot_move_up_button_description" n0:translationY="30.0dp" n0:elevation="@dimen/default_elevation_3" style="@style/ToolbarButton" />
+                <View n0:id="@id/top_mask_border" n0:background="@color/modern_white" n0:layout_width="match_parent" n0:layout_height="2.0dp" />
+            </LinearLayout>
+            <LinearLayout n0:gravity="center|top" n0:orientation="vertical" n0:id="@id/region_selection_bottom" n0:background="@color/black_alpha_65" n0:clipChildren="false" n0:layout_width="match_parent" n0:layout_height="150.0dp" n0:layout_marginLeft="30.0dp" n0:layout_marginRight="30.0dp" n0:layout_alignParentBottom="true" n0:layout_marginHorizontal="30.0dp">
+                <View n0:id="@id/bottom_mask_border" n0:background="@color/modern_white" n0:layout_width="match_parent" n0:layout_height="2.0dp" />
+                <org.chromium.ui.widget.ChromeImageButton n0:id="@id/down_button" n0:layout_width="@dimen/long_screenshots_button_size" n0:src="@drawable/arrow_down" n0:contentDescription="@string/sharing_long_screenshot_move_down_button_description" n0:translationY="-30.0dp" n0:elevation="@dimen/default_elevation_3" style="@style/ToolbarButton" />
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

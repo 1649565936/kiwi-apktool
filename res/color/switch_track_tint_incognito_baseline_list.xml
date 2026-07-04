@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector>
+    <item n0:state_enabled="false" n0:color="@color/switch_track_disabled_color_baseline_light" n0:alpha="@dimen/switch_track_disabled_alpha"
+      xmlns:n0="http://schemas.android.com/apk/res/android" />
+    <item n1:state_checked="true" n1:color="@color/default_control_color_active_dark" n1:alpha="@dimen/switch_track_enabled_alpha"
+      xmlns:n1="http://schemas.android.com/apk/res/android" />
+    <item n2:color="@color/switch_enabled_unchecked_color_baseline_light" n2:alpha="@dimen/switch_track_enabled_alpha"
+      xmlns:n2="http://schemas.android.com/apk/res/android" />
+</selector>

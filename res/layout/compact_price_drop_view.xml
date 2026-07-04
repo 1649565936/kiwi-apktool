@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout n0:orientation="horizontal" n0:layout_width="wrap_content" n0:layout_height="wrap_content"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <TextView n0:textAppearance="@style/TextAppearance.TextMedium.Secondary" n0:id="@id/normal_price_text" n0:layout_width="wrap_content" n0:layout_height="wrap_content" />
+    <TextView n0:textAppearance="@style/TextAppearance.ShoppingPriceDropText" n0:id="@id/price_drop_text" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:layout_marginEnd="8.0dp" />
+    <TextView n0:textAppearance="@style/TextAppearance.TextMedium.Secondary" n0:id="@id/original_price_text" n0:layout_width="wrap_content" n0:layout_height="wrap_content" />
+</LinearLayout>

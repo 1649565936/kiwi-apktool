@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout n0:orientation="vertical" n0:background="@android:color/transparent" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginTop="12.0dp"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <LinearLayout n0:orientation="horizontal" n0:paddingLeft="@dimen/restore_tabs_sheet_padding" n0:paddingRight="@dimen/restore_tabs_sheet_padding" n0:paddingBottom="12.0dp" n0:focusable="true" n0:clickable="true" n0:layout_width="match_parent" n0:layout_height="wrap_content">
+        <ImageButton n0:id="@id/restore_tabs_toolbar_back_image_button" n0:background="?actionBarItemBackground" n0:paddingLeft="6.0dp" n0:paddingRight="6.0dp" n0:layout_width="wrap_content" n0:layout_height="?actionBarSize" n0:src="@drawable/ic_arrow_back_24dp" n0:contentDescription="@string/restore_tabs_back_to_promo_screen_icon_description" n1:tint="?colorOnSurface"
+          xmlns:n1="http://schemas.android.com/apk/res-auto" />
+        <TextView n0:ellipsize="end" n0:layout_gravity="center_vertical" n0:id="@id/restore_tabs_toolbar_title_text_view" n0:paddingLeft="14.0dp" n0:paddingRight="14.0dp" n0:focusable="true" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:singleLine="true" n0:accessibilityHeading="true" style="@style/TextAppearance.Headline" />
+    </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView n0:id="@id/restore_tabs_detail_screen_recycler_view" n0:paddingLeft="@dimen/restore_tabs_sheet_padding_content" n0:paddingRight="@dimen/restore_tabs_sheet_padding_content" n0:paddingBottom="10.0dp" n0:clipToPadding="false" n0:layout_width="match_parent" n0:layout_height="0.0dp" n0:divider="@null" n0:layout_weight="1.0" />
+    <View n0:id="@id/restore_tabs_bottom_toolbar_divider" n0:background="@color/divider_line_bg_color_baseline" n0:layout_width="match_parent" n0:layout_height="1.0dp" />
+    <LinearLayout n0:orientation="horizontal" n0:paddingLeft="@dimen/restore_tabs_sheet_padding_content" n0:paddingTop="16.0dp" n0:paddingRight="@dimen/restore_tabs_sheet_padding_content" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginBottom="@dimen/restore_tabs_bottom_sheet_padding">
+        <org.chromium.ui.widget.ButtonCompat n0:ellipsize="end" n0:gravity="center" n0:id="@id/restore_tabs_button_change_all_tabs_selection" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:singleLine="true" style="@style/TextButton" />
+        <Space n0:layout_width="0.0dp" n0:layout_height="wrap_content" n0:layout_weight="1.0" />
+        <org.chromium.ui.widget.ButtonCompat n0:ellipsize="end" n0:gravity="center" n0:id="@id/restore_tabs_button_open_selected_tabs" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:singleLine="true" style="@style/FilledButton.Flat" />
+    </LinearLayout>
+</LinearLayout>

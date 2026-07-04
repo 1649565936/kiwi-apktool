@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge>
+    <ImageView n0:id="@id/show_keyboard" n0:background="?selectableItemBackground" n0:paddingTop="@dimen/keyboard_accessory_image_top_padding" n0:paddingBottom="@dimen/keyboard_accessory_image_top_padding" n0:layout_width="wrap_content" n0:layout_height="match_parent" n0:contentDescription="@string/keyboard_accessory_sheet_hide" n0:paddingStart="@dimen/keyboard_accessory_bar_item_padding" n0:paddingEnd="@dimen/keyboard_accessory_bar_item_padding"
+      xmlns:n0="http://schemas.android.com/apk/res/android" />
+    <TextView n1:textAppearance="@style/TextAppearance.TextLarge.Primary" n1:gravity="start|center" n1:id="@id/sheet_title" n1:layout_width="match_parent" n1:layout_height="wrap_content" n1:minHeight="48.0dp"
+      xmlns:n1="http://schemas.android.com/apk/res/android" />
+</merge>

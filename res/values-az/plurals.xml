@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="accessibility_dialog_back_button">
+        <item quantity="one">%1$d tabını yığcamlaşdırın.</item>
+        <item quantity="other">%1$d tab olan tab qrupunu yığcamlaşdırın.</item>
+    </plurals>
+    <plurals name="accessibility_dialog_back_button_with_group_name">
+        <item quantity="one">%1$d tabını yığcamlaşdırın.</item>
+        <item quantity="other">%2$d tab olan %1$s tab qrupunu yığcamlaşdırın.</item>
+    </plurals>
+    <plurals name="accessibility_download_manager_ui_audio">
+        <item quantity="one">%d Audio fayl</item>
+        <item quantity="other">%d Audio fayl</item>
+    </plurals>
+    <plurals name="accessibility_download_manager_ui_generic">
+        <item quantity="one">%d Fayl</item>
+        <item quantity="other">%d Fayl</item>
+    </plurals>
+    <plurals name="accessibility_download_manager_ui_images">
+        <item quantity="one">%d Şəkil</item>
+        <item quantity="other">%d Şəkil</item>
+    </plurals>
+    <plurals name="accessibility_download_manager_ui_pages">
+        <item quantity="one">%d Səhifə</item>
+        <item quantity="other">%d Səhifə</item>
+    </plurals>
+    <plurals name="accessibility_download_manager_ui_video">
+        <item quantity="one">%d Video</item>
+        <item quantity="other">%d Video</item>
+    </plurals>
+    <plurals name="accessibility_merchant_viewer_message_description">
+        <item quantity="one">" %1$s/%2$s reytinq, %3$d rəy"</item>
+        <item quantity="other">%1$s/%2$s reytinq, %3$d rəy</item>
+    </plurals>
+    <plurals name="accessibility_remove_selected_items">
+        <item quantity="one">Seçilmiş 1 elementi silin</item>
+        <item quantity="other">Seçilmiş %d elementi silin</item>
+    </plurals>
+    <plurals name="accessibility_share_selected_items">
+        <item quantity="one">Seçilmiş 1 elementi paylaşın</item>
+        <item quantity="other">Seçilmiş %d elementi paylaşın</item>
+    </plurals>
+    <plurals name="accessibility_tab_selection_editor_bookmark_tabs_action_button">
+        <item quantity="one">Seçilmiş %1$d taba əlfəcin əlavə edin</item>
+        <item quantity="other">Seçilmiş %1$d taba əlfəcin əlavə edin</item>
+    </plurals>
+    <plurals name="accessibility_tab_selection_editor_close_tabs">
+        <item quantity="one">Seçilmiş %1$d tabeli bağlayın</item>
+        <item quantity="other">Seçilmiş %1$d tabeli bağlayın</item>
+    </plurals>
+    <plurals name="accessibility_tab_selection_editor_group_tabs">
+        <item quantity="one">%1$d seçilmiş tabı qruplaşdırın</item>
+        <item quantity="other">%1$d seçilmiş tabı qruplaşdırın</item>
+    </plurals>
+    <plurals name="accessibility_tab_selection_editor_share_tabs_action_button">
+        <item quantity="one">%1$d seçilmiş tabı paylaşın</item>
+        <item quantity="other">%1$d seçilmiş tabı paylaşın</item>
+    </plurals>
+    <plurals name="accessibility_tab_selection_editor_ungroup_tabs">
+        <item quantity="one">%1$d seçilmiş tabı ayırın</item>
+        <item quantity="other">%1$d seçilmiş tabı ayırın</item>
+    </plurals>
+    <plurals name="allsites_fps_list_summary">
+        <item quantity="one">%1$s %2$s saytı üçün kukilərə icazə verilir</item>
+        <item quantity="other">%1$s %2$s saytı üçün kukilərə icazə verilir</item>
+    </plurals>
+    <plurals name="allsites_fps_summary">
+        <item quantity="one">%1$s sayt qrupdakı fəaliyyətinizi görə bilən %2$s adlı şəxsin saytlar qrupundadır</item>
+        <item quantity="other">%1$s sayt qrupdakı fəaliyyətinizi görə bilən %2$s adlı şəxsin saytlar qrupundadır</item>
+    </plurals>
+    <plurals name="bookmarks_count">
+        <item quantity="one">%1$d əlfəcin</item>
+        <item quantity="other">%1$d əlfəcin</item>
+    </plurals>
+    <plurals name="bottom_tab_grid_title_placeholder">
+        <item quantity="one">%1$d tab</item>
+        <item quantity="other">%1$d tab</item>
+    </plurals>
+    <plurals name="contacts_picker_more_details">
+        <item quantity="one">(+1)</item>
+        <item quantity="other">(+ %d)</item>
+    </plurals>
+    <plurals name="cookie_controls_blocked_cookies">
+        <item quantity="one">1 kuki bloklanıb</item>
+        <item quantity="other">%d kuki bloklanıb</item>
+    </plurals>
+    <plurals name="cookies_count">
+        <item quantity="one">%d kuki</item>
+        <item quantity="other">%d kuki</item>
+    </plurals>
+    <plurals name="download_manager_n_hours">
+        <item quantity="one">%d saat</item>
+        <item quantity="other">%d saat</item>
+    </plurals>
+    <plurals name="download_message_multiple_download_complete">
+        <item quantity="one">Fayl endirildi</item>
+        <item quantity="other">%d endirmə tamamlandı</item>
+    </plurals>
+    <plurals name="download_message_multiple_download_failed">
+        <item quantity="one">1 endirmə alınmadı</item>
+        <item quantity="other">%d endirmə alınmadı</item>
+    </plurals>
+    <plurals name="download_message_multiple_download_in_progress">
+        <item quantity="one">Fayl endirilir…</item>
+        <item quantity="other">%d fayl endirilir…</item>
+    </plurals>
+    <plurals name="download_message_multiple_download_pending">
+        <item quantity="one">1 endirmə gözlənilir</item>
+        <item quantity="other">%d endirmə gözlənilir</item>
+    </plurals>
+    <plurals name="download_ui_files_downloaded">
+        <item quantity="one">%1$d fayl endirildi</item>
+        <item quantity="other">%1$d fayl endirildi</item>
+    </plurals>
+    <plurals name="history_clusters_n_matches">
+        <item quantity="one">%d uyğunluq</item>
+        <item quantity="other">%d uyğunluq</item>
+    </plurals>
+    <plurals name="instance_switcher_close_confirm_deleted_incognito">
+        <item quantity="one">%1$s anonim tab bağlanacaq</item>
+        <item quantity="other">%1$s anonim tab bağlanacaq</item>
+    </plurals>
+    <plurals name="instance_switcher_close_confirm_deleted_incognito_mixed">
+        <item quantity="one">%1$s anonim və digər %2$s tab bağlanacaq</item>
+        <item quantity="other">%1$s anonim və digər %2$s tab bağlanacaq</item>
+    </plurals>
+    <plurals name="instance_switcher_close_confirm_deleted_tabs_many">
+        <item quantity="one">%1$s və digər %2$s tab bağlanacaq</item>
+        <item quantity="other">%1$s və digər %2$s tab bağlanacaq</item>
+    </plurals>
+    <plurals name="instance_switcher_desc_incognito">
+        <item quantity="one">%1$s anonim tab</item>
+        <item quantity="other">%1$s anonim tab</item>
+    </plurals>
+    <plurals name="instance_switcher_desc_mixed">
+        <item quantity="one">%1$s tab</item>
+        <item quantity="other">%2$s tab, %1$s anonim</item>
+    </plurals>
+    <plurals name="instance_switcher_tab_count_nonzero">
+        <item quantity="one">1 tab</item>
+        <item quantity="other">%d tab</item>
+    </plurals>
+    <plurals name="merchant_viewer_message_description_reviews">
+        <item quantity="one">(%1$s rəy)</item>
+        <item quantity="other">(%1$s rəy)</item>
+    </plurals>
+    <plurals name="merchant_viewer_message_description_reviews_from_google">
+        <item quantity="one">"Geometry'dan %1$s rəy"</item>
+        <item quantity="other">"Geometry'dan %1$s rəy"</item>
+    </plurals>
+    <plurals name="mtrl_badge_content_description">
+        <item quantity="one">%d yeni bildiriş</item>
+        <item quantity="other">%d yeni bildiriş</item>
+    </plurals>
+    <plurals name="n_days_ago">
+        <item quantity="one">%d gün öncə</item>
+        <item quantity="other">%d gün öncə</item>
+    </plurals>
+    <plurals name="n_hours_ago">
+        <item quantity="one">%d saat öncə</item>
+        <item quantity="other">%d saat öncə</item>
+    </plurals>
+    <plurals name="n_minutes_ago">
+        <item quantity="one">%d dəqiqə öncə</item>
+        <item quantity="other">%d dəqiqə öncə</item>
+    </plurals>
+    <plurals name="offline_pages_auto_fetch_in_progress_notification_text">
+        <item quantity="one">Kiwi Browser səhifəni cihaz onlayn olduqda yükləyəcək</item>
+        <item quantity="other">Kiwi Browser səhifələri cihaz onlayn olduqda yükləyəcək</item>
+    </plurals>
+    <plurals name="page_info_cookies_in_use">
+        <item quantity="one">1 kuki istifadə olunur</item>
+        <item quantity="other">%d kuki istifadə olunur</item>
+    </plurals>
+    <plurals name="page_info_permissions_summary_more_allowed">
+        <item quantity="one">%1$s, %2$s və daha %3$s üçün icazə verilib</item>
+        <item quantity="other">%1$s, %2$s və daha %3$s üçün icazə verilib</item>
+    </plurals>
+    <plurals name="page_info_permissions_summary_more_blocked">
+        <item quantity="one">%1$s, %2$s və daha %3$s icazə bloklanıb</item>
+        <item quantity="other">%1$s, %2$s və daha %3$s icazə bloklanıb</item>
+    </plurals>
+    <plurals name="page_info_permissions_summary_more_mixed">
+        <item quantity="one">%1$s, %2$s və daha %3$s icazə</item>
+        <item quantity="other">%1$s, %2$s və daha %3$s icazə</item>
+    </plurals>
+    <plurals name="password_check_status_message_idle_with_leaks">
+        <item quantity="one">%d oğurlanmış parol</item>
+        <item quantity="other">%d oğurlanmış parol</item>
+    </plurals>
+    <plurals name="payment_request_contacts_preview">
+        <item quantity="one">%1$s… və %2$s digəri</item>
+        <item quantity="other">%1$s… və %2$s digəri</item>
+    </plurals>
+    <plurals name="payment_request_payment_methods_preview">
+        <item quantity="one">%1$s… və %2$s digəri</item>
+        <item quantity="other">%1$s… və %2$s digəri</item>
+    </plurals>
+    <plurals name="payment_request_shipping_addresses_preview">
+        <item quantity="one">%1$s… və %2$s digəri</item>
+        <item quantity="other">%1$s… və %2$s digəri</item>
+    </plurals>
+    <plurals name="payment_request_shipping_options_preview">
+        <item quantity="one">%1$s… və %2$s digəri</item>
+        <item quantity="other">%1$s… və %2$s digəri</item>
+    </plurals>
+    <plurals name="quick_delete_dialog_tabs_closed_text">
+        <item quantity="one">Bu cihazda 1 tab</item>
+        <item quantity="other">Bu cihazda %d tab</item>
+    </plurals>
+    <plurals name="reading_list_unread_page_count">
+        <item quantity="one">%1$d oxunmamış səhifə</item>
+        <item quantity="other">%1$d oxunmamış səhifə</item>
+    </plurals>
+    <plurals name="restore_tabs_open_tabs">
+        <item quantity="one">%1$s tabı açın</item>
+        <item quantity="other">%1$s tabı açın</item>
+    </plurals>
+    <plurals name="restore_tabs_promo_sheet_device_info">
+        <item quantity="one">%1$s tab. Yenilənib: %2$s</item>
+        <item quantity="other">%1$s tab. Yenilənib: %2$s</item>
+    </plurals>
+    <plurals name="safety_check_passwords_compromised_exist">
+        <item quantity="one">1 oğurlanmış parol</item>
+        <item quantity="other">%d oğurlanmış parol</item>
+    </plurals>
+    <plurals name="safety_check_timestamp_after_days">
+        <item quantity="one">1 gün əvvəl yoxlanılıb</item>
+        <item quantity="other">%d gün əvvəl yoxlanılıb</item>
+    </plurals>
+    <plurals name="safety_check_timestamp_after_hours">
+        <item quantity="one">1 saat əvvəl yoxlanılıb</item>
+        <item quantity="other">%d saat əvvəl yoxlanılıb</item>
+    </plurals>
+    <plurals name="safety_check_timestamp_after_mins">
+        <item quantity="one">1 dəqiqə əvvəl yoxlanılıb</item>
+        <item quantity="other">%d dəqiqə əvvəl yoxlanılıb</item>
+    </plurals>
+    <plurals name="selected_items">
+        <item quantity="one">1 element seçildi</item>
+        <item quantity="other">%d element seçildi</item>
+    </plurals>
+    <plurals name="signal_strength_level_n_bars">
+        <item quantity="one">Siqnal Gücü Səviyyəsi: %d panel</item>
+        <item quantity="other">Siqnal Gücü Səviyyəsi: %d panel</item>
+    </plurals>
+    <plurals name="tab_selection_editor_bookmark_tabs_action_button">
+        <item quantity="one">Taba əlfəcin əlavə edin</item>
+        <item quantity="other">Tablara əlfəcin əlavə edin</item>
+    </plurals>
+    <plurals name="tab_selection_editor_close_tabs">
+        <item quantity="one">Tabı bağlayın</item>
+        <item quantity="other">Tabları bağlayın</item>
+    </plurals>
+    <plurals name="tab_selection_editor_group_tabs">
+        <item quantity="one">Tabı qruplaşdırın</item>
+        <item quantity="other">Tabları qruplaşdırın</item>
+    </plurals>
+    <plurals name="tab_selection_editor_share_sheet_preview_message">
+        <item quantity="one">"Kiwi Browser'dan %1$d keçid"</item>
+        <item quantity="other">"Kiwi Browser'dan %1$d keçid"</item>
+    </plurals>
+    <plurals name="tab_selection_editor_share_tabs_action_button">
+        <item quantity="one">Tabı paylaşın</item>
+        <item quantity="other">Tabları paylaşın</item>
+    </plurals>
+    <plurals name="tab_selection_editor_tabs_count">
+        <item quantity="one">%1$d tab</item>
+        <item quantity="other">%1$d tab</item>
+    </plurals>
+    <plurals name="tab_selection_editor_ungroup_tabs">
+        <item quantity="one">Tabı ayırın</item>
+        <item quantity="other">Tabları ayırın</item>
+    </plurals>
+</resources>

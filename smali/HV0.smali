@@ -1,0 +1,71 @@
+.class public final synthetic LHV0;
+.super Ljava/lang/Object;
+.source "chromium-ChromePublic.apk-dev-733700004"
+
+# interfaces
+.implements Lorg/chromium/base/Callback;
+
+
+# instance fields
+.field public final synthetic k:LKV0;
+
+
+# direct methods
+.method public synthetic constructor <init>(LKV0;)V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 2
+    .line 3
+    .line 4
+    iput-object p1, p0, LHV0;->k:LKV0;
+
+    .line 5
+    .line 6
+    return-void
+.end method
+
+
+# virtual methods
+.method public final onResult(Ljava/lang/Object;)V
+    .locals 4
+
+    .line 1
+    check-cast p1, Ljava/lang/Void;
+
+    .line 2
+    .line 3
+    iget-object p1, p0, LHV0;->k:LKV0;
+
+    .line 4
+    .line 5
+    iget-object v0, p1, LKV0;->g:Landroid/view/View;
+
+    .line 6
+    .line 7
+    iget-object v1, p1, LKV0;->f:LIV0;
+
+    .line 8
+    .line 9
+    invoke-virtual {v0, v1}, Landroid/view/View;->removeCallbacks(Ljava/lang/Runnable;)Z
+
+    .line 10
+    .line 11
+    .line 12
+    iget-object p1, p1, LKV0;->g:Landroid/view/View;
+
+    .line 13
+    .line 14
+    const-wide/16 v2, 0x1388
+
+    .line 15
+    .line 16
+    invoke-virtual {p1, v1, v2, v3}, Landroid/view/View;->postDelayed(Ljava/lang/Runnable;J)Z
+
+    .line 17
+    .line 18
+    .line 19
+    return-void
+.end method

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:overScrollMode="ifContentScrolls"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <LinearLayout n0:orientation="vertical" style="@style/AlertDialogContent">
+        <TextView n0:id="@id/prompt_text" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginBottom="25.0dp" />
+        <org.chromium.components.browser_ui.widget.text.AlertDialogEditText n0:id="@id/passphrase" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:hint="@string/sync_enter_custom_passphrase_hint" n0:singleLine="true" n0:inputType="textPassword" n0:imeOptions="actionNext" />
+        <TextView n0:gravity="center_horizontal" n0:id="@id/verifying" n0:layout_width="match_parent" n0:layout_height="match_parent" />
+        <org.chromium.ui.widget.TextViewWithClickableSpans n0:id="@id/reset_text" n0:visibility="gone" n0:layout_width="match_parent" n0:layout_height="wrap_content" />
+    </LinearLayout>
+</ScrollView>

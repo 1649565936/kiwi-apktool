@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen>
+    <org.chromium.components.browser_ui.accessibility.TextScalePreference n0:title="@string/font_size" n0:selectable="false" n0:key="text_scale"
+      xmlns:n0="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.accessibility.PageZoomPreference n1:selectable="false" n1:key="page_zoom_default_zoom"
+      xmlns:n1="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.ChromeSwitchPreference n2:title="@string/page_zoom_always_show_preference_title" n2:key="page_zoom_always_show" n2:summary="@string/page_zoom_always_show_preference_summary"
+      xmlns:n2="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.ChromeSwitchPreference n3:title="@string/force_enable_zoom_title" n3:key="force_enable_zoom" n3:summary="@string/force_enable_zoom_summary"
+      xmlns:n3="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.ChromeSwitchPreference n4:title="@string/reader_for_accessibility_title" n4:key="reader_for_accessibility" n4:summary="@string/reader_for_accessibility_summary"
+      xmlns:n4="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.ChromeBaseCheckBoxPreference n5:title="@string/accessibility_preferences_text_rewrap_title" n5:key="text_rewrap" n5:summary="@string/accessibility_preferences_text_rewrap_summary"
+      xmlns:n5="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.ChromeBaseCheckBoxPreference n6:title="@string/accessibility_preferences_open_in_external_application_title" n6:key="open_in_external_app" n6:summary="@string/accessibility_preferences_open_in_external_application_summary"
+      xmlns:n6="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.ChromeBaseCheckBoxPreference n7:title="@string/accessibility_preferences_enable_side_swipe_title" n7:key="side_swipe_mode_enabled" n7:summary="@string/accessibility_preferences_enable_side_swipe_summary"
+      xmlns:n7="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.ChromeBaseCheckBoxPreference n8:title="@string/accessibility_preferences_show_extensions_first_title" n8:key="show_extensions_first" n8:summary="@string/accessibility_preferences_show_extensions_first_summary"
+      xmlns:n8="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.ChromeSwitchPreference n9:title="@string/accessibility_tab_switcher_title" n9:key="accessibility_tab_switcher" n9:summary="@string/accessibility_tab_switcher_summary"
+      xmlns:n9="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.ChromeBaseCheckBoxPreference n10:title="@string/website_settings_desktop_mode" n10:key="desktop_mode" n10:summary="@string/website_settings_desktop_mode_enabled"
+      xmlns:n10="http://schemas.android.com/apk/res/android" />
+    <Preference n11:title="@string/accessibility_captions_title" n11:key="captions"
+      xmlns:n11="http://schemas.android.com/apk/res/android" />
+</PreferenceScreen>

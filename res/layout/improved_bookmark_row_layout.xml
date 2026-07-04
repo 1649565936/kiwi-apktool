@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout n0:gravity="center_vertical" n0:id="@id/container" n0:background="@drawable/rounded_rectangle_surface_0" n0:paddingTop="8.0dp" n0:paddingBottom="8.0dp" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:paddingStart="16.0dp" n0:paddingVertical="8.0dp"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <org.chromium.chrome.browser.bookmarks.ImprovedBookmarkFolderView n0:id="@id/folder_view" n0:layout_width="wrap_content" n0:layout_height="wrap_content" />
+    <ImageView n0:id="@id/start_image" n0:background="@drawable/oval_surface_1" n0:layout_width="@dimen/improved_bookmark_start_image_size_compact" n0:layout_height="@dimen/improved_bookmark_start_image_size_compact" n0:scaleType="center" n0:importantForAccessibility="no" />
+    <View n0:layout_width="16.0dp" n0:layout_height="match_parent" />
+    <include layout="@layout/title_and_description_layout" />
+    <include layout="@layout/improved_bookmark_row_end" />
+</LinearLayout>

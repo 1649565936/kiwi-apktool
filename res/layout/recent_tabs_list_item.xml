@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout n0:id="@id/recent_tabs_list_item_layout" n0:background="?selectableItemBackground" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:minHeight="@dimen/recent_tabs_foreign_session_group_item_height" n0:paddingStart="@dimen/recent_tabs_list_item_side_padding" n0:paddingEnd="@dimen/recent_tabs_list_item_side_padding"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <ImageView n0:id="@id/recent_tabs_favicon" n0:layout_centerVertical="true" n0:layout_alignParentStart="true" style="@style/ListItemStartIcon" />
+    <LinearLayout n0:orientation="vertical" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_centerVertical="true" n0:layout_toEndOf="@id/recent_tabs_favicon">
+        <TextView n0:textAppearance="@style/TextAppearance.TextLarge.Primary" n0:ellipsize="end" n0:id="@id/title_row" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:singleLine="true" />
+        <TextView n0:textAppearance="@style/TextAppearance.TextMedium.Secondary" n0:ellipsize="end" n0:id="@id/domain_row" n0:visibility="gone" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:singleLine="true" />
+    </LinearLayout>
+</RelativeLayout>

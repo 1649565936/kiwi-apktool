@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set n0:shareInterpolator="false"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <scale n0:interpolator="@android:anim/accelerate_decelerate_interpolator" n0:duration="200" n0:pivotX="@fraction/menu_animation_pivot_x" n0:pivotY="4.999995%" n0:fromXScale="0.0" n0:toXScale="1.0" n0:fromYScale="0.0" n0:toYScale="1.0" />
+    <alpha n0:interpolator="@android:anim/linear_interpolator" n0:duration="200" n0:fromAlpha="0.0" n0:toAlpha="1.0" />
+    <translate n0:interpolator="@android:anim/accelerate_decelerate_interpolator" n0:duration="200" n0:fromYDelta="@dimen/menu_negative_software_vertical_offset" n0:toYDelta="0.0" />
+</set>

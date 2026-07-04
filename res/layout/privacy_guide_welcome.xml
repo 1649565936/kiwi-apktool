@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView n0:layout_width="match_parent" n0:layout_height="match_parent"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <LinearLayout n0:orientation="vertical" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginLeft="@dimen/all_content_marginHorizontal" n0:layout_marginRight="@dimen/all_content_marginHorizontal" n0:animateLayoutChanges="true" n0:layout_marginHorizontal="@dimen/all_content_marginHorizontal">
+        <ImageView n0:layout_gravity="center_horizontal" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginLeft="@dimen/standard_illustration_marginHorizontal" n0:layout_marginTop="@dimen/welcome_done_step_illustration_marginVertical" n0:layout_marginRight="@dimen/standard_illustration_marginHorizontal" n0:layout_marginBottom="@dimen/welcome_done_step_illustration_marginVertical" n0:adjustViewBounds="true" n0:maxHeight="@dimen/illustration_maxHeight" n0:importantForAccessibility="no" n0:layout_marginHorizontal="@dimen/standard_illustration_marginHorizontal" n0:layout_marginVertical="@dimen/welcome_done_step_illustration_marginVertical" n1:srcCompat="@drawable/privacy_guide_welcome_image"
+          xmlns:n1="http://schemas.android.com/apk/res-auto" />
+        <TextView n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:layout_marginTop="16.0dp" n0:layout_marginBottom="16.0dp" n0:text="@string/privacy_guide_welcome_title" n0:layout_marginVertical="16.0dp" style="@style/TextAppearance.Headline2Thick.Primary" />
+        <TextView n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:text="@string/privacy_guide_welcome_description" style="@style/TextAppearance.TextLarge.Secondary" />
+    </LinearLayout>
+</ScrollView>

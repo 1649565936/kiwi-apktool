@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape n0:shape="rectangle"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <solid n0:color="@color/accessibility_tab_switcher_list_item" />
+    <size n0:height="1.0px" />
+</shape>

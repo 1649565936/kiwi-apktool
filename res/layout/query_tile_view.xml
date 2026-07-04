@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout n0:orientation="vertical" n0:layout_width="86.0dp" n0:layout_height="86.0dp"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <org.chromium.components.browser_ui.widget.RoundedCornerImageView n0:layout_gravity="center_horizontal" n0:id="@id/thumbnail" n0:layout_width="match_parent" n0:layout_height="match_parent" n0:scaleType="centerCrop" n0:importantForAccessibility="no" n1:cornerRadiusBottomEnd="@dimen/default_rounded_corner_radius" n1:cornerRadiusBottomStart="@dimen/default_rounded_corner_radius" n1:cornerRadiusTopEnd="@dimen/default_rounded_corner_radius" n1:cornerRadiusTopStart="@dimen/default_rounded_corner_radius"
+      xmlns:n1="http://schemas.android.com/apk/res-auto" />
+    <ImageView n0:id="@id/gradient_overlay" n0:layout_width="match_parent" n0:layout_height="match_parent" n0:importantForAccessibility="no" n2:srcCompat="@drawable/query_tile_overlay"
+      xmlns:n2="http://schemas.android.com/apk/res-auto" />
+    <TextView n0:textAppearance="@style/TextAppearance.TextSmall.Primary.Baseline.Light" n0:id="@id/title" n0:paddingBottom="6.0dp" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:layout_alignParentBottom="true" n0:paddingStart="8.0dp" n0:paddingEnd="8.0dp" n0:breakStrategy="balanced" />
+</RelativeLayout>

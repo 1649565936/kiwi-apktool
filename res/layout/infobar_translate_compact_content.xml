@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout n0:gravity="center_vertical" n0:orientation="horizontal" n0:id="@id/translate_infobar_content" n0:layout_width="match_parent" n0:layout_height="wrap_content"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <org.chromium.components.translate.TranslateTabLayout n0:id="@id/translate_infobar_tabs" n0:fadingEdgeLength="@dimen/infobar_translate_fade_edge_length" n0:layout_width="0.0dp" n0:layout_height="match_parent" n0:layout_weight="1.0" n0:requiresFadingEdge="horizontal" n1:tabMode="scrollable" style="@style/TabLayoutStyle"
+      xmlns:n1="http://schemas.android.com/apk/res-auto" />
+    <org.chromium.ui.widget.ChromeImageButton n0:id="@id/translate_infobar_menu_button" n0:background="?selectableItemBackground" n0:layout_width="wrap_content" n0:layout_height="match_parent" n0:src="@drawable/ic_more_vert_24dp" n0:scaleType="center" n0:minWidth="@dimen/min_touch_target_size" n0:minHeight="@dimen/min_touch_target_size" n0:contentDescription="@string/accessibility_toolbar_btn_menu" n2:tint="@color/default_icon_color_tint_list"
+      xmlns:n2="http://schemas.android.com/apk/res-auto" />
+</LinearLayout>

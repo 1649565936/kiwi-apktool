@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<org.chromium.components.browser_ui.modaldialog.ModalDialogView n0:orientation="vertical" n0:id="@id/modal_dialog_view" n0:layout_width="match_parent" n0:layout_height="wrap_content" n1:maxHeight="@dimen/modal_dialog_max_height" n1:maxWidthLandscape="@dimen/abc_dialog_min_width_major" n1:maxWidthPortrait="@dimen/abc_dialog_min_width_minor"
+  xmlns:n0="http://schemas.android.com/apk/res/android" xmlns:n1="http://schemas.android.com/apk/res-auto">
+    <include n0:id="@id/title_container" layout="@layout/modal_dialog_title" />
+    <org.chromium.components.browser_ui.widget.FadingEdgeScrollView n0:id="@id/modal_dialog_scroll_view" n0:layout_width="match_parent" n0:layout_height="0.0dp" n0:layout_weight="1.0" n0:fadeScrollbars="false">
+        <LinearLayout n0:orientation="vertical" n0:layout_width="match_parent" n0:layout_height="wrap_content">
+            <include n0:id="@id/scrollable_title_container" n0:visibility="gone" layout="@layout/modal_dialog_title" />
+            <org.chromium.ui.widget.TextViewWithLeading n0:textAppearance="@style/TextAppearance.TextMedium.Secondary" n0:id="@id/message_paragraph_1" n1:leading="20.0sp" style="@style/AlertDialogContent" />
+            <org.chromium.ui.widget.TextViewWithLeading n0:textAppearance="@style/TextAppearance.TextMedium.Secondary" n0:id="@id/message_paragraph_2" n0:visibility="gone" n0:layout_marginBottom="16.0dp" n1:leading="20.0sp" style="@style/AlertDialogContent" />
+        </LinearLayout>
+    </org.chromium.components.browser_ui.widget.FadingEdgeScrollView>
+    <FrameLayout n0:id="@id/custom" n0:visibility="gone" n0:layout_width="match_parent" n0:layout_height="0.0dp" n0:layout_weight="1.0" />
+    <org.chromium.components.browser_ui.widget.DualControlLayout n0:id="@id/button_bar" n0:paddingTop="?dualControlLayoutVerticalPadding" n0:paddingBottom="?dualControlLayoutVerticalPadding" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:paddingStart="?dualControlLayoutHorizontalPadding" n0:paddingEnd="?dualControlLayoutHorizontalPadding" n1:buttonAlignment="end" n1:stackedMargin="@dimen/button_bar_stacked_margin">
+        <org.chromium.ui.widget.ButtonCompat n0:id="@id/positive_button" n0:layout_width="wrap_content" n0:layout_height="wrap_content" style="?buttonBarPositiveButtonStyle" />
+        <org.chromium.ui.widget.ButtonCompat n0:id="@id/negative_button" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:accessibilityTraversalAfter="@id/positive_button" style="?buttonBarNegativeButtonStyle" />
+    </org.chromium.components.browser_ui.widget.DualControlLayout>
+    <FrameLayout n0:id="@id/custom_button_bar" n0:visibility="gone" n0:layout_width="match_parent" n0:layout_height="wrap_content" />
+    <LinearLayout n0:id="@id/footer" n0:visibility="gone" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginTop="@dimen/modal_dialog_footer_top_margin">
+        <TextView n0:textAppearance="@style/TextAppearance.TextMedium.Secondary" n0:id="@id/footer_message" n0:paddingLeft="@dimen/modal_dialog_footer_horizontal_padding" n0:paddingTop="@dimen/modal_dialog_footer_vertical_padding" n0:paddingRight="@dimen/modal_dialog_footer_horizontal_padding" n0:paddingBottom="@dimen/modal_dialog_footer_vertical_padding" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:paddingHorizontal="@dimen/modal_dialog_footer_horizontal_padding" n0:paddingVertical="@dimen/modal_dialog_footer_vertical_padding" />
+    </LinearLayout>
+</org.chromium.components.browser_ui.modaldialog.ModalDialogView>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout n0:gravity="center_vertical" n0:orientation="horizontal" n0:background="?selectableItemBackground" n0:paddingLeft="@dimen/page_info_popup_padding_sides" n0:paddingTop="@dimen/page_info_popup_padding_vertical" n0:paddingRight="@dimen/page_info_popup_padding_sides" n0:paddingBottom="@dimen/page_info_popup_padding_vertical" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:paddingHorizontal="@dimen/page_info_popup_padding_sides" n0:paddingVertical="@dimen/page_info_popup_padding_vertical"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <org.chromium.ui.widget.ChromeImageView n0:id="@id/page_info_row_icon" n0:layout_width="24.0dp" n0:layout_height="24.0dp" n0:layout_marginEnd="32.0dp" />
+    <LinearLayout n0:orientation="vertical" n0:layout_width="wrap_content" n0:layout_height="wrap_content">
+        <org.chromium.ui.widget.TextViewWithLeading n0:textAppearance="@style/TextAppearance.TextLarge.Primary" n0:id="@id/page_info_row_title" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:includeFontPadding="false" />
+        <org.chromium.ui.widget.TextViewWithLeading n0:textAppearance="@style/TextAppearance.TextMedium.Secondary" n0:id="@id/page_info_row_subtitle" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n1:leading="@dimen/text_size_medium_leading"
+          xmlns:n1="http://schemas.android.com/apk/res-auto" />
+    </LinearLayout>
+</LinearLayout>

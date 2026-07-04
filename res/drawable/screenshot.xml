@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector n0:tint="?colorOnSurface" n0:height="24.0dp" n0:width="24.0dp" n0:viewportWidth="24.0" n0:viewportHeight="24.0"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <path n0:fillColor="#00000000" n0:pathData="m8.6,2h-4.192c-0.7776,0 -1.408,0.6304 -1.408,1.408v4.192" n0:strokeColor="@android:color/white" n0:strokeWidth="1.8" n0:strokeLineCap="square" />
+    <path n0:fillColor="#00000000" n0:pathData="m8.6,18.8l-4.192,-0c-0.7776,-0 -1.408,-0.6304 -1.408,-1.408l0,-4.192" n0:strokeColor="@android:color/white" n0:strokeWidth="1.8" n0:strokeLineCap="square" />
+    <path n0:fillColor="#00000000" n0:pathData="m14.2,2l4.192,0c0.7776,0 1.408,0.6304 1.408,1.408l-0,4.192" n0:strokeColor="@android:color/white" n0:strokeWidth="1.8" n0:strokeLineCap="square" />
+    <path n0:fillColor="#00000000" n0:pathData="m19.8,12.5v9.8" n0:strokeColor="@android:color/white" n0:strokeWidth="1.8" n0:strokeLineCap="square" />
+    <path n0:fillColor="#00000000" n0:pathData="m13.5,18.8l9.8,-0" n0:strokeColor="@android:color/white" n0:strokeWidth="1.8" n0:strokeLineCap="square" />
+</vector>

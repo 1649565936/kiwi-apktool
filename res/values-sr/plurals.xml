@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="accessibility_dialog_back_button">
+        <item quantity="one">Скупите %1$d картицу.</item>
+        <item quantity="few">Скупите групу са %1$d картице.</item>
+        <item quantity="other">Скупите групу са %1$d картица.</item>
+    </plurals>
+    <plurals name="accessibility_dialog_back_button_with_group_name">
+        <item quantity="one">Скупите %1$d картицу.</item>
+        <item quantity="few">Скупите групу %1$s са %2$d картице.</item>
+        <item quantity="other">Скупите групу %1$s са %2$d картица.</item>
+    </plurals>
+    <plurals name="accessibility_download_manager_ui_audio">
+        <item quantity="one">%d аудио датотека</item>
+        <item quantity="few">%d аудио датотеке</item>
+        <item quantity="other">%d аудио датотека</item>
+    </plurals>
+    <plurals name="accessibility_download_manager_ui_generic">
+        <item quantity="one">%d датотека</item>
+        <item quantity="few">%d датотеке</item>
+        <item quantity="other">%d датотека</item>
+    </plurals>
+    <plurals name="accessibility_download_manager_ui_images">
+        <item quantity="one">%d слика</item>
+        <item quantity="few">%d слике</item>
+        <item quantity="other">%d слика</item>
+    </plurals>
+    <plurals name="accessibility_download_manager_ui_pages">
+        <item quantity="one">%d страница</item>
+        <item quantity="few">%d странице</item>
+        <item quantity="other">%d страница</item>
+    </plurals>
+    <plurals name="accessibility_download_manager_ui_video">
+        <item quantity="one">%d видео</item>
+        <item quantity="few">%d видео снимка</item>
+        <item quantity="other">%d видеа</item>
+    </plurals>
+    <plurals name="accessibility_merchant_viewer_message_description">
+        <item quantity="one">" Оцена %1$s од %2$s, %3$d рецензија"</item>
+        <item quantity="few">Оцена %1$s од %2$s, %3$d рецензије</item>
+        <item quantity="other">Оцена %1$s од %2$s, %3$d рецензија</item>
+    </plurals>
+    <plurals name="accessibility_remove_selected_items">
+        <item quantity="one">Уклони 1 изабрану ставку</item>
+        <item quantity="few">Уклони %d изабране ставке</item>
+        <item quantity="other">Уклони %d изабраних ставки</item>
+    </plurals>
+    <plurals name="accessibility_share_selected_items">
+        <item quantity="one">Дели 1 изабрану ставку</item>
+        <item quantity="few">Дели %d изабране ставке</item>
+        <item quantity="other">Дели %d изабраних ставки</item>
+    </plurals>
+    <plurals name="accessibility_tab_selection_editor_bookmark_tabs_action_button">
+        <item quantity="one">Обележите %1$d изабрану картицу</item>
+        <item quantity="few">Обележите %1$d изабране картице</item>
+        <item quantity="other">Обележите %1$d изабраних картица</item>
+    </plurals>
+    <plurals name="accessibility_tab_selection_editor_close_tabs">
+        <item quantity="one">Затворите %1$d изабрану картицу</item>
+        <item quantity="few">Затворите %1$d изабране картице</item>
+        <item quantity="other">Затворите %1$d изабраних картица</item>
+    </plurals>
+    <plurals name="accessibility_tab_selection_editor_group_tabs">
+        <item quantity="one">Додајте %1$d изабрану картицу у групу</item>
+        <item quantity="few">Додајте %1$d изабране картице у групу</item>
+        <item quantity="other">Додајте %1$d изабраних картица у групу</item>
+    </plurals>
+    <plurals name="accessibility_tab_selection_editor_share_tabs_action_button">
+        <item quantity="one">Делите %1$d изабрану картицу</item>
+        <item quantity="few">Делите %1$d изабране картице</item>
+        <item quantity="other">Делите %1$d изабраних картица</item>
+    </plurals>
+    <plurals name="accessibility_tab_selection_editor_ungroup_tabs">
+        <item quantity="one">Опозовите груписање за %1$d изабрану картицу</item>
+        <item quantity="few">Опозовите груписање за %1$d изабране картице</item>
+        <item quantity="other">Опозовите груписање за %1$d изабраних картица</item>
+    </plurals>
+    <plurals name="allsites_fps_list_summary">
+        <item quantity="one">Колачићи су дозвољени за %1$s %2$s сајт</item>
+        <item quantity="few">Колачићи су дозвољени за %1$s %2$s сајта</item>
+        <item quantity="other">Колачићи су дозвољени за %1$s %2$s сајтова</item>
+    </plurals>
+    <plurals name="allsites_fps_summary">
+        <item quantity="one">%1$s сајт у групи сајтова власника %2$s која може да види ваше активности у групи</item>
+        <item quantity="few">%1$s сајта у групи сајтова власника %2$s која може да види ваше активности у групи</item>
+        <item quantity="other">%1$s сајтова у групи сајтова власника %2$s која може да види ваше активности у групи</item>
+    </plurals>
+    <plurals name="bookmarks_count">
+        <item quantity="one">%1$d обележивач</item>
+        <item quantity="few">%1$d обележивача</item>
+        <item quantity="other">%1$d обележивача</item>
+    </plurals>
+    <plurals name="bottom_tab_grid_title_placeholder">
+        <item quantity="one">%1$d картица</item>
+        <item quantity="few">%1$d картице</item>
+        <item quantity="other">%1$d картица</item>
+    </plurals>
+    <plurals name="contacts_picker_more_details">
+        <item quantity="one">(и још 1)</item>
+        <item quantity="few">(и још %d)</item>
+        <item quantity="other">(и још %d)</item>
+    </plurals>
+    <plurals name="cookie_controls_blocked_cookies">
+        <item quantity="one">1 колачић је блокиран</item>
+        <item quantity="few">%d колачића су блокирана</item>
+        <item quantity="other">%d колачића је блокирано</item>
+    </plurals>
+    <plurals name="cookies_count">
+        <item quantity="one">%d колачић</item>
+        <item quantity="few">%d колачића</item>
+        <item quantity="other">%d колачића</item>
+    </plurals>
+    <plurals name="download_manager_n_hours">
+        <item quantity="one">%d ч</item>
+        <item quantity="few">%d ч</item>
+        <item quantity="other">%d ч</item>
+    </plurals>
+    <plurals name="download_message_multiple_download_complete">
+        <item quantity="one">Фајл је преузет</item>
+        <item quantity="few">%d преузимања су довршена</item>
+        <item quantity="other">%d преузимања је довршено</item>
+    </plurals>
+    <plurals name="download_message_multiple_download_failed">
+        <item quantity="one">1 преузимање није успело</item>
+        <item quantity="few">%d преузимања нису успела</item>
+        <item quantity="other">%d преузимања није успело</item>
+    </plurals>
+    <plurals name="download_message_multiple_download_in_progress">
+        <item quantity="one">Преузима се фајл…</item>
+        <item quantity="few">Преузимају се %d фајла…</item>
+        <item quantity="other">Преузима се %d фајлова…</item>
+    </plurals>
+    <plurals name="download_message_multiple_download_pending">
+        <item quantity="one">1 преузимање на чекању</item>
+        <item quantity="few">%d преузимања на чекању</item>
+        <item quantity="other">%d преузимања на чекању</item>
+    </plurals>
+    <plurals name="download_ui_files_downloaded">
+        <item quantity="one">Преузели сте %1$d датотеку</item>
+        <item quantity="few">Преузели сте %1$d датотеке</item>
+        <item quantity="other">Преузели сте %1$d датотека</item>
+    </plurals>
+    <plurals name="history_clusters_n_matches">
+        <item quantity="one">%d подударање</item>
+        <item quantity="few">%d подударања</item>
+        <item quantity="other">%d подударања</item>
+    </plurals>
+    <plurals name="instance_switcher_close_confirm_deleted_incognito">
+        <item quantity="one">%1$s картица без архивирања ће бити затворена</item>
+        <item quantity="few">%1$s картице без архивирања ће бити затворене</item>
+        <item quantity="other">%1$s картица без архивирања ће бити затворено</item>
+    </plurals>
+    <plurals name="instance_switcher_close_confirm_deleted_incognito_mixed">
+        <item quantity="one">Картице без архивирања (%1$s) и још %2$s картица ће бити затворене</item>
+        <item quantity="few">Картице без архивирања (%1$s) и још %2$s картице ће бити затворене</item>
+        <item quantity="other">Картице без архивирања (%1$s) и још %2$s картица ће бити затворене</item>
+    </plurals>
+    <plurals name="instance_switcher_close_confirm_deleted_tabs_many">
+        <item quantity="one">%1$s и још %2$s картица ће бити затворене</item>
+        <item quantity="few">%1$s и још %2$s картице ће бити затворене</item>
+        <item quantity="other">%1$s и још %2$s картица ће бити затворене</item>
+    </plurals>
+    <plurals name="instance_switcher_desc_incognito">
+        <item quantity="one">%1$s картица без архивирања</item>
+        <item quantity="few">%1$s картице без архивирања</item>
+        <item quantity="other">%1$s картица без архивирања</item>
+    </plurals>
+    <plurals name="instance_switcher_desc_mixed">
+        <item quantity="one">%1$s картица</item>
+        <item quantity="few">%2$s картице, %1$s без архивирања</item>
+        <item quantity="other">%2$s картица, %1$s без архивирања</item>
+    </plurals>
+    <plurals name="instance_switcher_tab_count_nonzero">
+        <item quantity="one">1 картица</item>
+        <item quantity="few">%d картице</item>
+        <item quantity="other">%d картица</item>
+    </plurals>
+    <plurals name="merchant_viewer_message_description_reviews">
+        <item quantity="one">(%1$s рецензија)</item>
+        <item quantity="few">(%1$s рецензије)</item>
+        <item quantity="other">(%1$s рецензија)</item>
+    </plurals>
+    <plurals name="merchant_viewer_message_description_reviews_from_google">
+        <item quantity="one">%1$s рецензија из Geometry-а</item>
+        <item quantity="few">%1$s рецензије из Geometry-а</item>
+        <item quantity="other">%1$s рецензија из Geometry-а</item>
+    </plurals>
+    <plurals name="mtrl_badge_content_description">
+        <item quantity="one">%d ново обавештење</item>
+        <item quantity="few">%d нова обавештења</item>
+        <item quantity="other">%d нових обавештења</item>
+    </plurals>
+    <plurals name="n_days_ago">
+        <item quantity="one">Пре %d дана</item>
+        <item quantity="few">Пре %d дана</item>
+        <item quantity="other">Пре %d дана</item>
+    </plurals>
+    <plurals name="n_hours_ago">
+        <item quantity="one">Пре %d сата</item>
+        <item quantity="few">Пре %d сата</item>
+        <item quantity="other">Пре %d сати</item>
+    </plurals>
+    <plurals name="n_minutes_ago">
+        <item quantity="one">Пре %d минута</item>
+        <item quantity="few">Пре %d минута</item>
+        <item quantity="other">Пре %d минута</item>
+    </plurals>
+    <plurals name="offline_pages_auto_fetch_in_progress_notification_text">
+        <item quantity="one">Kiwi Browser ће учитати страницу када буде спремна</item>
+        <item quantity="few">Kiwi Browser ће учитати странице када буду спремне</item>
+        <item quantity="other">Kiwi Browser ће учитати странице када буду спремне</item>
+    </plurals>
+    <plurals name="page_info_cookies_in_use">
+        <item quantity="one">Користи се 1 колачић</item>
+        <item quantity="few">Користе се %d колачића</item>
+        <item quantity="other">Користи се %d колачића</item>
+    </plurals>
+    <plurals name="page_info_permissions_summary_more_allowed">
+        <item quantity="one">Одобрене су дозволе %1$s, %2$s и још %3$s</item>
+        <item quantity="few">Одобрене су дозволе %1$s, %2$s и још %3$s</item>
+        <item quantity="other">Одобрене су дозволе %1$s, %2$s и још %3$s</item>
+    </plurals>
+    <plurals name="page_info_permissions_summary_more_blocked">
+        <item quantity="one">Блокиране су дозволе %1$s, %2$s и још %3$s</item>
+        <item quantity="few">Блокиране су дозволе %1$s, %2$s и још %3$s</item>
+        <item quantity="other">Блокиране су дозволе %1$s, %2$s и још %3$s</item>
+    </plurals>
+    <plurals name="page_info_permissions_summary_more_mixed">
+        <item quantity="one">%1$s, %2$s и још %3$s</item>
+        <item quantity="few">%1$s, %2$s и још %3$s</item>
+        <item quantity="other">%1$s, %2$s и још %3$s</item>
+    </plurals>
+    <plurals name="password_check_status_message_idle_with_leaks">
+        <item quantity="one">%d угрожена лозинка</item>
+        <item quantity="few">%d угрожене лозинке</item>
+        <item quantity="other">%d угрожених лозинки</item>
+    </plurals>
+    <plurals name="payment_request_contacts_preview">
+        <item quantity="one">%1$s… и још %2$s</item>
+        <item quantity="few">%1$s… и још %2$s</item>
+        <item quantity="other">%1$s… и још %2$s</item>
+    </plurals>
+    <plurals name="payment_request_payment_methods_preview">
+        <item quantity="one">%1$s… и још %2$s</item>
+        <item quantity="few">%1$s… и још %2$s</item>
+        <item quantity="other">%1$s… и још %2$s</item>
+    </plurals>
+    <plurals name="payment_request_shipping_addresses_preview">
+        <item quantity="one">%1$s… и још %2$s</item>
+        <item quantity="few">%1$s… и још %2$s</item>
+        <item quantity="other">%1$s… и још %2$s</item>
+    </plurals>
+    <plurals name="payment_request_shipping_options_preview">
+        <item quantity="one">%1$s… и још %2$s</item>
+        <item quantity="few">%1$s… и још %2$s</item>
+        <item quantity="other">%1$s… и још %2$s</item>
+    </plurals>
+    <plurals name="quick_delete_dialog_tabs_closed_text">
+        <item quantity="one">1 картица на овом уређају</item>
+        <item quantity="few">%d картице на овом уређају</item>
+        <item quantity="other">%d картица на овом уређају</item>
+    </plurals>
+    <plurals name="reading_list_unread_page_count">
+        <item quantity="one">%1$d непрочитана страница</item>
+        <item quantity="few">%1$d непрочитане странице</item>
+        <item quantity="other">%1$d непрочитаних страница</item>
+    </plurals>
+    <plurals name="restore_tabs_open_tabs">
+        <item quantity="one">Отвори %1$s картицу</item>
+        <item quantity="few">Отвори %1$s картице</item>
+        <item quantity="other">Отвори %1$s картица</item>
+    </plurals>
+    <plurals name="restore_tabs_promo_sheet_device_info">
+        <item quantity="one">%1$s картица, последњи пут ажурирана: %2$s</item>
+        <item quantity="few">%1$s картице, последњи пут ажуриране: %2$s</item>
+        <item quantity="other">%1$s картица, последњи пут ажуриране: %2$s</item>
+    </plurals>
+    <plurals name="safety_check_passwords_compromised_exist">
+        <item quantity="one">1 угрожена лозинка</item>
+        <item quantity="few">%d угрожене лозинке</item>
+        <item quantity="other">%d угрожених лозинки</item>
+    </plurals>
+    <plurals name="safety_check_timestamp_after_days">
+        <item quantity="one">Проверено пре 1 дан</item>
+        <item quantity="few">Проверено пре %d дана</item>
+        <item quantity="other">Проверено пре %d дана</item>
+    </plurals>
+    <plurals name="safety_check_timestamp_after_hours">
+        <item quantity="one">Проверено пре 1 сат</item>
+        <item quantity="few">Проверено пре %d сата</item>
+        <item quantity="other">Проверено пре %d сати</item>
+    </plurals>
+    <plurals name="safety_check_timestamp_after_mins">
+        <item quantity="one">Проверено пре 1 минут</item>
+        <item quantity="few">Проверено пре %d минута</item>
+        <item quantity="other">Проверено пре %d минута</item>
+    </plurals>
+    <plurals name="selected_items">
+        <item quantity="one">Изабрано: 1</item>
+        <item quantity="few">Изабрано: %d</item>
+        <item quantity="other">Изабрано: %d</item>
+    </plurals>
+    <plurals name="signal_strength_level_n_bars">
+        <item quantity="one">Ниво јачине сигнала: %d црта</item>
+        <item quantity="few">Ниво јачине сигнала: %d црте</item>
+        <item quantity="other">Ниво јачине сигнала: %d црта</item>
+    </plurals>
+    <plurals name="tab_selection_editor_bookmark_tabs_action_button">
+        <item quantity="one">Обележи картицу</item>
+        <item quantity="few">Обележи картице</item>
+        <item quantity="other">Обележи картице</item>
+    </plurals>
+    <plurals name="tab_selection_editor_close_tabs">
+        <item quantity="one">Затвори картицу</item>
+        <item quantity="few">Затвори картице</item>
+        <item quantity="other">Затвори картице</item>
+    </plurals>
+    <plurals name="tab_selection_editor_group_tabs">
+        <item quantity="one">Групиши картицу</item>
+        <item quantity="few">Групиши картице</item>
+        <item quantity="other">Групиши картице</item>
+    </plurals>
+    <plurals name="tab_selection_editor_share_sheet_preview_message">
+        <item quantity="one">%1$d линк из Kiwi Browser-а</item>
+        <item quantity="few">%1$d линкa из Kiwi Browser-а</item>
+        <item quantity="other">%1$d линковa из Kiwi Browser-а</item>
+    </plurals>
+    <plurals name="tab_selection_editor_share_tabs_action_button">
+        <item quantity="one">Дели картицу</item>
+        <item quantity="few">Дели картице</item>
+        <item quantity="other">Дели картице</item>
+    </plurals>
+    <plurals name="tab_selection_editor_tabs_count">
+        <item quantity="one">%1$d картица</item>
+        <item quantity="few">%1$d картице</item>
+        <item quantity="other">%1$d картица</item>
+    </plurals>
+    <plurals name="tab_selection_editor_ungroup_tabs">
+        <item quantity="one">Опозови груписање картице</item>
+        <item quantity="few">Опозови груписање картица</item>
+        <item quantity="other">Опозови груписање картица</item>
+    </plurals>
+</resources>

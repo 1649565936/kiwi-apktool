@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout n0:gravity="center_vertical" n0:orientation="horizontal" n0:layout_width="wrap_content" n0:layout_height="match_parent"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <View n0:id="@id/separator" n0:layout_width="1.0dp" n0:layout_height="match_parent" style="@style/VerticalDivider" />
+    <org.chromium.ui.widget.ChromeImageButton n0:id="@id/expand_arrow" n0:background="?android:selectableItemBackground" n0:layout_width="wrap_content" n0:layout_height="match_parent" n0:src="@drawable/ic_expand_more_horizontal_black_24dp" n0:contentDescription="@string/accessibility_expand_button" n0:paddingStart="@dimen/radio_button_with_description_and_aux_button_spacing" n0:paddingEnd="@dimen/radio_button_with_description_lateral_padding" n1:tint="@color/default_icon_color_tint_list"
+      xmlns:n1="http://schemas.android.com/apk/res-auto" />
+</LinearLayout>

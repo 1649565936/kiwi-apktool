@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout n0:orientation="vertical" n0:padding="@dimen/account_chooser_dialog_margin" n0:layout_width="wrap_content" n0:layout_height="wrap_content"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <TextView n0:textAppearance="@style/TextAppearance.TextLarge.Primary" n0:ellipsize="end" n0:id="@id/title" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:lineSpacingExtra="4.0dp" />
+    <TextView n0:textAppearance="@style/TextAppearance.TextMedium.Secondary" n0:ellipsize="end" n0:id="@id/origin" n0:paddingTop="8.0dp" n0:layout_width="match_parent" n0:layout_height="wrap_content" />
+</LinearLayout>

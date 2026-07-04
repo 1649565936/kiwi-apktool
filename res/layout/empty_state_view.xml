@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout n0:gravity="center" n0:orientation="vertical" n0:id="@id/empty_state_container" n0:padding="@dimen/card_padding" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:scaleType="fitCenter" n0:layout_marginStart="@dimen/default_list_row_padding" n0:layout_marginEnd="@dimen/default_list_row_padding" n0:autoSizeTextType="uniform"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <ImageView n0:id="@id/empty_state_icon" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:contentDescription="@null" />
+    <org.chromium.ui.widget.TextViewWithLeading n0:textAppearance="@style/TextAppearance.TextLarge.Secondary" n0:id="@id/empty_state_text_title" n0:paddingTop="@dimen/empty_state_heading_padding_top" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:maxWidth="@dimen/empty_state_text_width" n0:textAlignment="center" n1:leading="@dimen/text_size_large_leading"
+      xmlns:n1="http://schemas.android.com/apk/res-auto" />
+    <org.chromium.ui.widget.TextViewWithLeading n0:textAppearance="@style/TextAppearance.TextMedium.Secondary" n0:id="@id/empty_state_text_description" n0:paddingTop="@dimen/empty_state_subheading_padding_top" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:maxWidth="@dimen/empty_state_text_width" n0:textAlignment="center" n2:leading="@dimen/text_size_medium_leading"
+      xmlns:n2="http://schemas.android.com/apk/res-auto" />
+</LinearLayout>

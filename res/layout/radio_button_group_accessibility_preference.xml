@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<org.chromium.components.browser_ui.widget.RadioButtonWithDescriptionLayout n0:id="@id/image_descriptions_settings_radio_group" n0:focusable="false" n0:layout_width="match_parent" n0:layout_height="wrap_content"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <org.chromium.components.browser_ui.widget.RadioButtonWithDescription n0:id="@id/image_descriptions_settings_only_on_wifi_radio_button" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:minHeight="@dimen/min_touch_target_size" n1:primaryText="@string/image_descriptions_dialog_option_only_on_wifi"
+      xmlns:n1="http://schemas.android.com/apk/res-auto" />
+    <org.chromium.components.browser_ui.widget.RadioButtonWithDescription n0:id="@id/image_descriptions_settings_mobile_data_radio_button" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:minHeight="@dimen/min_touch_target_size" n2:descriptionText="@string/image_descriptions_settings_use_mobile_data_content" n2:primaryText="@string/image_descriptions_settings_use_mobile_data_title"
+      xmlns:n2="http://schemas.android.com/apk/res-auto" />
+</org.chromium.components.browser_ui.widget.RadioButtonWithDescriptionLayout>

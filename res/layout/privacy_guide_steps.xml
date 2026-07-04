@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout n0:orientation="vertical" n0:layout_width="match_parent" n0:layout_height="match_parent"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <FrameLayout n0:id="@id/step_content" n0:layout_width="match_parent" n0:layout_height="0.0dp" n0:layout_weight="1.0">
+        <androidx.viewpager2.widget.ViewPager2 n0:id="@id/review_viewpager" n0:layout_width="match_parent" n0:layout_height="match_parent" />
+    </FrameLayout>
+    <LinearLayout n0:orientation="horizontal" n0:id="@id/bottom_bar" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginTop="@dimen/bottom_bar_marginVertical" n0:layout_marginBottom="@dimen/bottom_bar_marginVertical" n0:layout_marginVertical="@dimen/bottom_bar_marginVertical">
+        <org.chromium.ui.widget.ButtonCompat n0:id="@id/start_button" n0:focusable="true" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginLeft="16.0dp" n0:layout_marginRight="16.0dp" n0:text="@string/privacy_guide_start_button" n0:layout_marginHorizontal="16.0dp" style="@style/FilledButton.Flat" />
+        <org.chromium.ui.widget.ButtonCompat n0:id="@id/back_button" n0:focusable="true" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:text="@string/back" n0:layout_marginStart="16.0dp" style="@style/TextButton" />
+        <com.google.android.material.tabs.TabLayout n0:id="@id/tab_layout" n0:layout_width="0.0dp" n0:layout_height="wrap_content" n0:layout_weight="1.0" n0:importantForAccessibility="no" n1:tabBackground="@drawable/tab_selector" n1:tabGravity="center" n1:tabIndicatorHeight="0.0dp" n1:tabMinWidth="0.0dp" n1:tabPaddingEnd="8.0dp" n1:tabPaddingStart="8.0dp"
+          xmlns:n1="http://schemas.android.com/apk/res-auto" />
+        <org.chromium.ui.widget.ButtonCompat n0:id="@id/next_button" n0:focusable="true" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:text="@string/next" n0:layout_marginEnd="16.0dp" style="@style/FilledButton.Flat" />
+        <org.chromium.ui.widget.ButtonCompat n0:id="@id/finish_button" n0:focusable="true" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:text="@string/privacy_guide_finish_button" n0:layout_marginEnd="16.0dp" style="@style/FilledButton.Flat" />
+        <org.chromium.ui.widget.ButtonCompat n0:id="@id/done_button" n0:focusable="true" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginLeft="16.0dp" n0:layout_marginRight="16.0dp" n0:text="@string/done" n0:layout_marginHorizontal="16.0dp" style="@style/FilledButton.Flat" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu>
+    <group n0:id="@id/normal_menu_group" n0:visible="false"
+      xmlns:n0="http://schemas.android.com/apk/res/android">
+        <item n0:icon="@drawable/settings_cog" n0:id="@id/settings_menu_id" n0:visible="false" n0:title="@string/settings" n1:iconTint="@color/default_icon_color_secondary_tint_list" n1:showAsAction="ifRoom"
+          xmlns:n1="http://schemas.android.com/apk/res-auto" />
+        <item n0:icon="@drawable/ic_search" n0:id="@id/search_menu_id" n0:visible="false" n0:title="@string/search" n2:iconTint="@color/default_icon_color_secondary_tint_list" n2:showAsAction="ifRoom"
+          xmlns:n2="http://schemas.android.com/apk/res-auto" />
+        <item n0:icon="@drawable/btn_close" n0:id="@id/close_menu_id" n0:title="@string/close" n3:iconTint="@color/default_icon_color_secondary_tint_list" n3:showAsAction="ifRoom"
+          xmlns:n3="http://schemas.android.com/apk/res-auto" />
+    </group>
+    <group n4:id="@id/selection_mode_menu_group" n4:visible="false"
+      xmlns:n4="http://schemas.android.com/apk/res/android">
+        <item n4:icon="@drawable/ic_share_white_24dp" n4:id="@id/selection_mode_share_menu_id" n4:title="@string/share" n5:iconTint="@color/default_icon_color_secondary_tint_list" n5:showAsAction="ifRoom"
+          xmlns:n5="http://schemas.android.com/apk/res-auto" />
+        <item n4:icon="@drawable/ic_delete_white_24dp" n4:id="@id/selection_mode_delete_menu_id" n4:title="@string/delete" n6:iconTint="@color/default_icon_color_secondary_tint_list" n6:showAsAction="ifRoom"
+          xmlns:n6="http://schemas.android.com/apk/res-auto" />
+    </group>
+</menu>

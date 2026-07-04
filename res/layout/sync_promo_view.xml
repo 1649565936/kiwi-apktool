@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<org.chromium.components.browser_ui.widget.MaterialCardViewNoShadow n0:id="@id/signin_promo_view_wrapper" n0:layout_width="match_parent" n0:layout_height="wrap_content" style="@style/MaterialCardStyle"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <LinearLayout n0:gravity="center_horizontal" n0:orientation="vertical" n0:paddingBottom="12.0dp" n0:layout_width="match_parent" n0:layout_height="wrap_content">
+        <FrameLayout n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginTop="4.0dp" n0:layout_marginStart="4.0dp" n0:layout_marginEnd="4.0dp">
+            <ImageView n0:layout_gravity="center" n0:id="@id/sync_promo_image" n0:layout_width="@dimen/sync_promo_account_image_size" n0:layout_height="@dimen/sync_promo_account_image_size" n0:layout_marginTop="12.0dp" n0:layout_marginBottom="12.0dp" n0:scaleType="fitCenter" n0:importantForAccessibility="no" />
+            <org.chromium.ui.widget.ChromeImageButton n0:layout_gravity="end|top" n0:id="@id/sync_promo_close_button" n0:background="?selectableItemBackground" n0:visibility="gone" n0:layout_width="48.0dp" n0:layout_height="48.0dp" n0:src="@drawable/btn_close" n0:scaleType="center" n0:contentDescription="@string/close" n1:tint="?colorOnSurface"
+              xmlns:n1="http://schemas.android.com/apk/res-auto" />
+        </FrameLayout>
+        <TextView n0:textAppearance="@style/TextAppearance.TextLarge.Primary" n0:gravity="center" n0:id="@id/sync_promo_title" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:layout_marginBottom="12.0dp" n0:includeFontPadding="false" n0:lineSpacingMultiplier="1.25" n0:layout_marginStart="16.0dp" n0:layout_marginEnd="16.0dp" />
+        <TextView n0:textAppearance="@style/TextAppearance.TextSmall.Secondary" n0:gravity="center" n0:id="@id/sync_promo_description" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:layout_marginBottom="12.0dp" n0:includeFontPadding="false" n0:lineSpacingMultiplier="1.25" n0:layout_marginStart="16.0dp" n0:layout_marginEnd="16.0dp" />
+        <org.chromium.ui.widget.ButtonCompat n0:ellipsize="end" n0:id="@id/sync_promo_signin_button" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:text="@string/sync_promo_continue_as" n0:singleLine="true" n0:layout_marginStart="16.0dp" n0:layout_marginEnd="16.0dp" style="@style/FilledButton.Flat" />
+        <org.chromium.ui.widget.ButtonCompat n0:ellipsize="end" n0:id="@id/sync_promo_choose_account_button" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:text="@string/signin_promo_choose_account" n0:singleLine="true" n0:layout_marginStart="16.0dp" n0:layout_marginEnd="16.0dp" style="@style/SigninButtonBorderlessRegular" />
+    </LinearLayout>
+</org.chromium.components.browser_ui.widget.MaterialCardViewNoShadow>

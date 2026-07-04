@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape n0:shape="rectangle"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <corners n0:radius="@dimen/card_rounded_corner_radius" />
+    <solid n0:color="@color/price_drop_annotation_bg_color" />
+</shape>

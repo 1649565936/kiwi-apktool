@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout n0:gravity="center" n0:orientation="vertical" n0:layout_width="match_parent" n0:layout_height="match_parent" n0:layout_marginStart="16.0dp" n0:layout_marginEnd="16.0dp"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <ImageView n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:src="@drawable/creator_content_unavailable_error_illustration" />
+    <TextView n0:textAppearance="@style/TextAppearance.TextLarge.Primary" n0:gravity="center" n0:padding="16.0dp" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:text="@string/cormorant_creator_content_unavailable_error_title" />
+    <TextView n0:textAppearance="@style/TextAppearance.TextSmall.Secondary" n0:gravity="center" n0:paddingLeft="16.0dp" n0:paddingRight="16.0dp" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:text="@string/cormorant_creator_content_unavailable_error_description" />
+</LinearLayout>

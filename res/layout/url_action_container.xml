@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge>
+    <LinearLayout n0:layout_gravity="end|center" n0:orientation="horizontal" n0:id="@id/url_action_container" n0:layout_width="wrap_content" n0:layout_height="@dimen/toolbar_height_no_shadow" n0:layout_marginEnd="@dimen/location_bar_url_action_offset"
+      xmlns:n0="http://schemas.android.com/apk/res/android">
+        <org.chromium.ui.widget.ChromeImageButton n0:id="@id/delete_button" n0:visibility="invisible" n0:src="@drawable/btn_delete_24dp" n0:contentDescription="@string/accessibility_toolbar_btn_delete_url" style="@style/LocationBarActionButton" />
+        <org.chromium.ui.widget.ChromeImageButton n0:id="@id/mic_button" n0:visibility="invisible" n0:src="@drawable/btn_mic" n0:contentDescription="@string/accessibility_toolbar_btn_mic" style="@style/LocationBarActionButton" />
+        <org.chromium.ui.widget.ChromeImageButton n0:id="@id/lens_camera_button" n0:visibility="gone" n0:src="@drawable/lens_camera_icon" n0:contentDescription="@string/accessibility_btn_lens_camera" style="@style/LocationBarActionButton" />
+        <org.chromium.ui.widget.ChromeImageButton n0:id="@id/bookmark_button" n0:visibility="gone" n0:contentDescription="@string/accessibility_menu_bookmark" style="@style/LocationBarActionButton" />
+        <org.chromium.ui.widget.ChromeImageButton n0:id="@id/save_offline_button" n0:visibility="gone" n0:src="@drawable/ic_file_download_white_24dp" n0:contentDescription="@string/download_page" n0:nextFocusForward="@id/menu_button" style="@style/LocationBarActionButton" />
+    </LinearLayout>
+</merge>

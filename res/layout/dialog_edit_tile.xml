@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout n0:orientation="vertical" n0:layout_width="wrap_content" n0:layout_height="wrap_content"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <EditText n0:gravity="center" n0:id="@id/url" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginLeft="8.0dp" n0:layout_marginTop="8.0dp" n0:layout_marginRight="8.0dp" n0:layout_marginBottom="8.0dp" n0:hint="http://" n0:inputType="textUri" />
+    <org.chromium.chrome.browser.suggestions.tile.TopSitesTileView n0:layout_gravity="center" n0:id="@id/tile_preview" n0:layout_width="@dimen/tile_view_width_condensed" n0:layout_height="wrap_content" n0:layout_marginTop="10.0dp" n0:layout_marginBottom="10.0dp" n0:paddingStart="@dimen/tile_view_padding" n0:paddingEnd="@dimen/tile_view_padding">
+        <org.chromium.components.browser_ui.widget.RoundedCornerImageView n0:layout_gravity="center_horizontal" n0:id="@id/tile_view_icon" n0:layout_width="48.0dp" n0:layout_height="48.0dp" n0:adjustViewBounds="true" n0:importantForAccessibility="no" n1:cornerRadiusBottomEnd="24.0dp" n1:cornerRadiusBottomStart="24.0dp" n1:cornerRadiusTopEnd="24.0dp" n1:cornerRadiusTopStart="24.0dp"
+          xmlns:n1="http://schemas.android.com/apk/res-auto" />
+        <View n0:layout_gravity="center_horizontal" n0:id="@id/tile_view_highlight" n0:background="@drawable/tile_view_highlight" n0:layout_width="@dimen/tile_view_icon_size" n0:layout_height="@dimen/tile_view_icon_size" />
+        <View n0:layout_gravity="center_horizontal" n0:background="@drawable/tile_view_hairline_border_background" n0:layout_width="@dimen/tile_view_icon_size" n0:layout_height="@dimen/tile_view_icon_size" />
+    </org.chromium.chrome.browser.suggestions.tile.TopSitesTileView>
+    <EditText n0:textAppearance="@style/TextAppearance.TextSmall.Secondary" n0:gravity="center" n0:id="@id/title" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginLeft="8.0dp" n0:layout_marginTop="8.0dp" n0:layout_marginRight="8.0dp" n0:layout_marginBottom="8.0dp" n0:inputType="text" />
+</LinearLayout>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout n0:orientation="vertical" n0:padding="16.0dp" n0:layout_width="match_parent" n0:layout_height="wrap_content"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <EditText n0:textSize="18.0sp" n0:textStyle="bold" n0:id="@id/script_name_input" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginBottom="16.0dp" n0:hint="@string/custom_script_script_name_hint" />
+    <EditText n0:gravity="start|top" n0:id="@id/script_content_input" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:hint="@string/custom_script_script_content_hint" n0:lines="8" n0:inputType="textMultiLine" />
+    <Button n0:id="@id/save_button" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginTop="16.0dp" n0:text="@string/custom_script_save_script" />
+</LinearLayout>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.gridlayout.widget.GridLayout n0:background="?colorSurface" n0:focusable="true" n0:clickable="true" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:minHeight="64.0dp" n1:columnCount="3" n1:rowCount="2"
+  xmlns:n0="http://schemas.android.com/apk/res/android" xmlns:n1="http://schemas.android.com/apk/res-auto">
+    <org.chromium.components.browser_ui.widget.async_image.AsyncImageView n0:id="@id/thumbnail" n0:layout_width="36.0dp" n0:layout_height="36.0dp" n0:scaleType="center" n0:layout_marginStart="16.0dp" n0:layout_marginEnd="16.0dp" n1:layout_column="0" n1:layout_gravity="center_vertical" n1:layout_row="0" n1:layout_rowSpan="2" />
+    <org.chromium.chrome.browser.download.home.view.SelectionView n0:id="@id/selection" n0:layout_width="36.0dp" n0:layout_height="36.0dp" n0:layout_marginStart="16.0dp" n0:layout_marginEnd="16.0dp" n1:layout_column="0" n1:layout_gravity="center_vertical" n1:layout_row="0" n1:layout_rowSpan="2" />
+    <TextView n0:textAppearance="@style/TextAppearance.TextLarge.Primary" n0:id="@id/title" n0:layout_marginTop="11.0dp" n1:layout_column="1" n1:layout_gravity="fill_horizontal" n1:layout_row="0" style="@style/DownloadItemText" />
+    <TextView n0:textAppearance="@style/TextAppearance.TextMedium.Secondary" n0:id="@id/caption" n1:layout_column="1" n1:layout_gravity="fill_horizontal" n1:layout_row="1" style="@style/DownloadItemText" />
+    <include n0:layout_width="48.0dp" n0:layout_height="48.0dp" n1:layout_column="2" n1:layout_gravity="center_vertical" n1:layout_row="0" n1:layout_rowSpan="2" layout="@layout/list_menu_button" />
+</androidx.gridlayout.widget.GridLayout>

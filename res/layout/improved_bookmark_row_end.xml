@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge>
+    <org.chromium.components.browser_ui.widget.listmenu.ListMenuButton n0:id="@id/more" n0:background="@null" n0:visibility="gone" n0:layout_width="@dimen/min_touch_target_size" n0:layout_height="match_parent" n0:src="@drawable/ic_more_vert_24dp" n0:importantForAccessibility="no" n1:tint="@color/default_icon_color_tint_list"
+      xmlns:n0="http://schemas.android.com/apk/res/android" xmlns:n1="http://schemas.android.com/apk/res-auto" />
+    <ImageView n2:id="@id/check_image" n2:visibility="gone" n2:layout_width="@dimen/min_touch_target_size" n2:layout_height="match_parent" n2:src="@drawable/ic_selection_check_24dp" n2:scaleType="center" n2:importantForAccessibility="no"
+      xmlns:n2="http://schemas.android.com/apk/res/android" />
+</merge>

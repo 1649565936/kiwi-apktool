@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-vector n0:drawable="@drawable/$quick_delete_animation__0"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <target n0:name="gradientGroup" n0:animation="@drawable/$quick_delete_animation__1" />
+</animated-vector>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen>
+    <org.chromium.chrome.browser.download.settings.DownloadLocationPreference n0:title="@string/downloads_location_selector_title" n0:key="location_change" n0:positiveButtonText="@string/done" n0:negativeButtonText="@null"
+      xmlns:n0="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.ChromeSwitchPreference n1:title="@string/download_location_prompt_enabled_title" n1:key="location_prompt_enabled" n1:summaryOn="@string/text_on" n1:summaryOff="@string/text_off"
+      xmlns:n1="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.ChromeBaseCheckBoxPreference n2:title="@string/download_preferences_enable_external_download_manager_title" n2:key="enable_external_download_manager" n2:summary="@string/download_preferences_enable_external_download_manager_summary"
+      xmlns:n2="http://schemas.android.com/apk/res/android" />
+</PreferenceScreen>

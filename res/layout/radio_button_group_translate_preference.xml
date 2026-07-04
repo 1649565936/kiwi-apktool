@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout n0:orientation="vertical" n0:layout_width="match_parent" n0:layout_height="wrap_content"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <TextView n0:id="@id/title" n0:paddingTop="@dimen/homepage_preference_title_vertical_padding" n0:paddingBottom="@dimen/homepage_preference_title_vertical_padding" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:text="@string/main_menu_translate" n0:paddingStart="@dimen/homepage_preference_title_lateral_padding" n0:paddingEnd="@dimen/homepage_preference_title_lateral_padding" style="@style/PreferenceTitle" />
+    <org.chromium.components.browser_ui.widget.RadioButtonWithDescriptionLayout n0:id="@id/radio_button_group" n0:focusableInTouchMode="true" n0:layout_width="match_parent" n0:layout_height="wrap_content">
+        <org.chromium.components.browser_ui.widget.RadioButtonWithDescription n0:id="@id/radio_button_default" n0:layout_width="match_parent" n0:layout_height="wrap_content" n1:primaryText="@string/main_menu_translate"
+          xmlns:n1="http://schemas.android.com/apk/res-auto" />
+        <org.chromium.components.browser_ui.widget.RadioButtonWithDescription n0:id="@id/radio_button_google_translate" n0:layout_width="match_parent" n0:layout_height="wrap_content" n2:primaryText="@string/main_menu_translate"
+          xmlns:n2="http://schemas.android.com/apk/res-auto" />
+        <org.chromium.components.browser_ui.widget.RadioButtonWithDescription n0:id="@id/radio_button_microsoft_translator" n0:layout_width="match_parent" n0:layout_height="wrap_content" n3:primaryText="@string/main_menu_translate"
+          xmlns:n3="http://schemas.android.com/apk/res-auto" />
+        <org.chromium.components.browser_ui.widget.RadioButtonWithDescription n0:id="@id/radio_button_yandex_translator" n0:layout_width="match_parent" n0:layout_height="wrap_content" n4:primaryText="@string/main_menu_translate"
+          xmlns:n4="http://schemas.android.com/apk/res-auto" />
+        <org.chromium.components.browser_ui.widget.RadioButtonWithDescription n0:id="@id/radio_button_baidu_fanyi" n0:layout_width="match_parent" n0:layout_height="wrap_content" n5:primaryText="@string/main_menu_translate"
+          xmlns:n5="http://schemas.android.com/apk/res-auto" />
+    </org.chromium.components.browser_ui.widget.RadioButtonWithDescriptionLayout>
+</LinearLayout>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-vector n0:drawable="@drawable/iph_drag_and_drop_drawable"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <target n0:name="hovered_card" n0:animation="@anim/iph_hovered_card_animation" />
+    <target n0:name="selected_card" n0:animation="@anim/iph_selected_card_animation" />
+    <target n0:name="selected_card_rectangle" n0:animation="@anim/iph_selected_card_color_change_animation" />
+    <target n0:name="touch_point_background" n0:animation="@anim/iph_touch_point_background_animation" />
+    <target n0:name="touch_point" n0:animation="@anim/iph_touch_point_animation" />
+    <target n0:name="touch_point_circle" n0:animation="@anim/iph_touch_point_alpha_animation" />
+    <target n0:name="touch_point_background_circle" n0:animation="@anim/iph_touch_point_background_alpha_animation" />
+</animated-vector>

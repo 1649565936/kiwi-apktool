@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen>
+    <org.chromium.components.browser_ui.settings.TextMessagePreference n0:layout="@layout/page_info_summary" n0:key="cookie_summary"
+      xmlns:n0="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.ChromeSwitchPreference n1:persistent="false" n1:title="@string/page_info_cookies_block" n1:key="cookie_switch"
+      xmlns:n1="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.ChromeImageViewPreference n2:key="cookie_in_use"
+      xmlns:n2="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.ChromeImageViewPreference n3:key="fps_in_use"
+      xmlns:n3="http://schemas.android.com/apk/res/android" />
+</PreferenceScreen>

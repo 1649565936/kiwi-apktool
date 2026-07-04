@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout n0:gravity="center_vertical" n0:orientation="horizontal" n0:layout_width="match_parent" n0:layout_height="wrap_content"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <ImageView n0:id="@id/start_dropdown_icon" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:layout_margin="@dimen/autofill_dropdown_icon_margin" />
+    <LinearLayout n0:gravity="center_vertical" n0:orientation="vertical" n0:id="@id/dropdown_label_wrapper" n0:layout_width="0.0dp" n0:layout_height="0.0dp" n0:layout_weight="1.0">
+        <LinearLayout n0:orientation="horizontal" n0:layout_width="wrap_content" n0:layout_height="wrap_content">
+            <TextView n0:textAppearance="@style/TextAppearance.TextLarge.Primary.Baseline" n0:ellipsize="end" n0:id="@id/dropdown_label" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:singleLine="true" n0:includeFontPadding="false" n0:layout_weight="1.0" n0:textAlignment="viewStart" n0:layout_marginStart="@dimen/autofill_dropdown_item_label_margin" n0:layout_marginEnd="@dimen/autofill_dropdown_item_label_margin" />
+            <TextView n0:textAppearance="@style/TextAppearance.TextLarge.Primary.Baseline" n0:id="@id/dropdown_secondary_label" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:singleLine="true" n0:includeFontPadding="false" n0:layout_weight="0.0" n0:textAlignment="viewStart" n0:layout_marginEnd="@dimen/autofill_dropdown_item_label_margin" />
+        </LinearLayout>
+        <LinearLayout n0:orientation="horizontal" n0:layout_width="wrap_content" n0:layout_height="wrap_content">
+            <TextView n0:textAppearance="@style/TextAppearance.TextSmall.Secondary.Baseline" n0:ellipsize="end" n0:id="@id/dropdown_sublabel" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:singleLine="true" n0:includeFontPadding="false" n0:layout_weight="1.0" n0:textAlignment="viewStart" n0:layout_marginStart="@dimen/autofill_dropdown_item_label_margin" n0:layout_marginEnd="@dimen/autofill_dropdown_item_label_margin" />
+            <TextView n0:textAppearance="@style/TextAppearance.TextSmall.Secondary.Baseline" n0:id="@id/dropdown_secondary_sublabel" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:singleLine="true" n0:includeFontPadding="false" n0:layout_weight="0.0" n0:textAlignment="viewStart" n0:layout_marginEnd="@dimen/autofill_dropdown_item_label_margin" />
+        </LinearLayout>
+        <TextView n0:textAppearance="@style/TextAppearance.TextSmall.Secondary.Baseline" n0:ellipsize="end" n0:id="@id/dropdown_item_tag" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:singleLine="true" n0:includeFontPadding="false" n0:textAlignment="viewStart" n0:layout_marginStart="@dimen/autofill_dropdown_item_label_margin" n0:layout_marginEnd="@dimen/autofill_dropdown_item_label_margin" />
+    </LinearLayout>
+    <ImageView n0:id="@id/end_dropdown_icon" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:layout_margin="8.0dp" />
+</LinearLayout>

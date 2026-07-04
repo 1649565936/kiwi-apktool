@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView n0:gravity="center_horizontal" n0:orientation="vertical" n0:id="@id/privacy_sandbox_bottom_sheet" n0:layout_width="match_parent" n0:layout_height="match_parent"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <org.chromium.components.browser_ui.widget.BoundedLinearLayout n0:orientation="vertical" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_margin="@dimen/promo_dialog_padding" n1:maxWidthLandscape="@dimen/privacy_sandbox_dialog_max_width" n1:maxWidthPortrait="@dimen/privacy_sandbox_dialog_max_width"
+      xmlns:n1="http://schemas.android.com/apk/res-auto">
+        <ImageView n0:layout_gravity="center" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:layout_marginBottom="@dimen/privacy_sandbox_dialog_illustration_margin_bottom" n0:importantForAccessibility="no" n1:srcCompat="@drawable/privacy_sandbox_dialog_illustration" />
+        <TextView n0:gravity="center" n0:layout_gravity="center" n0:id="@id/privacy_sandbox_notice_sheet_title" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:layout_marginBottom="@dimen/list_item_default_margin" n0:text="@string/privacy_sandbox_notice_sheet_title" style="@style/TextAppearance.Headline.Primary" />
+        <TextView n0:id="@id/privacy_sandbox_notice_sheet_description" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginBottom="@dimen/list_item_default_margin" style="@style/TextAppearance.TextLarge.Secondary" />
+        <LinearLayout n0:orientation="vertical" n0:layout_width="match_parent" n0:layout_height="wrap_content">
+            <org.chromium.ui.widget.ButtonCompat n0:id="@id/ack_button" n0:focusable="true" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginBottom="@dimen/privacy_sandbox_notice_button_margin_between" n0:text="@string/privacy_sandbox_dialog_acknowledge_button" style="@style/FilledButton.Flat" />
+            <org.chromium.ui.widget.ButtonCompat n0:layout_gravity="center_vertical" n0:id="@id/settings_button" n0:focusable="true" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:text="@string/privacy_sandbox_dialog_settings_button" style="@style/TextButton" />
+        </LinearLayout>
+    </org.chromium.components.browser_ui.widget.BoundedLinearLayout>
+</ScrollView>

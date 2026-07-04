@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout n0:orientation="vertical" n0:padding="@dimen/virtual_card_enrollment_dialog_padding" n0:layout_width="match_parent" n0:layout_height="match_parent"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <org.chromium.ui.widget.ChromeImageView n0:id="@id/secure_illustration_view" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:src="@drawable/virtual_card_enrollment_illustration" n0:layout_alignParentTop="true" n0:layout_centerHorizontal="true" n0:importantForAccessibility="no" />
+    <androidx.appcompat.widget.DialogTitle n0:textAppearance="@style/TextAppearance.AlertDialogTitleStyle" n0:id="@id/dialog_title" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginTop="@dimen/virtual_card_enrollment_dialog_title_margin_top" n0:layout_below="@id/secure_illustration_view" />
+    <RelativeLayout n0:id="@id/card_container" n0:background="@drawable/card_container_background" n0:padding="@dimen/virtual_card_enrollment_dialog_card_container_padding" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginTop="@dimen/virtual_card_enrollment_dialog_description_margin_top" n0:layout_below="@id/dialog_title">
+        <include layout="@layout/autofill_cc_details_new" />
+    </RelativeLayout>
+    <ScrollView n0:clickable="false" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginTop="@dimen/virtual_card_enrollment_dialog_description_margin_top" n0:layout_below="@id/card_container">
+        <LinearLayout n0:orientation="vertical" n0:layout_width="match_parent" n0:layout_height="wrap_content">
+            <TextView n0:id="@id/virtual_card_education" n0:layout_width="match_parent" n0:layout_height="wrap_content" style="@style/TextAppearance.TextLarge.Secondary" />
+            <TextView n0:id="@id/google_legal_message" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginTop="@dimen/virtual_card_enrollment_dialog_google_legal_message_margin_top" />
+            <TextView n0:id="@id/issuer_legal_message" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginTop="@dimen/virtual_card_enrollment_dialog_google_issuer_message_margin_top" />
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

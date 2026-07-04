@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView n0:layout_width="match_parent" n0:layout_height="match_parent"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <LinearLayout n0:orientation="vertical" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginLeft="@dimen/all_content_marginHorizontal" n0:layout_marginRight="@dimen/all_content_marginHorizontal" n0:animateLayoutChanges="true" n0:layout_marginHorizontal="@dimen/all_content_marginHorizontal">
+        <ImageView n0:layout_gravity="center_horizontal" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginLeft="@dimen/done_step_illustration_marginHorizontal" n0:layout_marginRight="@dimen/done_step_illustration_marginHorizontal" n0:layout_marginBottom="@dimen/welcome_done_step_illustration_marginVertical" n0:adjustViewBounds="true" n0:maxHeight="@dimen/illustration_maxHeight" n0:importantForAccessibility="no" n0:layout_marginHorizontal="@dimen/done_step_illustration_marginHorizontal" n1:srcCompat="@drawable/privacy_guide_done_image"
+          xmlns:n1="http://schemas.android.com/apk/res-auto" />
+        <TextView n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:layout_marginBottom="@dimen/done_step_header_marginBottom" n0:text="@string/privacy_guide_done_title" style="@style/TextAppearance.Headline.Primary" />
+        <TextView n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:layout_marginBottom="@dimen/done_step_description_marginBottom" n0:text="@string/privacy_guide_done_description" style="@style/TextAppearance.TextLarge.Secondary" />
+        <TextView n0:id="@id/ps_heading" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginBottom="@dimen/done_step_header_marginBottom" n0:text="@string/privacy_guide_privacy_sandbox_heading" n0:labelFor="@id/ps_button" style="@style/TextAppearance.TextMediumThick.Accent1" />
+        <LinearLayout n0:orientation="horizontal" n0:id="@id/ps_explanation" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginBottom="@dimen/done_step_description_marginBottom">
+            <TextView n0:layout_width="0.0dp" n0:layout_height="wrap_content" n0:text="@string/privacy_guide_privacy_sandbox_description" n0:layout_weight="1.0" style="@style/TextAppearance.TextMedium.Secondary" />
+            <org.chromium.ui.widget.ChromeImageButton n0:layout_gravity="center_vertical" n0:id="@id/ps_button" n0:background="?actionBarItemBackground" n0:padding="@dimen/done_step_link_button_padding" n0:layout_width="@dimen/done_step_link_button_size" n0:layout_height="@dimen/done_step_link_button_size" n0:src="@drawable/open_in_new_tab" n0:scaleType="centerInside" n0:adjustViewBounds="true" n0:contentDescription="@string/accessibility_expand_button" n2:tint="@color/default_icon_color_tint_list"
+              xmlns:n2="http://schemas.android.com/apk/res-auto" />
+        </LinearLayout>
+        <TextView n0:id="@id/waa_heading" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginBottom="@dimen/done_step_header_marginBottom" n0:text="@string/privacy_guide_web_app_activity_heading" n0:labelFor="@id/waa_button" style="@style/TextAppearance.TextMediumThick.Accent1" />
+        <LinearLayout n0:orientation="horizontal" n0:id="@id/waa_explanation" n0:layout_width="match_parent" n0:layout_height="wrap_content">
+            <TextView n0:layout_width="0.0dp" n0:layout_height="wrap_content" n0:text="@string/privacy_guide_web_app_activity_description" n0:layout_weight="1.0" style="@style/TextAppearance.TextMedium.Secondary" />
+            <org.chromium.ui.widget.ChromeImageButton n0:layout_gravity="center_vertical" n0:id="@id/waa_button" n0:background="?actionBarItemBackground" n0:padding="@dimen/done_step_link_button_padding" n0:layout_width="@dimen/done_step_link_button_size" n0:layout_height="@dimen/done_step_link_button_size" n0:src="@drawable/open_in_new_tab" n0:scaleType="centerInside" n0:adjustViewBounds="true" n0:contentDescription="@string/accessibility_expand_button" n3:tint="@color/default_icon_color_tint_list"
+              xmlns:n3="http://schemas.android.com/apk/res-auto" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

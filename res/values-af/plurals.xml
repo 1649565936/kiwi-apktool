@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="accessibility_dialog_back_button">
+        <item quantity="one">Vou %1$d oortjie in.</item>
+        <item quantity="other">Vou oortjiegroep met %1$d oortjies in.</item>
+    </plurals>
+    <plurals name="accessibility_dialog_back_button_with_group_name">
+        <item quantity="one">Vou %1$d oortjie in.</item>
+        <item quantity="other">Vou %1$s-oortjiegroep met %2$d oortjies in.</item>
+    </plurals>
+    <plurals name="accessibility_download_manager_ui_audio">
+        <item quantity="one">%d oudiolêer</item>
+        <item quantity="other">%d oudiolêers</item>
+    </plurals>
+    <plurals name="accessibility_download_manager_ui_generic">
+        <item quantity="one">%d lêer</item>
+        <item quantity="other">%d lêers</item>
+    </plurals>
+    <plurals name="accessibility_download_manager_ui_images">
+        <item quantity="one">%d prent</item>
+        <item quantity="other">%d prente</item>
+    </plurals>
+    <plurals name="accessibility_download_manager_ui_pages">
+        <item quantity="one">%d bladsy</item>
+        <item quantity="other">%d bladsye</item>
+    </plurals>
+    <plurals name="accessibility_download_manager_ui_video">
+        <item quantity="one">%d video</item>
+        <item quantity="other">"%d video's"</item>
+    </plurals>
+    <plurals name="accessibility_merchant_viewer_message_description">
+        <item quantity="one">" %1$s/%2$s gradering, %3$d resensie"</item>
+        <item quantity="other">%1$s/%2$s gradering, %3$d resensies</item>
+    </plurals>
+    <plurals name="accessibility_remove_selected_items">
+        <item quantity="one">Verwyder 1 gekose item</item>
+        <item quantity="other">Verwyder %d gekose items</item>
+    </plurals>
+    <plurals name="accessibility_share_selected_items">
+        <item quantity="one">Deel 1 gekose item</item>
+        <item quantity="other">Deel %d gekose items</item>
+    </plurals>
+    <plurals name="accessibility_tab_selection_editor_bookmark_tabs_action_button">
+        <item quantity="one">Boekmerk %1$d gekose oortjie</item>
+        <item quantity="other">Boekmerk %1$d gekose oortjies</item>
+    </plurals>
+    <plurals name="accessibility_tab_selection_editor_close_tabs">
+        <item quantity="one">Maak %1$d gekose oortjie toe</item>
+        <item quantity="other">Maak %1$d gekose oortjies toe</item>
+    </plurals>
+    <plurals name="accessibility_tab_selection_editor_group_tabs">
+        <item quantity="one">Groepeer %1$d geselekteerde oortjie</item>
+        <item quantity="other">Groepeer %1$d geselekteerde oortjies</item>
+    </plurals>
+    <plurals name="accessibility_tab_selection_editor_share_tabs_action_button">
+        <item quantity="one">Deel %1$d geselekteerde oortjie</item>
+        <item quantity="other">Deel %1$d geselekteerde oortjies</item>
+    </plurals>
+    <plurals name="accessibility_tab_selection_editor_ungroup_tabs">
+        <item quantity="one">Ongroepeer %1$d geselekteerde oortjie</item>
+        <item quantity="other">Ongroepeer %1$d geselekteerde oortjies</item>
+    </plurals>
+    <plurals name="allsites_fps_list_summary">
+        <item quantity="one">Webkoekies word toegelaat vir %1$s %2$s-werf</item>
+        <item quantity="other">Webkoekies word toegelaat vir %1$s %2$s-werwe</item>
+    </plurals>
+    <plurals name="allsites_fps_summary">
+        <item quantity="one">%1$s werf in %2$s se groep werwe wat jou aktiwiteit in die groep kan sien</item>
+        <item quantity="other">%1$s werwe in %2$s se groep werwe wat jou aktiwiteit in die groep kan sien</item>
+    </plurals>
+    <plurals name="bookmarks_count">
+        <item quantity="one">%1$d boekmerk</item>
+        <item quantity="other">%1$d boekmerke</item>
+    </plurals>
+    <plurals name="bottom_tab_grid_title_placeholder">
+        <item quantity="one">%1$d oortjie</item>
+        <item quantity="other">%1$d oortjies</item>
+    </plurals>
+    <plurals name="contacts_picker_more_details">
+        <item quantity="one">(+ nog 1)</item>
+        <item quantity="other">(+ nog %d)</item>
+    </plurals>
+    <plurals name="cookie_controls_blocked_cookies">
+        <item quantity="one">1 webkoekie word geblokkeer</item>
+        <item quantity="other">%d webkoekies word geblokkeer</item>
+    </plurals>
+    <plurals name="cookies_count">
+        <item quantity="one">%d webkoekie</item>
+        <item quantity="other">%d webkoekies</item>
+    </plurals>
+    <plurals name="download_manager_n_hours">
+        <item quantity="one">%d uur</item>
+        <item quantity="other">%d uur</item>
+    </plurals>
+    <plurals name="download_message_multiple_download_complete">
+        <item quantity="one">Lêer is afgelaai</item>
+        <item quantity="other">%d aflaaie is voltooi</item>
+    </plurals>
+    <plurals name="download_message_multiple_download_failed">
+        <item quantity="one">Kon 1 item nie aflaai nie</item>
+        <item quantity="other">Kon %d items nie aflaai nie</item>
+    </plurals>
+    <plurals name="download_message_multiple_download_in_progress">
+        <item quantity="one">Laai tans lêer af …</item>
+        <item quantity="other">Laai tans %d lêers af …</item>
+    </plurals>
+    <plurals name="download_message_multiple_download_pending">
+        <item quantity="one">1 aflaai hangende</item>
+        <item quantity="other">%d aflaaie hangende</item>
+    </plurals>
+    <plurals name="download_ui_files_downloaded">
+        <item quantity="one">%1$d lêer is afgelaai</item>
+        <item quantity="other">%1$d lêers is afgelaai</item>
+    </plurals>
+    <plurals name="history_clusters_n_matches">
+        <item quantity="one">%d passing</item>
+        <item quantity="other">%d passings</item>
+    </plurals>
+    <plurals name="instance_switcher_close_confirm_deleted_incognito">
+        <item quantity="one">%1$s Incognito-oortjie sal toegemaak word</item>
+        <item quantity="other">%1$s Incognito-oortjies sal toegemaak word</item>
+    </plurals>
+    <plurals name="instance_switcher_close_confirm_deleted_incognito_mixed">
+        <item quantity="one">%1$s Incognito- en nog %2$s oortjie sal toegemaak word</item>
+        <item quantity="other">%1$s Incognito- en nog %2$s oortjies sal toegemaak word</item>
+    </plurals>
+    <plurals name="instance_switcher_close_confirm_deleted_tabs_many">
+        <item quantity="one">%1$s en nog %2$s oortjie sal toegemaak word</item>
+        <item quantity="other">%1$s en nog %2$s oortjies sal toegemaak word</item>
+    </plurals>
+    <plurals name="instance_switcher_desc_incognito">
+        <item quantity="one">%1$s incognito-oortjie</item>
+        <item quantity="other">%1$s incognito-oortjies</item>
+    </plurals>
+    <plurals name="instance_switcher_desc_mixed">
+        <item quantity="one">%1$s oortjie</item>
+        <item quantity="other">%2$s oortjies, %1$s incognito</item>
+    </plurals>
+    <plurals name="instance_switcher_tab_count_nonzero">
+        <item quantity="one">1 oortjie</item>
+        <item quantity="other">%d oortjies</item>
+    </plurals>
+    <plurals name="merchant_viewer_message_description_reviews">
+        <item quantity="one">(%1$s resensie)</item>
+        <item quantity="other">(%1$s resensies)</item>
+    </plurals>
+    <plurals name="merchant_viewer_message_description_reviews_from_google">
+        <item quantity="one">%1$s resensie van Geometry af</item>
+        <item quantity="other">%1$s resensies van Geometry af</item>
+    </plurals>
+    <plurals name="mtrl_badge_content_description">
+        <item quantity="one">%d nuwe kennisgewing</item>
+        <item quantity="other">%d nuwe kennisgewings</item>
+    </plurals>
+    <plurals name="n_days_ago">
+        <item quantity="one">%d dag gelede</item>
+        <item quantity="other">%d dae gelede</item>
+    </plurals>
+    <plurals name="n_hours_ago">
+        <item quantity="one">%d uur gelede</item>
+        <item quantity="other">%d uur gelede</item>
+    </plurals>
+    <plurals name="n_minutes_ago">
+        <item quantity="one">%d minuut gelede</item>
+        <item quantity="other">%d minute gelede</item>
+    </plurals>
+    <plurals name="offline_pages_auto_fetch_in_progress_notification_text">
+        <item quantity="one">Kiwi Browser sal jou bladsy laai wanneer dit gereed is</item>
+        <item quantity="other">Kiwi Browser sal jou bladsye laai wanneer dit gereed is</item>
+    </plurals>
+    <plurals name="page_info_cookies_in_use">
+        <item quantity="one">1 webkoekie word tans gebruik</item>
+        <item quantity="other">%d webkoekies word tans gebruik</item>
+    </plurals>
+    <plurals name="page_info_permissions_summary_more_allowed">
+        <item quantity="one">%1$s, %2$s en nog %3$s word toegelaat</item>
+        <item quantity="other">%1$s, %2$s en nog %3$s word toegelaat</item>
+    </plurals>
+    <plurals name="page_info_permissions_summary_more_blocked">
+        <item quantity="one">%1$s, %2$s, en nog %3$s word geblokkeer</item>
+        <item quantity="other">%1$s, %2$s, en nog %3$s word geblokkeer</item>
+    </plurals>
+    <plurals name="page_info_permissions_summary_more_mixed">
+        <item quantity="one">%1$s, %2$s en nog %3$s</item>
+        <item quantity="other">%1$s, %2$s en nog %3$s</item>
+    </plurals>
+    <plurals name="password_check_status_message_idle_with_leaks">
+        <item quantity="one">%d gekompromitteerde wagwoord</item>
+        <item quantity="other">%d gekompromitteerde wagwoorde</item>
+    </plurals>
+    <plurals name="payment_request_contacts_preview">
+        <item quantity="one">%1$s … en nog %2$s</item>
+        <item quantity="other">%1$s … en nog %2$s</item>
+    </plurals>
+    <plurals name="payment_request_payment_methods_preview">
+        <item quantity="one">%1$s … en nog %2$s</item>
+        <item quantity="other">%1$s … en nog %2$s</item>
+    </plurals>
+    <plurals name="payment_request_shipping_addresses_preview">
+        <item quantity="one">%1$s … en nog %2$s</item>
+        <item quantity="other">%1$s … en nog %2$s</item>
+    </plurals>
+    <plurals name="payment_request_shipping_options_preview">
+        <item quantity="one">%1$s … en nog %2$s</item>
+        <item quantity="other">%1$s … en nog %2$s</item>
+    </plurals>
+    <plurals name="quick_delete_dialog_tabs_closed_text">
+        <item quantity="one">1 oortjie op hierdie toestel</item>
+        <item quantity="other">%d oortjies op hierdie toestel</item>
+    </plurals>
+    <plurals name="reading_list_unread_page_count">
+        <item quantity="one">%1$d ongeleesde bladsy</item>
+        <item quantity="other">%1$d ongeleesde bladsye</item>
+    </plurals>
+    <plurals name="restore_tabs_open_tabs">
+        <item quantity="one">Maak %1$s oortjie oop</item>
+        <item quantity="other">Maak %1$s oortjies oop</item>
+    </plurals>
+    <plurals name="restore_tabs_promo_sheet_device_info">
+        <item quantity="one">%1$s oortjie, laas opgedateer: %2$s</item>
+        <item quantity="other">%1$s oortjies, laas opgedateer: %2$s</item>
+    </plurals>
+    <plurals name="safety_check_passwords_compromised_exist">
+        <item quantity="one">1 gekompromitteerde wagwoord</item>
+        <item quantity="other">%d gekompromitteerde wagwoorde</item>
+    </plurals>
+    <plurals name="safety_check_timestamp_after_days">
+        <item quantity="one">1 dag gelede nagegaan</item>
+        <item quantity="other">%d dae gelede nagegaan</item>
+    </plurals>
+    <plurals name="safety_check_timestamp_after_hours">
+        <item quantity="one">1 uur gelede nagegaan</item>
+        <item quantity="other">%d uur gelede nagegaan</item>
+    </plurals>
+    <plurals name="safety_check_timestamp_after_mins">
+        <item quantity="one">1 minuut gelede nagegaan</item>
+        <item quantity="other">%d minute gelede nagegaan</item>
+    </plurals>
+    <plurals name="selected_items">
+        <item quantity="one">1 gekies</item>
+        <item quantity="other">%d gekies</item>
+    </plurals>
+    <plurals name="signal_strength_level_n_bars">
+        <item quantity="one">Seinsterktevlak: %d stafie</item>
+        <item quantity="other">Seinsterktevlak: %d stafies</item>
+    </plurals>
+    <plurals name="tab_selection_editor_bookmark_tabs_action_button">
+        <item quantity="one">Boekmerk oortjie</item>
+        <item quantity="other">Boekmerk oortjies</item>
+    </plurals>
+    <plurals name="tab_selection_editor_close_tabs">
+        <item quantity="one">Maak oortjie toe</item>
+        <item quantity="other">Maak oortjies toe</item>
+    </plurals>
+    <plurals name="tab_selection_editor_group_tabs">
+        <item quantity="one">Groepeer oortjie</item>
+        <item quantity="other">Groepeer oortjies</item>
+    </plurals>
+    <plurals name="tab_selection_editor_share_sheet_preview_message">
+        <item quantity="one">%1$d skakel vanaf Kiwi Browser</item>
+        <item quantity="other">%1$d skakels vanaf Kiwi Browser</item>
+    </plurals>
+    <plurals name="tab_selection_editor_share_tabs_action_button">
+        <item quantity="one">Deel oortjie</item>
+        <item quantity="other">Deel oortjies</item>
+    </plurals>
+    <plurals name="tab_selection_editor_tabs_count">
+        <item quantity="one">%1$d oortjie</item>
+        <item quantity="other">%1$d oortjies</item>
+    </plurals>
+    <plurals name="tab_selection_editor_ungroup_tabs">
+        <item quantity="one">Ongroepeer oortjie</item>
+        <item quantity="other">Ongroepeer oortjies</item>
+    </plurals>
+</resources>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge n0:minHeight="@dimen/bookmark_minimum_dialog_size_tablet"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <ScrollView n0:id="@id/scroll_view" n0:paddingTop="@dimen/toolbar_height_no_shadow" n0:clipToPadding="false" n0:layout_width="match_parent" n0:layout_height="match_parent">
+        <LinearLayout n0:orientation="vertical" n0:clipToPadding="false" n0:layout_width="match_parent" n0:layout_height="wrap_content">
+            <org.chromium.chrome.browser.bookmarks.BookmarkTextInputLayout n0:id="@id/folder_title" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginTop="24.0dp" n0:hint="@string/title" n0:layout_marginStart="12.0dp" n0:layout_marginEnd="12.0dp" n1:emptyErrorMessage="@string/bookmark_missing_title"
+              xmlns:n1="http://schemas.android.com/apk/res-auto">
+                <com.google.android.material.textfield.TextInputEditText n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:inputType="textCapSentences|textAutoCorrect" n0:imeOptions="flagNoExtractUi" />
+            </org.chromium.chrome.browser.bookmarks.BookmarkTextInputLayout>
+            <TextView n0:textAppearance="@style/TextAppearance.TextMedium.Secondary" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:layout_marginTop="24.0dp" n0:layout_marginBottom="4.0dp" n0:text="@string/bookmark_parent_folder" n0:layout_marginStart="16.0dp" n0:layout_marginEnd="16.0dp" />
+            <TextView n0:textAppearance="@style/TextAppearance.TextLarge.Primary" n0:id="@id/parent_folder" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginTop="8.0dp" n0:layout_marginBottom="32.0dp" n0:layout_marginStart="16.0dp" />
+        </LinearLayout>
+    </ScrollView>
+    <androidx.appcompat.widget.Toolbar n0:id="@id/toolbar" n0:layout_width="match_parent" n0:layout_height="@dimen/toolbar_height_no_shadow" style="@style/ModernToolbar" />
+    <View n0:id="@id/shadow" n0:background="@drawable/bookmark_title_bar_shadow" n0:visibility="gone" n0:layout_width="match_parent" n0:layout_height="@dimen/bookmark_dialog_toolbar_shadow_height" n0:layout_marginTop="@dimen/toolbar_height_no_shadow" />
+</merge>

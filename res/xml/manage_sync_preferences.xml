@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen>
+    <org.chromium.chrome.browser.sync.settings.SyncErrorCardPreference n0:key="sync_error_card" n1:isPreferenceVisible="false"
+      xmlns:n0="http://schemas.android.com/apk/res/android" xmlns:n1="http://schemas.android.com/apk/res-auto" />
+    <PreferenceCategory n2:title="@string/syncing_category" n2:key="syncing_category" n3:isPreferenceVisible="false"
+      xmlns:n2="http://schemas.android.com/apk/res/android" xmlns:n3="http://schemas.android.com/apk/res-auto" />
+    <org.chromium.components.browser_ui.settings.ChromeSwitchPreference n4:persistent="false" n4:title="@string/sync_everything_pref" n4:key="sync_everything"
+      xmlns:n4="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.ChromeBaseCheckBoxPreference n5:persistent="false" n5:title="@string/sync_autofill" n5:key="sync_autofill"
+      xmlns:n5="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.ChromeBaseCheckBoxPreference n6:persistent="false" n6:title="@string/sync_bookmarks" n6:key="sync_bookmarks"
+      xmlns:n6="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.ChromeBaseCheckBoxPreference n7:persistent="false" n7:title="@string/sync_payments_integration" n7:key="sync_payments_integration"
+      xmlns:n7="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.ChromeBaseCheckBoxPreference n8:persistent="false" n8:title="@string/sync_history" n8:key="sync_history"
+      xmlns:n8="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.ChromeBaseCheckBoxPreference n9:persistent="false" n9:title="@string/sync_passwords" n9:key="sync_passwords"
+      xmlns:n9="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.ChromeBaseCheckBoxPreference n10:persistent="false" n10:title="@string/sync_reading_list" n10:key="sync_reading_list"
+      xmlns:n10="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.ChromeBaseCheckBoxPreference n11:persistent="false" n11:title="@string/sync_recent_tabs" n11:key="sync_recent_tabs"
+      xmlns:n11="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.ChromeBaseCheckBoxPreference n12:persistent="false" n12:title="@string/sync_settings" n12:key="sync_settings"
+      xmlns:n12="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.ChromeBasePreference n13:icon="@drawable/ic_signout_40dp" n13:title="@string/sign_out_and_turn_off_sync" n13:key="turn_off_sync" n14:isPreferenceVisible="false"
+      xmlns:n13="http://schemas.android.com/apk/res/android" xmlns:n14="http://schemas.android.com/apk/res-auto" />
+    <PreferenceCategory n15:title="@string/prefs_section_advanced" n15:key="advanced_category" n16:isPreferenceVisible="false"
+      xmlns:n15="http://schemas.android.com/apk/res/android" xmlns:n16="http://schemas.android.com/apk/res-auto" />
+    <org.chromium.components.browser_ui.settings.ChromeBasePreference n17:title="@string/sign_in_google_activity_controls_title" n17:key="google_activity_controls" n17:summary="@string/sign_in_google_activity_controls_summary"
+      xmlns:n17="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.ChromeBasePreference n18:title="@string/sync_encryption" n18:key="encryption"
+      xmlns:n18="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.ChromeBasePreference n19:title="@string/sync_review_data" n19:key="sync_review_data"
+      xmlns:n19="http://schemas.android.com/apk/res/android" />
+    <PreferenceCategory n20:title="@string/search_and_browse_category" n20:key="search_and_browse_category" n21:isPreferenceVisible="false"
+      xmlns:n20="http://schemas.android.com/apk/res/android" xmlns:n21="http://schemas.android.com/apk/res-auto">
+        <org.chromium.components.browser_ui.settings.ChromeSwitchPreference n20:title="@string/url_keyed_anonymized_data_title" n20:key="url_keyed_anonymized_data" n20:summary="@string/url_keyed_anonymized_data_summary" />
+    </PreferenceCategory>
+</PreferenceScreen>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout n0:layout_gravity="center_horizontal" n0:orientation="vertical" n0:layout_width="wrap_content" n0:layout_height="wrap_content"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <org.chromium.components.browser_ui.widget.RadioButtonWithDescriptionLayout n0:id="@id/radio_button_layout" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:layout_marginBottom="@dimen/pwd_migration_warning_margin">
+        <org.chromium.components.browser_ui.widget.RadioButtonWithDescription n0:id="@id/radio_sign_in_or_sync" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n1:descriptionText="@string/password_migration_warning_turn_on_sync_subtitle" n1:primaryText="@string/password_migration_warning_turn_on_sync"
+          xmlns:n1="http://schemas.android.com/apk/res-auto" />
+        <org.chromium.components.browser_ui.widget.RadioButtonWithDescription n0:id="@id/radio_password_export" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n2:primaryText="@string/password_migration_warning_password_export"
+          xmlns:n2="http://schemas.android.com/apk/res-auto" />
+    </org.chromium.components.browser_ui.widget.RadioButtonWithDescriptionLayout>
+    <org.chromium.ui.widget.ButtonCompat n0:ellipsize="end" n0:layout_gravity="center_horizontal" n0:id="@id/password_migration_next_button" n0:descendantFocusability="blocksDescendants" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginBottom="@dimen/pwd_migration_warning_button_spacing" n0:minHeight="@dimen/pwd_migration_warning_button_height" n0:text="@string/password_migration_warning_next" n0:singleLine="true" style="@style/FilledButton.Flat" />
+    <org.chromium.ui.widget.ButtonCompat n0:ellipsize="end" n0:layout_gravity="center_horizontal" n0:id="@id/password_migration_cancel_button" n0:descendantFocusability="blocksDescendants" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:layout_marginBottom="@dimen/pwd_migration_warning_margin" n0:minHeight="@dimen/pwd_migration_warning_button_height" n0:text="@string/password_migration_warning_cancel" n0:singleLine="true" style="@style/TextButton" />
+</LinearLayout>

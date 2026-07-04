@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge>
+    <ScrollView n0:id="@id/scroll_view" n0:paddingTop="@dimen/toolbar_height_no_shadow" n0:clipToPadding="false" n0:layout_width="match_parent" n0:layout_height="match_parent"
+      xmlns:n0="http://schemas.android.com/apk/res/android">
+        <LinearLayout n0:orientation="vertical" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginStart="16.0dp" n0:layout_marginEnd="16.0dp">
+            <org.chromium.chrome.browser.bookmarks.BookmarkTextInputLayout n0:id="@id/title_text" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginTop="22.0dp" n0:hint="@string/bookmark_name" n1:emptyErrorMessage="@string/bookmark_missing_title"
+              xmlns:n1="http://schemas.android.com/apk/res-auto">
+                <com.google.android.material.textfield.TextInputEditText n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:singleLine="true" n0:inputType="textCapSentences|textAutoCorrect" n0:imeOptions="flagNoExtractUi" />
+            </org.chromium.chrome.browser.bookmarks.BookmarkTextInputLayout>
+            <LinearLayout n0:orientation="vertical" n0:id="@id/folder_container" n0:layout_width="match_parent" n0:layout_height="wrap_content">
+                <TextView n0:textAppearance="@style/TextAppearance.TextSmall.Secondary" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:layout_marginTop="18.0dp" n0:text="@string/bookmark_folder" n0:layout_marginStart="3.0dp" n0:layout_marginEnd="3.0dp" />
+                <TextView n0:textAppearance="@style/TextAppearance.BookmarkEditFolderName" n0:id="@id/folder_text" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginTop="14.0dp" n0:layout_marginStart="3.0dp" n0:layout_marginEnd="3.0dp" />
+            </LinearLayout>
+            <org.chromium.chrome.browser.bookmarks.BookmarkTextInputLayout n0:id="@id/url_text" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginTop="24.0dp" n0:hint="@string/bookmark_url" n2:emptyErrorMessage="@string/bookmark_missing_url"
+              xmlns:n2="http://schemas.android.com/apk/res-auto">
+                <com.google.android.material.textfield.TextInputEditText n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:singleLine="true" n0:inputType="textUri" n0:imeOptions="flagNoExtractUi" />
+            </org.chromium.chrome.browser.bookmarks.BookmarkTextInputLayout>
+            <LinearLayout n0:orientation="vertical" n0:id="@id/improved_folder_container" n0:visibility="gone" n0:layout_width="match_parent" n0:layout_height="wrap_content">
+                <TextView n0:textAppearance="@style/TextAppearance.TextSmall.Secondary" n0:id="@id/improved_folder_title" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:layout_marginTop="18.0dp" n0:text="@string/bookmark_folder" n0:layout_marginStart="3.0dp" n0:layout_marginEnd="3.0dp" />
+                <include n0:id="@id/improved_folder_row" layout="@layout/improved_bookmark_folder_select_layout" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+    <androidx.appcompat.widget.Toolbar n3:id="@id/toolbar" n3:layout_width="match_parent" n3:layout_height="@dimen/toolbar_height_no_shadow" style="@style/ModernToolbar"
+      xmlns:n3="http://schemas.android.com/apk/res/android" />
+    <View n4:id="@id/shadow" n4:background="@drawable/bookmark_title_bar_shadow" n4:visibility="gone" n4:layout_width="match_parent" n4:layout_height="@dimen/bookmark_dialog_toolbar_shadow_height" n4:layout_marginTop="@dimen/toolbar_height_no_shadow"
+      xmlns:n4="http://schemas.android.com/apk/res/android" />
+</merge>

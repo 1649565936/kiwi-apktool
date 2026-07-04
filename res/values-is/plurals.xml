@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="accessibility_dialog_back_button">
+        <item quantity="one">Draga saman %1$d flipa.</item>
+        <item quantity="other">Draga saman flipahóp með %1$d flipum.</item>
+    </plurals>
+    <plurals name="accessibility_dialog_back_button_with_group_name">
+        <item quantity="one">Draga saman %1$d flipa.</item>
+        <item quantity="other">Draga saman %1$s-flipahóp með %2$d flipum.</item>
+    </plurals>
+    <plurals name="accessibility_download_manager_ui_audio">
+        <item quantity="one">%d hljóðskrá</item>
+        <item quantity="other">%d hljóðskrár</item>
+    </plurals>
+    <plurals name="accessibility_download_manager_ui_generic">
+        <item quantity="one">%d skrá</item>
+        <item quantity="other">%d skrár</item>
+    </plurals>
+    <plurals name="accessibility_download_manager_ui_images">
+        <item quantity="one">%d mynd</item>
+        <item quantity="other">%d myndir</item>
+    </plurals>
+    <plurals name="accessibility_download_manager_ui_pages">
+        <item quantity="one">%d síða</item>
+        <item quantity="other">%d síður</item>
+    </plurals>
+    <plurals name="accessibility_download_manager_ui_video">
+        <item quantity="one">%d myndskeið</item>
+        <item quantity="other">%d myndskeið</item>
+    </plurals>
+    <plurals name="accessibility_merchant_viewer_message_description">
+        <item quantity="one">" %1$s/%2$s einkunn, %3$d umsögn"</item>
+        <item quantity="other">%1$s/%2$s einkunnir, %3$d umsagnir</item>
+    </plurals>
+    <plurals name="accessibility_remove_selected_items">
+        <item quantity="one">Fjarlægja 1 valið atriði</item>
+        <item quantity="other">Fjarlægja %d valin atriði</item>
+    </plurals>
+    <plurals name="accessibility_share_selected_items">
+        <item quantity="one">Deila 1 völdu atriði</item>
+        <item quantity="other">Deila %d völdum atriðum</item>
+    </plurals>
+    <plurals name="accessibility_tab_selection_editor_bookmark_tabs_action_button">
+        <item quantity="one">Bókamerkja %1$d valinn flipa</item>
+        <item quantity="other">Bókamerkja %1$d valda flipa</item>
+    </plurals>
+    <plurals name="accessibility_tab_selection_editor_close_tabs">
+        <item quantity="one">Loka %1$d völdum flipa</item>
+        <item quantity="other">Loka %1$d völdum flipum</item>
+    </plurals>
+    <plurals name="accessibility_tab_selection_editor_group_tabs">
+        <item quantity="one">Setja %1$d valinn flipa í hóp</item>
+        <item quantity="other">Setja %1$d valda flipa í hóp</item>
+    </plurals>
+    <plurals name="accessibility_tab_selection_editor_share_tabs_action_button">
+        <item quantity="one">Deila %1$d völdum flipa</item>
+        <item quantity="other">Deila %1$d völdum flipum</item>
+    </plurals>
+    <plurals name="accessibility_tab_selection_editor_ungroup_tabs">
+        <item quantity="one">Taka %1$d valinn flipa úr hópi</item>
+        <item quantity="other">Taka %1$d valda flipa úr hópi</item>
+    </plurals>
+    <plurals name="allsites_fps_list_summary">
+        <item quantity="one">Fótspor leyfð fyrir %1$s vefsvæði sem %2$s á</item>
+        <item quantity="other">Fótspor leyfð fyrir %1$s vefsvæði sem %2$s á</item>
+    </plurals>
+    <plurals name="allsites_fps_summary">
+        <item quantity="one">%1$s vefsvæði í hópi vefsvæða sem %2$s á sem geta séð virkni þína í hópnum</item>
+        <item quantity="other">%1$s vefsvæði í hópi vefsvæða sem %2$s á sem geta séð virkni þína í hópnum</item>
+    </plurals>
+    <plurals name="bookmarks_count">
+        <item quantity="one">%1$d bókamerki</item>
+        <item quantity="other">%1$d bókamerki</item>
+    </plurals>
+    <plurals name="bottom_tab_grid_title_placeholder">
+        <item quantity="one">%1$d flipi</item>
+        <item quantity="other">%1$d flipar</item>
+    </plurals>
+    <plurals name="contacts_picker_more_details">
+        <item quantity="one">(+ 1 í viðbót)</item>
+        <item quantity="other">(+ %d í viðbót)</item>
+    </plurals>
+    <plurals name="cookie_controls_blocked_cookies">
+        <item quantity="one">Lokað á eitt fótspor</item>
+        <item quantity="other">Lokað á %d fótspor</item>
+    </plurals>
+    <plurals name="cookies_count">
+        <item quantity="one">%d fótspor</item>
+        <item quantity="other">%d fótspor</item>
+    </plurals>
+    <plurals name="download_manager_n_hours">
+        <item quantity="one">%d klst.</item>
+        <item quantity="other">%d klst.</item>
+    </plurals>
+    <plurals name="download_message_multiple_download_complete">
+        <item quantity="one">Skrá sótt</item>
+        <item quantity="other">%d skrár sóttar</item>
+    </plurals>
+    <plurals name="download_message_multiple_download_failed">
+        <item quantity="one">Mistókst að sækja eina skrá</item>
+        <item quantity="other">Mistókst að sækja %d skrár</item>
+    </plurals>
+    <plurals name="download_message_multiple_download_in_progress">
+        <item quantity="one">Sækir skrá…</item>
+        <item quantity="other">Sækir %d skrár…</item>
+    </plurals>
+    <plurals name="download_message_multiple_download_pending">
+        <item quantity="one">Ein skrá bíður niðurhals</item>
+        <item quantity="other">%d skrár bíða niðurhals</item>
+    </plurals>
+    <plurals name="download_ui_files_downloaded">
+        <item quantity="one">%1$d skrá sótt</item>
+        <item quantity="other">%1$d skrár sóttar</item>
+    </plurals>
+    <plurals name="history_clusters_n_matches">
+        <item quantity="one">%d samsvörun</item>
+        <item quantity="other">%d samsvaranir</item>
+    </plurals>
+    <plurals name="instance_switcher_close_confirm_deleted_incognito">
+        <item quantity="one">%1$s huliðsflipa verður lokað</item>
+        <item quantity="other">%1$s huliðsflipum verður lokað</item>
+    </plurals>
+    <plurals name="instance_switcher_close_confirm_deleted_incognito_mixed">
+        <item quantity="one">%1$s huliðsflipa og %2$s flipa til viðbótar verður lokað</item>
+        <item quantity="other">%1$s huliðsflipa og %2$s flipum til viðbótar verður lokað</item>
+    </plurals>
+    <plurals name="instance_switcher_close_confirm_deleted_tabs_many">
+        <item quantity="one">%1$s og %2$s flipa til viðbótar verður lokað</item>
+        <item quantity="other">%1$s og %2$s flipum til viðbótar verður lokað</item>
+    </plurals>
+    <plurals name="instance_switcher_desc_incognito">
+        <item quantity="one">%1$s huliðsflipi</item>
+        <item quantity="other">%1$s huliðsflipar</item>
+    </plurals>
+    <plurals name="instance_switcher_desc_mixed">
+        <item quantity="one">%1$s flipi</item>
+        <item quantity="other">%2$s flipar, %1$s huliðsflipar</item>
+    </plurals>
+    <plurals name="instance_switcher_tab_count_nonzero">
+        <item quantity="one">1 flipi</item>
+        <item quantity="other">%d flipar</item>
+    </plurals>
+    <plurals name="merchant_viewer_message_description_reviews">
+        <item quantity="one">(%1$s umsögn)</item>
+        <item quantity="other">(%1$s umsagnir)</item>
+    </plurals>
+    <plurals name="merchant_viewer_message_description_reviews_from_google">
+        <item quantity="one">%1$s umsögn frá Geometry</item>
+        <item quantity="other">%1$s umsagnir frá Geometry</item>
+    </plurals>
+    <plurals name="mtrl_badge_content_description">
+        <item quantity="one">%d ný tilkynning</item>
+        <item quantity="other">%d nýjar tilkynningar</item>
+    </plurals>
+    <plurals name="n_days_ago">
+        <item quantity="one">Fyrir %d degi</item>
+        <item quantity="other">Fyrir %d dögum</item>
+    </plurals>
+    <plurals name="n_hours_ago">
+        <item quantity="one">Fyrir %d klukkustund</item>
+        <item quantity="other">Fyrir %d klukkustundum</item>
+    </plurals>
+    <plurals name="n_minutes_ago">
+        <item quantity="one">Fyrir %d mínútu</item>
+        <item quantity="other">Fyrir %d mínútum</item>
+    </plurals>
+    <plurals name="offline_pages_auto_fetch_in_progress_notification_text">
+        <item quantity="one">Kiwi Browser hleður síðunni þegar hún er tilbúin</item>
+        <item quantity="other">Kiwi Browser hleður síðunum þegar þær eru tilbúnar</item>
+    </plurals>
+    <plurals name="page_info_cookies_in_use">
+        <item quantity="one">1 fótspor í notkun</item>
+        <item quantity="other">%d fótspor í notkun</item>
+    </plurals>
+    <plurals name="page_info_permissions_summary_more_allowed">
+        <item quantity="one">„%1$s“, „%2$s“ og %3$s í viðbót leyft</item>
+        <item quantity="other">„%1$s“, „%2$s“ og %3$s í viðbót leyft</item>
+    </plurals>
+    <plurals name="page_info_permissions_summary_more_blocked">
+        <item quantity="one">Lokað er fyrir „%1$s“, „%2$s“ og %3$s í viðbót</item>
+        <item quantity="other">Lokað er fyrir „%1$s“, „%2$s“ og %3$s í viðbót</item>
+    </plurals>
+    <plurals name="page_info_permissions_summary_more_mixed">
+        <item quantity="one">„%1$s“, „%2$s“ og %3$s í viðbót</item>
+        <item quantity="other">„%1$s“, „%2$s“ og %3$s í viðbót</item>
+    </plurals>
+    <plurals name="password_check_status_message_idle_with_leaks">
+        <item quantity="one">%d aðgangsorð í hættu</item>
+        <item quantity="other">%d aðgangsorð í hættu</item>
+    </plurals>
+    <plurals name="payment_request_contacts_preview">
+        <item quantity="one">%1$s… og %2$s í viðbót</item>
+        <item quantity="other">%1$s… og %2$s í viðbót</item>
+    </plurals>
+    <plurals name="payment_request_payment_methods_preview">
+        <item quantity="one">%1$s… og %2$s í viðbót</item>
+        <item quantity="other">%1$s… og %2$s í viðbót</item>
+    </plurals>
+    <plurals name="payment_request_shipping_addresses_preview">
+        <item quantity="one">%1$s… og %2$s í viðbót</item>
+        <item quantity="other">%1$s… og %2$s í viðbót</item>
+    </plurals>
+    <plurals name="payment_request_shipping_options_preview">
+        <item quantity="one">%1$s… og %2$s í viðbót</item>
+        <item quantity="other">%1$s… og %2$s í viðbót</item>
+    </plurals>
+    <plurals name="quick_delete_dialog_tabs_closed_text">
+        <item quantity="one">1 flipi í þessu tæki</item>
+        <item quantity="other">%d flipar í þessu tæki</item>
+    </plurals>
+    <plurals name="reading_list_unread_page_count">
+        <item quantity="one">%1$d ólesin síða</item>
+        <item quantity="other">%1$d ólesnar síður</item>
+    </plurals>
+    <plurals name="restore_tabs_open_tabs">
+        <item quantity="one">Opna %1$s flipa</item>
+        <item quantity="other">Opna %1$s flipa</item>
+    </plurals>
+    <plurals name="restore_tabs_promo_sheet_device_info">
+        <item quantity="one">%1$s flipi, síðast uppfært: %2$s</item>
+        <item quantity="other">%1$s flipar, síðast uppfært: %2$s</item>
+    </plurals>
+    <plurals name="safety_check_passwords_compromised_exist">
+        <item quantity="one">1 aðgangsorð í hættu</item>
+        <item quantity="other">%d aðgangsorð í hættu</item>
+    </plurals>
+    <plurals name="safety_check_timestamp_after_days">
+        <item quantity="one">Síðast athugað fyrir 1 degi</item>
+        <item quantity="other">Síðast athugað fyrir %d dögum</item>
+    </plurals>
+    <plurals name="safety_check_timestamp_after_hours">
+        <item quantity="one">Síðast athugað fyrir 1 klukkustund</item>
+        <item quantity="other">Síðast athugað fyrir %d klukkustundum</item>
+    </plurals>
+    <plurals name="safety_check_timestamp_after_mins">
+        <item quantity="one">Athugað fyrir 1 mínútu</item>
+        <item quantity="other">Athugað fyrir %d mínútum</item>
+    </plurals>
+    <plurals name="selected_items">
+        <item quantity="one">1 valið</item>
+        <item quantity="other">%d valin</item>
+    </plurals>
+    <plurals name="signal_strength_level_n_bars">
+        <item quantity="one">Sendistyrkur: %d stika</item>
+        <item quantity="other">Sendistyrkur: %d stikur</item>
+    </plurals>
+    <plurals name="tab_selection_editor_bookmark_tabs_action_button">
+        <item quantity="one">Bókamerkja flipa</item>
+        <item quantity="other">Bókamerkja flipa</item>
+    </plurals>
+    <plurals name="tab_selection_editor_close_tabs">
+        <item quantity="one">Loka flipa</item>
+        <item quantity="other">Loka flipum</item>
+    </plurals>
+    <plurals name="tab_selection_editor_group_tabs">
+        <item quantity="one">Sameina flipa</item>
+        <item quantity="other">Sameina flipa</item>
+    </plurals>
+    <plurals name="tab_selection_editor_share_sheet_preview_message">
+        <item quantity="one">%1$d tengill frá Kiwi Browser</item>
+        <item quantity="other">%1$d tenglar frá Kiwi Browser</item>
+    </plurals>
+    <plurals name="tab_selection_editor_share_tabs_action_button">
+        <item quantity="one">Deila flipa</item>
+        <item quantity="other">Deila flipum</item>
+    </plurals>
+    <plurals name="tab_selection_editor_tabs_count">
+        <item quantity="one">%1$d flipi</item>
+        <item quantity="other">%1$d flipar</item>
+    </plurals>
+    <plurals name="tab_selection_editor_ungroup_tabs">
+        <item quantity="one">Taka flipa úr hópi</item>
+        <item quantity="other">Taka flipa úr hópi</item>
+    </plurals>
+</resources>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu>
+    <group n0:id="@id/normal_menu_group"
+      xmlns:n0="http://schemas.android.com/apk/res/android">
+        <item n0:icon="@drawable/ic_filter_list_24dp" n0:id="@id/normal_options_submenu" n0:title="@string/sort_submenu" n1:showAsAction="ifRoom"
+          xmlns:n1="http://schemas.android.com/apk/res-auto">
+            <menu>
+                <group n0:id="@id/sort_opts" n0:checkableBehavior="single">
+                    <item n0:id="@id/sort_by_newest" n0:title="@string/sort_by_newest" />
+                    <item n0:id="@id/sort_by_oldest" n0:title="@string/sort_by_oldest" />
+                    <item n0:id="@id/sort_by_alpha" n0:title="@string/sort_by_alpha" />
+                    <item n0:id="@id/sort_by_reverse_alpha" n0:title="@string/sort_by_reverse_alpha" />
+                </group>
+                <group n0:id="@id/view_opts" n0:checkableBehavior="single">
+                    <item n0:id="@id/visual_view" n0:title="@string/visual_view" />
+                    <item n0:id="@id/compact_view" n0:title="@string/compact_view" />
+                </group>
+            </menu>
+        </item>
+        <item n0:icon="@drawable/ic_edit_24dp" n0:id="@id/edit_menu_id" n0:visible="false" n0:title="@string/edit_folder" n2:iconTint="@color/default_icon_color_secondary_tint_list" n2:showAsAction="ifRoom"
+          xmlns:n2="http://schemas.android.com/apk/res-auto" />
+        <item n0:icon="@drawable/ic_create_new_folder_24dp" n0:id="@id/create_new_folder_menu_id" n0:title="@string/create_new_folder" n3:iconTint="@color/default_icon_color_secondary_tint_list" n3:showAsAction="ifRoom"
+          xmlns:n3="http://schemas.android.com/apk/res-auto" />
+        <item n0:icon="@drawable/btn_close" n0:id="@id/close_menu_id" n0:title="@string/bookmark_toolbar_close" n4:iconTint="@color/default_icon_color_secondary_tint_list" n4:showAsAction="ifRoom"
+          xmlns:n4="http://schemas.android.com/apk/res-auto" />
+    </group>
+    <group n5:id="@id/selection_mode_menu_group" n5:visible="false"
+      xmlns:n5="http://schemas.android.com/apk/res/android">
+        <item n5:icon="@drawable/bookmark_edit_active" n5:id="@id/selection_mode_edit_menu_id" n5:title="@string/edit_bookmark" n6:iconTint="@color/default_icon_color_secondary_tint_list" n6:showAsAction="ifRoom"
+          xmlns:n6="http://schemas.android.com/apk/res-auto" />
+        <item n5:icon="@drawable/bookmark_move_active" n5:id="@id/selection_mode_move_menu_id" n5:title="@string/bookmark_toolbar_move" n7:iconTint="@color/default_icon_color_secondary_tint_list" n7:showAsAction="ifRoom"
+          xmlns:n7="http://schemas.android.com/apk/res-auto" />
+        <item n5:icon="@drawable/ic_delete_white_24dp" n5:id="@id/selection_mode_delete_menu_id" n5:title="@string/bookmark_toolbar_delete" n8:iconTint="@color/default_icon_color_secondary_tint_list" n8:showAsAction="ifRoom"
+          xmlns:n8="http://schemas.android.com/apk/res-auto" />
+        <item n5:id="@id/selection_open_in_new_tab_id" n5:title="@string/contextmenu_open_in_new_tab" n9:showAsAction="never"
+          xmlns:n9="http://schemas.android.com/apk/res-auto" />
+        <item n5:id="@id/selection_open_in_incognito_tab_id" n5:title="@string/contextmenu_open_in_incognito_tab" n10:showAsAction="never"
+          xmlns:n10="http://schemas.android.com/apk/res-auto" />
+        <item n5:id="@id/reading_list_mark_as_read_id" n5:title="@string/reading_list_mark_as_read" n11:showAsAction="never"
+          xmlns:n11="http://schemas.android.com/apk/res-auto" />
+        <item n5:id="@id/reading_list_mark_as_unread_id" n5:title="@string/reading_list_mark_as_unread" n12:showAsAction="never"
+          xmlns:n12="http://schemas.android.com/apk/res-auto" />
+    </group>
+</menu>

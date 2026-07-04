@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout n0:orientation="vertical" n0:paddingTop="@dimen/custom_preference_category_paddingVertical" n0:paddingBottom="@dimen/custom_preference_category_paddingVertical" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:paddingVertical="@dimen/custom_preference_category_paddingVertical" style="@style/PreferenceLayout"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <TextView n0:textAppearance="@style/TextAppearance.TextMediumThick.Accent1" n0:id="@android:id/title" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginBottom="@dimen/custom_preference_category_title_marginBottom" />
+    <org.chromium.ui.widget.TextViewWithClickableSpans n0:id="@android:id/summary" n0:layout_width="match_parent" n0:layout_height="wrap_content" style="@style/PreferenceSummary" />
+</LinearLayout>

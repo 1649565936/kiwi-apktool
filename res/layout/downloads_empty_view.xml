@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout n0:layout_width="match_parent" n0:layout_height="match_parent"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <org.chromium.components.browser_ui.widget.MaterialCardViewNoShadow n0:gravity="center" n0:id="@id/empty_container" n0:padding="@dimen/card_padding" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginStart="@dimen/default_list_row_padding" n0:layout_marginEnd="@dimen/default_list_row_padding" style="@style/MaterialCardStyle">
+        <org.chromium.ui.widget.TextViewWithLeading n0:textAppearance="@style/TextAppearance.TextMedium.Secondary" n0:id="@id/empty" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:textAlignment="center" n1:leading="@dimen/text_size_medium_leading"
+          xmlns:n1="http://schemas.android.com/apk/res-auto" />
+    </org.chromium.components.browser_ui.widget.MaterialCardViewNoShadow>
+    <org.chromium.ui.widget.LoadingView n0:layout_gravity="center" n0:id="@id/loading" n0:layout_width="wrap_content" n0:layout_height="wrap_content" />
+</FrameLayout>

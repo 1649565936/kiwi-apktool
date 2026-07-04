@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen>
+    <org.chromium.components.browser_ui.settings.TextMessagePreference n0:key="page_description" n0:summary="@string/website_settings_permissions_description" n1:iconSpaceReserved="false"
+      xmlns:n0="http://schemas.android.com/apk/res/android" xmlns:n1="http://schemas.android.com/apk/res-auto" />
+    <org.chromium.components.browser_ui.settings.ChromeBasePreference n2:key="os_permissions_warning"
+      xmlns:n2="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.ChromeBasePreference n3:key="os_permissions_warning_extra"
+      xmlns:n3="http://schemas.android.com/apk/res/android" />
+    <Preference n4:layout="@layout/divider_preference" n4:selectable="false" n4:key="os_permissions_warning_divider"
+      xmlns:n4="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.TextMessagePreference n5:icon="@drawable/btn_info" n5:title="@string/intrusive_ads_information" n5:key="intrusive_ads_info" n6:iconTint="?colorOnSurface"
+      xmlns:n5="http://schemas.android.com/apk/res/android" xmlns:n6="http://schemas.android.com/apk/res-auto" />
+    <Preference n7:layout="@layout/divider_preference" n7:selectable="false" n7:key="intrusive_ads_info_divider"
+      xmlns:n7="http://schemas.android.com/apk/res/android" />
+    <PreferenceCategory n8:title="@string/website_settings_site_category" n8:key="site_heading"
+      xmlns:n8="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.TextMessagePreference n9:key="site_title"
+      xmlns:n9="http://schemas.android.com/apk/res/android" />
+    <PreferenceCategory n10:title="@string/website_settings_usage_category" n10:key="site_usage"
+      xmlns:n10="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.site_settings.ClearWebsiteStorage n11:title="@string/webstorage_clear_data_dialog_title" n11:key="clear_data" n11:widgetLayout="@layout/clear_storage" n11:positiveButtonText="@string/webstorage_clear_data_dialog_ok_button" n11:negativeButtonText="@string/cancel"
+      xmlns:n11="http://schemas.android.com/apk/res/android" />
+    <PreferenceCategory n12:title="@string/website_settings_related_sites" n12:key="related_sites_header"
+      xmlns:n12="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.TextMessagePreference n13:key="related_sites"
+      xmlns:n13="http://schemas.android.com/apk/res/android" />
+    <PreferenceCategory n14:title="@string/website_settings_permissions_category" n14:key="site_permissions"
+      xmlns:n14="http://schemas.android.com/apk/res/android" />
+    <org.chromium.components.browser_ui.settings.ButtonPreference n15:key="reset_site_button"
+      xmlns:n15="http://schemas.android.com/apk/res/android" />
+</PreferenceScreen>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout n0:orientation="vertical" n0:paddingBottom="8.0dp" n0:layout_width="match_parent" n0:layout_height="match_parent"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <include n0:id="@id/header_view_item" layout="@layout/account_selection_header_item" />
+    <FrameLayout n0:id="@id/sheet_item_list_container" n0:layout_width="match_parent" n0:layout_height="match_parent">
+        <androidx.recyclerview.widget.RecyclerView n0:id="@id/sheet_item_list" n0:clipToPadding="false" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:divider="@null" />
+    </FrameLayout>
+    <include n0:id="@id/account_selection_continue_btn" n0:visibility="gone" layout="@layout/account_selection_continue_button" />
+    <include n0:id="@id/user_data_sharing_consent" n0:visibility="gone" layout="@layout/account_selection_data_sharing_consent_item" />
+</LinearLayout>

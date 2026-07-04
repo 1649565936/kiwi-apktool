@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen>
+    <org.chromium.components.browser_ui.settings.LongSummaryTextMessagePreference n0:title="@string/privacy_sandbox_topic_interests_subtitle" n0:selectable="false" n0:key="topics_description" n1:allowDividerBelow="false" n1:singleLineTitle="false"
+      xmlns:n0="http://schemas.android.com/apk/res/android" xmlns:n1="http://schemas.android.com/apk/res-auto" />
+    <org.chromium.components.browser_ui.settings.LongSummaryTextMessagePreference n2:title="@string/privacy_sandbox_fledge_interests_subtitle" n2:selectable="false" n2:key="fledge_description" n3:allowDividerBelow="false" n3:singleLineTitle="false"
+      xmlns:n2="http://schemas.android.com/apk/res/android" xmlns:n3="http://schemas.android.com/apk/res-auto" />
+</PreferenceScreen>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen>
+    <org.chromium.components.browser_ui.settings.TextMessagePreference n0:title="@string/price_notifications_settings_detailed_page_description" n0:key="price_notifications_description" n1:allowDividerBelow="false"
+      xmlns:n0="http://schemas.android.com/apk/res/android" xmlns:n1="http://schemas.android.com/apk/res-auto" />
+    <org.chromium.components.browser_ui.settings.TextMessagePreference n2:title="@string/price_notifications_settings_mobile_title" n2:key="mobile_notifications_text" n2:summary="@string/price_notifications_settings_mobile_description_on" n3:allowDividerBelow="false"
+      xmlns:n2="http://schemas.android.com/apk/res/android" xmlns:n3="http://schemas.android.com/apk/res-auto" />
+    <org.chromium.components.browser_ui.settings.ChromeSwitchPreference n4:title="@string/price_notifications_settings_email_title" n4:key="send_email_switch" n4:summary="@string/price_notifications_settings_email_description" n5:allowDividerBelow="false"
+      xmlns:n4="http://schemas.android.com/apk/res/android" xmlns:n5="http://schemas.android.com/apk/res-auto" />
+</PreferenceScreen>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge>
+    <com.google.android.material.textfield.TextInputLayout n0:id="@id/credit_card_number_label" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginTop="@dimen/pref_autofill_field_large_top_margin" n0:layout_marginBottom="@dimen/pref_autofill_field_bottom_margin" n0:labelFor="@id/credit_card_number_edit" n1:errorTextAppearance="@style/TextAppearance.ErrorCaption"
+      xmlns:n0="http://schemas.android.com/apk/res/android" xmlns:n1="http://schemas.android.com/apk/res-auto">
+        <EditText n0:id="@id/credit_card_number_edit" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:hint="@string/autofill_credit_card_editor_number" n0:digits="0123456789- " n0:inputType="phone" n0:imeOptions="flagNoExtractUi" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <TextView n2:textAppearance="@style/TextAppearance.TextSmall.Secondary" n2:id="@id/credit_card_expiration_label" n2:layout_width="match_parent" n2:layout_height="wrap_content" n2:layout_marginTop="@dimen/pref_autofill_field_top_margin" n2:text="@string/autofill_credit_card_editor_expiration_date" n2:layout_marginStart="@dimen/pref_autofill_field_horizontal_padding" n2:layout_marginEnd="@dimen/pref_autofill_field_horizontal_padding" n2:labelFor="@id/credit_card_expiration_month"
+      xmlns:n2="http://schemas.android.com/apk/res/android" />
+    <LinearLayout n3:orientation="horizontal" n3:id="@id/credit_card_expiration_container" n3:layout_width="match_parent" n3:layout_height="wrap_content" n3:layout_marginTop="@dimen/pref_autofill_field_top_margin" n3:layout_marginBottom="@dimen/pref_autofill_dropdown_bottom_margin" n3:baselineAligned="false" n3:layout_marginStart="@dimen/pref_autofill_field_horizontal_padding" n3:layout_marginEnd="@dimen/pref_autofill_field_horizontal_padding"
+      xmlns:n3="http://schemas.android.com/apk/res/android">
+        <LinearLayout n3:orientation="vertical" n3:id="@id/credit_card_expiration_month" n3:layout_width="0.0dp" n3:layout_height="wrap_content" n3:layout_weight="1.0" n3:layout_marginEnd="@dimen/editor_dialog_section_large_spacing">
+            <androidx.appcompat.widget.AppCompatSpinner n3:id="@id/autofill_credit_card_editor_month_spinner" n3:layout_width="match_parent" n3:layout_height="wrap_content" n3:contentDescription="@string/autofill_credit_card_editor_expiration_month" />
+            <View style="@style/PreferenceSpinnerUnderlineView" />
+        </LinearLayout>
+        <LinearLayout n3:orientation="vertical" n3:layout_width="0.0dp" n3:layout_height="wrap_content" n3:layout_weight="1.0">
+            <androidx.appcompat.widget.AppCompatSpinner n3:id="@id/autofill_credit_card_editor_year_spinner" n3:layout_width="match_parent" n3:layout_height="wrap_content" n3:contentDescription="@string/autofill_credit_card_editor_expiration_year" />
+            <View style="@style/PreferenceSpinnerUnderlineView" />
+        </LinearLayout>
+    </LinearLayout>
+    <com.google.android.material.textfield.TextInputLayout n4:id="@id/credit_card_name_label" n4:layout_width="match_parent" n4:layout_height="wrap_content" n4:layout_marginTop="@dimen/pref_autofill_field_top_margin" n4:layout_marginBottom="@dimen/pref_autofill_field_bottom_margin" n4:labelFor="@id/credit_card_name_edit"
+      xmlns:n4="http://schemas.android.com/apk/res/android">
+        <EditText n4:id="@id/credit_card_name_edit" n4:layout_width="match_parent" n4:layout_height="wrap_content" n4:hint="@string/autofill_credit_card_editor_name" n4:inputType="textCapWords" n4:imeOptions="flagNoExtractUi" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <include layout="@layout/autofill_billing_address_dropdown" />
+    <com.google.android.material.textfield.TextInputLayout n5:id="@id/credit_card_nickname_label" n5:layout_width="match_parent" n5:layout_height="wrap_content" n5:layout_marginTop="@dimen/pref_autofill_field_extra_large_top_margin" n5:layout_marginBottom="@dimen/pref_autofill_field_bottom_margin" n5:labelFor="@id/credit_card_nickname_edit" n6:counterMaxLength="25" n6:errorEnabled="true"
+      xmlns:n5="http://schemas.android.com/apk/res/android" xmlns:n6="http://schemas.android.com/apk/res-auto">
+        <EditText n5:id="@id/credit_card_nickname_edit" n5:layout_width="match_parent" n5:layout_height="wrap_content" n5:hint="@string/autofill_credit_card_editor_nickname" n5:maxLength="25" n5:inputType="textCapWords" n5:imeOptions="flagNoExtractUi" />
+    </com.google.android.material.textfield.TextInputLayout>
+</merge>

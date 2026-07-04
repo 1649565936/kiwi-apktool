@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu>
+    <item n0:id="@id/icon_row_menu_id" n0:orderInCategory="0" n0:title="@null"
+      xmlns:n0="http://schemas.android.com/apk/res/android">
+        <menu>
+            <item n0:icon="@drawable/btn_forward" n0:id="@id/forward_menu_id" n0:title="@string/accessibility_menu_forward" />
+            <item n0:icon="@drawable/btn_star" n0:id="@id/bookmark_this_page_id" n0:title="@string/accessibility_menu_bookmark" />
+            <item n0:icon="@drawable/ic_file_download_white_24dp" n0:id="@id/offline_page_id" n0:title="@string/download_page" />
+            <item n0:icon="@drawable/btn_info" n0:id="@id/info_menu_id" n0:title="@string/accessibility_menu_info" />
+            <item n0:icon="@drawable/btn_reload_stop" n0:id="@id/reload_menu_id" n0:title="@string/accessibility_btn_refresh" />
+        </menu>
+    </item>
+    <item n1:id="@id/divider_line_id" n1:orderInCategory="2" n1:title="@null"
+      xmlns:n1="http://schemas.android.com/apk/res/android" />
+    <item n2:id="@id/share_row_menu_id" n2:orderInCategory="2" n2:title="@null"
+      xmlns:n2="http://schemas.android.com/apk/res/android">
+        <menu>
+            <item n2:id="@id/share_menu_id" n2:title="@string/menu_share_page" />
+            <item n2:id="@id/direct_share_menu_id" n2:title="@null" />
+        </menu>
+    </item>
+    <item n3:id="@id/page_insights_id" n3:visible="false" n3:orderInCategory="2" n3:title="@string/menu_page_insights"
+      xmlns:n3="http://schemas.android.com/apk/res/android" />
+    <item n4:id="@id/find_in_page_id" n4:orderInCategory="2" n4:title="@string/menu_find_in_page"
+      xmlns:n4="http://schemas.android.com/apk/res/android" />
+    <item n5:icon="@drawable/reader_mode_prefs_icon" n5:id="@id/reader_mode_prefs_id" n5:visible="false" n5:orderInCategory="2" n5:title="@string/menu_reader_mode_prefs"
+      xmlns:n5="http://schemas.android.com/apk/res/android" />
+    <item n6:id="@id/add_to_homescreen_id" n6:orderInCategory="2" n6:title="@string/menu_add_to_homescreen"
+      xmlns:n6="http://schemas.android.com/apk/res/android" />
+    <item n7:id="@id/install_webapp_id" n7:orderInCategory="2" n7:title="@string/menu_install_webapp"
+      xmlns:n7="http://schemas.android.com/apk/res/android" />
+    <item n8:id="@id/open_webapk_id" n8:orderInCategory="2" n8:title="@string/menu_open_webapk"
+      xmlns:n8="http://schemas.android.com/apk/res/android" />
+    <item n9:id="@id/request_desktop_site_row_menu_id" n9:orderInCategory="2" n9:title="@null"
+      xmlns:n9="http://schemas.android.com/apk/res/android">
+        <menu>
+            <item n9:id="@id/request_desktop_site_id" n9:title="@string/menu_request_desktop_site" />
+            <item n9:id="@id/request_desktop_site_check_id" n9:title="@null" n9:checkable="true" />
+        </menu>
+    </item>
+    <item n10:id="@id/translate_id" n10:orderInCategory="2" n10:title="@string/menu_translate"
+      xmlns:n10="http://schemas.android.com/apk/res/android" />
+    <item n11:id="@id/open_in_browser_id" n11:orderInCategory="2" n11:title=""
+      xmlns:n11="http://schemas.android.com/apk/res/android" />
+</menu>

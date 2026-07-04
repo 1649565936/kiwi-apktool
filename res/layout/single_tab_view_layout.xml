@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<org.chromium.chrome.features.tasks.SingleTabView n0:orientation="horizontal" n0:id="@id/single_tab_view" n0:background="@drawable/single_tab_background" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginTop="24.0dp" n0:foreground="?android:selectableItemBackground" n0:layout_marginStart="@dimen/single_tab_card_lateral_margin" n0:layout_marginEnd="@dimen/single_tab_card_lateral_margin"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <RelativeLayout n0:layout_width="match_parent" n0:layout_height="match_parent">
+        <ImageView n0:id="@id/tab_favicon_view" n0:layout_width="24.0dp" n0:layout_height="24.0dp" n0:layout_centerVertical="true" n0:layout_marginStart="16.0dp" n0:layout_marginEnd="8.0dp" n0:layout_alignParentStart="true" />
+        <LinearLayout n0:orientation="vertical" n0:id="@id/continue_browsing" n0:layout_width="wrap_content" n0:layout_height="match_parent" n0:layout_toStartOf="@id/chevron_right_view" n0:layout_toEndOf="@id/tab_favicon_view">
+            <TextView n0:textAppearance="@style/TextAppearance.TextSmall.Secondary" n0:gravity="start|center" n0:layout_gravity="center_vertical" n0:id="@id/tab_switcher_title_description" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:layout_marginTop="10.0dp" n0:text="@string/tab_switcher_carousel_title" n0:singleLine="true" n0:layout_weight="1.0" n0:textAlignment="viewStart" />
+            <TextView n0:textAppearance="@style/TextAppearance.TextMedium" n0:gravity="center_vertical" n0:layout_gravity="center_vertical" n0:id="@id/tab_title_view" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:layout_marginBottom="10.0dp" n0:singleLine="true" n0:layout_weight="1.0" />
+        </LinearLayout>
+        <ImageView n0:id="@id/chevron_right_view" n0:layout_width="20.0dp" n0:layout_height="20.0dp" n0:src="@drawable/chevron_right" n0:scaleType="centerCrop" n0:layout_centerVertical="true" n0:layout_marginStart="16.0dp" n0:layout_marginEnd="16.0dp" n0:layout_alignParentEnd="true" />
+    </RelativeLayout>
+</org.chromium.chrome.features.tasks.SingleTabView>

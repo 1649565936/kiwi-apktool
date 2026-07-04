@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge>
+    <org.chromium.components.browser_ui.widget.PromoDialogLayout n0:layout_gravity="center" n0:orientation="vertical" n0:id="@id/promo_dialog_layout" n0:background="@drawable/menu_bg_tinted" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n1:maxWidthLandscape="@dimen/dialog_max_width" n1:maxWidthPortrait="@dimen/dialog_max_width"
+      xmlns:n0="http://schemas.android.com/apk/res/android" xmlns:n1="http://schemas.android.com/apk/res-auto">
+        <org.chromium.components.browser_ui.widget.FadingEdgeScrollView n0:id="@id/promo_container" n0:layout_width="match_parent" n0:layout_height="0.0dp" n0:layout_weight="1.0" n0:fadeScrollbars="false">
+            <LinearLayout n0:gravity="center" n0:orientation="vertical" n0:id="@id/full_promo_content" n0:padding="@dimen/promo_dialog_padding" n0:layout_width="wrap_content" n0:layout_height="wrap_content">
+                <ImageView n0:layout_gravity="center" n0:id="@id/illustration" n0:paddingTop="@dimen/promo_dialog_illustration_margin" n0:layout_width="@dimen/promo_dialog_illustration_width" n0:layout_height="wrap_content" n0:scaleType="fitCenter" n0:layout_marginStart="@dimen/promo_dialog_illustration_margin" n0:layout_marginEnd="@dimen/promo_dialog_illustration_margin" />
+                <org.chromium.components.browser_ui.widget.BoundedLinearLayout n0:orientation="vertical" n0:id="@id/scrollable_promo_content" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n1:maxWidthLandscape="@dimen/promo_dialog_max_content_width" n1:maxWidthPortrait="@dimen/promo_dialog_max_content_width">
+                    <TextView n0:textAppearance="@style/TextAppearance.Headline.Primary" n0:id="@id/header" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:layout_marginTop="@dimen/dialog_header_margin" n0:layout_marginBottom="@dimen/dialog_header_margin" n0:textDirection="locale" />
+                    <org.chromium.ui.widget.TextViewWithClickableSpans n0:id="@id/subheader" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:textDirection="locale" n1:leading="@dimen/text_size_medium_leading" style="@style/TextAppearance.TextMedium.Secondary" />
+                </org.chromium.components.browser_ui.widget.BoundedLinearLayout>
+            </LinearLayout>
+        </org.chromium.components.browser_ui.widget.FadingEdgeScrollView>
+        <ViewStub n0:id="@id/footer_stub" n0:layout="@layout/dialog_control_description" n0:inflatedId="@id/footer" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_margin="@dimen/promo_dialog_padding" />
+        <org.chromium.components.browser_ui.widget.DualControlLayout n0:layout_gravity="end" n0:id="@id/button_bar" n0:padding="@dimen/promo_dialog_padding" n0:layout_width="match_parent" n0:layout_height="wrap_content" n1:buttonAlignment="end" n1:stackedMargin="@dimen/promo_dialog_stacked_margin" />
+    </org.chromium.components.browser_ui.widget.PromoDialogLayout>
+</merge>

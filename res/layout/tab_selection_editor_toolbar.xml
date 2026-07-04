@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<org.chromium.chrome.browser.tasks.tab_management.TabSelectionEditorToolbar n0:layout_width="match_parent" n0:layout_height="match_parent"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <org.chromium.chrome.browser.tasks.tab_management.TabSelectionEditorActionViewLayout n0:orientation="horizontal" n0:id="@id/action_view_layout" n0:layout_width="match_parent" n0:layout_height="match_parent">
+        <org.chromium.components.browser_ui.widget.listmenu.ListMenuButton n0:enabled="true" n0:layout_gravity="center" n0:id="@id/list_menu_button" n0:background="@null" n0:focusable="true" n0:visibility="gone" n0:clickable="true" n0:layout_width="@dimen/min_touch_target_size" n0:layout_height="@dimen/min_touch_target_size" n0:src="@drawable/ic_more_vert_24dp" n1:menuMaxWidth="@dimen/menu_width" n1:tint="@color/default_icon_color_tint_list" style="@style/ToolbarMenuButton"
+          xmlns:n1="http://schemas.android.com/apk/res-auto" />
+    </org.chromium.chrome.browser.tasks.tab_management.TabSelectionEditorActionViewLayout>
+</org.chromium.chrome.browser.tasks.tab_management.TabSelectionEditorToolbar>

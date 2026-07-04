@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen>
+    <org.chromium.components.browser_ui.settings.TextMessagePreference n0:title="@string/privacy_sandbox_ad_personalization_subtitle" n0:selectable="false" n1:allowDividerBelow="false"
+      xmlns:n0="http://schemas.android.com/apk/res/android" xmlns:n1="http://schemas.android.com/apk/res-auto" />
+    <org.chromium.components.browser_ui.settings.LongSummaryTextMessagePreference n2:selectable="false" n2:key="ad_personalization_description" n3:allowDividerBelow="false"
+      xmlns:n2="http://schemas.android.com/apk/res/android" xmlns:n3="http://schemas.android.com/apk/res-auto" />
+    <PreferenceCategory n4:title="@string/privacy_sandbox_topic_interests_subtitle" n4:key="topic_interests" n5:isPreferenceVisible="false"
+      xmlns:n4="http://schemas.android.com/apk/res/android" xmlns:n5="http://schemas.android.com/apk/res-auto" />
+    <org.chromium.components.browser_ui.settings.ChromeBasePreference n6:selectable="false" n6:key="empty_topics" n6:summary="@string/privacy_sandbox_topic_empty_state" n7:isPreferenceVisible="false"
+      xmlns:n6="http://schemas.android.com/apk/res/android" xmlns:n7="http://schemas.android.com/apk/res-auto" />
+    <org.chromium.components.browser_ui.settings.ChromeBasePreference n8:title="@string/privacy_sandbox_remove_interest_title" n8:key="removed_topics" n8:fragment="org.chromium.chrome.browser.privacy_sandbox.AdPersonalizationRemovedFragment" n9:allowDividerAbove="false" n9:isPreferenceVisible="false" n9:userAction="Settings.PrivacySandbox.RemovedInterests.Opened"
+      xmlns:n8="http://schemas.android.com/apk/res/android" xmlns:n9="http://schemas.android.com/apk/res-auto" />
+    <PreferenceCategory n10:title="@string/privacy_sandbox_fledge_subtitle" n10:key="fledge_interests" n11:allowDividerAbove="true" n11:isPreferenceVisible="false"
+      xmlns:n10="http://schemas.android.com/apk/res/android" xmlns:n11="http://schemas.android.com/apk/res-auto" />
+    <org.chromium.components.browser_ui.settings.ChromeBasePreference n12:selectable="false" n12:key="empty_fledge" n12:summary="@string/privacy_sandbox_fledge_empty_state" n13:isPreferenceVisible="false"
+      xmlns:n12="http://schemas.android.com/apk/res/android" xmlns:n13="http://schemas.android.com/apk/res-auto" />
+    <org.chromium.components.browser_ui.settings.ChromeBasePreference n14:title="@string/privacy_sandbox_remove_sites_title" n14:key="removed_sites" n14:fragment="org.chromium.chrome.browser.privacy_sandbox.AdPersonalizationRemovedFragment" n15:allowDividerAbove="false" n15:allowDividerBelow="false" n15:isPreferenceVisible="false" n15:userAction="Settings.PrivacySandbox.RemovedInterests.Opened"
+      xmlns:n14="http://schemas.android.com/apk/res/android" xmlns:n15="http://schemas.android.com/apk/res-auto" />
+</PreferenceScreen>
