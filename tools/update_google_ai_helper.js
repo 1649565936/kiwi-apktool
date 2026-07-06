@@ -8,6 +8,17 @@ const helperPath = path.join(root, 'smali/org/chromium/chrome/browser/translate/
 const sourcePath = path.join(root, 'tools/google_ai_translate_v8.js');
 const marker = '__KIWI_TRANSLATE_API_KEY__';
 const chunkSize = 9000;
+const legacyWrapper = [
+  '.method public static b(Ljava/lang/String;)Ljava/lang/String;',
+  '    .locals 1',
+  '',
+  '    invoke-static {p0}, Lorg/chromium/chrome/browser/translate/GoogleAiTranslateHelper;->f(Ljava/lang/String;)Ljava/lang/String;',
+  '',
+  '    move-result-object v0',
+  '',
+  '    return-object v0',
+  '.end method'
+].join('\n');
 
 function smaliQuote(text) {
   return '"' + text
@@ -73,7 +84,9 @@ const method = buildMethod(source);
 const helper = fs.readFileSync(helperPath, 'utf8');
 const pattern = /\.method public static f\(Ljava\/lang\/String;\)Ljava\/lang\/String;[\s\S]*?\.end method(?=\n\s*\.method public static b)/;
 if (!pattern.test(helper)) throw new Error('Could not locate GoogleAiTranslateHelper.f(String)');
-const next = helper.replace(pattern, method);
+const legacyPattern = /\.method public static b\(Ljava\/lang\/String;\)Ljava\/lang\/String;[\s\S]*?\.end method/;
+if (!legacyPattern.test(helper)) throw new Error('Could not locate GoogleAiTranslateHelper.b(String)');
+const next = helper.replace(pattern, method).replace(legacyPattern, legacyWrapper);
 
 if (process.argv.includes('--check')) {
   console.log(`Generated f(String) method: ${method.length} chars, ${chunks(source).length} source chunks`);

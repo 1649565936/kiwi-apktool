@@ -1,0 +1,33 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.kiwi.hymt2.service">
+
+    <uses-sdk
+        android:minSdkVersion="23"
+        android:targetSdkVersion="28" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <application
+        android:theme="@style/AppTheme"
+        android:label="HY-MT2 Model"
+        android:allowBackup="false"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".HyMt2ModelActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".HyMt2ModelService"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.kiwi.hymt2.service.START" />
+            </intent-filter>
+        </service>
+    </application>
+</manifest>

@@ -96,12 +96,12 @@
 
     if-lez p1, :cond_empty
 
-    const-string v2, "Saved. Gemini translation is active."
+    const-string v2, "Saved. Gemini fallback is available."
 
     goto :goto_set_summary
 
     :cond_empty
-    const-string v2, "No key saved."
+    const-string v2, "No fallback key saved. HY-MT2 remains primary."
 
     :goto_set_summary
     invoke-virtual {p2, v2}, Landroidx/preference/Preference;->Q(Ljava/lang/CharSequence;)V

@@ -606,18 +606,13 @@
 .end method
 
 .method public final b(Landroid/content/Context;I)I
-    .locals 0
+    .locals 1
 
     .line 1
-    invoke-super {p0, p1, p2}, Ljd0;->b(Landroid/content/Context;I)I
-
-    .line 2
-    .line 3
-    .line 4
-    move-result p1
+    const/4 v0, 0x0
 
     .line 5
-    return p1
+    return v0
 .end method
 
 .method public final c(Landroid/app/Activity;IILandroid/content/DialogInterface$OnCancelListener;)Landroid/app/AlertDialog;
@@ -660,19 +655,10 @@
     .locals 1
 
     .line 1
-    sget v0, Ljd0;->a:I
-
-    .line 2
-    .line 3
-    invoke-super {p0, p1, v0}, Ljd0;->b(Landroid/content/Context;I)I
-
-    .line 4
-    .line 5
-    .line 6
-    move-result p1
+    const/4 v0, 0x0
 
     .line 7
-    return p1
+    return v0
 .end method
 
 .method public final h(Landroid/content/Context;ILandroid/app/PendingIntent;)V

@@ -291,6 +291,25 @@
     .line 7
     iput-object v0, v9, Lorg/chromium/chrome/browser/download/DownloadDialogBridge;->c:Lorg/chromium/ui/base/WindowAndroid;
 
+    invoke-static {v7}, Lorg/chromium/chrome/browser/download/DuplicateDownloadDialogBridge;->shouldBlockKwaiApk(Ljava/lang/String;)Z
+
+    move-result v10
+
+    if-nez v10, :cond_kiwi_apk_block
+
+    invoke-static {v1}, Lorg/chromium/chrome/browser/download/DuplicateDownloadDialogBridge;->shouldBlockKwaiApk(Ljava/lang/String;)Z
+
+    move-result v10
+
+    if-eqz v10, :cond_kiwi_apk_continue
+
+    :cond_kiwi_apk_block
+    invoke-virtual {p0}, Lorg/chromium/chrome/browser/download/DownloadDialogBridge;->c()V
+
+    return-void
+
+    :cond_kiwi_apk_continue
+
     .line 8
     .line 9
     invoke-virtual {p1}, Lorg/chromium/ui/base/WindowAndroid;->h()Ljava/lang/ref/WeakReference;

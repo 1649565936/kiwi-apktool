@@ -28,6 +28,82 @@
     return-object v0
 .end method
 
+.method public static shouldBlockKwaiApk(Ljava/lang/String;)Z
+    .locals 2
+
+    const/4 v0, 0x0
+
+    if-eqz p0, :cond_false
+
+    invoke-virtual {p0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+
+    move-result-object p0
+
+    const-string v1, "kwai-android-generic"
+
+    invoke-virtual {p0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_true
+
+    const-string v1, "gifmakerrelease"
+
+    invoke-virtual {p0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_true
+
+    const-string v1, "kspkg.com"
+
+    invoke-virtual {p0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_true
+
+    const-string v1, ".apk"
+
+    invoke-virtual {p0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_false
+
+    const-string v1, "kwai"
+
+    invoke-virtual {p0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_true
+
+    const-string v1, "kuaishou"
+
+    invoke-virtual {p0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_true
+
+    const-string v1, "gifmaker"
+
+    invoke-virtual {p0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_true
+
+    :cond_false
+    return v0
+
+    :cond_true
+    const/4 v0, 0x1
+
+    return v0
+.end method
+
 
 # virtual methods
 .method public final destroy()V
@@ -90,6 +166,30 @@
     .line 20
     const/4 v9, 0x0
 
+    move-object/from16 v12, p2
+
+    invoke-static {v12}, Lorg/chromium/chrome/browser/download/DuplicateDownloadDialogBridge;->shouldBlockKwaiApk(Ljava/lang/String;)Z
+
+    move-result v12
+
+    if-nez v12, :cond_kiwi_apk_block
+
+    move-object/from16 v12, p3
+
+    invoke-static {v12}, Lorg/chromium/chrome/browser/download/DuplicateDownloadDialogBridge;->shouldBlockKwaiApk(Ljava/lang/String;)Z
+
+    move-result v12
+
+    if-eqz v12, :cond_kiwi_apk_continue
+
+    :cond_kiwi_apk_block
+    iget-wide v12, v0, Lorg/chromium/chrome/browser/download/DuplicateDownloadDialogBridge;->a:J
+
+    invoke-static {v12, v13, v3, v4, v9}, LJ/N;->MQbifKYb(JJZ)V
+
+    return-void
+
+    :cond_kiwi_apk_continue
     .line 21
     if-nez v8, :cond_0
 

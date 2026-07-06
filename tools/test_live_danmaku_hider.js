@@ -155,7 +155,7 @@ function matchesSelector(node, selector) {
 }
 
 function isHidden(node) {
-  return node.getAttribute('data-kiwi-live-noise') === '1' &&
+  return (node.getAttribute('data-kiwi-live-noise') === '1' || node.getAttribute('data-kiwi-live-overlay-hidden') === '1') &&
     node.style.display === 'none' &&
     node.style.visibility === 'hidden' &&
     node.style.pointerEvents === 'none';
@@ -230,6 +230,17 @@ const genericFloating = doc.add(new FakeElement('span', {
 }));
 liveRoot.appendChild(genericFloating);
 
+const playerShell = doc.add(new FakeElement('div', { className: 'kwai-player-control-layer', rect: box(0, 0, 760, 520) }));
+liveRoot.appendChild(playerShell);
+
+const playButton = doc.add(new FakeElement('button', {
+  className: 'kwai-player-play-button',
+  text: '播放',
+  rect: box(350, 430, 64, 64),
+  style: { position: 'absolute' }
+}));
+playerShell.appendChild(playButton);
+
 const chatRoot = doc.add(new FakeElement('div', { className: 'live-chat', rect: box(840, 0, 320, 720) }));
 doc.body.appendChild(chatRoot);
 
@@ -241,15 +252,38 @@ const rightChat = doc.add(new FakeElement('div', {
 }));
 chatRoot.appendChild(rightChat);
 
-vm.runInNewContext(source, makeContext(doc), { filename: 'google_ai_translate_v8.js' });
+const context = makeContext(doc);
+vm.runInNewContext(source, context, { filename: 'google_ai_translate_v8.js' });
 
-assert.ok(isHidden(dashNamed), 'dash-style danmaku class should be hidden');
-assert.ok(isHidden(camelNamed), 'camelCase webcast screen comment should be hidden');
-assert.ok(isHidden(genericFloating), 'generic animated floating text over video should be hidden');
+assert.strictEqual(isHidden(dashNamed), true, 'dash-style horizontal danmaku should be hidden over the video');
+assert.strictEqual(isHidden(camelNamed), true, 'camelCase webcast screen comment should be hidden over the video');
+assert.strictEqual(isHidden(genericFloating), true, 'generic animated floating text over video should be hidden');
+assert.strictEqual(isHidden(playButton), true, 'video play/pause overlay button should be hidden');
 assert.strictEqual(isHidden(rightChat), false, 'right-side chat item should not be hidden');
 
-const css = doc.getElementById('kiwi-ai-translate-media-block').textContent;
-assert.ok(css.includes('webcastScreen'), 'media block CSS should include camelCase webcast selector');
-assert.ok(css.includes('bulletScreen'), 'media block CSS should include camelCase bullet selector');
+assert.strictEqual(doc.getElementById('kiwi-ai-translate-media-block'), null, 'media block CSS should not be injected');
+assert.strictEqual(context.HTMLMediaElement.prototype.play, undefined, 'media play API should not be patched');
+assert.ok(source.includes('function installLiveOverlayGuard()'), 'live pages should install a narrow overlay hider');
+assert.ok(source.includes('data-kiwi-live-overlay-hidden'), 'hidden live overlays should be marked with a dedicated attribute');
+assert.ok(source.includes('const LIVE_CHAT_RE'), 'live pages should use a narrow chat/danmaku matcher');
+assert.ok(source.includes('const LIVE_BLOCK_RE'), 'live pages should exclude player/header/search/input surfaces');
+assert.ok(source.includes("if (!S.live && S.queue.length < 40) loading(n);"), 'live pages should not inject loading placeholders');
+assert.ok(!source.includes("comment|chat|message|webcast|msg|room|live/.test(n)"), 'live pages must not treat broad room/live containers as chat');
+assert.ok(!/backdrop-filter|-webkit-backdrop-filter/.test(source), 'floating translator UI should avoid backdrop filters over live video');
+assert.ok(source.includes("const POS_KEY = 'kiwi_ai_translate_panel_pos'"), 'floating translator panel should persist its dragged position');
+assert.ok(source.includes('function installPanelDrag()'), 'floating translator panel should install drag handlers');
+assert.ok(source.includes('function dragBlocked(target)'), 'panel drag should only ignore real controls, not the whole panel');
+assert.ok(source.includes("touch-action:none"), 'panel drag handle should work on touch screens');
+assert.ok(source.includes('function scanLiveInitial()'), 'live pages should scan only detected live chat roots initially');
+assert.ok(source.includes('function collectLiveNode(n)'), 'live pages should filter mutation nodes before scanning');
+assert.ok(source.includes('function queueLiveScan(root)'), 'live pages should batch mutation scans instead of scanning on every DOM change');
+assert.ok(!source.includes('if (S.live) scan(D.body || D)'), 'live pages must not scan the full body on run');
+assert.ok(/chenzhongtech/.test(source), 'Kuaishou livev.m.chenzhongtech.com pages should enter live mode');
+assert.ok(source.includes('function installKwaiDownloadGuard()'), 'Kuaishou live pages should install a download/deeplink guard');
+assert.ok(source.includes('const KWAI_APK_RE'), 'Kuaishou APK URLs should be recognized before navigation/download');
+assert.ok(source.includes('patchLocationMethod'), 'live page download guard should patch location.assign/replace');
+assert.ok(source.includes('HTMLAnchorElement'), 'programmatic anchor clicks should be guarded');
+assert.ok(source.includes("Object.defineProperty(proto, 'click'"), 'anchor click patch should use a stable prototype override');
+assert.ok(source.includes('已拦截快手下载跳转'), 'blocked Kuaishou APK jumps should surface a clear status');
 
-console.log('live danmaku hider checks passed');
+console.log('live room overlay checks passed');

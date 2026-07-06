@@ -12884,6 +12884,8 @@
     .line 8
     :try_start_0
     invoke-super {p0}, Lorg/chromium/chrome/browser/app/ChromeActivity;->onStart()V
+
+    invoke-static {p0}, Lorg/chromium/chrome/browser/translate/HyMt2ModelServiceStarter;->start(Landroid/content/Context;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 

@@ -40,7 +40,7 @@
 
     invoke-virtual {v1, v3}, Landroid/widget/EditText;->setInputType(I)V
 
-    const-string v3, "Paste Gemini API key"
+    const-string v3, "Optional Gemini fallback key"
 
     invoke-virtual {v1, v3}, Landroid/widget/EditText;->setHint(Ljava/lang/CharSequence;)V
 
@@ -73,7 +73,7 @@
 
     invoke-direct {v4, v0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const-string v5, "Gemini API key"
+    const-string v5, "Gemini fallback key"
 
     invoke-virtual {v4, v5}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 

@@ -51,36 +51,6 @@
 
     invoke-interface {p2}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    const-string p2, "google_ai_translate_api_key"
-
-    const-string v0, ""
-
-    invoke-interface {p1, p2, v0}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p1
-
-    if-eqz p1, :cond_prompt_key
-
-    invoke-virtual {p1}, Ljava/lang/String;->trim()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Ljava/lang/String;->isEmpty()Z
-
-    move-result p1
-
-    if-eqz p1, :goto_done
-
-    :cond_prompt_key
-    new-instance p1, Lorg/chromium/chrome/browser/translate/GoogleAiKeyPreferenceClickListener;
-
-    const/4 p2, 0x0
-
-    invoke-direct {p1, p2}, Lorg/chromium/chrome/browser/translate/GoogleAiKeyPreferenceClickListener;-><init>(Lorg/chromium/chrome/browser/translate/TranslateSettings;)V
-
-    invoke-virtual {p1, p0}, Lorg/chromium/chrome/browser/translate/GoogleAiKeyPreferenceClickListener;->l(Landroidx/preference/Preference;)Z
-
-    :goto_done
     return-void
 .end method
 
@@ -131,39 +101,19 @@
 
     check-cast v0, Lorg/chromium/components/browser_ui/widget/RadioButtonWithDescription;
 
-    const-string v1, "Gemini"
+    const-string v1, "HY-MT2"
 
     invoke-virtual {v0, v1}, Lorg/chromium/components/browser_ui/widget/RadioButtonWithDescription;->i(Ljava/lang/String;)V
 
-    const-string v1, "Translate pages with Gemini. Tap to activate; if no key is saved, the key dialog opens."
+    const-string v1, "Translate pages and live comments with a local HY-MT2 endpoint. Gemini key is optional fallback."
 
     invoke-virtual {v0, v1}, Lorg/chromium/components/browser_ui/widget/RadioButtonWithDescription;->h(Ljava/lang/CharSequence;)V
-
-    sget-object v1, LoF;->a:Landroid/content/SharedPreferences;
-
-    const-string v2, "google_ai_translate_api_key"
-
-    const-string v3, ""
-
-    invoke-interface {v1, v2, v3}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
-
-    if-eqz v2, :cond_no_key
-
-    invoke-virtual {v2}, Ljava/lang/String;->trim()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/String;->isEmpty()Z
-
-    move-result v2
-
-    if-nez v2, :cond_no_key
 
     const/4 v2, 0x1
 
     invoke-virtual {v0, v2}, Lorg/chromium/components/browser_ui/widget/RadioButtonWithDescription;->f(Z)V
+
+    sget-object v1, LoF;->a:Landroid/content/SharedPreferences;
 
     invoke-interface {v1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
@@ -177,7 +127,6 @@
 
     invoke-interface {v1}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    :cond_no_key
     const v0, 0x7f010682
 
     invoke-virtual {p1, v0}, LE61;->u(I)Landroid/view/View;

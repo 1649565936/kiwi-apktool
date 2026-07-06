@@ -13,12 +13,12 @@
 
 ## 当前代码基线
 
-当前项目是 apktool 反编译工程，已有 Gemini 翻译改动，主要入口如下：
+当前项目是 apktool 反编译工程，已有 HY-MT2/Gemini 翻译改动，主要入口如下：
 
 - `smali/org/chromium/chrome/browser/translate/GoogleAiTranslateHelper.smali`
-  - `a(Tab)`：用户主动点击浏览器菜单“翻译”时调用，会检查 Gemini Key，注入脚本并强制显示 UI。
-  - `c(Tab)`：Tab/WebContents 生命周期中自动调用，有 Key 时静默注入脚本。
-  - `f(String)`：当前实际使用的新版注入脚本，版本号 `7`。
+  - `a(Tab)`：用户主动点击浏览器菜单“翻译”时调用，注入脚本并强制显示 UI；HY-MT2 模式不要求 Gemini Key。
+  - `c(Tab)`：Tab/WebContents 生命周期中自动调用，静默注入脚本。
+  - `f(String)`：当前实际使用的新版注入脚本，版本号 `9`。
   - `b(String)`：旧版注入脚本，版本号 `4`，已包含批量 JSON 翻译、并发处理、加载态插入等逻辑，可作为弹幕批处理改造参考。
 - `smali/org/chromium/chrome/browser/app/ChromeActivity.smali`
   - 菜单翻译动作已被接到 `GoogleAiTranslateHelper.a(Tab)`。
@@ -31,7 +31,10 @@
 
 已有能力：
 
-- Gemini Key 不内置，需要用户在设置里保存。
+- HY-MT2 是默认 provider，调用 OpenAI 兼容本地端点。
+- 默认端点：`http://127.0.0.1:8080/v1/chat/completions`。
+- 默认模型名：`hy-mt2`。
+- Gemini Key 不内置，只作为可选兜底，需要用户在设置里保存。
 - 页面中注入浮动翻译面板。
 - 使用 `MutationObserver` 扫描新增文本。
 - 针对抖音/快手直播页识别右侧评论，隐藏横向弹幕、视频、音频。
@@ -47,7 +50,7 @@
 
 ## 推荐架构
 
-继续采用“页面 JS 注入 + Gemini API”的轻量方案，先不引入 Android 原生 WebSocket 网关。原因是当前仓库已有完整注入链，直接改 `GoogleAiTranslateHelper.smali` 的脚本风险最低。
+继续采用“页面 JS 注入 + HY-MT2 OpenAI 兼容端点”的轻量方案，先不把 GGUF 和 llama.cpp runtime 直接内置进 APK。原因是当前仓库已有完整注入链，直接改 `GoogleAiTranslateHelper.smali` 的脚本风险最低；同时可以先验证 HY-MT2 对弹幕短文本的延迟和稳定性。
 
 建议拆成以下逻辑层：
 
@@ -59,7 +62,8 @@ WebContents 注入入口
   -> 去重缓存
   -> 有界队列
   -> 批处理调度器
-  -> Gemini 批量翻译
+  -> HY-MT2 批量翻译
+  -> Gemini fallback（可选）
   -> 译文回填器
   -> 高峰降级/状态 UI
 ```
@@ -197,9 +201,16 @@ P3：短句、重复、刷屏、低信息密度文本
 - 状态栏显示“高峰模式，仅翻译重点弹幕”。
 - 后续可做热点摘要，例如“多人在问价格 x 43”。
 
-## Gemini 调用格式
+## HY-MT2 调用格式
 
 批量翻译应强制 JSON 输出，便于回填对应节点。
+
+默认调用本地 OpenAI 兼容接口：
+
+```text
+POST http://127.0.0.1:8080/v1/chat/completions
+model: hy-mt2
+```
 
 请求内容示例：
 
@@ -232,9 +243,10 @@ P3：短句、重复、刷屏、低信息密度文本
 
 模型策略：
 
-- 默认优先低延迟模型。
-- 保留备用模型。
-- 后续如果成本或速度压力大，可把弹幕翻译接口切到自建网关，由网关再调模型。
+- 默认优先 HY-MT2 本地端点。
+- 页面面板中的“端点”按钮可修改 HY-MT2 endpoint 和 model，并写入 `localStorage`。
+- 如果用户保存了 Gemini fallback key，HY-MT2 调用失败后可自动兜底到 Gemini。
+- 后续如果要真正内置 GGUF，需要新增 llama.cpp/ggml Android native runtime、JNI 桥和模型分发逻辑。
 
 ## UI 展示
 
@@ -256,7 +268,13 @@ P3：短句、重复、刷屏、低信息密度文本
 
 ## 设置项规划
 
-第一阶段可以不新增 Android 设置，只使用当前 Gemini Key 和目标语言本地存储。
+第一阶段可以不新增 Android 设置，只使用当前页面面板和本地存储：
+
+- `kiwi_ai_translate_provider`：`hymt2` 或 `gemini`。
+- `kiwi_hymt2_endpoint`：默认 `http://127.0.0.1:8080/v1/chat/completions`。
+- `kiwi_hymt2_model`：默认 `hy-mt2`。
+- `kiwi_ai_translate_target`：目标语言。
+- `google_ai_translate_api_key`：可选 Gemini fallback key。
 
 第二阶段再考虑新增：
 
@@ -407,7 +425,7 @@ P3：短句、重复、刷屏、低信息密度文本
 - 某些直播页 CSP/CORS 可能影响页面内 fetch。
 - 直接在页面 JS 中调用 Gemini 会暴露用户 API Key 给当前页面上下文，这是现有架构风险；短期沿用，长期建议后端网关。
 - 反编译 smali 中维护长 JS 字符串容易出错，后续改动需要非常小心字符串转义。
-- 过度隐藏视频/音频可能影响用户想边看边翻译的场景，后续需要做成模式开关。
+- 不再默认隐藏或拦截视频/音频；直播间应保持正常加载，翻译逻辑只处理可读取的评论/弹幕文本。
 
 ## 测试计划
 
