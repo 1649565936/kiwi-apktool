@@ -75,7 +75,7 @@
     goto :goto_store_translator
 
     :cond_store_empty
-    const-string v0, ""
+    const-string v0, "GoogleAI"
 
     :goto_store_translator
     const-string v1, "active_translator"
@@ -101,7 +101,7 @@
     goto :goto_set_summary
 
     :cond_empty
-    const-string v2, "No fallback key saved. HY-MT2 remains primary."
+    const-string v2, "No fallback key saved. Doubao Seed remains primary."
 
     :goto_set_summary
     invoke-virtual {p2, v2}, Landroidx/preference/Preference;->Q(Ljava/lang/CharSequence;)V

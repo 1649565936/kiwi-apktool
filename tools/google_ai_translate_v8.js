@@ -10,8 +10,15 @@
       ru: 'Русский',
       uk: 'Українська'
     };
+    const DOUBAO_DEFAULTS = {
+      endpoint: 'https://ark.cn-beijing.volces.com/api/v3/responses',
+      model: 'doubao-seed-translation-250915',
+      key: 'ark-3d372bb6-82cd-4d5c-af58-9a0852ee12ea-8d461'
+    };
 
-    if (W.__kiwiAiTranslator && W.__kiwiAiTranslator.version >= 19) {
+    seedDoubaoDefaults();
+
+    if (W.__kiwiAiTranslator && W.__kiwiAiTranslator.version >= 21) {
       W.__kiwiAiTranslator.key = k;
       W.__kiwiAiTranslator.reloadConfig();
       W.__kiwiAiTranslator.show(false);
@@ -19,17 +26,17 @@
     }
 
     const S = {
-      version: 19,
+      version: 21,
       key: k || '',
-      provider: localStorage.getItem('kiwi_ai_translate_provider') || 'hymt2',
-      hyEndpoint: localStorage.getItem('kiwi_hymt2_endpoint') || 'http://127.0.0.1:8080/v1/chat/completions',
-      hyModel: localStorage.getItem('kiwi_hymt2_model') || 'hy-mt2',
-      hyKey: localStorage.getItem('kiwi_hymt2_api_key') || '',
+      doubaoEndpoint: localStorage.getItem('kiwi_doubao_endpoint') || DOUBAO_DEFAULTS.endpoint,
+      doubaoModel: localStorage.getItem('kiwi_doubao_model') || DOUBAO_DEFAULTS.model,
+      doubaoKey: localStorage.getItem('kiwi_doubao_api_key') || DOUBAO_DEFAULTS.key,
       target: localStorage.getItem('kiwi_ai_translate_target') || 'zh-CN',
       enabled: false,
       queue: [],
       active: 0,
-      maxConcurrent: 4,
+      maxConcurrent: 2,
+      maxLiveConcurrent: 1,
       flushTimer: 0,
       observer: null,
       seen: new WeakMap(),
@@ -50,15 +57,10 @@
       statusTimer: 0,
       lastStatusAt: 0,
       pendingStatus: '',
-      forceShownAt: 0,
-      downloadGuardInstalled: false,
-      downloadGuardObserver: null,
-      liveOverlayGuardInstalled: false,
-      liveOverlayObserver: null
+      forceShownAt: 0
     };
 
     if (!LANGS[S.target]) S.target = 'zh-CN';
-    if (!/^(hymt2|gemini)$/.test(S.provider)) S.provider = 'hymt2';
 
     const UI = {};
     const LIVE_CHAT_RE = /(?:^|[\s_-])(?:chat|comment|message|msg)(?:$|[\s_-])|chat-history|chat-list|chat-item|chat-message|comment-list|comment-item|comment-content|message-list|message-item|danmu|danmaku|barrage|bullet[-_ ]?screen|screen[-_ ]?comment|webcast.+(?:screen|comment|message|danmaku|barrage)|(?:screen|comment|message|danmaku|barrage).+webcast/i;
@@ -106,37 +108,6 @@
       '[data-e2e*="message"]'
     ]);
     const LIVE_ROOT_QUERY = LIVE_ROOT_SELECTORS.join(',');
-    const KWAI_APK_RE = /\.apk(?:[?#]|$)|kwai-android-generic|gifmakerrelease|kspkg\.com/i;
-    const KWAI_APP_RE = /^(?:kwai|ksnebula|gifshow|kuaishou):|intent:.*(?:kwai|gifshow|kuaishou|com\.smile\.gifmaker|com\.kuaishou)/i;
-    const KWAI_PROMO_RE = /打开快手|下载快手|快手APP|快手应用|上快手|open\s*(?:kwai|kuaishou)|download\s*(?:kwai|kuaishou)/i;
-    const LIVE_OVERLAY_QUERY = [
-      '[data-kiwi-live-overlay-hidden="1"]',
-      '[class*="danmu"]',
-      '[class*="danmaku"]',
-      '[class*="barrage"]',
-      '[class*="bullet"]',
-      '[class*="screen-comment"]',
-      '[class*="screenComment"]',
-      '[class*="webcastScreen"]',
-      '[class*="float"]',
-      '[class*="floating"]',
-      '[id*="danmu"]',
-      '[id*="danmaku"]',
-      '[id*="barrage"]',
-      '[data-e2e*="danmu"]',
-      '[data-e2e*="danmaku"]',
-      '[data-e2e*="barrage"]',
-      '[class*="play"]',
-      '[class*="pause"]',
-      '[class*="control"]',
-      '[class*="player"]',
-      '[aria-label*="播放"]',
-      '[aria-label*="暂停"]',
-      '[title*="播放"]',
-      '[title*="暂停"]',
-      'button',
-      '[role="button"]'
-    ].join(',');
 
     function el(t, a, txt) {
       const x = D.createElement(t);
@@ -168,7 +139,7 @@
         '#' + ID + '-title{display:block!important;color:#202124!important;font:700 14px/1.2 Arial,sans-serif!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important}' +
         '#' + ID + '-detect{display:block!important;color:#5f6368!important;font:500 11px/1.25 Arial,sans-serif!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important}' +
         '#' + ID + '-head-actions{display:flex!important;gap:6px!important;align-items:center!important;flex:0 0 auto!important}' +
-        '#' + ID + '-controls{display:grid!important;grid-template-columns:minmax(88px,1fr) minmax(82px,1fr) auto auto!important;gap:7px!important;align-items:center!important;width:100%!important;box-sizing:border-box!important}' +
+        '#' + ID + '-controls{display:grid!important;grid-template-columns:minmax(92px,1fr) auto auto!important;gap:7px!important;align-items:center!important;width:100%!important;box-sizing:border-box!important}' +
         '#' + ID + '-panel button,#' + ID + '-panel select{height:34px!important;min-width:0!important;border-radius:999px!important;font:700 13px Arial,sans-serif!important;border:1px solid rgba(218,220,224,.95)!important;background:#fff!important;color:#202124!important;padding:0 10px!important;box-sizing:border-box!important;white-space:nowrap!important;box-shadow:0 1px 2px rgba(60,64,67,.08)!important;outline:none!important}' +
         '#' + ID + '-panel select{width:100%!important;appearance:auto!important;-webkit-appearance:menulist!important;font-weight:650!important}' +
         '#' + ID + '-panel button{touch-action:manipulation!important}' +
@@ -177,11 +148,10 @@
         '#' + ID + '-status{display:block!important;max-width:100%!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important;color:#3c4043!important;background:#f1f5f9!important;border:1px solid rgba(218,220,224,.55)!important;border-radius:999px!important;padding:6px 10px!important;font:600 12px/1.25 Arial,sans-serif!important;box-sizing:border-box!important}' +
         '#' + ID + '-btn{position:fixed!important;right:14px!important;bottom:calc(env(safe-area-inset-bottom,0px) + 84px)!important;z-index:2147483647!important;display:none!important;align-items:center!important;justify-content:center!important;width:54px!important;height:54px!important;border:0!important;border-radius:50%!important;background:#1a73e8!important;color:#fff!important;font:800 22px Arial,sans-serif!important;box-shadow:0 12px 26px rgba(26,115,232,.34)!important;box-sizing:border-box!important;touch-action:manipulation!important}' +
         '#' + ID + '-btn::after{content:""!important;position:absolute!important;right:8px!important;top:8px!important;width:8px!important;height:8px!important;border-radius:50%!important;background:#34a853!important;border:2px solid #fff!important;box-sizing:border-box!important}' +
-        '[data-kiwi-live-overlay-hidden="1"]{display:none!important;visibility:hidden!important;pointer-events:none!important}' +
         '[data-kiwi-ai-translation="1"]{display:block!important;color:#1a73e8!important;font-size:.95em!important;line-height:1.35!important;margin-top:2px!important;white-space:pre-wrap!important}' +
         '[data-kiwi-ai-loading="1"]{display:block!important;height:16px!important;margin-top:2px!important;font-size:0!important;color:transparent!important}' +
         '[data-kiwi-ai-loading="1"]::after{content:""!important;display:inline-block!important;width:12px!important;height:12px!important;border:2px solid rgba(95,99,104,.25)!important;border-top-color:#1a73e8!important;border-radius:50%!important;animation:kiwiAiSpin .8s linear infinite!important}@keyframes kiwiAiSpin{to{transform:rotate(360deg)}}' +
-        '@media(min-width:640px){#' + ID + '-panel{left:50%!important;right:auto!important;transform:translate3d(-50%,0,0)!important;width:560px!important}#' + ID + '-controls{grid-template-columns:128px 128px auto auto!important}}';
+        '@media(min-width:640px){#' + ID + '-panel{left:50%!important;right:auto!important;transform:translate3d(-50%,0,0)!important;width:560px!important}#' + ID + '-controls{grid-template-columns:160px auto auto!important}}';
       D.documentElement.appendChild(st);
 
       UI.panel = el('div', { id: ID + '-panel' });
@@ -194,15 +164,6 @@
       UI.minimize = el('button', { 'data-icon': '1', title: '收起', 'aria-label': '收起翻译面板' }, '−');
       UI.close = el('button', { 'data-icon': '1', title: '关闭', 'aria-label': '关闭翻译面板' }, '×');
       UI.controls = el('div', { id: ID + '-controls' });
-      UI.provider = el('select');
-      [
-        ['hymt2', 'HY-MT2'],
-        ['gemini', 'Gemini']
-      ].forEach(x => {
-        const o = el('option', { value: x[0] }, x[1]);
-        if (x[0] === S.provider) o.selected = true;
-        UI.provider.appendChild(o);
-      });
       UI.sel = el('select');
       Object.keys(LANGS).forEach(c => {
         const o = el('option', { value: c }, LANGS[c]);
@@ -216,7 +177,7 @@
       UI.brand.append(UI.title, UI.detect);
       UI.headActions.append(UI.endpoint, UI.minimize, UI.close);
       UI.head.append(UI.brand, UI.headActions);
-      UI.controls.append(UI.provider, UI.sel, UI.run, UI.stop);
+      UI.controls.append(UI.sel, UI.run, UI.stop);
       UI.panel.append(UI.head, UI.controls, UI.status);
       D.documentElement.appendChild(UI.panel);
 
@@ -231,15 +192,9 @@
       bindTap(UI.stop, stop);
       bindTap(UI.minimize, minimize);
       bindTap(UI.close, dismiss);
-      bindTap(UI.endpoint, configureHyMt2);
+      bindTap(UI.endpoint, configureProvider);
       bindTap(UI.fab, expand);
       installPanelDrag();
-      UI.provider.onchange = () => {
-        S.provider = UI.provider.value;
-        localStorage.setItem('kiwi_ai_translate_provider', S.provider);
-        clearWork();
-        setStatus(providerName() + ' 已选择');
-      };
       UI.sel.onchange = () => {
         S.target = UI.sel.value;
         localStorage.setItem('kiwi_ai_translate_target', S.target);
@@ -388,14 +343,23 @@
       on(node, 'touchend', fire, { capture: true, passive: false });
     }
 
+    function seedDoubaoDefaults() {
+      try {
+        const mark = 'kiwi_doubao_seed_translation_250915_defaulted';
+        if (localStorage.getItem(mark) === '1') return;
+        if (!localStorage.getItem('kiwi_doubao_endpoint')) localStorage.setItem('kiwi_doubao_endpoint', DOUBAO_DEFAULTS.endpoint);
+        if (!localStorage.getItem('kiwi_doubao_model')) localStorage.setItem('kiwi_doubao_model', DOUBAO_DEFAULTS.model);
+        if (!localStorage.getItem('kiwi_doubao_api_key')) localStorage.setItem('kiwi_doubao_api_key', DOUBAO_DEFAULTS.key);
+        localStorage.setItem(mark, '1');
+      } catch (_) {}
+    }
+
     function reloadConfig() {
       S.key = (W.__kiwiAiTranslator && W.__kiwiAiTranslator.key) || S.key || '';
-      S.provider = localStorage.getItem('kiwi_ai_translate_provider') || S.provider || 'hymt2';
-      S.hyEndpoint = localStorage.getItem('kiwi_hymt2_endpoint') || S.hyEndpoint || 'http://127.0.0.1:8080/v1/chat/completions';
-      S.hyModel = localStorage.getItem('kiwi_hymt2_model') || S.hyModel || 'hy-mt2';
-      S.hyKey = localStorage.getItem('kiwi_hymt2_api_key') || S.hyKey || '';
-      if (!/^(hymt2|gemini)$/.test(S.provider)) S.provider = 'hymt2';
-      if (UI.provider) UI.provider.value = S.provider;
+      seedDoubaoDefaults();
+      S.doubaoEndpoint = localStorage.getItem('kiwi_doubao_endpoint') || S.doubaoEndpoint || DOUBAO_DEFAULTS.endpoint;
+      S.doubaoModel = localStorage.getItem('kiwi_doubao_model') || S.doubaoModel || DOUBAO_DEFAULTS.model;
+      S.doubaoKey = localStorage.getItem('kiwi_doubao_api_key') || S.doubaoKey || DOUBAO_DEFAULTS.key;
       refreshLiveMode();
     }
 
@@ -408,272 +372,39 @@
       S.live = live;
       if (UI.panel) UI.panel.setAttribute('data-live', live ? '1' : '0');
       if (live) {
-        installKwaiDownloadGuard();
-        installLiveOverlayGuard();
+        // Keep live playback untouched; translation only observes safe chat text.
       }
       return live;
     }
 
-    function installKwaiDownloadGuard() {
-      if (S.downloadGuardInstalled || !D.documentElement) return;
-      S.downloadGuardInstalled = true;
-
-      const guardEvent = e => {
-        const target = e && (e.target || e.srcElement);
-        if (!target || target.closest && target.closest('#' + ID + '-panel,#' + ID + '-btn')) return;
-        if (blockedPromoTarget(target)) blockDownload(e, 'live app/download button');
-      };
-      ['click', 'touchstart', 'touchend', 'pointerdown', 'pointerup', 'mousedown'].forEach(ev => {
-        on(D, ev, guardEvent, { capture: true, passive: false });
-      });
-
-      patchOpen();
-      patchLocationMethod('assign');
-      patchLocationMethod('replace');
-      patchLocationHref();
-      patchAnchorClick();
-      sanitizeDownloadLinks(D);
-      try {
-        S.downloadGuardObserver = new MutationObserver(ms => {
-          ms.forEach(m => {
-            m.addedNodes && m.addedNodes.forEach(n => sanitizeDownloadLinks(n));
-            if (m.type === 'attributes') sanitizeDownloadLinks(m.target);
-          });
-        });
-        S.downloadGuardObserver.observe(D.documentElement, { childList: true, subtree: true, attributes: true, attributeFilter: ['href', 'src', 'data-href', 'data-url'] });
-      } catch (_) {}
-    }
-
-    function patchOpen() {
-      if (W.__kiwiKwaiOpenPatched || typeof W.open !== 'function') return;
-      const oldOpen = W.open;
-      W.open = function(url) {
-        if (shouldBlockLiveJump(url)) {
-          noteBlockedDownload();
-          return null;
-        }
-        return oldOpen.apply(this, arguments);
-      };
-      W.__kiwiKwaiOpenPatched = true;
-    }
-
-    function patchLocationMethod(name) {
-      try {
-        const proto = Object.getPrototypeOf(location);
-        const old = proto && proto[name];
-        if (typeof old !== 'function' || old.__kiwiKwaiPatched) return;
-        const next = function(url) {
-          if (shouldBlockLiveJump(url)) {
-            noteBlockedDownload();
-            return;
-          }
-          return old.apply(this, arguments);
-        };
-        next.__kiwiKwaiPatched = true;
-        Object.defineProperty(proto, name, { value: next, configurable: true, writable: true });
-      } catch (_) {}
-    }
-
-    function patchLocationHref() {
-      try {
-        const proto = Object.getPrototypeOf(location);
-        const desc = proto && Object.getOwnPropertyDescriptor(proto, 'href');
-        if (!desc || !desc.set || desc.set.__kiwiKwaiPatched) return;
-        const setter = desc.set;
-        const getter = desc.get;
-        const next = function(url) {
-          if (shouldBlockLiveJump(url)) {
-            noteBlockedDownload();
-            return;
-          }
-          return setter.call(this, url);
-        };
-        next.__kiwiKwaiPatched = true;
-        Object.defineProperty(proto, 'href', { get: getter, set: next, configurable: true });
-      } catch (_) {}
-    }
-
-    function patchAnchorClick() {
-      try {
-        const proto = W.HTMLAnchorElement && W.HTMLAnchorElement.prototype;
-        if (!proto || !proto.click || proto.click.__kiwiKwaiPatched) return;
-        const old = proto.click;
-        const next = function() {
-          if (blockedPromoTarget(this)) {
-            noteBlockedDownload();
-            return;
-          }
-          return old.apply(this, arguments);
-        };
-        next.__kiwiKwaiPatched = true;
-        Object.defineProperty(proto, 'click', { value: next, configurable: true, writable: true });
-      } catch (_) {}
-    }
-
-    function sanitizeDownloadLinks(root) {
-      if (!root || !isLivePage()) return;
-      const nodes = [];
-      if (root.nodeType === 1) nodes.push(root);
-      if (root.querySelectorAll) {
-        try {
-          root.querySelectorAll('a[href],area[href],[data-href],[data-url],[href*=".apk"],[src*=".apk"]').forEach(n => nodes.push(n));
-        } catch (_) {}
-      }
-      nodes.forEach(n => {
-        if (!n || !blockedPromoTarget(n)) return;
-        const href = n.getAttribute && (n.getAttribute('href') || n.getAttribute('src'));
-        if (href) n.setAttribute('data-kiwi-blocked-download', href);
-        if (n.removeAttribute) {
-          n.removeAttribute('href');
-          n.removeAttribute('src');
-          n.removeAttribute('download');
-        }
-      });
-    }
-
-    function blockDownload(e) {
-      if (e && e.preventDefault) e.preventDefault();
-      if (e && e.stopPropagation) e.stopPropagation();
-      if (e && e.stopImmediatePropagation) e.stopImmediatePropagation();
-      noteBlockedDownload();
-      return false;
-    }
-
-    function noteBlockedDownload() {
-      S.dropped++;
-      if (S.live) showFab();
-      setStatus('已拦截快手下载跳转');
-      try {
-        console.warn('Kiwi translator blocked Kuaishou APK/app download on live page.');
-      } catch (_) {}
-    }
-
-    function blockedPromoTarget(target) {
-      if (!target || !isLivePage()) return false;
-      const e = target.closest && target.closest('a,area,button,[role="button"],[onclick],[data-href],[data-url],[href],[src]');
-      if (!e) return false;
-      const text = normalize((e.innerText || e.textContent || '').slice(0, 120));
-      const attrs = Array.from(e.attributes || []).map(a => a.name + '=' + a.value).join(' ');
-      if (shouldBlockLiveJump(e.href || e.src || e.getAttribute && (e.getAttribute('href') || e.getAttribute('src') || e.getAttribute('data-href') || e.getAttribute('data-url')))) return true;
-      return KWAI_PROMO_RE.test(text + ' ' + attrs) && /kwai|kuaishou|gifshow|快手|apk|download|下载|打开/i.test(text + ' ' + attrs);
-    }
-
-    function shouldBlockLiveJump(url) {
-      if (!url || !isLivePage()) return false;
-      const s = safeDecode(String(url));
-      return KWAI_APK_RE.test(s) || KWAI_APP_RE.test(s);
-    }
-
-    function safeDecode(s) {
-      try {
-        return decodeURIComponent(s);
-      } catch (_) {
-        return s;
-      }
-    }
-
-    function installLiveOverlayGuard() {
-      if (S.liveOverlayGuardInstalled || !D.documentElement) return;
-      S.liveOverlayGuardInstalled = true;
-      hideLiveOverlays(D);
-      try {
-        S.liveOverlayObserver = new MutationObserver(ms => {
-          ms.forEach(m => {
-            if (m.type === 'attributes') hideLiveOverlayNode(m.target);
-            m.addedNodes && m.addedNodes.forEach(n => hideLiveOverlays(n));
-          });
-        });
-        S.liveOverlayObserver.observe(D.documentElement, {
-          childList: true,
-          subtree: true,
-          attributes: true,
-          attributeFilter: ['class', 'id', 'style', 'aria-label', 'title', 'data-e2e']
-        });
-      } catch (_) {}
-      [500, 1500, 3500].forEach(ms => setTimeout(() => hideLiveOverlays(D), ms));
-    }
-
-    function hideLiveOverlays(root) {
-      if (!root || !isLivePage()) return;
-      if (root.nodeType === 1) hideLiveOverlayNode(root);
-      if (!root.querySelectorAll) return;
-      try {
-        root.querySelectorAll(LIVE_OVERLAY_QUERY).forEach(hideLiveOverlayNode);
-      } catch (_) {}
-    }
-
-    function hideLiveOverlayNode(e) {
-      if (!shouldHideLiveOverlay(e)) return;
-      e.setAttribute('data-kiwi-live-overlay-hidden', '1');
-      if (e.style && e.style.setProperty) {
-        e.style.setProperty('display', 'none', 'important');
-        e.style.setProperty('visibility', 'hidden', 'important');
-        e.style.setProperty('pointer-events', 'none', 'important');
-      }
-    }
-
-    function shouldHideLiveOverlay(e) {
-      if (!e || e.nodeType !== 1 || !isLivePage()) return false;
-      if (e.closest && e.closest('#' + ID + '-panel,#' + ID + '-btn,[data-kiwi-ai-translation="1"],[data-kiwi-ai-loading="1"]')) return false;
-      if (/^(HTML|BODY|VIDEO|AUDIO|CANVAS|IMG|SOURCE|TRACK)$/.test(e.tagName || '')) return false;
-      if (!nearViewport(e)) return false;
-      const n = nameOf(e);
-      return isHorizontalDanmakuOverlay(e, n) || isPlaybackOverlayControl(e, n);
-    }
-
-    function isHorizontalDanmakuOverlay(e, n) {
-      const x = r(e);
-      if (x.width <= 0 || x.height <= 0 || x.height > 96 || x.width > innerWidth * 0.85) return false;
-      if (x.left > innerWidth * 0.82) return false;
-      if (/chat|comment-list|message-list|input|textarea|follow|avatar|profile|gift|like|share|toolbar|menu/.test(n) && !danmakuNamed(e)) return false;
-      if (danmakuNamed(e)) return true;
-      const s = getComputedStyle(e);
-      const moving = (s.animationName && s.animationName !== 'none') || /translate|matrix/.test(s.transform || '') || parseFloat(s.transitionDuration || '0') > 0;
-      const text = normalize((e.innerText || e.textContent || '').slice(0, 120));
-      return moving && !!text && x.height <= 72 && x.width <= innerWidth * 0.7 && x.left < innerWidth * 0.75;
-    }
-
-    function isPlaybackOverlayControl(e, n) {
-      const x = r(e);
-      if (x.width < 12 || x.height < 12 || x.width > 180 || x.height > 180) return false;
-      if (/follow|关注|gift|礼物|like|heart|share|more|更多|download|open|打开|avatar|profile|user|close|关闭|comment|chat/.test(n)) return false;
-      const text = normalize((e.innerText || e.textContent || '').slice(0, 80));
-      const names = n + ' ' + text;
-      const explicit = /play|pause|paused|playing|播放|暂停|停止播放|继续播放/.test(names);
-      const inPlayer = /player|video|control|xgplayer|kwai-player|webcast.*play/.test(ancestorName(e));
-      const centered = x.left < innerWidth * 0.72 && x.right > innerWidth * 0.25 && x.top < innerHeight * 0.85;
-      return centered && (explicit || (inPlayer && /button|control|icon|svg|play/.test(names)));
-    }
-
-    function ancestorName(e) {
-      const out = [];
-      for (let p = e; p && p !== D.body && out.length < 5; p = p.parentElement) out.push(nameOf(p));
-      return out.join(' ');
-    }
-
     function providerName(p) {
-      p = p || S.provider;
-      return p === 'gemini' ? 'Gemini' : 'HY-MT2';
+      return p === 'gemini' ? 'Gemini' : 'Doubao Seed';
     }
 
-    function configureHyMt2() {
-      const nextEndpoint = prompt('HY-MT2 endpoint', S.hyEndpoint);
+    function configureProvider() {
+      configureDoubao();
+    }
+
+    function configureDoubao() {
+      const nextEndpoint = prompt('Doubao endpoint', S.doubaoEndpoint);
       if (nextEndpoint == null) return;
       const endpoint = normalize(nextEndpoint);
       if (endpoint) {
-        S.hyEndpoint = endpoint;
-        localStorage.setItem('kiwi_hymt2_endpoint', endpoint);
+        S.doubaoEndpoint = endpoint;
+        localStorage.setItem('kiwi_doubao_endpoint', endpoint);
       }
-      const nextModel = prompt('HY-MT2 model', S.hyModel);
+      const nextModel = prompt('Doubao model', S.doubaoModel);
       if (nextModel != null && normalize(nextModel)) {
-        S.hyModel = normalize(nextModel);
-        localStorage.setItem('kiwi_hymt2_model', S.hyModel);
+        S.doubaoModel = normalize(nextModel);
+        localStorage.setItem('kiwi_doubao_model', S.doubaoModel);
       }
-      S.provider = 'hymt2';
-      localStorage.setItem('kiwi_ai_translate_provider', S.provider);
-      if (UI.provider) UI.provider.value = S.provider;
+      const nextKey = prompt('Doubao API key（留空则保留当前密钥）', '');
+      if (nextKey != null && normalize(nextKey)) {
+        S.doubaoKey = normalize(nextKey);
+        localStorage.setItem('kiwi_doubao_api_key', S.doubaoKey);
+      }
       clearWork();
-      setStatus('HY-MT2: ' + S.hyModel);
+      setStatus('Doubao Seed: ' + S.doubaoModel);
     }
 
     function detectLang() {
@@ -884,6 +615,7 @@
     function isLiveRoot(e) {
       if (!e || e.nodeType !== 1 || interactive(e)) return false;
       if (LIVE_BLOCK_RE.test(nameOf(e))) return false;
+      if (liveVideoOverlay(e)) return false;
       if (!nearViewport(e)) return false;
       const count = e.children ? e.children.length : (e.childElementCount || 0);
       return danmakuNamed(e) || inChat(e) || count <= 12;
@@ -923,6 +655,7 @@
     function liveCandidate(e) {
       if (!e || interactive(e) || !nearViewport(e)) return false;
       if (LIVE_BLOCK_RE.test(nameOf(e))) return false;
+      if (liveVideoOverlay(e)) return false;
       return danmakuNamed(e) || inChat(e);
     }
 
@@ -985,6 +718,7 @@
 
     function inChat(e) {
       if (!e) return false;
+      if (liveVideoOverlay(e)) return false;
       if (isDanmu(e)) return true;
       if (!S.live) return true;
       let hit = false;
@@ -1004,8 +738,24 @@
       if (/^(SCRIPT|STYLE|TEXTAREA|INPUT|NOSCRIPT|CODE|PRE|SVG|CANVAS|SELECT|OPTION|BUTTON)$/.test(tag)) return true;
       if (p.isContentEditable || p.closest('[aria-hidden="true"],[data-kiwi-live-noise="1"],[data-kiwi-ai-translation="1"],[data-kiwi-ai-loading="1"],#' + ID + '-panel,#' + ID + '-btn')) return true;
       if (S.live && p.closest('header,nav,footer,form,a,button,input,textarea,select,option,[role="button"],[role="textbox"]')) return true;
+      if (S.live && liveVideoOverlay(p)) return true;
       if (S.live && !inChat(p)) return true;
       return !visible(p);
+    }
+
+    function liveVideoOverlay(e) {
+      if (!S.live || !e) return false;
+      for (let p = e; p && p !== D.body; p = p.parentElement) {
+        if (!danmakuNamed(p)) continue;
+        const x = r(p);
+        if (x.width <= 0 || x.height <= 0) continue;
+        const rightChat = x.left > innerWidth * 0.55 && x.width < innerWidth * 0.45;
+        if (rightChat) return false;
+        const s = getComputedStyle(p);
+        const moving = (s.animationName && s.animationName !== 'none') || /translate|matrix/.test(s.transform || '') || parseFloat(s.transitionDuration || '0') > 0;
+        return moving || x.left < innerWidth * 0.55 || x.width > innerWidth * 0.45 || x.height <= 96;
+      }
+      return false;
     }
 
     function nickname(e) {
@@ -1182,7 +932,8 @@
 
     async function process() {
       if (!S.enabled) return;
-      while (S.active < S.maxConcurrent && S.queue.length) {
+      const maxActive = S.live ? S.maxLiveConcurrent : S.maxConcurrent;
+      while (S.active < maxActive && S.queue.length) {
         const batch = takeBatch();
         if (!batch.length) break;
         S.active++;
@@ -1228,7 +979,7 @@
       S.requests++;
       for (const p of providers) {
         try {
-          const map = p === 'gemini' ? await callGemini(system, promptText, batch) : await callHyMt2(system, promptText, batch);
+          const map = p === 'gemini' ? await callGemini(system, promptText, batch) : await callDoubao(system, promptText, batch);
           batch.forEach(it => {
             const v = map[it.id] || map[String(it.id)];
             if (typeof v === 'string' && v.trim()) {
@@ -1251,15 +1002,9 @@
     }
 
     function providerOrder() {
-      const out = [];
-      if (S.provider === 'gemini') {
-        if (S.key) out.push('gemini');
-        out.push('hymt2');
-      } else {
-        out.push('hymt2');
-        if (S.key) out.push('gemini');
-      }
-      return out.filter((x, i, a) => a.indexOf(x) === i);
+      const out = ['doubao'];
+      if (S.key) out.push('gemini');
+      return out;
     }
 
     function parseBatchMap(text, batch) {
@@ -1280,11 +1025,21 @@
       }
     }
 
-    async function callHyMt2(system, promptText, batch) {
-      if (!S.hyEndpoint) throw new Error('HY-MT2 endpoint missing');
-      const headers = { 'Content-Type': 'application/json' };
-      if (S.hyKey) headers.Authorization = 'Bearer ' + S.hyKey;
-      const req = withTimeout(signal => fetch(S.hyEndpoint, {
+    function requestTimeoutMs(p) {
+      if (p === 'doubao') return S.live ? (S.mode === 'normal' ? 9000 : 11000) : 15000;
+      return 3000;
+    }
+
+    async function callDoubao(system, promptText, batch) {
+      if (!S.doubaoEndpoint) throw new Error('Doubao endpoint missing');
+      if (!S.doubaoKey) throw new Error('Doubao API key missing');
+      const text = batch.map(x => x.id + ': ' + x.part.input).join('\n');
+      const headers = {
+        'Content-Type': 'application/json',
+        Accept: 'text/event-stream',
+        Authorization: 'Bearer ' + S.doubaoKey
+      };
+      const req = withTimeout(signal => fetch(S.doubaoEndpoint, {
         method: 'POST',
         mode: 'cors',
         credentials: 'omit',
@@ -1292,21 +1047,105 @@
         signal,
         headers,
         body: JSON.stringify({
-          model: S.hyModel || 'hy-mt2',
-          messages: [
-            { role: 'system', content: system },
-            { role: 'user', content: promptText }
-          ],
-          temperature: 0,
-          stream: false
+          model: S.doubaoModel || DOUBAO_DEFAULTS.model,
+          input: [{
+            role: 'user',
+            content: [{
+              type: 'input_text',
+              text,
+              translation_options: { target_language: doubaoLang(S.target) }
+            }]
+          }],
+          stream: true
         })
-      }), S.mode === 'normal' ? 5000 : 7000);
+      }), requestTimeoutMs('doubao'));
       const res = await req.done;
-      const j = await res.json();
-      if (!res.ok) throw new Error((j.error && (j.error.message || j.error)) || ('HTTP ' + res.status));
-      const c = j.choices && j.choices[0];
-      const text = (c && c.message && c.message.content) || (c && c.text) || j.content || j.response || '';
-      return parseBatchMap(text, batch);
+      if (!res.ok) throw new Error(await responseError(res));
+      const translatedText = await readOpenAiStream(res);
+      return parseBatchMap(translatedText, batch);
+    }
+
+    async function responseError(res) {
+      let text = '';
+      try {
+        text = await res.text();
+      } catch (_) {}
+      try {
+        const j = JSON.parse(text);
+        return (j.error && (j.error.message || j.error)) || ('HTTP ' + res.status);
+      } catch (_) {
+        return text || ('HTTP ' + res.status);
+      }
+    }
+
+    async function readOpenAiStream(res) {
+      const type = res.headers && res.headers.get && (res.headers.get('content-type') || '');
+      if (!res.body || !res.body.getReader || !/event-stream|stream/i.test(type)) {
+        const text = await res.text();
+        try {
+          return extractChoiceText(JSON.parse(text)) || text;
+        } catch (_) {
+          return text;
+        }
+      }
+      const reader = res.body.getReader();
+      const decoder = new TextDecoder('utf-8');
+      let buf = '';
+      let out = '';
+      while (true) {
+        const r = await reader.read();
+        if (r.done) break;
+        buf += decoder.decode(r.value, { stream: true });
+        buf = buf.replace(/\r\n/g, '\n');
+        let idx;
+        while ((idx = buf.indexOf('\n\n')) >= 0) {
+          const part = parseSseBlock(buf.slice(0, idx));
+          buf = buf.slice(idx + 2);
+          if (part.done) return out;
+          out += part.text;
+        }
+      }
+      if (buf.trim()) {
+        const part = parseSseBlock(buf);
+        out += part.text;
+      }
+      return out;
+    }
+
+    function parseSseBlock(block) {
+      const data = String(block || '').split('\n').filter(line => /^data:/i.test(line)).map(line => line.replace(/^data:\s*/i, '')).join('\n').trim();
+      if (!data) return { text: '', done: false };
+      if (data === '[DONE]') return { text: '', done: true };
+      try {
+        return { text: extractChoiceText(JSON.parse(data)), done: false };
+      } catch (_) {
+        return { text: data, done: false };
+      }
+    }
+
+    function extractChoiceText(j) {
+      if (j && j.type === 'response.output_text.delta') return contentText(j.delta);
+      if (j && j.output_text) return contentText(j.output_text);
+      if (j && Array.isArray(j.output)) {
+        return j.output.map(item => (item.content || []).map(part => contentText(part && (part.text || part.content))).join('')).join('');
+      }
+      const c = j && j.choices && j.choices[0];
+      if (!c) return contentText(j && (j.content || j.response || j.output_text));
+      return contentText(c.delta && c.delta.content) || contentText(c.message && c.message.content) || contentText(c.text);
+    }
+
+    function doubaoLang(code) {
+      if (/^zh/i.test(code)) return 'zh';
+      if (/^en/i.test(code)) return 'en';
+      if (/^ru/i.test(code)) return 'ru';
+      if (/^uk/i.test(code)) return 'uk';
+      return String(code || 'zh-CN').split('-')[0].toLowerCase();
+    }
+
+    function contentText(v) {
+      if (typeof v === 'string') return v;
+      if (Array.isArray(v)) return v.map(p => contentText(p && (p.text || p.content))).join('');
+      return '';
     }
 
     async function callGemini(system, promptText, batch) {
@@ -1328,7 +1167,7 @@
             signal,
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(body)
-          }), 3000);
+          }), requestTimeoutMs('gemini'));
           const res = await req.done;
           const j = await res.json();
           if (!res.ok) throw new Error((j.error && j.error.message) || ('HTTP ' + res.status));
@@ -1360,15 +1199,11 @@
       S.seen.set(n, S.target + '\n' + p.input.toLowerCase());
     }
 
-    function blockMedia() {
-      hideLiveOverlays(D);
-    }
-
     W.__kiwiAiTranslator = {
-      version: 19,
+      version: 21,
       key: S.key,
       reloadConfig,
-      configureHyMt2,
+      configureDoubao,
       show,
       minimize,
       expand,
@@ -1376,7 +1211,6 @@
       stop,
       scan,
       dismiss,
-      blockMedia,
       state: S
     };
     ensureUi();

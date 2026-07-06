@@ -101,11 +101,11 @@
 
     check-cast v0, Lorg/chromium/components/browser_ui/widget/RadioButtonWithDescription;
 
-    const-string v1, "HY-MT2"
+    const-string v1, "Doubao Seed"
 
     invoke-virtual {v0, v1}, Lorg/chromium/components/browser_ui/widget/RadioButtonWithDescription;->i(Ljava/lang/String;)V
 
-    const-string v1, "Translate pages and live comments with a local HY-MT2 endpoint. Gemini key is optional fallback."
+    const-string v1, "Translate pages and live comments with Doubao Seed Translation. Gemini key is optional fallback."
 
     invoke-virtual {v0, v1}, Lorg/chromium/components/browser_ui/widget/RadioButtonWithDescription;->h(Ljava/lang/CharSequence;)V
 

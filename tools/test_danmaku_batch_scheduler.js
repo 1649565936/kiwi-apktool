@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 class SchedulerSim {
-  constructor({ requestMs = 260, maxConcurrent = 4 } = {}) {
+  constructor({ requestMs = 260, maxConcurrent = 2 } = {}) {
     this.requestMs = requestMs;
     this.maxConcurrent = maxConcurrent;
     this.queue = [];

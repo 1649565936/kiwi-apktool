@@ -13,12 +13,12 @@
 
 ## 当前代码基线
 
-当前项目是 apktool 反编译工程，已有 HY-MT2/Gemini 翻译改动，主要入口如下：
+当前项目是 apktool 反编译工程，已有 Doubao Seed 主通道和 Gemini 可选兜底翻译改动，主要入口如下：
 
 - `smali/org/chromium/chrome/browser/translate/GoogleAiTranslateHelper.smali`
-  - `a(Tab)`：用户主动点击浏览器菜单“翻译”时调用，注入脚本并强制显示 UI；HY-MT2 模式不要求 Gemini Key。
+  - `a(Tab)`：用户主动点击浏览器菜单“翻译”时调用，注入脚本并强制显示 UI；Doubao Seed 模式不要求 Gemini Key。
   - `c(Tab)`：Tab/WebContents 生命周期中自动调用，静默注入脚本。
-  - `f(String)`：当前实际使用的新版注入脚本，版本号 `9`。
+  - `f(String)`：当前实际使用的新版注入脚本，版本号 `21`。
   - `b(String)`：旧版注入脚本，版本号 `4`，已包含批量 JSON 翻译、并发处理、加载态插入等逻辑，可作为弹幕批处理改造参考。
 - `smali/org/chromium/chrome/browser/app/ChromeActivity.smali`
   - 菜单翻译动作已被接到 `GoogleAiTranslateHelper.a(Tab)`。
@@ -31,13 +31,13 @@
 
 已有能力：
 
-- HY-MT2 是默认 provider，调用 OpenAI 兼容本地端点。
-- 默认端点：`http://127.0.0.1:8080/v1/chat/completions`。
-- 默认模型名：`hy-mt2`。
+- Doubao Seed 是默认 provider，调用火山方舟 Responses API SSE 端点。
+- 默认端点：`https://ark.cn-beijing.volces.com/api/v3/responses`。
+- 默认模型名：`doubao-seed-translation-250915`。
 - Gemini Key 不内置，只作为可选兜底，需要用户在设置里保存。
 - 页面中注入浮动翻译面板。
 - 使用 `MutationObserver` 扫描新增文本。
-- 针对抖音/快手直播页识别右侧评论，隐藏横向弹幕、视频、音频。
+- 针对抖音/快手直播页识别右侧评论，默认不隐藏、不拦截播放器或下载跳转，避免影响直播本身。
 - 跳过昵称，只翻译评论内容。
 
 当前不足：
@@ -50,7 +50,7 @@
 
 ## 推荐架构
 
-继续采用“页面 JS 注入 + HY-MT2 OpenAI 兼容端点”的轻量方案，先不把 GGUF 和 llama.cpp runtime 直接内置进 APK。原因是当前仓库已有完整注入链，直接改 `GoogleAiTranslateHelper.smali` 的脚本风险最低；同时可以先验证 HY-MT2 对弹幕短文本的延迟和稳定性。
+继续采用“页面 JS 注入 + Doubao Seed Responses API SSE”的轻量方案，不在 APK 内置本地模型 runtime。原因是当前仓库已有完整注入链，直接改 `GoogleAiTranslateHelper.smali` 的脚本风险最低；同时 SSE 长连接可以在保持低并发的前提下快速接收译文增量。
 
 建议拆成以下逻辑层：
 
@@ -62,7 +62,7 @@ WebContents 注入入口
   -> 去重缓存
   -> 有界队列
   -> 批处理调度器
-  -> HY-MT2 批量翻译
+  -> Doubao Seed Responses SSE 批量翻译
   -> Gemini fallback（可选）
   -> 译文回填器
   -> 高峰降级/状态 UI
@@ -201,52 +201,25 @@ P3：短句、重复、刷屏、低信息密度文本
 - 状态栏显示“高峰模式，仅翻译重点弹幕”。
 - 后续可做热点摘要，例如“多人在问价格 x 43”。
 
-## HY-MT2 调用格式
+## Doubao Seed 调用格式
 
-批量翻译应强制 JSON 输出，便于回填对应节点。
-
-默认调用本地 OpenAI 兼容接口：
+批量翻译仍使用编号文本，便于回填对应节点。Doubao Seed 使用火山方舟 Responses API，并开启 SSE 流式响应：
 
 ```text
-POST http://127.0.0.1:8080/v1/chat/completions
-model: hy-mt2
+POST https://ark.cn-beijing.volces.com/api/v3/responses
+model: doubao-seed-translation-250915
+stream: true
+input_text.translation_options.target_language: zh/en/ru/uk
 ```
 
-请求内容示例：
-
-```text
-目标语言: 中文
-请翻译以下直播间评论，只返回 JSON 对象，key 为编号，value 为译文。
-不要解释，不要 Markdown，不要翻译昵称。
-
-1: how much is this?
-2: ship to Canada?
-3: the sound is too low
-```
-
-期望返回：
-
-```json
-{
-  "1": "这个多少钱？",
-  "2": "可以发加拿大吗？",
-  "3": "声音太小了"
-}
-```
-
-失败处理：
-
-- JSON 解析失败时尝试截取 `{...}` 再解析。
-- 单条缺失时只跳过该条，不让整批失败。
-- API 失败时最多重试 1 次，换备用模型。
-- 超时后回填失败态或保持原文，不继续占用并发。
+客户端解析 `data:` SSE 块中的 `response.output_text.delta`，拼接完整编号译文后再批量回填。直播页只允许 1 个活跃流式批次，且请求有超时保护，避免长连接影响直播加载和交互。
 
 模型策略：
 
-- 默认优先 HY-MT2 本地端点。
-- 页面面板中的“端点”按钮可修改 HY-MT2 endpoint 和 model，并写入 `localStorage`。
-- 如果用户保存了 Gemini fallback key，HY-MT2 调用失败后可自动兜底到 Gemini。
-- 后续如果要真正内置 GGUF，需要新增 llama.cpp/ggml Android native runtime、JNI 桥和模型分发逻辑。
+- 默认优先 Doubao Seed 火山方舟端点。
+- 页面面板中的“端点”按钮可修改 Doubao endpoint、model 和 API key，并写入 `localStorage`。
+- 如果用户保存了 Gemini fallback key，Doubao 调用失败后可自动兜底到 Gemini。
+- 后续如果客户端直连火山方舟不够稳定，优先考虑自建网关做统一缓存、限流和密钥隔离。
 
 ## UI 展示
 
@@ -270,9 +243,9 @@ model: hy-mt2
 
 第一阶段可以不新增 Android 设置，只使用当前页面面板和本地存储：
 
-- `kiwi_ai_translate_provider`：`hymt2` 或 `gemini`。
-- `kiwi_hymt2_endpoint`：默认 `http://127.0.0.1:8080/v1/chat/completions`。
-- `kiwi_hymt2_model`：默认 `hy-mt2`。
+- `kiwi_doubao_endpoint`：默认 `https://ark.cn-beijing.volces.com/api/v3/responses`。
+- `kiwi_doubao_model`：默认 `doubao-seed-translation-250915`。
+- `kiwi_doubao_api_key`：火山方舟 API key。
 - `kiwi_ai_translate_target`：目标语言。
 - `google_ai_translate_api_key`：可选 Gemini fallback key。
 
@@ -295,7 +268,7 @@ model: hy-mt2
 第一阶段建议只改：
 
 - `smali/org/chromium/chrome/browser/translate/GoogleAiTranslateHelper.smali`
-  - 升级 `f(String)` 注入脚本版本，例如 `version: 8`。
+  - 升级 `f(String)` 注入脚本版本，例如 `version: 21`。
   - 引入批处理队列、超时 flush、有界队列、缓存上限、高峰模式。
   - 把当前逐条 `callOne()` 改为 `callBatch()`。
   - 回填方式从直接替换原文改为插入译文节点。
@@ -438,8 +411,8 @@ model: hy-mt2
 真机/模拟器测试：
 
 - 安装前按项目要求：先 `zipalign`，再 `apksigner` 签名。
-- 测试无 Key：点击翻译提示设置 Key，不注入请求。
-- 测试有 Key：普通网页翻译不回退。
+- 测试默认 Doubao Key：普通网页和直播评论可直接翻译。
+- 测试错误 Key 或网络失败：保留原文，状态栏提示失败；如设置了 Gemini fallback key 可回退。
 - 测试直播页：评论新增后自动进入队列。
 - 测试快速刷屏：队列有上限，页面不崩。
 - 测试网络失败：保留原文，状态栏提示失败。
