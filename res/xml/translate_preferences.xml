@@ -2,6 +2,4 @@
 <PreferenceScreen>
     <org.chromium.chrome.browser.translate.RadioButtonGroupTranslatePreference n0:selectable="false" n0:key="translate_radio_group" n1:allowDividerAbove="true" n1:allowDividerBelow="false"
       xmlns:n0="http://schemas.android.com/apk/res/android" xmlns:n1="http://schemas.android.com/apk/res-auto" />
-    <org.chromium.components.browser_ui.settings.ChromeBasePreference n0:key="google_ai_translate_api_key" n0:title="Gemini fallback key" n0:summary="Optional fallback when Doubao Seed is unavailable."
-      xmlns:n0="http://schemas.android.com/apk/res/android" />
 </PreferenceScreen>

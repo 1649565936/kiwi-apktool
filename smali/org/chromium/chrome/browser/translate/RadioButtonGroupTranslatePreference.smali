@@ -105,7 +105,7 @@
 
     invoke-virtual {v0, v1}, Lorg/chromium/components/browser_ui/widget/RadioButtonWithDescription;->i(Ljava/lang/String;)V
 
-    const-string v1, "Translate pages and live comments with Doubao Seed Translation. Gemini key is optional fallback."
+    const-string v1, "Translate pages and live comments directly with Doubao Seed Translation."
 
     invoke-virtual {v0, v1}, Lorg/chromium/components/browser_ui/widget/RadioButtonWithDescription;->h(Ljava/lang/CharSequence;)V
 

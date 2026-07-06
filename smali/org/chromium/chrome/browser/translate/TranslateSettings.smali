@@ -90,21 +90,6 @@
     .line 23
     check-cast p1, Lorg/chromium/chrome/browser/translate/RadioButtonGroupTranslatePreference;
 
-    const-string p1, "google_ai_translate_api_key"
-
-    invoke-virtual {p0, p1}, Ls61;->k1(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
-
-    move-result-object p1
-
-    if-eqz p1, :cond_google_ai_key_listener_done
-
-    new-instance p2, Lorg/chromium/chrome/browser/translate/GoogleAiKeyPreferenceClickListener;
-
-    invoke-direct {p2, p0}, Lorg/chromium/chrome/browser/translate/GoogleAiKeyPreferenceClickListener;-><init>(Lorg/chromium/chrome/browser/translate/TranslateSettings;)V
-
-    iput-object p2, p1, Landroidx/preference/Preference;->p:Lj61;
-
-    :cond_google_ai_key_listener_done
     .line 24
     .line 25
     const-string p1, "Settings.Translate.Opened"

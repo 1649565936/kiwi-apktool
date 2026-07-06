@@ -6,7 +6,7 @@ Package:
 com.kiwibrowser.browser.dev
 
 Main changes:
-- The Translate menu action is forced to call GoogleAiTranslateHelper. It injects even when no Gemini key is saved, because Doubao Seed is the primary provider.
+- The Translate menu action is forced to call GoogleAiTranslateHelper and uses Doubao Seed directly.
 - GoogleAiTranslateHelper auto-injects a floating page translation button and a top status panel after page/WebContents navigation.
 - Clicking the floating Translate button sends readable page/live-comment text to Doubao Seed through the Volcengine Ark Responses SSE endpoint and inserts translations next to the original text.
 - Default Doubao endpoint: https://ark.cn-beijing.volces.com/api/v3/responses
@@ -21,10 +21,8 @@ Main changes:
 - Douyin/Kuaishou/live pages do not install playback overlay or download-jump guards by default; they keep the live room loading normally and only observe safe comment/danmaku text.
 - Comment nicknames are skipped; only the message content is sent for translation.
 - Live chat translation uses a low-latency bounded batch scheduler: normal mode sends up to 5 messages per request with a short flush timeout, high-frequency/extreme modes increase batch size, and live pages allow only one active streaming batch so translation cannot crowd the playback thread.
-- Google Translate web fallback is not used.
-- No default Gemini API key is embedded. The key is optional and only used as fallback when saved from Settings > Translate > Gemini fallback key:
-  google_ai_translate_api_key
-- Settings > Translate keeps the Gemini key editor as a separate fallback preference.
+- Google Translate web fallback and alternate model fallbacks are not used.
+- Settings > Translate only exposes the Doubao Seed translation option.
 
 Build example:
 java -jar tools\apktool.jar b kiwi-apktool-dev -o kiwi-browser-dev-googleai-unsigned.apk

@@ -6,15 +6,22 @@ const path = require('path');
 
 const root = path.resolve(__dirname, '..');
 const source = fs.readFileSync(path.join(root, 'tools/google_ai_translate_v8.js'), 'utf8');
+const oldProvider = (...codes) => String.fromCharCode(...codes);
 const removedProviderTerms = [
-  ['HY', 'MT2'].join('-'),
-  ['hy', 'mt2'].join(''),
-  ['kiwi', 'hy', 'mt2'].join('_'),
-  ['hy', 'mt2'].join('-'),
-  ['call', 'Hy', 'Mt2'].join(''),
-  ['configure', 'Hy', 'Mt2'].join('')
+  oldProvider(72, 89, 45, 77, 84, 50),
+  oldProvider(104, 121, 109, 116, 50),
+  oldProvider(107, 105, 119, 105, 95, 104, 121, 95, 109, 116, 50),
+  oldProvider(104, 121, 45, 109, 116, 50),
+  oldProvider(99, 97, 108, 108, 72, 121, 77, 116, 50),
+  oldProvider(99, 111, 110, 102, 105, 103, 117, 114, 101, 72, 121, 77, 116, 50)
 ];
 const removedProviderKey = ['kiwi', 'ai', 'translate', 'provider'].join('_');
+const alternateProviderPattern = new RegExp([
+  ['provider', 'Order'].join(''),
+  ['call', 'Ge', 'mini'].join(''),
+  ['generative', 'language'].join(''),
+  ['ge', 'mini'].join('')
+].join('|'), 'i');
 
 assert.ok(
   source.includes("https://ark.cn-beijing.volces.com/api/v3/responses"),
@@ -66,11 +73,12 @@ assert.ok(
 );
 assert.ok(
   /extractChoiceText\(j\)/.test(source),
-  'fallback providers should parse OpenAI-compatible choices'
+  'stream parser should keep OpenAI-compatible response parsing'
 );
 assert.ok(
-  /function providerOrder\(\)[\s\S]*const out = \['doubao'\];[\s\S]*if \(S\.key\) out\.push\('gemini'\);[\s\S]*return out;/.test(source),
-  'provider order should use Doubao first and optional Gemini fallback only'
+  /async function callBatch[\s\S]*await callDoubao\(system, promptText, batch\)/.test(source)
+    && !alternateProviderPattern.test(source),
+  'translation should call Doubao Seed directly without alternate model fallback'
 );
 assert.ok(
   !/UI\.provider|provider onchange/.test(source),

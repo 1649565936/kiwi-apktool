@@ -377,8 +377,8 @@
       return live;
     }
 
-    function providerName(p) {
-      return p === 'gemini' ? 'Gemini' : 'Doubao Seed';
+    function providerName() {
+      return 'Doubao Seed';
     }
 
     function configureProvider() {
@@ -1000,37 +1000,28 @@
       const system = '你是直播间弹幕极速翻译引擎。自动识别来源语言，把每条评论翻译成' + target + '。保留语气，昵称不要翻译。只返回 JSON 对象，key 是编号，value 是译文。不要解释，不要 Markdown。';
       const input = batch.map(x => x.id + ': ' + x.part.input).join('\n');
       const promptText = 'Detected source language: ' + source + '. Target language: ' + target + ' (' + S.target + '). Translate each numbered live-chat message.\n' + input;
-      const providers = providerOrder();
       let last;
       S.requests++;
-      for (const p of providers) {
-        try {
-          const map = p === 'gemini' ? await callGemini(system, promptText, batch) : await callDoubao(system, promptText, batch);
-          batch.forEach(it => {
-            const v = map[it.id] || map[String(it.id)];
-            if (typeof v === 'string' && v.trim()) {
-              const out = v.trim();
-              cacheSet(it.key, out);
-              apply(it.node, it.part, out, false);
-            } else {
-              fail(it.node);
-            }
-          });
-          return;
-        } catch (e) {
-          console.warn(providerName(p) + ' danmaku batch failed: ' + (e && e.message ? e.message : e));
-          last = e;
-        }
+      try {
+        const map = await callDoubao(system, promptText, batch);
+        batch.forEach(it => {
+          const v = map[it.id] || map[String(it.id)];
+          if (typeof v === 'string' && v.trim()) {
+            const out = v.trim();
+            cacheSet(it.key, out);
+            apply(it.node, it.part, out, false);
+          } else {
+            fail(it.node);
+          }
+        });
+        return;
+      } catch (e) {
+        console.warn(providerName() + ' danmaku batch failed: ' + (e && e.message ? e.message : e));
+        last = e;
       }
       S.failed += batch.length;
       batch.forEach(it => fail(it.node));
       setStatus(providerName() + ' 不可用' + (last && last.message ? ': ' + last.message : ''));
-    }
-
-    function providerOrder() {
-      const out = ['doubao'];
-      if (S.key) out.push('gemini');
-      return out;
     }
 
     function parseBatchMap(text, batch) {
@@ -1172,38 +1163,6 @@
       if (typeof v === 'string') return v;
       if (Array.isArray(v)) return v.map(p => contentText(p && (p.text || p.content))).join('');
       return '';
-    }
-
-    async function callGemini(system, promptText, batch) {
-      if (!S.key) throw new Error('Gemini key missing');
-      const body = {
-        systemInstruction: { parts: [{ text: system }] },
-        contents: [{ role: 'user', parts: [{ text: promptText }] }],
-        generationConfig: { responseMimeType: 'application/json', temperature: 0, candidateCount: 1 }
-      };
-      const models = ['gemini-3.5-flash', 'gemini-3.1-flash-lite'];
-      let last;
-      for (const m of models) {
-        try {
-          const req = withTimeout(signal => fetch('https://generativelanguage.googleapis.com/v1beta/models/' + m + ':generateContent?key=' + encodeURIComponent(S.key), {
-            method: 'POST',
-            mode: 'cors',
-            credentials: 'omit',
-            cache: 'no-store',
-            signal,
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(body)
-          }), requestTimeoutMs('gemini'));
-          const res = await req.done;
-          const j = await res.json();
-          if (!res.ok) throw new Error((j.error && j.error.message) || ('HTTP ' + res.status));
-          const text = (j.candidates && j.candidates[0] && j.candidates[0].content && j.candidates[0].content.parts || []).map(p => p.text || '').join('');
-          return parseBatchMap(text, batch);
-        } catch (e) {
-          last = e;
-        }
-      }
-      throw last || new Error('Gemini failed');
     }
 
     function apply(n, p, v) {

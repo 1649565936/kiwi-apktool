@@ -96,12 +96,12 @@
 
     if-lez p1, :cond_empty
 
-    const-string v2, "Saved. Gemini fallback is available."
+    const-string v2, "Doubao Seed is built in."
 
     goto :goto_set_summary
 
     :cond_empty
-    const-string v2, "No fallback key saved. Doubao Seed remains primary."
+    const-string v2, "Doubao Seed is built in."
 
     :goto_set_summary
     invoke-virtual {p2, v2}, Landroidx/preference/Preference;->Q(Ljava/lang/CharSequence;)V

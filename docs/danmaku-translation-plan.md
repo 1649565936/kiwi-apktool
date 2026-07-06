@@ -2,7 +2,7 @@
 
 ## 目标
 
-在现有 Kiwi Browser Dev 的 Gemini 页面翻译基础上，增加面向直播间评论/弹幕的实时翻译能力。目标不是无条件翻译所有弹幕，而是在高频直播场景中保证浏览器不卡顿、翻译结果尽快出现，并且在刷屏时自动降级。
+在现有 Kiwi Browser Dev 的 Doubao Seed 页面翻译基础上，增加面向直播间评论/弹幕的实时翻译能力。目标不是无条件翻译所有弹幕，而是在高频直播场景中保证浏览器不卡顿、翻译结果尽快出现，并且在刷屏时自动降级。
 
 核心体验目标：
 
@@ -13,10 +13,10 @@
 
 ## 当前代码基线
 
-当前项目是 apktool 反编译工程，已有 Doubao Seed 主通道和 Gemini 可选兜底翻译改动，主要入口如下：
+当前项目是 apktool 反编译工程，翻译通道已固定为 Doubao Seed，主要入口如下：
 
 - `smali/org/chromium/chrome/browser/translate/GoogleAiTranslateHelper.smali`
-  - `a(Tab)`：用户主动点击浏览器菜单“翻译”时调用，注入脚本并强制显示 UI；Doubao Seed 模式不要求 Gemini Key。
+  - `a(Tab)`：用户主动点击浏览器菜单“翻译”时调用，注入脚本并强制显示 UI。
   - `c(Tab)`：Tab/WebContents 生命周期中自动调用，静默注入脚本。
   - `f(String)`：当前实际使用的新版注入脚本，版本号 `21`。
   - `b(String)`：旧版注入脚本，版本号 `4`，已包含批量 JSON 翻译、并发处理、加载态插入等逻辑，可作为弹幕批处理改造参考。
@@ -24,17 +24,14 @@
   - 菜单翻译动作已被接到 `GoogleAiTranslateHelper.a(Tab)`。
 - `smali/org/chromium/chrome/browser/tab/TabImpl.smali`
   - `Z()` 里调用 `GoogleAiTranslateHelper.c(Tab)`，用于页面生命周期自动注入。
-- `res/xml/translate_preferences.xml`
-  - 已有 `google_ai_translate_api_key` 设置项。
 - `README_googleai_changes.txt`
-  - 记录了现有 Gemini 页面翻译行为，包括抖音/快手直播页处理。
+  - 记录了现有 Doubao Seed 页面/弹幕翻译行为，包括抖音/快手直播页处理。
 
 已有能力：
 
 - Doubao Seed 是默认 provider，调用火山方舟 Responses API SSE 端点。
 - 默认端点：`https://ark.cn-beijing.volces.com/api/v3/responses`。
 - 默认模型名：`doubao-seed-translation-250915`。
-- Gemini Key 不内置，只作为可选兜底，需要用户在设置里保存。
 - 页面中注入浮动翻译面板。
 - 使用 `MutationObserver` 扫描新增文本。
 - 针对抖音/快手直播页识别右侧评论，默认不隐藏、不拦截播放器或下载跳转，避免影响直播本身。
@@ -63,7 +60,6 @@ WebContents 注入入口
   -> 有界队列
   -> 批处理调度器
   -> Doubao Seed Responses SSE 批量翻译
-  -> Gemini fallback（可选）
   -> 译文回填器
   -> 高峰降级/状态 UI
 ```
@@ -218,7 +214,6 @@ input_text.translation_options.target_language: zh/en/ru/uk
 
 - 默认优先 Doubao Seed 火山方舟端点。
 - 页面面板中的“端点”按钮可修改 Doubao endpoint、model 和 API key，并写入 `localStorage`。
-- 如果用户保存了 Gemini fallback key，Doubao 调用失败后可自动兜底到 Gemini。
 - 后续如果客户端直连火山方舟不够稳定，优先考虑自建网关做统一缓存、限流和密钥隔离。
 
 ## UI 展示
@@ -247,8 +242,6 @@ input_text.translation_options.target_language: zh/en/ru/uk
 - `kiwi_doubao_model`：默认 `doubao-seed-translation-250915`。
 - `kiwi_doubao_api_key`：火山方舟 API key。
 - `kiwi_ai_translate_target`：目标语言。
-- `google_ai_translate_api_key`：可选 Gemini fallback key。
-
 第二阶段再考虑新增：
 
 - 弹幕翻译开关。
@@ -396,7 +389,7 @@ input_text.translation_options.target_language: zh/en/ru/uk
 
 - 平台 DOM 经常变化，选择器会失效。
 - 某些直播页 CSP/CORS 可能影响页面内 fetch。
-- 直接在页面 JS 中调用 Gemini 会暴露用户 API Key 给当前页面上下文，这是现有架构风险；短期沿用，长期建议后端网关。
+- 直接在页面 JS 中调用火山方舟会暴露内置 API Key 给当前页面上下文，这是现有架构风险；长期建议后端网关。
 - 反编译 smali 中维护长 JS 字符串容易出错，后续改动需要非常小心字符串转义。
 - 不再默认隐藏或拦截视频/音频；直播间应保持正常加载，翻译逻辑只处理可读取的评论/弹幕文本。
 
@@ -412,7 +405,7 @@ input_text.translation_options.target_language: zh/en/ru/uk
 
 - 安装前按项目要求：先 `zipalign`，再 `apksigner` 签名。
 - 测试默认 Doubao Key：普通网页和直播评论可直接翻译。
-- 测试错误 Key 或网络失败：保留原文，状态栏提示失败；如设置了 Gemini fallback key 可回退。
+- 测试错误 Key 或网络失败：保留原文，状态栏提示失败。
 - 测试直播页：评论新增后自动进入队列。
 - 测试快速刷屏：队列有上限，页面不崩。
 - 测试网络失败：保留原文，状态栏提示失败。
