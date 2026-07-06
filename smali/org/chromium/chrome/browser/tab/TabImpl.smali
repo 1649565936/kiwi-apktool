@@ -2148,6 +2148,10 @@
 .method public final M(Lorg/chromium/url/GURL;)I
     .locals 9
 
+    const/4 v0, 0x2
+
+    return v0
+
     .line 1
     iget-object v0, p0, Lorg/chromium/chrome/browser/tab/TabImpl;->g:Lorg/chromium/content_public/browser/WebContents;
 

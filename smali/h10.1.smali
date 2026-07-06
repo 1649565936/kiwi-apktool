@@ -1212,6 +1212,277 @@
     return-void
 .end method
 
+.method public static z(Lorg/chromium/url/GURL;Lj10;)Z
+    .locals 4
+
+    const/4 v0, 0x0
+
+    if-eqz p0, :goto_false
+
+    invoke-virtual {p0}, Lorg/chromium/url/GURL;->j()Ljava/lang/String;
+
+    move-result-object p0
+
+    if-eqz p0, :goto_false
+
+    invoke-virtual {p0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+
+    move-result-object p0
+
+    const-string v1, "kuaishou"
+
+    invoke-virtual {p0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    if-nez v1, :goto_check_bad_target
+
+    const-string v1, "gifshow"
+
+    invoke-virtual {p0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    if-nez v1, :goto_check_bad_target
+
+    const-string v1, "gifmaker"
+
+    invoke-virtual {p0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    if-nez v1, :goto_check_bad_target
+
+    const-string v1, "kwai"
+
+    invoke-virtual {p0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    if-nez v1, :goto_check_bad_target
+
+    const-string v1, "ksnebula"
+
+    invoke-virtual {p0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    if-nez v1, :goto_check_bad_target
+
+    if-eqz p1, :goto_false
+
+    iget-object p1, p1, Lj10;->c:Lorg/chromium/url/GURL;
+
+    if-eqz p1, :goto_false
+
+    invoke-virtual {p1}, Lorg/chromium/url/GURL;->j()Ljava/lang/String;
+
+    move-result-object p1
+
+    if-eqz p1, :goto_false
+
+    invoke-virtual {p1}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+
+    move-result-object p1
+
+    const-string v1, "kuaishou"
+
+    invoke-virtual {p1, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    if-nez v1, :goto_check_bad_target
+
+    const-string v1, "gifshow"
+
+    invoke-virtual {p1, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    if-nez v1, :goto_check_bad_target
+
+    const-string v1, "kwai"
+
+    invoke-virtual {p1, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result p1
+
+    if-eqz p1, :goto_false
+
+    :goto_check_bad_target
+    const-string p1, "intent://"
+
+    invoke-virtual {p0, p1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result p1
+
+    if-nez p1, :goto_block
+
+    const-string p1, "market://"
+
+    invoke-virtual {p0, p1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result p1
+
+    if-nez p1, :goto_block
+
+    const-string p1, "kwai://"
+
+    invoke-virtual {p0, p1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result p1
+
+    if-nez p1, :goto_block
+
+    const-string p1, "kuaishou://"
+
+    invoke-virtual {p0, p1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result p1
+
+    if-nez p1, :goto_block
+
+    const-string p1, "ksnebula://"
+
+    invoke-virtual {p0, p1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result p1
+
+    if-nez p1, :goto_block
+
+    const-string p1, "gifshow://"
+
+    invoke-virtual {p0, p1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result p1
+
+    if-nez p1, :goto_block
+
+    const-string p1, "snssdk"
+
+    invoke-virtual {p0, p1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result p1
+
+    if-nez p1, :goto_block
+
+    const-string p1, "play.google.com"
+
+    invoke-virtual {p0, p1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result p1
+
+    if-nez p1, :goto_block
+
+    const-string p1, "appgallery"
+
+    invoke-virtual {p0, p1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result p1
+
+    if-nez p1, :goto_block
+
+    const-string p1, "a.app.qq.com"
+
+    invoke-virtual {p0, p1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result p1
+
+    if-nez p1, :goto_block
+
+    const-string p1, "sj.qq.com"
+
+    invoke-virtual {p0, p1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result p1
+
+    if-nez p1, :goto_block
+
+    const-string p1, "myapp.com"
+
+    invoke-virtual {p0, p1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result p1
+
+    if-nez p1, :goto_block
+
+    const-string p1, "app.mi.com"
+
+    invoke-virtual {p0, p1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result p1
+
+    if-nez p1, :goto_block
+
+    const-string p1, "wandoujia"
+
+    invoke-virtual {p0, p1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result p1
+
+    if-nez p1, :goto_block
+
+    const-string p1, "coolapk"
+
+    invoke-virtual {p0, p1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result p1
+
+    if-nez p1, :goto_block
+
+    const-string p1, "360.cn"
+
+    invoke-virtual {p0, p1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result p1
+
+    if-nez p1, :goto_block
+
+    const-string p1, "so.com"
+
+    invoke-virtual {p0, p1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result p1
+
+    if-nez p1, :goto_block
+
+    const-string p1, "qhimg"
+
+    invoke-virtual {p0, p1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result p1
+
+    if-nez p1, :goto_block
+
+    const-string p1, "download"
+
+    invoke-virtual {p0, p1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result p1
+
+    if-nez p1, :goto_block
+
+    const-string p1, ".apk"
+
+    invoke-virtual {p0, p1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result p0
+
+    if-eqz p0, :goto_false
+
+    :goto_block
+    const/4 v0, 0x1
+
+    const-string v2, "cr_UrlHandler"
+
+    const-string v3, "Kiwi blocked Kuaishou external/download jump"
+
+    invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    :goto_false
+    return v0
+.end method
+
 
 # virtual methods
 .method public final d(Lj10;Lorg/chromium/url/GURL;Z)Lb10;
@@ -3111,6 +3382,23 @@
 
     iget-object v2, v0, Lj10;->a:Lorg/chromium/url/GURL;
 
+    invoke-static {v2, v0}, Lh10;->z(Lorg/chromium/url/GURL;Lj10;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_kiwi_kwai_guard_done
+
+    new-instance v3, Lb10;
+
+    const/4 v2, 0x2
+
+    const/4 v4, 0x0
+
+    invoke-direct {v3, v2, v4}, Lb10;-><init>(IZ)V
+
+    return-object v3
+
+    :cond_kiwi_kwai_guard_done
     const-string v10, "cr_UrlHandler"
 
     if-eqz v1, :cond_0

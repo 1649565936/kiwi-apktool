@@ -42,6 +42,12 @@ class FakeElement {
     this.textContent = opts.text || '';
     this.innerText = opts.text || '';
     this.rect = opts.rect || { left: 0, top: 0, right: 0, bottom: 0, width: 0, height: 0 };
+    this.paused = opts.paused !== false;
+    this.muted = false;
+    this.volume = 1;
+    this.autoplay = !!opts.autoplay;
+    this.preload = 'auto';
+    this.pauseCount = 0;
   }
 
   setAttribute(name, value) {
@@ -94,6 +100,11 @@ class FakeElement {
 
   getBoundingClientRect() {
     return this.rect;
+  }
+
+  pause() {
+    this.paused = true;
+    this.pauseCount++;
   }
 }
 
@@ -154,11 +165,13 @@ function matchesSelector(node, selector) {
   });
 }
 
-function isHidden(node) {
-  return (node.getAttribute('data-kiwi-live-noise') === '1' || node.getAttribute('data-kiwi-live-overlay-hidden') === '1') &&
-    node.style.display === 'none' &&
-    node.style.visibility === 'hidden' &&
-    node.style.pointerEvents === 'none';
+function isVideoBlocked(node) {
+  return node.getAttribute('data-kiwi-live-video-blocked') === '1' &&
+    node.muted === true &&
+    node.volume === 0 &&
+    node.autoplay === false &&
+    node.preload === 'none' &&
+    node.pauseCount > 0;
 }
 
 function makeContext(doc) {
@@ -174,6 +187,13 @@ function makeContext(doc) {
     setItem() {},
     removeItem() {}
   };
+
+  function HTMLMediaElement() {}
+  const originalPlay = function() {
+    this.played = true;
+    return Promise.resolve();
+  };
+  HTMLMediaElement.prototype.play = originalPlay;
 
   const context = {
     window: {},
@@ -194,7 +214,8 @@ function makeContext(doc) {
     getComputedStyle(node) { return node.style; },
     MutationObserver,
     XMLHttpRequest,
-    HTMLMediaElement: function HTMLMediaElement() {},
+    HTMLMediaElement,
+    originalPlay,
     Element: FakeElement,
     NodeFilter: { SHOW_TEXT: 4, FILTER_ACCEPT: 1, FILTER_REJECT: 2 }
   };
@@ -252,38 +273,44 @@ const rightChat = doc.add(new FakeElement('div', {
 }));
 chatRoot.appendChild(rightChat);
 
+const video = doc.add(new FakeElement('video', {
+  className: 'kwai-player-video',
+  rect: box(0, 0, 760, 520),
+  paused: false,
+  autoplay: true
+}));
+liveRoot.appendChild(video);
+
 const context = makeContext(doc);
 vm.runInNewContext(source, context, { filename: 'google_ai_translate_v8.js' });
 
-assert.strictEqual(isHidden(dashNamed), true, 'dash-style horizontal danmaku should be hidden over the video');
-assert.strictEqual(isHidden(camelNamed), true, 'camelCase webcast screen comment should be hidden over the video');
-assert.strictEqual(isHidden(genericFloating), true, 'generic animated floating text over video should be hidden');
-assert.strictEqual(isHidden(playButton), true, 'video play/pause overlay button should be hidden');
-assert.strictEqual(isHidden(rightChat), false, 'right-side chat item should not be hidden');
+assert.strictEqual(isVideoBlocked(video), true, 'live video element should be paused, muted, and marked hidden');
+assert.notStrictEqual(context.HTMLMediaElement.prototype.play, context.originalPlay, 'media play API should be patched on live pages');
+context.HTMLMediaElement.prototype.play.call(video);
+assert.strictEqual(video.played, undefined, 'patched play() should not start live video playback');
+assert.ok(video.pauseCount >= 2, 'patched play() should pause the live media again');
+assert.strictEqual(dashNamed.getAttribute('data-kiwi-live-video-blocked'), null, 'dash-style danmaku should not be marked as video');
+assert.strictEqual(camelNamed.getAttribute('data-kiwi-live-video-blocked'), null, 'camelCase webcast screen comment should not be marked as video');
+assert.strictEqual(genericFloating.getAttribute('data-kiwi-live-video-blocked'), null, 'generic animated comment should not be marked as video');
+assert.strictEqual(playButton.getAttribute('data-kiwi-live-video-blocked'), null, 'player buttons should not be removed as video');
+assert.strictEqual(rightChat.getAttribute('data-kiwi-live-video-blocked'), null, 'right-side chat item should not be marked as video');
 
-assert.strictEqual(doc.getElementById('kiwi-ai-translate-media-block'), null, 'media block CSS should not be injected');
-assert.strictEqual(context.HTMLMediaElement.prototype.play, undefined, 'media play API should not be patched');
-assert.ok(source.includes('function installLiveOverlayGuard()'), 'live pages should install a narrow overlay hider');
-assert.ok(source.includes('data-kiwi-live-overlay-hidden'), 'hidden live overlays should be marked with a dedicated attribute');
+assert.ok(source.includes('function installLiveVideoBlocker()'), 'live pages should install a video blocker');
+assert.ok(source.includes('data-kiwi-live-video-blocked'), 'blocked live media should be marked with a dedicated attribute');
+assert.ok(source.includes("D.querySelectorAll('video,audio')"), 'video blocker should only target media elements');
 assert.ok(source.includes('const LIVE_CHAT_RE'), 'live pages should use a narrow chat/danmaku matcher');
 assert.ok(source.includes('const LIVE_BLOCK_RE'), 'live pages should exclude player/header/search/input surfaces');
 assert.ok(source.includes("if (!S.live && S.queue.length < 40) loading(n);"), 'live pages should not inject loading placeholders');
 assert.ok(!source.includes("comment|chat|message|webcast|msg|room|live/.test(n)"), 'live pages must not treat broad room/live containers as chat');
 assert.ok(!/backdrop-filter|-webkit-backdrop-filter/.test(source), 'floating translator UI should avoid backdrop filters over live video');
-assert.ok(source.includes("const POS_KEY = 'kiwi_ai_translate_panel_pos'"), 'floating translator panel should persist its dragged position');
-assert.ok(source.includes('function installPanelDrag()'), 'floating translator panel should install drag handlers');
-assert.ok(source.includes('function dragBlocked(target)'), 'panel drag should only ignore real controls, not the whole panel');
-assert.ok(source.includes("touch-action:none"), 'panel drag handle should work on touch screens');
+assert.ok(source.includes("const FAB_POS_KEY = 'kiwi_ai_translate_fab_pos'"), 'floating translator ball should persist its dragged position');
+assert.ok(source.includes('function installFabDrag()'), 'floating translator ball should install drag handlers');
+assert.ok(source.includes('function positionFab(x, y, persist)'), 'floating translator ball should clamp dragged coordinates');
+assert.ok(source.includes("touch-action:none"), 'floating translator ball drag should work on touch screens');
 assert.ok(source.includes('function scanLiveInitial()'), 'live pages should scan only detected live chat roots initially');
 assert.ok(source.includes('function collectLiveNode(n)'), 'live pages should filter mutation nodes before scanning');
 assert.ok(source.includes('function queueLiveScan(root)'), 'live pages should batch mutation scans instead of scanning on every DOM change');
 assert.ok(!source.includes('if (S.live) scan(D.body || D)'), 'live pages must not scan the full body on run');
 assert.ok(/chenzhongtech/.test(source), 'Kuaishou livev.m.chenzhongtech.com pages should enter live mode');
-assert.ok(source.includes('function installKwaiDownloadGuard()'), 'Kuaishou live pages should install a download/deeplink guard');
-assert.ok(source.includes('const KWAI_APK_RE'), 'Kuaishou APK URLs should be recognized before navigation/download');
-assert.ok(source.includes('patchLocationMethod'), 'live page download guard should patch location.assign/replace');
-assert.ok(source.includes('HTMLAnchorElement'), 'programmatic anchor clicks should be guarded');
-assert.ok(source.includes("Object.defineProperty(proto, 'click'"), 'anchor click patch should use a stable prototype override');
-assert.ok(source.includes('已拦截快手下载跳转'), 'blocked Kuaishou APK jumps should surface a clear status');
 
-console.log('live room overlay checks passed');
+console.log('live room video block checks passed');

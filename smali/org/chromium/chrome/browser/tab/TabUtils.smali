@@ -534,6 +534,10 @@
 .method public static f(Lorg/chromium/chrome/browser/profiles/Profile;)Z
     .locals 3
 
+    const/4 p0, 0x1
+
+    return p0
+
     .line 1
     sget-object v0, LoF;->a:Landroid/content/SharedPreferences;
 
@@ -582,6 +586,8 @@
 
 .method public static g(ILorg/chromium/chrome/browser/tab/Tab;ZZ)V
     .locals 3
+
+    const/4 p2, 0x1
 
     .line 1
     invoke-interface {p1}, Lorg/chromium/chrome/browser/tab/Tab;->isNativePage()Z

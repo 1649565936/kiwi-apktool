@@ -7362,6 +7362,8 @@
     .line 80
     move-result p2
 
+    const/4 p2, 0x1
+
     .line 81
     sget-object p3, LSv;->a:LYp;
 

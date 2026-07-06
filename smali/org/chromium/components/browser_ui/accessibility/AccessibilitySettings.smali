@@ -646,7 +646,7 @@
 .end method
 
 .method public final m1(Ljava/lang/String;Landroid/os/Bundle;)V
-    .locals 2
+    .locals 4
 
     .line 1
     const p1, 0x7f180001
@@ -748,6 +748,62 @@
 
     .line 51
     if-eqz p1, :cond_0
+
+    .line 52
+    .line 53
+    sget-object p1, LoF;->a:Landroid/content/SharedPreferences;
+
+    const-string v0, "kiwi_page_zoom_default_50_applied"
+
+    const/4 p2, 0x0
+
+    invoke-interface {p1, v0, p2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+
+    move-result p1
+
+    if-nez p1, :cond_zoom_50_done
+
+    iget-object p1, p0, Lorg/chromium/components/browser_ui/accessibility/AccessibilitySettings;->u0:Lku;
+
+    iget-object p1, p1, Lku;->a:Lorg/chromium/chrome/browser/profiles/Profile;
+
+    invoke-static {p1}, LJ/N;->MNitnPWj(Ljava/lang/Object;)D
+
+    move-result-wide v0
+
+    const-wide/16 v2, 0x0
+
+    cmpl-double p2, v0, v2
+
+    if-nez p2, :cond_zoom_50_mark
+
+    const/4 p2, 0x0
+
+    invoke-static {p2}, LQV0;->a(I)D
+
+    move-result-wide v0
+
+    invoke-static {p1, v0, v1}, LJ/N;->MNh9C30M(Ljava/lang/Object;D)V
+
+    :cond_zoom_50_mark
+    sget-object p1, LoF;->a:Landroid/content/SharedPreferences;
+
+    invoke-interface {p1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object p1
+
+    const-string v0, "kiwi_page_zoom_default_50_applied"
+
+    const/4 p2, 0x1
+
+    invoke-interface {p1, v0, p2}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
+
+    move-result-object p1
+
+    invoke-interface {p1}, Landroid/content/SharedPreferences$Editor;->apply()V
+
+    :cond_zoom_50_done
+    const/4 p2, 0x0
 
     .line 52
     .line 53

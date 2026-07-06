@@ -19917,6 +19917,8 @@
     .line 1799
     xor-int/lit8 v1, v0, 0x1
 
+    const/4 v1, 0x1
+
     .line 1800
     .line 1801
     const-string v2, "RequestDesktopSiteExceptions"

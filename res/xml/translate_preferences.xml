@@ -2,4 +2,8 @@
 <PreferenceScreen>
     <org.chromium.chrome.browser.translate.RadioButtonGroupTranslatePreference n0:selectable="false" n0:key="translate_radio_group" n1:allowDividerAbove="true" n1:allowDividerBelow="false"
       xmlns:n0="http://schemas.android.com/apk/res/android" xmlns:n1="http://schemas.android.com/apk/res-auto" />
+    <org.chromium.components.browser_ui.settings.ChromeSwitchPreference n2:title="显示 AI 翻译悬浮球" n2:key="kiwi_ai_floating_ball_enabled" n2:summary="关闭后网页上不显示悬浮球"
+      xmlns:n2="http://schemas.android.com/apk/res/android" />
+    <Preference n3:title="AI 翻译约束指令" n3:key="kiwi_ai_constraint_instruction" n3:summary="设置弹幕翻译约束，保存后自动同步到模型"
+      xmlns:n3="http://schemas.android.com/apk/res/android" />
 </PreferenceScreen>

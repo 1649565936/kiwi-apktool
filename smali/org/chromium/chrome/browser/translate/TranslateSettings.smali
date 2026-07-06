@@ -45,7 +45,7 @@
 .end method
 
 .method public final m1(Ljava/lang/String;Landroid/os/Bundle;)V
-    .locals 0
+    .locals 2
 
     .line 1
     invoke-virtual {p0}, Landroidx/fragment/app/c;->b0()Landroid/app/Activity;
@@ -92,6 +92,78 @@
 
     .line 24
     .line 25
+    const-string p1, "kiwi_ai_floating_ball_enabled"
+
+    invoke-virtual {p0, p1}, Ls61;->k1(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_no_fab
+
+    check-cast p1, Lorg/chromium/components/browser_ui/settings/ChromeSwitchPreference;
+
+    sget-object p2, LoF;->a:Landroid/content/SharedPreferences;
+
+    const-string v0, "kiwi_ai_floating_ball_enabled"
+
+    const/4 v1, 0x1
+
+    invoke-interface {p2, v0, v1}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+
+    move-result p2
+
+    invoke-virtual {p1, p2}, Landroidx/preference/g;->Y(Z)V
+
+    new-instance p2, Lorg/chromium/chrome/browser/translate/GoogleAiFloatingBallPreferenceChangeListener;
+
+    invoke-direct {p2}, Lorg/chromium/chrome/browser/translate/GoogleAiFloatingBallPreferenceChangeListener;-><init>()V
+
+	iput-object p2, p1, Landroidx/preference/Preference;->o:Li61;
+
+	:cond_no_fab
+	const-string p1, "kiwi_ai_constraint_instruction"
+
+	invoke-virtual {p0, p1}, Ls61;->k1(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_no_constraint
+
+    new-instance p2, Lorg/chromium/chrome/browser/translate/GoogleAiConstraintPreferenceClickListener;
+
+    invoke-direct {p2, p0}, Lorg/chromium/chrome/browser/translate/GoogleAiConstraintPreferenceClickListener;-><init>(Lorg/chromium/chrome/browser/translate/TranslateSettings;)V
+
+    iput-object p2, p1, Landroidx/preference/Preference;->p:Lj61;
+
+    sget-object p2, LoF;->a:Landroid/content/SharedPreferences;
+
+    const-string v0, "kiwi_ai_translate_constraint_instruction"
+
+    const-string v1, ""
+
+    invoke-interface {p2, v0, v1}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p2
+
+    if-eqz p2, :cond_empty_constraint
+
+    invoke-virtual {p2}, Ljava/lang/String;->length()I
+
+    move-result v0
+
+    if-lez v0, :cond_empty_constraint
+
+    const-string p2, "已设置，刷新或重新打开网页后会自动同步到模型"
+
+    goto :goto_constraint_summary
+
+    :cond_empty_constraint
+    const-string p2, "未设置约束指令"
+
+    :goto_constraint_summary
+    invoke-virtual {p1, p2}, Landroidx/preference/Preference;->Q(Ljava/lang/CharSequence;)V
+
+    :cond_no_constraint
     const-string p1, "Settings.Translate.Opened"
 
     .line 26

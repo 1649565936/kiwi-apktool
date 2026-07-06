@@ -4,35 +4,45 @@
     const D = document;
     const ID = 'kiwi-ai-translate';
     const POS_KEY = 'kiwi_ai_translate_panel_pos';
-    const LANGS = {
-      'zh-CN': '中文',
-      en: 'English',
-      ru: 'Русский',
-      uk: 'Українська'
-    };
+    const FAB_POS_KEY = 'kiwi_ai_translate_fab_pos';
+    const FAB_ENABLED_KEY = 'kiwi_ai_floating_ball_enabled';
+    const CONSTRAINT_KEY = 'kiwi_ai_translate_constraint_instruction';
+    const CONSTRAINT_LIMIT = 2000;
     const DOUBAO_DEFAULTS = {
       endpoint: 'https://ark.cn-beijing.volces.com/api/v3/responses',
       model: 'doubao-seed-translation-250915',
       key: 'ark-3d372bb6-82cd-4d5c-af58-9a0852ee12ea-8d461'
     };
-    const CURRENT_VERSION = 23;
+    const CURRENT_VERSION = 30;
+    const NATIVE_CONFIG = parseNativeConfig(k);
 
     cleanupLegacyProviderState();
     seedDoubaoDefaults();
+    applyNativeConfig(NATIVE_CONFIG);
 
     if (W.__kiwiAiTranslator && W.__kiwiAiTranslator.version >= CURRENT_VERSION) {
-      W.__kiwiAiTranslator.key = k;
+      W.__kiwiAiTranslator.payload = k;
+      W.__kiwiAiTranslator.key = NATIVE_CONFIG.key || k || '';
       W.__kiwiAiTranslator.reloadConfig();
       return;
     }
 
     const S = {
       version: CURRENT_VERSION,
-      key: k || '',
+      key: NATIVE_CONFIG.key || k || '',
       doubaoEndpoint: localStorage.getItem('kiwi_doubao_endpoint') || DOUBAO_DEFAULTS.endpoint,
       doubaoModel: localStorage.getItem('kiwi_doubao_model') || DOUBAO_DEFAULTS.model,
       doubaoKey: localStorage.getItem('kiwi_doubao_api_key') || DOUBAO_DEFAULTS.key,
-      target: localStorage.getItem('kiwi_ai_translate_target') || 'zh-CN',
+      constraint: typeof NATIVE_CONFIG.constraint === 'string' ? cleanInstruction(NATIVE_CONFIG.constraint) : loadConstraintInstruction(),
+      fabEnabled: readFabEnabled(NATIVE_CONFIG),
+      fabDraggedAt: 0,
+      constraintResponseId: '',
+      constraintSyncedKey: '',
+      constraintSyncing: null,
+      constraintSyncingKey: '',
+      constraintError: '',
+      constraintInlineOnly: false,
+      constraintSaveTimer: 0,
       enabled: false,
       queue: [],
       active: 0,
@@ -55,13 +65,15 @@
       live: isLivePage(),
       liveScanQueue: [],
       liveScanTimer: 0,
+      mediaBlockTimer: 0,
+      mediaBlockObserver: null,
+      mediaPlayPatched: false,
+      originalMediaPlay: null,
       statusTimer: 0,
       lastStatusAt: 0,
       pendingStatus: '',
       forceShownAt: 0
     };
-
-    if (!LANGS[S.target]) S.target = 'zh-CN';
 
     const UI = {};
     const LIVE_CHAT_RE = /(?:^|[\s_-])(?:chat|comment|message|msg)(?:$|[\s_-])|chat-history|chat-list|chat-item|chat-message|comment-list|comment-item|comment-content|message-list|message-item|danmu|danmaku|barrage|bullet[-_ ]?screen|screen[-_ ]?comment|webcast.+(?:screen|comment|message|danmaku|barrage)|(?:screen|comment|message|danmaku|barrage).+webcast/i;
@@ -133,27 +145,33 @@
 
       const st = el('style', { id: ID + '-v8-style' });
       st.textContent =
-        '#' + ID + '-panel{position:fixed!important;left:10px!important;right:10px!important;top:calc(env(safe-area-inset-top,0px) + 8px)!important;z-index:2147483647!important;display:flex!important;flex-direction:column!important;gap:8px!important;max-width:560px!important;margin:0 auto!important;padding:10px!important;border-radius:18px!important;border:1px solid rgba(32,33,36,.10)!important;background:#fff!important;color:#202124!important;font:13px Arial,sans-serif!important;box-shadow:0 14px 34px rgba(32,33,36,.20)!important;box-sizing:border-box!important;overflow:hidden!important;contain:layout paint style!important;backface-visibility:hidden!important;-webkit-backface-visibility:hidden!important}' +
+        '#' + ID + '-panel{position:fixed!important;left:10px!important;right:10px!important;top:calc(env(safe-area-inset-top,0px) + 8px)!important;z-index:2147483647!important;display:none!important;flex-direction:column!important;gap:8px!important;max-width:560px!important;margin:0 auto!important;padding:10px!important;border-radius:18px!important;border:1px solid rgba(32,33,36,.10)!important;background:#fff!important;color:#202124!important;font:13px Arial,sans-serif!important;box-shadow:0 14px 34px rgba(32,33,36,.20)!important;box-sizing:border-box!important;overflow:hidden!important;contain:layout paint style!important;backface-visibility:hidden!important;-webkit-backface-visibility:hidden!important}' +
         '#' + ID + '-panel[data-live="1"]{box-shadow:0 6px 14px rgba(32,33,36,.12)!important;border-color:rgba(32,33,36,.08)!important}' +
         '#' + ID + '-head{display:flex!important;align-items:center!important;gap:8px!important;min-width:0!important;cursor:move!important;touch-action:none!important;user-select:none!important;-webkit-user-select:none!important}' +
         '#' + ID + '-brand{display:flex!important;flex:1 1 auto!important;min-width:0!important;flex-direction:column!important;gap:1px!important}' +
         '#' + ID + '-title{display:block!important;color:#202124!important;font:700 14px/1.2 Arial,sans-serif!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important}' +
         '#' + ID + '-detect{display:block!important;color:#5f6368!important;font:500 11px/1.25 Arial,sans-serif!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important}' +
         '#' + ID + '-head-actions{display:flex!important;gap:6px!important;align-items:center!important;flex:0 0 auto!important}' +
-        '#' + ID + '-controls{display:grid!important;grid-template-columns:minmax(92px,1fr) auto auto!important;gap:7px!important;align-items:center!important;width:100%!important;box-sizing:border-box!important}' +
-        '#' + ID + '-panel button,#' + ID + '-panel select{height:34px!important;min-width:0!important;border-radius:999px!important;font:700 13px Arial,sans-serif!important;border:1px solid rgba(218,220,224,.95)!important;background:#fff!important;color:#202124!important;padding:0 10px!important;box-sizing:border-box!important;white-space:nowrap!important;box-shadow:0 1px 2px rgba(60,64,67,.08)!important;outline:none!important}' +
-        '#' + ID + '-panel select{width:100%!important;appearance:auto!important;-webkit-appearance:menulist!important;font-weight:650!important}' +
+        '#' + ID + '-controls{display:grid!important;grid-template-columns:1fr 1fr!important;gap:7px!important;align-items:center!important;width:100%!important;box-sizing:border-box!important}' +
+        '#' + ID + '-constraint-row{display:grid!important;grid-template-columns:minmax(0,1fr) auto!important;gap:7px!important;align-items:stretch!important;width:100%!important;box-sizing:border-box!important}' +
+        '#' + ID + '-constraint{width:100%!important;min-height:54px!important;max-height:108px!important;resize:vertical!important;border-radius:12px!important;border:1px solid rgba(218,220,224,.95)!important;background:#fff!important;color:#202124!important;padding:8px 10px!important;font:600 12px/1.35 Arial,sans-serif!important;box-sizing:border-box!important;outline:none!important;box-shadow:0 1px 2px rgba(60,64,67,.08)!important}' +
+        '#' + ID + '-constraint::placeholder{color:#80868b!important;font-weight:600!important}' +
+        '#' + ID + '-constraint-apply{height:auto!important;min-height:54px!important;border-radius:12px!important;padding:0 11px!important}' +
+        '#' + ID + '-constraint-state{display:block!important;max-width:100%!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important;color:#5f6368!important;font:600 11px/1.2 Arial,sans-serif!important;padding:0 2px!important;box-sizing:border-box!important}' +
+        '#' + ID + '-panel button{height:34px!important;min-width:0!important;border-radius:999px!important;font:700 13px Arial,sans-serif!important;border:1px solid rgba(218,220,224,.95)!important;background:#fff!important;color:#202124!important;padding:0 10px!important;box-sizing:border-box!important;white-space:nowrap!important;box-shadow:0 1px 2px rgba(60,64,67,.08)!important;outline:none!important}' +
         '#' + ID + '-panel button{touch-action:manipulation!important}' +
         '#' + ID + '-panel button[data-primary="1"]{background:#1a73e8!important;color:#fff!important;border-color:#1a73e8!important;box-shadow:0 4px 10px rgba(26,115,232,.25)!important}' +
         '#' + ID + '-panel button[data-icon="1"]{width:34px!important;min-width:34px!important;padding:0!important;font:800 19px/1 Arial,sans-serif!important;color:#3c4043!important;background:#f8fafd!important}' +
+        '#' + ID + '-panel #' + ID + '-constraint-apply{height:auto!important;min-height:54px!important;border-radius:12px!important;padding:0 11px!important}' +
         '#' + ID + '-status{display:block!important;max-width:100%!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important;color:#3c4043!important;background:#f1f5f9!important;border:1px solid rgba(218,220,224,.55)!important;border-radius:999px!important;padding:6px 10px!important;font:600 12px/1.25 Arial,sans-serif!important;box-sizing:border-box!important}' +
-        '#' + ID + '-btn{position:fixed!important;right:14px!important;bottom:calc(env(safe-area-inset-bottom,0px) + 84px)!important;z-index:2147483647!important;display:none!important;align-items:center!important;justify-content:center!important;width:54px!important;height:54px!important;border:0!important;border-radius:50%!important;background:#1a73e8!important;color:#fff!important;font:800 22px Arial,sans-serif!important;box-shadow:0 12px 26px rgba(26,115,232,.34)!important;box-sizing:border-box!important;touch-action:manipulation!important}' +
+        '#' + ID + '-btn{position:fixed!important;right:14px!important;bottom:calc(env(safe-area-inset-bottom,0px) + 84px)!important;z-index:2147483647!important;display:none!important;align-items:center!important;justify-content:center!important;width:54px!important;height:54px!important;border:0!important;border-radius:50%!important;background:#1a73e8!important;color:#fff!important;font:800 22px Arial,sans-serif!important;box-shadow:0 12px 26px rgba(26,115,232,.34)!important;box-sizing:border-box!important;touch-action:none!important;user-select:none!important;-webkit-user-select:none!important}' +
         '#' + ID + '-btn::after{content:""!important;position:absolute!important;right:8px!important;top:8px!important;width:8px!important;height:8px!important;border-radius:50%!important;background:#34a853!important;border:2px solid #fff!important;box-sizing:border-box!important}' +
         '[data-kiwi-ai-translation="1"]{display:block!important;color:#1a73e8!important;font-size:.95em!important;line-height:1.35!important;margin-top:2px!important;white-space:pre-wrap!important}' +
         '[data-kiwi-ai-live-translation="1"]{display:inline!important;color:#64a8ff!important;font-size:.95em!important;line-height:inherit!important;margin:0 0 0 4px!important;white-space:normal!important;vertical-align:baseline!important}' +
         '[data-kiwi-ai-loading="1"]{display:block!important;height:16px!important;margin-top:2px!important;font-size:0!important;color:transparent!important}' +
         '[data-kiwi-ai-loading="1"]::after{content:""!important;display:inline-block!important;width:12px!important;height:12px!important;border:2px solid rgba(95,99,104,.25)!important;border-top-color:#1a73e8!important;border-radius:50%!important;animation:kiwiAiSpin .8s linear infinite!important}@keyframes kiwiAiSpin{to{transform:rotate(360deg)}}' +
-        '@media(min-width:640px){#' + ID + '-panel{left:50%!important;right:auto!important;transform:translate3d(-50%,0,0)!important;width:560px!important}#' + ID + '-controls{grid-template-columns:160px auto auto!important}}';
+        '[data-kiwi-live-video-blocked="1"]{opacity:0!important;visibility:hidden!important;pointer-events:none!important}' +
+        '@media(min-width:640px){#' + ID + '-panel{left:50%!important;right:auto!important;transform:translate3d(-50%,0,0)!important;width:560px!important}#' + ID + '-controls{grid-template-columns:1fr 1fr!important}}';
       D.documentElement.appendChild(st);
 
       UI.panel = el('div', { id: ID + '-panel' });
@@ -166,24 +184,24 @@
       UI.minimize = el('button', { 'data-icon': '1', title: '收起', 'aria-label': '收起翻译面板' }, '−');
       UI.close = el('button', { 'data-icon': '1', title: '关闭', 'aria-label': '关闭翻译面板' }, '×');
       UI.controls = el('div', { id: ID + '-controls' });
-      UI.sel = el('select');
-      Object.keys(LANGS).forEach(c => {
-        const o = el('option', { value: c }, LANGS[c]);
-        if (c === S.target) o.selected = true;
-        UI.sel.appendChild(o);
-      });
       UI.run = el('button', { 'data-primary': '1' }, '翻译');
       UI.stop = el('button', null, '停止');
       UI.endpoint = el('button', { 'data-icon': '1', title: '端点设置', 'aria-label': '端点设置' }, '⚙');
+      UI.constraintRow = el('div', { id: ID + '-constraint-row' });
+      UI.constraint = el('textarea', { id: ID + '-constraint', placeholder: '翻译约束指令' });
+      UI.constraint.value = S.constraint || '';
+      UI.constraintApply = el('button', { id: ID + '-constraint-apply', title: '应用约束指令' }, '应用');
+      UI.constraintState = el('span', { id: ID + '-constraint-state' }, constraintStateText());
       UI.status = el('span', { id: ID + '-status' }, '待翻译');
       UI.brand.append(UI.title, UI.detect);
       UI.headActions.append(UI.endpoint, UI.minimize, UI.close);
       UI.head.append(UI.brand, UI.headActions);
-      UI.controls.append(UI.sel, UI.run, UI.stop);
-      UI.panel.append(UI.head, UI.controls, UI.status);
+      UI.controls.append(UI.run, UI.stop);
+      UI.constraintRow.append(UI.constraint, UI.constraintApply);
+      UI.panel.append(UI.head, UI.controls, UI.constraintRow, UI.constraintState, UI.status);
       D.documentElement.appendChild(UI.panel);
 
-      UI.fab = el('button', { id: ID + '-btn', title: '展开翻译面板', 'aria-label': '展开翻译面板' }, '译');
+      UI.fab = el('button', { id: ID + '-btn', title: '开始翻译', 'aria-label': '开始翻译' }, '译');
       D.documentElement.appendChild(UI.fab);
 
       ['click', 'mousedown', 'mouseup', 'touchstart', 'touchend'].forEach(ev => {
@@ -195,14 +213,13 @@
       bindTap(UI.minimize, minimize);
       bindTap(UI.close, dismiss);
       bindTap(UI.endpoint, configureProvider);
+      bindTap(UI.constraintApply, () => saveConstraintInstruction(false));
       bindTap(UI.fab, expand);
+      on(UI.constraint, 'input', scheduleConstraintInstructionSave, false);
+      on(UI.constraint, 'change', () => saveConstraintInstruction(true), false);
+      on(UI.constraint, 'blur', () => saveConstraintInstruction(true), false);
       installPanelDrag();
-      UI.sel.onchange = () => {
-        S.target = UI.sel.value;
-        localStorage.setItem('kiwi_ai_translate_target', S.target);
-        clearWork();
-        setStatus('目标: ' + LANGS[S.target]);
-      };
+      installFabDrag();
     }
 
     function installPanelDrag() {
@@ -331,6 +348,103 @@
       if (p) positionPanel(p.x, p.y, false);
     }
 
+    function installFabDrag() {
+      const start = e => {
+        if (!S.fabEnabled) return;
+        const p = eventPoint(e);
+        if (!p) return;
+        const r = UI.fab.getBoundingClientRect();
+        S.fabDrag = { dx: p.x - r.left, dy: p.y - r.top, moved: false };
+        if (e.preventDefault) e.preventDefault();
+        if (e.stopPropagation) e.stopPropagation();
+        addFabDragListeners();
+      };
+      on(UI.fab, 'mousedown', start, true);
+      on(UI.fab, 'touchstart', start, { capture: true, passive: false });
+      on(W, 'resize', () => {
+        if (UI.fab && UI.fab.style.display === 'flex') restoreFabPosition();
+      }, false);
+    }
+
+    function addFabDragListeners() {
+      if (S.fabDragBound) return;
+      S.fabDragBound = true;
+      if (D.addEventListener) {
+        D.addEventListener('mousemove', fabDragMove, true);
+        D.addEventListener('mouseup', fabDragEnd, true);
+        D.addEventListener('touchmove', fabDragMove, { capture: true, passive: false });
+        D.addEventListener('touchend', fabDragEnd, true);
+        D.addEventListener('touchcancel', fabDragEnd, true);
+      }
+    }
+
+    function removeFabDragListeners() {
+      if (!S.fabDragBound || !D.removeEventListener) return;
+      S.fabDragBound = false;
+      D.removeEventListener('mousemove', fabDragMove, true);
+      D.removeEventListener('mouseup', fabDragEnd, true);
+      D.removeEventListener('touchmove', fabDragMove, true);
+      D.removeEventListener('touchend', fabDragEnd, true);
+      D.removeEventListener('touchcancel', fabDragEnd, true);
+    }
+
+    function fabDragMove(e) {
+      if (!S.fabDrag) return;
+      const p = eventPoint(e);
+      if (!p) return;
+      if (e.preventDefault) e.preventDefault();
+      if (e.stopPropagation) e.stopPropagation();
+      S.fabDrag.moved = true;
+      positionFab(p.x - S.fabDrag.dx, p.y - S.fabDrag.dy, false);
+    }
+
+    function fabDragEnd(e) {
+      if (S.fabDrag && S.fabDrag.moved) {
+        const r = UI.fab.getBoundingClientRect();
+        saveFabPosition(r.left, r.top);
+        S.fabDraggedAt = Date.now();
+        if (e && e.preventDefault) e.preventDefault();
+        if (e && e.stopPropagation) e.stopPropagation();
+      }
+      S.fabDrag = null;
+      removeFabDragListeners();
+    }
+
+    function positionFab(x, y, persist) {
+      ensureUi();
+      const v = viewport();
+      const margin = 8;
+      const r = UI.fab.getBoundingClientRect();
+      const width = Math.max(48, r.width || 54);
+      const height = Math.max(48, r.height || 54);
+      const left = clamp(Math.round(x), margin, Math.max(margin, v.w - width - margin));
+      const top = clamp(Math.round(y), margin, Math.max(margin, v.h - height - margin));
+      UI.fab.style.setProperty('left', left + 'px', 'important');
+      UI.fab.style.setProperty('top', top + 'px', 'important');
+      UI.fab.style.setProperty('right', 'auto', 'important');
+      UI.fab.style.setProperty('bottom', 'auto', 'important');
+      if (persist) saveFabPosition(left, top);
+    }
+
+    function saveFabPosition(x, y) {
+      try {
+        localStorage.setItem(FAB_POS_KEY, JSON.stringify({ x: Math.round(x), y: Math.round(y) }));
+      } catch (_) {}
+    }
+
+    function savedFabPosition() {
+      try {
+        const p = JSON.parse(localStorage.getItem(FAB_POS_KEY) || 'null');
+        if (p && typeof p.x === 'number' && typeof p.y === 'number') return p;
+      } catch (_) {}
+      return null;
+    }
+
+    function restoreFabPosition() {
+      const p = savedFabPosition();
+      if (p) positionFab(p.x, p.y, false);
+    }
+
     function bindTap(node, fn) {
       let lastTouch = 0;
       const fire = e => {
@@ -360,6 +474,7 @@
       try {
         [
           ['kiwi', 'ai', 'translate', 'provider'].join('_'),
+          ['kiwi', 'ai', 'translate', 'target'].join('_'),
           String.fromCharCode(107, 105, 119, 105, 95, 104, 121, 95, 109, 116, 50),
           String.fromCharCode(104, 121, 95, 109, 116, 50, 95, 97, 112, 105, 95, 107, 101, 121)
         ].forEach(key => {
@@ -371,13 +486,216 @@
       } catch (_) {}
     }
 
+    function parseNativeConfig(raw) {
+      const text = String(raw || '').trim();
+      if (!text) return {};
+      if (text[0] === '{') {
+        try {
+          const j = JSON.parse(text);
+          return {
+            key: typeof j.key === 'string' ? normalize(j.key) : '',
+            constraint: typeof j.constraint === 'string' ? cleanInstruction(j.constraint) : undefined,
+            fabEnabled: typeof j.fabEnabled === 'boolean' ? j.fabEnabled : undefined
+          };
+        } catch (_) {}
+      }
+      return { key: text };
+    }
+
+    function applyNativeConfig(config) {
+      if (!config) return;
+      try {
+        if (typeof config.constraint === 'string') {
+          const next = cleanInstruction(config.constraint);
+          if (next) localStorage.setItem(CONSTRAINT_KEY, next);
+          else localStorage.removeItem(CONSTRAINT_KEY);
+        }
+        if (typeof config.fabEnabled === 'boolean') {
+          localStorage.setItem(FAB_ENABLED_KEY, config.fabEnabled ? '1' : '0');
+        }
+      } catch (_) {}
+    }
+
+    function readFabEnabled(config) {
+      if (config && typeof config.fabEnabled === 'boolean') return config.fabEnabled;
+      try {
+        return localStorage.getItem(FAB_ENABLED_KEY) !== '0';
+      } catch (_) {
+        return true;
+      }
+    }
+
+    function cleanInstruction(t) {
+      const s = String(t || '').replace(/\r\n?/g, '\n').replace(/[ \t]+\n/g, '\n').trim();
+      return s.length > CONSTRAINT_LIMIT ? s.slice(0, CONSTRAINT_LIMIT).trim() : s;
+    }
+
+    function loadConstraintInstruction() {
+      try {
+        return cleanInstruction(localStorage.getItem(CONSTRAINT_KEY) || '');
+      } catch (_) {
+        return '';
+      }
+    }
+
+    function saveConstraintInstruction(silent) {
+      clearTimeout(S.constraintSaveTimer);
+      S.constraintSaveTimer = 0;
+      const next = cleanInstruction(UI.constraint && UI.constraint.value);
+      if (UI.constraint && UI.constraint.value !== next) UI.constraint.value = next;
+      try {
+        if (next) localStorage.setItem(CONSTRAINT_KEY, next);
+        else localStorage.removeItem(CONSTRAINT_KEY);
+      } catch (_) {}
+      if (next !== S.constraint) {
+        S.constraint = next;
+        resetConstraintSync();
+        clearTranslationCache();
+        clearWork();
+      }
+      writeConstraintState();
+      if (!next) {
+        if (!silent) setStatus('约束指令已清空');
+        return;
+      }
+      syncConstraintInstruction(silent).catch(() => {});
+    }
+
+    function scheduleConstraintInstructionSave() {
+      clearTimeout(S.constraintSaveTimer);
+      S.constraintSaveTimer = setTimeout(() => saveConstraintInstruction(true), 650);
+      const next = cleanInstruction(UI.constraint && UI.constraint.value);
+      if (next !== S.constraint) {
+        S.constraintError = '';
+        S.constraintResponseId = '';
+        S.constraintSyncedKey = '';
+      }
+      writeConstraintState();
+    }
+
+    function resetConstraintSync() {
+      S.constraintResponseId = '';
+      S.constraintSyncedKey = '';
+      S.constraintSyncing = null;
+      S.constraintSyncingKey = '';
+      S.constraintError = '';
+      S.constraintInlineOnly = false;
+    }
+
+    function constraintSyncKey() {
+      return [S.doubaoEndpoint || '', S.doubaoModel || '', cleanInstruction(S.constraint)].join('\n');
+    }
+
+    function constraintCacheScope() {
+      return cleanInstruction(S.constraint);
+    }
+
+    function clearTranslationCache() {
+      S.cache.clear();
+      S.cacheOrder.length = 0;
+      S.seen = new WeakMap();
+      S.cacheHits = 0;
+    }
+
+    function constraintStateText() {
+      if (!cleanInstruction(S.constraint)) return '约束指令未设置';
+      if (S.constraintSyncing) return '约束指令同步中';
+      if (S.constraintError) return '约束指令同步失败: ' + S.constraintError;
+      if (S.constraintInlineOnly && S.constraintSyncedKey === constraintSyncKey()) return '约束指令已启用';
+      if (S.constraintResponseId && S.constraintSyncedKey === constraintSyncKey()) return '约束指令已同步';
+      return '约束指令待同步';
+    }
+
+    function writeConstraintState() {
+      if (UI.constraintState) UI.constraintState.textContent = constraintStateText();
+    }
+
+    async function syncConstraintInstruction(silent) {
+      const instruction = cleanInstruction(S.constraint);
+      if (!instruction) {
+        resetConstraintSync();
+        writeConstraintState();
+        return '';
+      }
+      const key = constraintSyncKey();
+      if (S.constraintResponseId && S.constraintSyncedKey === key) return S.constraintResponseId;
+      if (S.constraintInlineOnly && S.constraintSyncedKey === key) return '';
+      if (S.constraintSyncing && S.constraintSyncingKey === key) return S.constraintSyncing;
+      if (!S.doubaoEndpoint || !S.doubaoKey) {
+        S.constraintError = 'Doubao 配置缺失';
+        writeConstraintState();
+        throw new Error(S.constraintError);
+      }
+      S.constraintError = '';
+      S.constraintSyncingKey = key;
+      if (!silent) setStatus('正在同步约束指令');
+      writeConstraintState();
+      S.constraintSyncing = callDoubaoConstraint(instruction, key).then(id => {
+        if (S.constraintSyncingKey !== key) return '';
+        if (!id) throw new Error('Response id missing');
+        S.constraintResponseId = id;
+        S.constraintSyncedKey = key;
+        S.constraintError = '';
+        S.constraintInlineOnly = false;
+        if (!silent) setStatus('约束指令已同步');
+        return id;
+      }).catch(e => {
+        const message = e && e.message ? e.message : String(e || 'unknown error');
+        if (S.constraintSyncingKey === key && constraintStoreUnsupported(message)) {
+          S.constraintResponseId = '';
+          S.constraintSyncedKey = key;
+          S.constraintError = '';
+          S.constraintInlineOnly = true;
+          if (!silent) setStatus('约束指令已启用');
+          return '';
+        }
+        if (S.constraintSyncingKey === key) {
+          S.constraintResponseId = '';
+          S.constraintSyncedKey = '';
+          S.constraintError = message;
+          if (!silent) setStatus('约束指令同步失败: ' + S.constraintError);
+        }
+        throw e;
+      }).finally(() => {
+        if (S.constraintSyncingKey === key) {
+          S.constraintSyncing = null;
+          S.constraintSyncingKey = '';
+        }
+        writeConstraintState();
+      });
+      return S.constraintSyncing;
+    }
+
+    async function ensureConstraintReady() {
+      if (!cleanInstruction(S.constraint)) return '';
+      return await syncConstraintInstruction(true);
+    }
+
+    function constraintStoreUnsupported(message) {
+      return /store.+not supported|not supported.+store|previous_response_id.+not supported/i.test(String(message || ''));
+    }
+
     function reloadConfig() {
-      S.key = (W.__kiwiAiTranslator && W.__kiwiAiTranslator.key) || S.key || '';
+      const config = parseNativeConfig((W.__kiwiAiTranslator && (W.__kiwiAiTranslator.payload || W.__kiwiAiTranslator.key)) || S.key || '');
+      applyNativeConfig(config);
+      S.key = config.key || (W.__kiwiAiTranslator && W.__kiwiAiTranslator.key) || S.key || '';
       seedDoubaoDefaults();
       S.doubaoEndpoint = localStorage.getItem('kiwi_doubao_endpoint') || S.doubaoEndpoint || DOUBAO_DEFAULTS.endpoint;
       S.doubaoModel = localStorage.getItem('kiwi_doubao_model') || S.doubaoModel || DOUBAO_DEFAULTS.model;
       S.doubaoKey = localStorage.getItem('kiwi_doubao_api_key') || S.doubaoKey || DOUBAO_DEFAULTS.key;
+      const nextConstraint = typeof config.constraint === 'string' ? cleanInstruction(config.constraint) : loadConstraintInstruction();
+      if (nextConstraint !== S.constraint) {
+        S.constraint = nextConstraint;
+        resetConstraintSync();
+        clearTranslationCache();
+        if (UI.constraint && UI.constraint.value !== nextConstraint) UI.constraint.value = nextConstraint;
+      }
+      S.fabEnabled = readFabEnabled(config);
       refreshLiveMode();
+      writeConstraintState();
+      if (!S.fabEnabled) hideUi();
+      else if (!dismissed()) showFab();
+      syncConstraintInstruction(true).catch(() => {});
     }
 
     function isLivePage() {
@@ -388,10 +706,102 @@
       const live = isLivePage();
       S.live = live;
       if (UI.panel) UI.panel.setAttribute('data-live', live ? '1' : '0');
-      if (live) {
-        // Keep live playback untouched; translation only observes safe chat text.
-      }
+      if (live) installLiveVideoBlocker();
+      else stopLiveVideoBlocker();
       return live;
+    }
+
+    function installLiveVideoBlocker() {
+      patchMediaPlay();
+      blockLiveMedia();
+      if (!S.mediaBlockTimer) S.mediaBlockTimer = setInterval(blockLiveMedia, 700);
+      if (!S.mediaBlockObserver && typeof MutationObserver !== 'undefined') {
+        S.mediaBlockObserver = new MutationObserver(ms => {
+          if (!isLivePage()) return;
+          let hit = false;
+          for (const m of ms) {
+            if (isMediaNode(m.target)) hit = true;
+            if (!hit && m.addedNodes) {
+              for (const n of m.addedNodes) {
+                if (isMediaNode(n) || (n.querySelector && n.querySelector('video,audio'))) {
+                  hit = true;
+                  break;
+                }
+              }
+            }
+            if (hit) break;
+          }
+          if (hit) setTimeout(blockLiveMedia, 0);
+        });
+        try {
+          S.mediaBlockObserver.observe(D.documentElement || D, { childList: true, subtree: true, attributes: true, attributeFilter: ['src', 'autoplay'] });
+        } catch (_) {}
+      }
+    }
+
+    function stopLiveVideoBlocker() {
+      if (S.mediaBlockTimer) {
+        clearInterval(S.mediaBlockTimer);
+        S.mediaBlockTimer = 0;
+      }
+      if (S.mediaBlockObserver) {
+        try {
+          S.mediaBlockObserver.disconnect();
+        } catch (_) {}
+        S.mediaBlockObserver = null;
+      }
+    }
+
+    function patchMediaPlay() {
+      if (S.mediaPlayPatched) return;
+      const proto = W.HTMLMediaElement && W.HTMLMediaElement.prototype;
+      if (!proto || !proto.play) return;
+      S.originalMediaPlay = proto.play;
+      try {
+        Object.defineProperty(proto, 'play', {
+          configurable: true,
+          writable: true,
+          value: function() {
+            if (isLivePage() && isMediaNode(this) && !ownNode(this)) {
+              blockMediaElement(this);
+              return Promise.resolve();
+            }
+            return S.originalMediaPlay.apply(this, arguments);
+          }
+        });
+        S.mediaPlayPatched = true;
+      } catch (_) {}
+    }
+
+    function isMediaNode(n) {
+      return !!(n && n.nodeType === 1 && /^(VIDEO|AUDIO)$/.test(n.tagName || ''));
+    }
+
+    function blockLiveMedia() {
+      if (!isLivePage()) return;
+      try {
+        D.querySelectorAll('video,audio').forEach(blockMediaElement);
+      } catch (_) {}
+    }
+
+    function blockMediaElement(m) {
+      if (!isMediaNode(m) || ownNode(m) || m.__kiwiLiveVideoBlocking) return;
+      m.__kiwiLiveVideoBlocking = true;
+      try {
+        m.muted = true;
+        m.volume = 0;
+      } catch (_) {}
+      try {
+        m.autoplay = false;
+        m.preload = 'none';
+        m.removeAttribute('autoplay');
+        m.setAttribute('muted', '');
+        m.setAttribute('data-kiwi-live-video-blocked', '1');
+      } catch (_) {}
+      try {
+        if (m.pause) m.pause();
+      } catch (_) {}
+      m.__kiwiLiveVideoBlocking = false;
     }
 
     function providerName() {
@@ -403,25 +813,34 @@
     }
 
     function configureDoubao() {
+      let changed = false;
       const nextEndpoint = prompt('Doubao endpoint', S.doubaoEndpoint);
       if (nextEndpoint == null) return;
       const endpoint = normalize(nextEndpoint);
       if (endpoint) {
+        if (endpoint !== S.doubaoEndpoint) changed = true;
         S.doubaoEndpoint = endpoint;
         localStorage.setItem('kiwi_doubao_endpoint', endpoint);
       }
       const nextModel = prompt('Doubao model', S.doubaoModel);
       if (nextModel != null && normalize(nextModel)) {
-        S.doubaoModel = normalize(nextModel);
+        const model = normalize(nextModel);
+        if (model !== S.doubaoModel) changed = true;
+        S.doubaoModel = model;
         localStorage.setItem('kiwi_doubao_model', S.doubaoModel);
       }
       const nextKey = prompt('Doubao API key（留空则保留当前密钥）', '');
       if (nextKey != null && normalize(nextKey)) {
-        S.doubaoKey = normalize(nextKey);
+        const key = normalize(nextKey);
+        if (key !== S.doubaoKey) changed = true;
+        S.doubaoKey = key;
         localStorage.setItem('kiwi_doubao_api_key', S.doubaoKey);
       }
+      if (changed) resetConstraintSync();
       clearWork();
       setStatus('Doubao Seed: ' + S.doubaoModel);
+      writeConstraintState();
+      syncConstraintInstruction(true).catch(() => {});
     }
 
     function detectLang() {
@@ -453,22 +872,36 @@
 
     function showPanel() {
       ensureUi();
-      if (UI.panel.style.display !== 'flex') UI.panel.style.setProperty('display', 'flex', 'important');
-      if (UI.fab.style.display !== 'none') UI.fab.style.setProperty('display', 'none', 'important');
-      restorePanelPosition();
+      showFab();
       if (UI.detect) UI.detect.textContent = '检测: ' + detectLang();
     }
 
     function showFab() {
       ensureUi();
+      if (!S.fabEnabled) {
+        hideUi();
+        return;
+      }
       if (UI.panel.style.display !== 'none') UI.panel.style.setProperty('display', 'none', 'important');
       if (UI.fab.style.display !== 'flex') UI.fab.style.setProperty('display', 'flex', 'important');
+      restoreFabPosition();
+      updateFabState();
     }
 
     function hideUi() {
       ensureUi();
       if (UI.panel.style.display !== 'none') UI.panel.style.setProperty('display', 'none', 'important');
       if (UI.fab.style.display !== 'none') UI.fab.style.setProperty('display', 'none', 'important');
+    }
+
+    function updateFabState() {
+      if (!UI.fab) return;
+      const running = !!S.enabled;
+      UI.fab.textContent = running ? '停' : '译';
+      UI.fab.setAttribute('title', running ? '停止翻译' : '开始翻译');
+      UI.fab.setAttribute('aria-label', running ? '停止翻译' : '开始翻译');
+      UI.fab.style.setProperty('background', running ? '#d93025' : '#1a73e8', 'important');
+      UI.fab.style.setProperty('box-shadow', running ? '0 12px 26px rgba(217,48,37,.32)' : '0 12px 26px rgba(26,115,232,.34)', 'important');
     }
 
     function minimize() {
@@ -479,13 +912,16 @@
     }
 
     function expand() {
+      if (Date.now() - S.fabDraggedAt < 450) return false;
       try {
         sessionStorage.removeItem('kiwi_ai_translate_minimized');
         sessionStorage.removeItem('kiwi_ai_translate_dismissed');
       } catch (_) {}
       S.forceShownAt = Date.now();
-      showPanel();
-      setStatus();
+      if (S.enabled) stop();
+      else run();
+      showFab();
+      return false;
     }
 
     function dismiss() {
@@ -506,16 +942,7 @@
           sessionStorage.removeItem('kiwi_ai_translate_minimized');
         } catch (_) {}
       }
-      if (!force && dismissed()) {
-        hideUi();
-        return;
-      }
-      if (!force && live && !minimized()) {
-        showFab();
-        return;
-      }
-      if (!force && minimized()) showFab();
-      else showPanel();
+      showFab();
     }
 
     function setStatus(t) {
@@ -561,6 +988,8 @@
       S.enabled = false;
       clearWork();
       setStatus('已停止');
+      updateFabState();
+      showFab();
     }
 
     function run() {
@@ -582,6 +1011,7 @@
         scan(D.body || D);
       }
       schedule(false);
+      updateFabState();
     }
 
     function observe() {
@@ -823,15 +1253,13 @@
       return false;
     }
 
-    function alreadyTarget(raw) {
-      if (!/^zh/i.test(S.target)) return false;
-      if (!/[\u3400-\u9fff]/.test(raw)) return false;
-      return !/[A-Za-z\u00c0-\u024f\u0400-\u04ff\u0590-\u08ff]/.test(raw);
+    function hasCyrillicOriginal(raw) {
+      return /[\u0400-\u052f]/.test(raw);
     }
 
     function textPart(t, e) {
       const raw = normalize(t);
-      if (!raw || nickname(e) || lowSignal(raw) || alreadyTarget(raw)) return null;
+      if (!raw || hasCyrillicOriginal(raw) || nickname(e) || lowSignal(raw)) return null;
       let m = raw.match(/^([^:：]{1,64})([:：]\s*)(.+)$/);
       if (m && looksName(m[1]) && normalize(m[3])) return { prefix: m[1] + m[2], input: normalize(m[3]), raw: raw };
       m = raw.match(/^(.{1,64}?)(?:说|發言|发言)\s*[:：]\s*(.+)$/);
@@ -887,7 +1315,7 @@
     function enqueue(n) {
       const p = textPart(n.nodeValue, n.parentElement);
       if (!p) return;
-      const key = S.target + '\n' + p.input.toLowerCase();
+      const key = constraintCacheScope() + '\n' + p.input.toLowerCase();
       if (S.seen.get(n) === key) return;
       S.seen.set(n, key);
 
@@ -1012,15 +1440,10 @@
     }
 
     async function callBatch(batch) {
-      const target = LANGS[S.target] || S.target;
-      const source = detectLang();
-      const system = '你是直播间弹幕极速翻译引擎。自动识别来源语言，把每条评论翻译成' + target + '。保留语气，昵称不要翻译。只返回 JSON 对象，key 是编号，value 是译文。不要解释，不要 Markdown。';
-      const input = batch.map(x => x.id + ': ' + x.part.input).join('\n');
-      const promptText = 'Detected source language: ' + source + '. Target language: ' + target + ' (' + S.target + '). Translate each numbered live-chat message.\n' + input;
       let last;
       S.requests++;
       try {
-        const map = await callDoubao(system, promptText, batch);
+        const map = await callDoubao(batch);
         batch.forEach(it => {
           const v = map[it.id] || map[String(it.id)];
           if (typeof v === 'string' && v.trim()) {
@@ -1064,10 +1487,28 @@
       return 3000;
     }
 
-    async function callDoubao(system, promptText, batch) {
+    function buildConstraintPrompt(instruction) {
+      return [
+        '请保存并严格执行后续直播弹幕翻译约束。后续请求只会发送编号弹幕文本和 previous_response_id，不会重复携带本段约束。',
+        '基础规则：目标语言、术语、风格和特殊要求完全以用户约束指令为准；自动识别来源语言；保留语气和直播场景表达；昵称不要翻译；只返回 JSON 对象，key 是编号，value 是译文；不要解释，不要 Markdown。',
+        '用户约束指令：',
+        instruction,
+        '如果已理解并会在同一 previous_response_id 链路中执行，请只回复 {"ok":true}。'
+      ].join('\n');
+    }
+
+    function targetLanguageFromConstraint() {
+      const s = cleanInstruction(S.constraint).toLowerCase();
+      if (/english|英语|英文|英式|美式/.test(s)) return 'en';
+      if (/russian|russia|русский|русская|россия|俄语|俄文|俄罗斯日常口语|俄罗斯本地|俄罗斯人/.test(s)) return 'ru';
+      if (/ukrainian|ukraine|українська|украинский|украина|乌克兰语|乌克兰日常口语|乌克兰本地|乌克兰人|乌语|乌文/.test(s)) return 'uk';
+      if (/chinese|中文|汉语|汉文|普通话|简体|繁体/.test(s)) return 'zh';
+      return 'zh';
+    }
+
+    async function callDoubaoConstraint(instruction) {
       if (!S.doubaoEndpoint) throw new Error('Doubao endpoint missing');
       if (!S.doubaoKey) throw new Error('Doubao API key missing');
-      const text = batch.map(x => x.id + ': ' + x.part.input).join('\n');
       const headers = {
         'Content-Type': 'application/json',
         Accept: 'text/event-stream',
@@ -1086,12 +1527,51 @@
             role: 'user',
             content: [{
               type: 'input_text',
-              text,
-              translation_options: { target_language: doubaoLang(S.target) }
+              text: buildConstraintPrompt(instruction),
+              translation_options: { target_language: targetLanguageFromConstraint() }
             }]
           }],
-          stream: true
+          stream: true,
+          store: true
         })
+      }), requestTimeoutMs('doubao'));
+      const res = await req.done;
+      if (!res.ok) throw new Error(await responseError(res));
+      const result = await readOpenAiStreamDetails(res);
+      return result.id || '';
+    }
+
+    async function callDoubao(batch) {
+      if (!S.doubaoEndpoint) throw new Error('Doubao endpoint missing');
+      if (!S.doubaoKey) throw new Error('Doubao API key missing');
+      const previousId = await ensureConstraintReady();
+      const text = batch.map(x => x.id + ': ' + x.part.input).join('\n');
+      const headers = {
+        'Content-Type': 'application/json',
+        Accept: 'text/event-stream',
+        Authorization: 'Bearer ' + S.doubaoKey
+      };
+      const body = {
+        model: S.doubaoModel || DOUBAO_DEFAULTS.model,
+        input: [{
+          role: 'user',
+          content: [{
+            type: 'input_text',
+            text,
+            translation_options: { target_language: targetLanguageFromConstraint() }
+          }]
+        }],
+        stream: true
+      };
+      if (previousId) body.previous_response_id = previousId;
+      const req = withTimeout(signal => fetch(S.doubaoEndpoint, {
+        method: 'POST',
+        mode: 'cors',
+        credentials: 'omit',
+        cache: 'no-store',
+        signal,
+        headers,
+        body: JSON.stringify(body)
       }), requestTimeoutMs('doubao'));
       const res = await req.done;
       if (!res.ok) throw new Error(await responseError(res));
@@ -1113,19 +1593,26 @@
     }
 
     async function readOpenAiStream(res) {
+      const result = await readOpenAiStreamDetails(res);
+      return result.text;
+    }
+
+    async function readOpenAiStreamDetails(res) {
       const type = res.headers && res.headers.get && (res.headers.get('content-type') || '');
       if (!res.body || !res.body.getReader || !/event-stream|stream/i.test(type)) {
         const text = await res.text();
         try {
-          return extractChoiceText(JSON.parse(text)) || text;
+          const json = JSON.parse(text);
+          return { text: extractChoiceText(json) || text, id: extractResponseId(json) };
         } catch (_) {
-          return text;
+          return { text, id: '' };
         }
       }
       const reader = res.body.getReader();
       const decoder = new TextDecoder('utf-8');
       let buf = '';
       let out = '';
+      let id = '';
       while (true) {
         const r = await reader.read();
         if (r.done) break;
@@ -1135,26 +1622,37 @@
         while ((idx = buf.indexOf('\n\n')) >= 0) {
           const part = parseSseBlock(buf.slice(0, idx));
           buf = buf.slice(idx + 2);
-          if (part.done) return out;
+          if (part.id) id = part.id;
+          if (part.done) return { text: out, id };
           out += part.text;
         }
       }
       if (buf.trim()) {
         const part = parseSseBlock(buf);
+        if (part.id) id = part.id;
         out += part.text;
       }
-      return out;
+      return { text: out, id };
     }
 
     function parseSseBlock(block) {
       const data = String(block || '').split('\n').filter(line => /^data:/i.test(line)).map(line => line.replace(/^data:\s*/i, '')).join('\n').trim();
-      if (!data) return { text: '', done: false };
-      if (data === '[DONE]') return { text: '', done: true };
+      if (!data) return { text: '', id: '', done: false };
+      if (data === '[DONE]') return { text: '', id: '', done: true };
       try {
-        return { text: extractChoiceText(JSON.parse(data)), done: false };
+        const json = JSON.parse(data);
+        return { text: extractChoiceText(json), id: extractResponseId(json), done: false };
       } catch (_) {
-        return { text: data, done: false };
+        return { text: data, id: '', done: false };
       }
+    }
+
+    function extractResponseId(j) {
+      if (!j) return '';
+      if (typeof j.id === 'string') return j.id;
+      if (j.response && typeof j.response.id === 'string') return j.response.id;
+      if (j.item && typeof j.item.id === 'string') return j.item.id;
+      return '';
     }
 
     function extractChoiceText(j) {
@@ -1168,14 +1666,6 @@
       return contentText(c.delta && c.delta.content) || contentText(c.message && c.message.content) || contentText(c.text);
     }
 
-    function doubaoLang(code) {
-      if (/^zh/i.test(code)) return 'zh';
-      if (/^en/i.test(code)) return 'en';
-      if (/^ru/i.test(code)) return 'ru';
-      if (/^uk/i.test(code)) return 'uk';
-      return String(code || 'zh-CN').split('-')[0].toLowerCase();
-    }
-
     function contentText(v) {
       if (typeof v === 'string') return v;
       if (Array.isArray(v)) return v.map(p => contentText(p && (p.text || p.content))).join('');
@@ -1186,28 +1676,23 @@
       if (!n.parentNode) return;
       const out = String(v || '').trim();
       if (!out) return;
-      let mark = n.__kiwiAiTranslation;
-      if (!mark || !mark.parentNode) {
-        mark = D.createElement('span');
-        n.parentNode.insertBefore(mark, n.nextSibling);
-        n.__kiwiAiTranslation = mark;
-      }
-      mark.removeAttribute('data-kiwi-ai-loading');
-      mark.setAttribute('data-kiwi-ai-translation', '1');
-      if (S.live) mark.setAttribute('data-kiwi-ai-live-translation', '1');
-      else mark.removeAttribute('data-kiwi-ai-live-translation');
-      mark.textContent = S.live ? ' ' + out : out;
-      mark.style.cssText = '';
+      const mark = n.__kiwiAiTranslation;
+      if (mark && mark.parentNode) mark.remove();
+      n.__kiwiAiTranslation = null;
+      n.nodeValue = (p.prefix || '') + out;
       n.__kiwiAiDone = '1';
       S.translated++;
-      S.seen.set(n, S.target + '\n' + p.input.toLowerCase());
+      S.seen.set(n, constraintCacheScope() + '\n' + p.input.toLowerCase());
     }
 
     W.__kiwiAiTranslator = {
       version: CURRENT_VERSION,
+      payload: k,
       key: S.key,
       reloadConfig,
       configureDoubao,
+      saveConstraintInstruction,
+      syncConstraintInstruction,
       show,
       minimize,
       expand,
@@ -1219,13 +1704,14 @@
     };
     ensureUi();
     refreshLiveMode();
-    if (S.live) showFab();
-    else show(false);
+    syncConstraintInstruction(true).catch(() => {});
+    if (S.fabEnabled) show(false);
+    else hideUi();
     setTimeout(() => {
-      if (refreshLiveMode() && !S.enabled && !S.forceShownAt && !dismissed()) showFab();
+      if (S.fabEnabled && refreshLiveMode() && !S.enabled && !S.forceShownAt) showFab();
     }, 800);
     setTimeout(() => {
-      if (refreshLiveMode() && !S.enabled && !S.forceShownAt && !dismissed()) showFab();
+      if (S.fabEnabled && refreshLiveMode() && !S.enabled && !S.forceShownAt) showFab();
     }, 2200);
   } catch (e) {
     console.warn('Google AI translation failed: ' + (e && e.message ? e.message : e));
