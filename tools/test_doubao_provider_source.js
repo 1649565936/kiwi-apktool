@@ -48,9 +48,14 @@ assert.ok(
   'live mode should not include overlay/download guards that can affect playback'
 );
 assert.ok(
-  /W\.__kiwiAiTranslator && W\.__kiwiAiTranslator\.version >= 22[\s\S]*reloadConfig\(\);[\s\S]*return;/.test(source)
+  /const CURRENT_VERSION = 23/.test(source)
+    && /W\.__kiwiAiTranslator && W\.__kiwiAiTranslator\.version >= CURRENT_VERSION[\s\S]*reloadConfig\(\);[\s\S]*return;/.test(source)
     && !/W\.__kiwiAiTranslator\.show\(false\)/.test(source),
   'reinjecting an existing translator should not toggle the live UI'
+);
+assert.ok(
+  /function cleanupLegacyProviderState\(\)[\s\S]*removeItem/.test(source),
+  'translator should clear stale legacy provider state before seeding Doubao defaults'
 );
 assert.ok(
   /function commentSurfaceName\(n\)[\s\S]*live\[-_ \]\?player\[-_ \]\?comment/.test(source)

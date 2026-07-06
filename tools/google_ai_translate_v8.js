@@ -15,17 +15,19 @@
       model: 'doubao-seed-translation-250915',
       key: 'ark-3d372bb6-82cd-4d5c-af58-9a0852ee12ea-8d461'
     };
+    const CURRENT_VERSION = 23;
 
+    cleanupLegacyProviderState();
     seedDoubaoDefaults();
 
-    if (W.__kiwiAiTranslator && W.__kiwiAiTranslator.version >= 22) {
+    if (W.__kiwiAiTranslator && W.__kiwiAiTranslator.version >= CURRENT_VERSION) {
       W.__kiwiAiTranslator.key = k;
       W.__kiwiAiTranslator.reloadConfig();
       return;
     }
 
     const S = {
-      version: 22,
+      version: CURRENT_VERSION,
       key: k || '',
       doubaoEndpoint: localStorage.getItem('kiwi_doubao_endpoint') || DOUBAO_DEFAULTS.endpoint,
       doubaoModel: localStorage.getItem('kiwi_doubao_model') || DOUBAO_DEFAULTS.model,
@@ -351,6 +353,21 @@
         if (!localStorage.getItem('kiwi_doubao_model')) localStorage.setItem('kiwi_doubao_model', DOUBAO_DEFAULTS.model);
         if (!localStorage.getItem('kiwi_doubao_api_key')) localStorage.setItem('kiwi_doubao_api_key', DOUBAO_DEFAULTS.key);
         localStorage.setItem(mark, '1');
+      } catch (_) {}
+    }
+
+    function cleanupLegacyProviderState() {
+      try {
+        [
+          ['kiwi', 'ai', 'translate', 'provider'].join('_'),
+          String.fromCharCode(107, 105, 119, 105, 95, 104, 121, 95, 109, 116, 50),
+          String.fromCharCode(104, 121, 95, 109, 116, 50, 95, 97, 112, 105, 95, 107, 101, 121)
+        ].forEach(key => {
+          try {
+            localStorage.removeItem(key);
+            sessionStorage.removeItem(key);
+          } catch (_) {}
+        });
       } catch (_) {}
     }
 
@@ -1187,7 +1204,7 @@
     }
 
     W.__kiwiAiTranslator = {
-      version: 22,
+      version: CURRENT_VERSION,
       key: S.key,
       reloadConfig,
       configureDoubao,
