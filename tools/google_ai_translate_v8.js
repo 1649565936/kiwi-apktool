@@ -18,15 +18,14 @@
 
     seedDoubaoDefaults();
 
-    if (W.__kiwiAiTranslator && W.__kiwiAiTranslator.version >= 21) {
+    if (W.__kiwiAiTranslator && W.__kiwiAiTranslator.version >= 22) {
       W.__kiwiAiTranslator.key = k;
       W.__kiwiAiTranslator.reloadConfig();
-      W.__kiwiAiTranslator.show(false);
       return;
     }
 
     const S = {
-      version: 21,
+      version: 22,
       key: k || '',
       doubaoEndpoint: localStorage.getItem('kiwi_doubao_endpoint') || DOUBAO_DEFAULTS.endpoint,
       doubaoModel: localStorage.getItem('kiwi_doubao_model') || DOUBAO_DEFAULTS.model,
@@ -149,6 +148,7 @@
         '#' + ID + '-btn{position:fixed!important;right:14px!important;bottom:calc(env(safe-area-inset-bottom,0px) + 84px)!important;z-index:2147483647!important;display:none!important;align-items:center!important;justify-content:center!important;width:54px!important;height:54px!important;border:0!important;border-radius:50%!important;background:#1a73e8!important;color:#fff!important;font:800 22px Arial,sans-serif!important;box-shadow:0 12px 26px rgba(26,115,232,.34)!important;box-sizing:border-box!important;touch-action:manipulation!important}' +
         '#' + ID + '-btn::after{content:""!important;position:absolute!important;right:8px!important;top:8px!important;width:8px!important;height:8px!important;border-radius:50%!important;background:#34a853!important;border:2px solid #fff!important;box-sizing:border-box!important}' +
         '[data-kiwi-ai-translation="1"]{display:block!important;color:#1a73e8!important;font-size:.95em!important;line-height:1.35!important;margin-top:2px!important;white-space:pre-wrap!important}' +
+        '[data-kiwi-ai-live-translation="1"]{display:inline!important;color:#64a8ff!important;font-size:.95em!important;line-height:inherit!important;margin:0 0 0 4px!important;white-space:normal!important;vertical-align:baseline!important}' +
         '[data-kiwi-ai-loading="1"]{display:block!important;height:16px!important;margin-top:2px!important;font-size:0!important;color:transparent!important}' +
         '[data-kiwi-ai-loading="1"]::after{content:""!important;display:inline-block!important;width:12px!important;height:12px!important;border:2px solid rgba(95,99,104,.25)!important;border-top-color:#1a73e8!important;border-radius:50%!important;animation:kiwiAiSpin .8s linear infinite!important}@keyframes kiwiAiSpin{to{transform:rotate(360deg)}}' +
         '@media(min-width:640px){#' + ID + '-panel{left:50%!important;right:auto!important;transform:translate3d(-50%,0,0)!important;width:560px!important}#' + ID + '-controls{grid-template-columns:160px auto auto!important}}';
@@ -573,6 +573,7 @@
       S.observer = new MutationObserver(ms => {
         if (!S.enabled) return;
         for (const m of ms) {
+          if (ownMutation(m)) continue;
           if (S.live) {
             if (m.type === 'characterData') collectLiveNode(m.target);
             else {
@@ -635,6 +636,7 @@
 
     function collectLiveNode(n) {
       if (!n) return;
+      if (ownNode(n)) return;
       if (n.nodeType === 3) {
         if (liveCandidate(n.parentElement)) queueLiveScan(n);
         return;
@@ -699,6 +701,19 @@
       return /live[-_ ]?player[-_ ]?comment|live[-_ ]?comment|comment[-_ ]?item|comment[-_ ]?content|chat[-_ ]?message|message[-_ ]?item/.test(n);
     }
 
+    function ownNode(n) {
+      const e = n && n.nodeType === 1 ? n : n && n.parentElement;
+      return !!(e && e.closest('[data-kiwi-ai-translation="1"],[data-kiwi-ai-live-translation="1"],[data-kiwi-ai-loading="1"],#' + ID + '-panel,#' + ID + '-btn'));
+    }
+
+    function ownMutation(m) {
+      if (!m) return false;
+      if (ownNode(m.target)) return true;
+      const added = Array.from(m.addedNodes || []);
+      const removed = Array.from(m.removedNodes || []);
+      return added.length > 0 && removed.length === 0 && added.every(ownNode);
+    }
+
     function r(e) {
       try {
         return e.getBoundingClientRect();
@@ -747,7 +762,7 @@
       if (!p) return true;
       const tag = p.tagName;
       if (/^(SCRIPT|STYLE|TEXTAREA|INPUT|NOSCRIPT|CODE|PRE|SVG|CANVAS|SELECT|OPTION|BUTTON)$/.test(tag)) return true;
-      if (p.isContentEditable || p.closest('[aria-hidden="true"],[data-kiwi-live-noise="1"],[data-kiwi-ai-translation="1"],[data-kiwi-ai-loading="1"],#' + ID + '-panel,#' + ID + '-btn')) return true;
+      if (p.isContentEditable || p.closest('[aria-hidden="true"],[data-kiwi-live-noise="1"],[data-kiwi-ai-translation="1"],[data-kiwi-ai-live-translation="1"],[data-kiwi-ai-loading="1"],#' + ID + '-panel,#' + ID + '-btn')) return true;
       if (S.live && p.closest('header,nav,footer,form,a,button,input,textarea,select,option,[role="button"],[role="textbox"]')) return true;
       if (S.live && liveVideoOverlay(p)) return true;
       if (S.live && !inChat(p)) return true;
@@ -1203,7 +1218,9 @@
       }
       mark.removeAttribute('data-kiwi-ai-loading');
       mark.setAttribute('data-kiwi-ai-translation', '1');
-      mark.textContent = out;
+      if (S.live) mark.setAttribute('data-kiwi-ai-live-translation', '1');
+      else mark.removeAttribute('data-kiwi-ai-live-translation');
+      mark.textContent = S.live ? ' ' + out : out;
       mark.style.cssText = '';
       n.__kiwiAiDone = '1';
       S.translated++;
@@ -1211,7 +1228,7 @@
     }
 
     W.__kiwiAiTranslator = {
-      version: 21,
+      version: 22,
       key: S.key,
       reloadConfig,
       configureDoubao,

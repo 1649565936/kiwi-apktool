@@ -41,9 +41,20 @@ assert.ok(
   'live mode should not include overlay/download guards that can affect playback'
 );
 assert.ok(
+  /W\.__kiwiAiTranslator && W\.__kiwiAiTranslator\.version >= 22[\s\S]*reloadConfig\(\);[\s\S]*return;/.test(source)
+    && !/W\.__kiwiAiTranslator\.show\(false\)/.test(source),
+  'reinjecting an existing translator should not toggle the live UI'
+);
+assert.ok(
   /function commentSurfaceName\(n\)[\s\S]*live\[-_ \]\?player\[-_ \]\?comment/.test(source)
     && /LIVE_BLOCK_RE\.test\(n\) && !commentSurfaceName\(n\)[\s\S]*if \(hit\) break/.test(source),
   'real Kuaishou live-player-comment nodes should not be blocked by the player exclusion'
+);
+assert.ok(
+  /data-kiwi-ai-live-translation/.test(source)
+    && /function ownMutation\(m\)/.test(source)
+    && /ownMutation\(m\)\) continue/.test(source),
+  'live translation should avoid block-level DOM churn and ignore self mutations'
 );
 assert.ok(
   !new RegExp(removedProviderTerms.join('|')).test(source),
