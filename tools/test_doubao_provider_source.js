@@ -41,6 +41,11 @@ assert.ok(
   'live mode should not include overlay/download guards that can affect playback'
 );
 assert.ok(
+  /function commentSurfaceName\(n\)[\s\S]*live\[-_ \]\?player\[-_ \]\?comment/.test(source)
+    && /LIVE_BLOCK_RE\.test\(n\) && !commentSurfaceName\(n\)[\s\S]*if \(hit\) break/.test(source),
+  'real Kuaishou live-player-comment nodes should not be blocked by the player exclusion'
+);
+assert.ok(
   !new RegExp(removedProviderTerms.join('|')).test(source),
   'obsolete local model provider should be removed from the injected translator'
 );

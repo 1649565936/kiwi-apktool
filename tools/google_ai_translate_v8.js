@@ -614,7 +614,7 @@
 
     function isLiveRoot(e) {
       if (!e || e.nodeType !== 1 || interactive(e)) return false;
-      if (LIVE_BLOCK_RE.test(nameOf(e))) return false;
+      if (LIVE_BLOCK_RE.test(nameOf(e)) && !commentSurface(e)) return false;
       if (liveVideoOverlay(e)) return false;
       if (!nearViewport(e)) return false;
       const count = e.children ? e.children.length : (e.childElementCount || 0);
@@ -654,7 +654,7 @@
 
     function liveCandidate(e) {
       if (!e || interactive(e) || !nearViewport(e)) return false;
-      if (LIVE_BLOCK_RE.test(nameOf(e))) return false;
+      if (LIVE_BLOCK_RE.test(nameOf(e)) && !commentSurface(e)) return false;
       if (liveVideoOverlay(e)) return false;
       return danmakuNamed(e) || inChat(e);
     }
@@ -691,6 +691,14 @@
       return /danmu|danmaku|barrage|bullet[-_ ]?screen|screen[-_ ]?comment|float(?:ing)?[-_ ]?comment|webcast[-_ ]?screen|webcast.+(?:screen|danmaku|barrage)|(?:screen|danmaku|barrage).+webcast/.test(nameOf(e));
     }
 
+    function commentSurface(e) {
+      return commentSurfaceName(nameOf(e));
+    }
+
+    function commentSurfaceName(n) {
+      return /live[-_ ]?player[-_ ]?comment|live[-_ ]?comment|comment[-_ ]?item|comment[-_ ]?content|chat[-_ ]?message|message[-_ ]?item/.test(n);
+    }
+
     function r(e) {
       try {
         return e.getBoundingClientRect();
@@ -724,8 +732,11 @@
       let hit = false;
       for (let p = e; p && p !== D.body; p = p.parentElement) {
         const n = nameOf(p);
-        if (LIVE_BLOCK_RE.test(n)) return false;
-        if (LIVE_CHAT_RE.test(n)) hit = true;
+        if (LIVE_BLOCK_RE.test(n) && !commentSurfaceName(n)) {
+          if (hit) break;
+          return false;
+        }
+        if (LIVE_CHAT_RE.test(n) || commentSurfaceName(n)) hit = true;
       }
       if (hit) return true;
       const x = r(e);
