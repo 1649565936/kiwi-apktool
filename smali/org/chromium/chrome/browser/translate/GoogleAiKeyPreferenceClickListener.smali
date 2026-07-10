@@ -40,13 +40,11 @@
 
     invoke-virtual {v1, v3}, Landroid/widget/EditText;->setInputType(I)V
 
-    const-string v3, "Doubao Seed is built in"
+    const-string v3, "请输入 Doubao Seed API Key"
 
     invoke-virtual {v1, v3}, Landroid/widget/EditText;->setHint(Ljava/lang/CharSequence;)V
 
-    invoke-static {v0}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
-
-    move-result-object v3
+    sget-object v3, LoF;->a:Landroid/content/SharedPreferences;
 
     const-string v4, "google_ai_translate_api_key"
 
@@ -73,7 +71,7 @@
 
     invoke-direct {v4, v0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const-string v5, "Doubao Seed"
+    const-string v5, "Doubao Seed 密钥"
 
     invoke-virtual {v4, v5}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 

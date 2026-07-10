@@ -7,15 +7,15 @@ com.kiwibrowser.browser.dev
 
 Main changes:
 - The Translate menu action is forced to call GoogleAiTranslateHelper and uses Doubao Seed directly.
-- GoogleAiTranslateHelper auto-injects only a draggable floating translation ball after page/WebContents navigation; the old on-page top status panel remains hidden.
-- Clicking the floating Translate button sends readable page/live-comment text to Doubao Seed through the Volcengine Ark Responses SSE endpoint and replaces the original message text with the translation.
+- GoogleAiTranslateHelper injects the Doubao translator runtime after page/WebContents navigation; the old on-page top status panel and floating button remain hidden by native config.
+- Using the Translate menu action sends readable page/live-comment text to Doubao Seed through the Volcengine Ark Responses SSE endpoint and replaces the original message text with the translation.
 - Default Doubao endpoint: https://ark.cn-beijing.volces.com/api/v3/responses
 - Default Doubao model name: doubao-seed-translation-250915
 - Doubao requests use stream: true and parse Responses API output_text delta chunks before applying batched danmaku translations.
-- Doubao endpoint/model/key are stored in localStorage as kiwi_doubao_endpoint, kiwi_doubao_model, and kiwi_doubao_api_key.
-- Settings > Translate includes a floating-ball switch and an AI translation constraint instruction editor. The instruction is saved as kiwi_ai_translate_constraint_instruction, automatically reloaded after page refresh/browser restart, and sent once to Doubao through Responses API context storage.
-- Danmaku translation batches do not resend the constraint instruction body. After the one-time instruction sync returns a response id, later batches send only numbered danmaku text plus previous_response_id metadata so the model can reuse the stored constraints.
-- The floating translation ball can be freely dragged and persists its position as kiwi_ai_translate_fab_pos. Tapping it starts/stops translation; Settings > Translate can hide it completely.
+- Doubao endpoint/model/key are stored in localStorage as kiwi_doubao_endpoint, kiwi_doubao_model, and kiwi_doubao_api_key. The Doubao key is supplied by Settings > Translate and bridged into page localStorage at injection time.
+- Settings > Translate includes a Doubao Seed key editor, an AI translation style instruction editor, and optional temperature/top-p sampling controls. Sampling values are validated and sent as top-level Doubao Responses API parameters when configured.
+- Danmaku translation batches send numbered danmaku text directly to Doubao Seed with the optional style instruction; model-side constraint persistence is not used.
+- The page floating translation ball is disabled by native config. The Translate menu action still injects the translator and starts translation directly.
 - The source language is auto-detected, and the default target language remains Chinese.
 - Cyrillic originals, including Russian and Ukrainian danmaku text, are filtered locally and are not sent to Doubao for translation.
 - Accessibility default page zoom is initialized to 50% once when the profile is still at the original 100% default.
@@ -25,8 +25,11 @@ Main changes:
 - Douyin/Kuaishou/live pages pause, mute, and hide page video/audio elements while leaving chat/comment/danmaku DOM available for translation.
 - Comment nicknames are skipped; only the message content is sent for translation.
 - Live chat translation uses a low-latency bounded batch scheduler: normal mode sends up to 5 messages per request with a short flush timeout, high-frequency/extreme modes increase batch size, and live pages allow only one active streaming batch so translation cannot crowd the playback thread.
+- Reused text nodes in a scrolling live-chat list are translated again when their content changes; stale queued work and late responses are discarded without clearing a newer completed translation. Horizontal video-overlay danmaku remains excluded even while it crosses the right side of the screen.
 - Google Translate web fallback and alternate model fallbacks are not used.
-- Settings > Translate exposes the Doubao Seed translation option, the floating-ball switch, and the constraint instruction editor.
+- Settings > Translate exposes the Doubao Seed translation option, the Doubao Seed key editor, the constraint instruction editor, and temperature/top-p controls.
+- The main app menu includes a localized "开始翻译"/"停止翻译" toggle directly below the new-tab entry, plus the localized translation-settings entry.
+- The app launcher icon has been replaced with the supplied red/cyan icon across legacy and adaptive launcher resources.
 
 Build example:
 java -jar tools\apktool.jar b kiwi-apktool-dev -o kiwi-browser-dev-googleai-unsigned.apk

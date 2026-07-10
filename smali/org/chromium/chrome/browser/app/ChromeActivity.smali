@@ -17700,6 +17700,15 @@
 
     .line 679
     .line 680
+    const v1, 0x7f010933
+
+    if-ne v0, v1, :cond_no_kiwi_translate_toggle
+
+    invoke-static {v4}, Lorg/chromium/chrome/browser/translate/GoogleAiTranslateHelper;->h(Lorg/chromium/chrome/browser/tab/Tab;)V
+
+    goto/16 :goto_1f
+
+    :cond_no_kiwi_translate_toggle
     const v1, 0x3fd6f1b7
 
     .line 681
@@ -20394,13 +20403,31 @@
     .line 2038
     :cond_52
     :goto_1d
-    const-string v0, "MobileMenuTranslate"
+    const-string v0, "MobileMenuTranslateSettings"
 
     .line 2039
     .line 2040
     invoke-static {v0}, LHc1;->a(Ljava/lang/String;)V
 
-    invoke-static {v4}, Lorg/chromium/chrome/browser/translate/GoogleAiTranslateHelper;->a(Lorg/chromium/chrome/browser/tab/Tab;)V
+    new-instance v0, Landroid/content/Intent;
+
+    invoke-direct {v0}, Landroid/content/Intent;-><init>()V
+
+    const-class v1, Lorg/chromium/chrome/browser/settings/SettingsActivity;
+
+    invoke-virtual {v0, v8, v1}, Landroid/content/Intent;->setClass(Landroid/content/Context;Ljava/lang/Class;)Landroid/content/Intent;
+
+    const-class v1, Lorg/chromium/chrome/browser/translate/TranslateSettings;
+
+    invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v1
+
+    const-string v2, "show_fragment"
+
+    invoke-virtual {v0, v2, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    invoke-virtual {v8, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
     goto :goto_1f
 

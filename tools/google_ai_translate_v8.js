@@ -7,13 +7,14 @@
     const FAB_POS_KEY = 'kiwi_ai_translate_fab_pos';
     const FAB_ENABLED_KEY = 'kiwi_ai_floating_ball_enabled';
     const CONSTRAINT_KEY = 'kiwi_ai_translate_constraint_instruction';
+    const STYLE_INSTRUCTION_LIMIT = 500;
     const CONSTRAINT_LIMIT = 2000;
     const DOUBAO_DEFAULTS = {
       endpoint: 'https://ark.cn-beijing.volces.com/api/v3/responses',
       model: 'doubao-seed-translation-250915',
-      key: 'ark-3d372bb6-82cd-4d5c-af58-9a0852ee12ea-8d461'
+      key: ''
     };
-    const CURRENT_VERSION = 30;
+    const CURRENT_VERSION = 38;
     const NATIVE_CONFIG = parseNativeConfig(k);
 
     cleanupLegacyProviderState();
@@ -32,16 +33,14 @@
       key: NATIVE_CONFIG.key || k || '',
       doubaoEndpoint: localStorage.getItem('kiwi_doubao_endpoint') || DOUBAO_DEFAULTS.endpoint,
       doubaoModel: localStorage.getItem('kiwi_doubao_model') || DOUBAO_DEFAULTS.model,
-      doubaoKey: localStorage.getItem('kiwi_doubao_api_key') || DOUBAO_DEFAULTS.key,
+      doubaoKey: NATIVE_CONFIG.key || localStorage.getItem('kiwi_doubao_api_key') || DOUBAO_DEFAULTS.key,
+      target: normalizeTargetLanguage(NATIVE_CONFIG.target),
+      style: normalizeStyleInstruction(NATIVE_CONFIG.style),
+      temperature: normalizeSamplingValue(NATIVE_CONFIG.temperature, 0, 2),
+      topP: normalizeSamplingValue(NATIVE_CONFIG.topP, 0, 1),
       constraint: typeof NATIVE_CONFIG.constraint === 'string' ? cleanInstruction(NATIVE_CONFIG.constraint) : loadConstraintInstruction(),
       fabEnabled: readFabEnabled(NATIVE_CONFIG),
       fabDraggedAt: 0,
-      constraintResponseId: '',
-      constraintSyncedKey: '',
-      constraintSyncing: null,
-      constraintSyncingKey: '',
-      constraintError: '',
-      constraintInlineOnly: false,
       constraintSaveTimer: 0,
       enabled: false,
       queue: [],
@@ -57,6 +56,7 @@
       next: 1,
       translated: 0,
       failed: 0,
+      stale: 0,
       dropped: 0,
       cacheHits: 0,
       requests: 0,
@@ -158,6 +158,7 @@
         '#' + ID + '-constraint::placeholder{color:#80868b!important;font-weight:600!important}' +
         '#' + ID + '-constraint-apply{height:auto!important;min-height:54px!important;border-radius:12px!important;padding:0 11px!important}' +
         '#' + ID + '-constraint-state{display:block!important;max-width:100%!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important;color:#5f6368!important;font:600 11px/1.2 Arial,sans-serif!important;padding:0 2px!important;box-sizing:border-box!important}' +
+        '#' + ID + '-constraint-row,#' + ID + '-constraint-state{display:none!important}' +
         '#' + ID + '-panel button{height:34px!important;min-width:0!important;border-radius:999px!important;font:700 13px Arial,sans-serif!important;border:1px solid rgba(218,220,224,.95)!important;background:#fff!important;color:#202124!important;padding:0 10px!important;box-sizing:border-box!important;white-space:nowrap!important;box-shadow:0 1px 2px rgba(60,64,67,.08)!important;outline:none!important}' +
         '#' + ID + '-panel button{touch-action:manipulation!important}' +
         '#' + ID + '-panel button[data-primary="1"]{background:#1a73e8!important;color:#fff!important;border-color:#1a73e8!important;box-shadow:0 4px 10px rgba(26,115,232,.25)!important}' +
@@ -465,7 +466,7 @@
         if (localStorage.getItem(mark) === '1') return;
         if (!localStorage.getItem('kiwi_doubao_endpoint')) localStorage.setItem('kiwi_doubao_endpoint', DOUBAO_DEFAULTS.endpoint);
         if (!localStorage.getItem('kiwi_doubao_model')) localStorage.setItem('kiwi_doubao_model', DOUBAO_DEFAULTS.model);
-        if (!localStorage.getItem('kiwi_doubao_api_key')) localStorage.setItem('kiwi_doubao_api_key', DOUBAO_DEFAULTS.key);
+        if (DOUBAO_DEFAULTS.key && !localStorage.getItem('kiwi_doubao_api_key')) localStorage.setItem('kiwi_doubao_api_key', DOUBAO_DEFAULTS.key);
         localStorage.setItem(mark, '1');
       } catch (_) {}
     }
@@ -494,6 +495,10 @@
           const j = JSON.parse(text);
           return {
             key: typeof j.key === 'string' ? normalize(j.key) : '',
+            target: typeof j.target === 'string' ? normalizeTargetLanguage(j.target) : undefined,
+            style: typeof j.style === 'string' ? normalizeStyleInstruction(j.style) : undefined,
+            temperature: normalizeSamplingValue(j.temperature, 0, 2),
+            topP: normalizeSamplingValue(j.topP, 0, 1),
             constraint: typeof j.constraint === 'string' ? cleanInstruction(j.constraint) : undefined,
             fabEnabled: typeof j.fabEnabled === 'boolean' ? j.fabEnabled : undefined
           };
@@ -505,6 +510,11 @@
     function applyNativeConfig(config) {
       if (!config) return;
       try {
+        if (typeof config.key === 'string') {
+          const nextKey = normalize(config.key);
+          if (nextKey) localStorage.setItem('kiwi_doubao_api_key', nextKey);
+          else localStorage.removeItem('kiwi_doubao_api_key');
+        }
         if (typeof config.constraint === 'string') {
           const next = cleanInstruction(config.constraint);
           if (next) localStorage.setItem(CONSTRAINT_KEY, next);
@@ -530,6 +540,13 @@
       return s.length > CONSTRAINT_LIMIT ? s.slice(0, CONSTRAINT_LIMIT).trim() : s;
     }
 
+    function normalizeSamplingValue(raw, min, max) {
+      if (raw === undefined || raw === null || String(raw).trim() === '') return undefined;
+      const value = Number(raw);
+      if (!Number.isFinite(value) || value < min || value > max) return undefined;
+      return value;
+    }
+
     function loadConstraintInstruction() {
       try {
         return cleanInstruction(localStorage.getItem(CONSTRAINT_KEY) || '');
@@ -549,7 +566,6 @@
       } catch (_) {}
       if (next !== S.constraint) {
         S.constraint = next;
-        resetConstraintSync();
         clearTranslationCache();
         clearWork();
       }
@@ -558,36 +574,23 @@
         if (!silent) setStatus('约束指令已清空');
         return;
       }
-      syncConstraintInstruction(silent).catch(() => {});
+      if (!silent) setStatus('约束指令已保存');
     }
 
     function scheduleConstraintInstructionSave() {
       clearTimeout(S.constraintSaveTimer);
       S.constraintSaveTimer = setTimeout(() => saveConstraintInstruction(true), 650);
-      const next = cleanInstruction(UI.constraint && UI.constraint.value);
-      if (next !== S.constraint) {
-        S.constraintError = '';
-        S.constraintResponseId = '';
-        S.constraintSyncedKey = '';
-      }
       writeConstraintState();
     }
 
-    function resetConstraintSync() {
-      S.constraintResponseId = '';
-      S.constraintSyncedKey = '';
-      S.constraintSyncing = null;
-      S.constraintSyncingKey = '';
-      S.constraintError = '';
-      S.constraintInlineOnly = false;
-    }
-
-    function constraintSyncKey() {
-      return [S.doubaoEndpoint || '', S.doubaoModel || '', cleanInstruction(S.constraint)].join('\n');
-    }
-
     function constraintCacheScope() {
-      return cleanInstruction(S.constraint);
+      const info = resolveTargetLanguage();
+      return [
+        info.target,
+        doubaoStyleWord(info),
+        typeof S.temperature === 'number' ? S.temperature : '',
+        typeof S.topP === 'number' ? S.topP : ''
+      ].join('\n');
     }
 
     function clearTranslationCache() {
@@ -599,80 +602,11 @@
 
     function constraintStateText() {
       if (!cleanInstruction(S.constraint)) return '约束指令未设置';
-      if (S.constraintSyncing) return '约束指令同步中';
-      if (S.constraintError) return '约束指令同步失败: ' + S.constraintError;
-      if (S.constraintInlineOnly && S.constraintSyncedKey === constraintSyncKey()) return '约束指令已启用';
-      if (S.constraintResponseId && S.constraintSyncedKey === constraintSyncKey()) return '约束指令已同步';
-      return '约束指令待同步';
+      return '已设置，按豆包方式随翻译请求生效';
     }
 
     function writeConstraintState() {
       if (UI.constraintState) UI.constraintState.textContent = constraintStateText();
-    }
-
-    async function syncConstraintInstruction(silent) {
-      const instruction = cleanInstruction(S.constraint);
-      if (!instruction) {
-        resetConstraintSync();
-        writeConstraintState();
-        return '';
-      }
-      const key = constraintSyncKey();
-      if (S.constraintResponseId && S.constraintSyncedKey === key) return S.constraintResponseId;
-      if (S.constraintInlineOnly && S.constraintSyncedKey === key) return '';
-      if (S.constraintSyncing && S.constraintSyncingKey === key) return S.constraintSyncing;
-      if (!S.doubaoEndpoint || !S.doubaoKey) {
-        S.constraintError = 'Doubao 配置缺失';
-        writeConstraintState();
-        throw new Error(S.constraintError);
-      }
-      S.constraintError = '';
-      S.constraintSyncingKey = key;
-      if (!silent) setStatus('正在同步约束指令');
-      writeConstraintState();
-      S.constraintSyncing = callDoubaoConstraint(instruction, key).then(id => {
-        if (S.constraintSyncingKey !== key) return '';
-        if (!id) throw new Error('Response id missing');
-        S.constraintResponseId = id;
-        S.constraintSyncedKey = key;
-        S.constraintError = '';
-        S.constraintInlineOnly = false;
-        if (!silent) setStatus('约束指令已同步');
-        return id;
-      }).catch(e => {
-        const message = e && e.message ? e.message : String(e || 'unknown error');
-        if (S.constraintSyncingKey === key && constraintStoreUnsupported(message)) {
-          S.constraintResponseId = '';
-          S.constraintSyncedKey = key;
-          S.constraintError = '';
-          S.constraintInlineOnly = true;
-          if (!silent) setStatus('约束指令已启用');
-          return '';
-        }
-        if (S.constraintSyncingKey === key) {
-          S.constraintResponseId = '';
-          S.constraintSyncedKey = '';
-          S.constraintError = message;
-          if (!silent) setStatus('约束指令同步失败: ' + S.constraintError);
-        }
-        throw e;
-      }).finally(() => {
-        if (S.constraintSyncingKey === key) {
-          S.constraintSyncing = null;
-          S.constraintSyncingKey = '';
-        }
-        writeConstraintState();
-      });
-      return S.constraintSyncing;
-    }
-
-    async function ensureConstraintReady() {
-      if (!cleanInstruction(S.constraint)) return '';
-      return await syncConstraintInstruction(true);
-    }
-
-    function constraintStoreUnsupported(message) {
-      return /store.+not supported|not supported.+store|previous_response_id.+not supported/i.test(String(message || ''));
     }
 
     function reloadConfig() {
@@ -682,11 +616,30 @@
       seedDoubaoDefaults();
       S.doubaoEndpoint = localStorage.getItem('kiwi_doubao_endpoint') || S.doubaoEndpoint || DOUBAO_DEFAULTS.endpoint;
       S.doubaoModel = localStorage.getItem('kiwi_doubao_model') || S.doubaoModel || DOUBAO_DEFAULTS.model;
-      S.doubaoKey = localStorage.getItem('kiwi_doubao_api_key') || S.doubaoKey || DOUBAO_DEFAULTS.key;
+      S.doubaoKey = config.key || localStorage.getItem('kiwi_doubao_api_key') || DOUBAO_DEFAULTS.key;
+      const nextTarget = typeof config.target === 'string' ? normalizeTargetLanguage(config.target) : '';
+      if (nextTarget !== S.target) {
+        S.target = nextTarget;
+        clearTranslationCache();
+        clearWork();
+      }
+      const nextStyle = typeof config.style === 'string' ? normalizeStyleInstruction(config.style) : '';
+      if (nextStyle !== S.style) {
+        S.style = nextStyle;
+        clearTranslationCache();
+        clearWork();
+      }
+      const nextTemperature = normalizeSamplingValue(config.temperature, 0, 2);
+      const nextTopP = normalizeSamplingValue(config.topP, 0, 1);
+      if (nextTemperature !== S.temperature || nextTopP !== S.topP) {
+        S.temperature = nextTemperature;
+        S.topP = nextTopP;
+        clearTranslationCache();
+        clearWork();
+      }
       const nextConstraint = typeof config.constraint === 'string' ? cleanInstruction(config.constraint) : loadConstraintInstruction();
       if (nextConstraint !== S.constraint) {
         S.constraint = nextConstraint;
-        resetConstraintSync();
         clearTranslationCache();
         if (UI.constraint && UI.constraint.value !== nextConstraint) UI.constraint.value = nextConstraint;
       }
@@ -695,7 +648,6 @@
       writeConstraintState();
       if (!S.fabEnabled) hideUi();
       else if (!dismissed()) showFab();
-      syncConstraintInstruction(true).catch(() => {});
     }
 
     function isLivePage() {
@@ -836,11 +788,10 @@
         S.doubaoKey = key;
         localStorage.setItem('kiwi_doubao_api_key', S.doubaoKey);
       }
-      if (changed) resetConstraintSync();
+      if (changed) clearTranslationCache();
       clearWork();
       setStatus('Doubao Seed: ' + S.doubaoModel);
       writeConstraintState();
-      syncConstraintInstruction(true).catch(() => {});
     }
 
     function detectLang() {
@@ -1155,6 +1106,10 @@
 
     function ownMutation(m) {
       if (!m) return false;
+      if (m.type === 'characterData') {
+        const n = m.target;
+        if (n && n.nodeType === 3 && n.__kiwiAiDone === '1' && nodeText(n) === String(n.__kiwiAiOutput || '')) return true;
+      }
       if (ownNode(m.target)) return true;
       const added = Array.from(m.addedNodes || []);
       const removed = Array.from(m.removedNodes || []);
@@ -1222,11 +1177,17 @@
         if (!danmakuNamed(p)) continue;
         const x = r(p);
         if (x.width <= 0 || x.height <= 0) continue;
+        const n = nameOf(p);
         const rightChat = x.left > innerWidth * 0.55 && x.width < innerWidth * 0.45;
-        if (rightChat) return false;
         const s = getComputedStyle(p);
-        const moving = (s.animationName && s.animationName !== 'none') || /translate|matrix/.test(s.transform || '') || parseFloat(s.transitionDuration || '0') > 0;
-        return moving || x.left < innerWidth * 0.55 || x.width > innerWidth * 0.45 || x.height <= 96;
+        const animated = !!(s.animationName && s.animationName !== 'none');
+        const transformed = /translate|matrix/.test(s.transform || '');
+        const transitioning = parseFloat(s.transitionDuration || '0') > 0;
+        if (rightChat && commentSurfaceName(n) && !animated && !transformed) return false;
+        const moving = animated || transformed || transitioning;
+        if (moving) return true;
+        if (rightChat) return false;
+        return x.left < innerWidth * 0.55 || x.width > innerWidth * 0.45 || x.height <= 96;
       }
       return false;
     }
@@ -1258,17 +1219,45 @@
     }
 
     function textPart(t, e) {
-      const raw = normalize(t);
+      const originalValue = String(t == null ? '' : t);
+      const raw = normalize(originalValue);
       if (!raw || hasCyrillicOriginal(raw) || nickname(e) || lowSignal(raw)) return null;
       let m = raw.match(/^([^:：]{1,64})([:：]\s*)(.+)$/);
-      if (m && looksName(m[1]) && normalize(m[3])) return { prefix: m[1] + m[2], input: normalize(m[3]), raw: raw };
+      if (m && looksName(m[1]) && normalize(m[3])) return { prefix: m[1] + m[2], input: normalize(m[3]), raw: raw, originalValue: originalValue };
       m = raw.match(/^(.{1,64}?)(?:说|發言|发言)\s*[:：]\s*(.+)$/);
-      if (m && looksName(m[1]) && normalize(m[2])) return { prefix: m[1] + ': ', input: normalize(m[2]), raw: raw };
-      return { prefix: '', input: raw, raw: raw };
+      if (m && looksName(m[1]) && normalize(m[2])) return { prefix: m[1] + ': ', input: normalize(m[2]), raw: raw, originalValue: originalValue };
+      return { prefix: '', input: raw, raw: raw, originalValue: originalValue };
+    }
+
+    function nodeText(n) {
+      return String(n && n.nodeValue != null ? n.nodeValue : '');
+    }
+
+    function clearNodeTranslationState(n) {
+      if (!n) return;
+      n.__kiwiAiDone = '';
+      n.__kiwiAiOutput = '';
+      if (S.seen && S.seen.delete) S.seen.delete(n);
+    }
+
+    function prepareTextNode(n) {
+      if (!n || n.__kiwiAiDone !== '1') return true;
+      if (nodeText(n) === String(n.__kiwiAiOutput || '')) return false;
+      clearNodeTranslationState(n);
+      return true;
+    }
+
+    function requeueChangedNode(n) {
+      S.stale++;
+      if (n && n.__kiwiAiDone === '1' && nodeText(n) === String(n.__kiwiAiOutput || '')) return;
+      clearNodeTranslationState(n);
+      if (!S.enabled || !n || !n.parentNode) return;
+      if (S.live) collectLiveNode(n);
+      else scan(n);
     }
 
     function accept(n) {
-      return n && n.nodeType === 3 && n.__kiwiAiDone !== '1' && !badParent(n.parentElement) && nearViewport(n.parentElement) && !!textPart(n.nodeValue, n.parentElement);
+      return n && n.nodeType === 3 && prepareTextNode(n) && !badParent(n.parentElement) && nearViewport(n.parentElement) && !!textPart(n.nodeValue, n.parentElement);
     }
 
     function scan(root) {
@@ -1395,6 +1384,11 @@
         }
         const it = S.queue.splice(idx, 1)[0];
         if (!it || !it.node.parentNode) continue;
+        if (nodeText(it.node) !== it.part.originalValue) {
+          fail(it.node);
+          requeueChangedNode(it.node);
+          continue;
+        }
         batch.push(it);
         len += it.part.input.length + 16;
       }
@@ -1470,7 +1464,7 @@
       } catch (_) {
         const map = {};
         String(text || '').split(/\n+/).forEach(line => {
-          const m = line.match(/^\s*["']?(\d+)["']?\s*[:：.)-]\s*(.+?)\s*$/);
+          const m = line.match(/^\s*["']?(\d+)["']?\s*(?:[:：.)、-]|\s+)\s*(.+?)\s*$/);
           if (m) map[m[1]] = m[2].replace(/^["']|["']$/g, '').trim();
         });
         if (Object.keys(map).length) return map;
@@ -1487,65 +1481,62 @@
       return 3000;
     }
 
-    function buildConstraintPrompt(instruction) {
-      return [
-        '请保存并严格执行后续直播弹幕翻译约束。后续请求只会发送编号弹幕文本和 previous_response_id，不会重复携带本段约束。',
-        '基础规则：目标语言、术语、风格和特殊要求完全以用户约束指令为准；自动识别来源语言；保留语气和直播场景表达；昵称不要翻译；只返回 JSON 对象，key 是编号，value 是译文；不要解释，不要 Markdown。',
-        '用户约束指令：',
-        instruction,
-        '如果已理解并会在同一 previous_response_id 链路中执行，请只回复 {"ok":true}。'
-      ].join('\n');
+    const DOUBAO_SUPPORTED_TARGETS = {
+      zh: true,
+      en: true,
+      ru: true,
+      uk: true
+    };
+
+    function normalizeTargetLanguage(raw) {
+      const s = String(raw || '').trim().toLowerCase().replace(/_/g, '-');
+      if (!s) return '';
+      if (/^(zh|zh-cn|zh-hans|chinese|中文|汉语|汉文|普通话|简体|繁体)/.test(s)) return 'zh';
+      if (/^(en|en-us|en-gb|english|英语|英文|英式|美式)/.test(s)) return 'en';
+      if (/^(ru|ru-ru|russian|russia|русский|русская|россия|俄语|俄文|俄罗斯)/.test(s)) return 'ru';
+      if (/^(uk|uk-ua|ukrainian|ukraine|українська|украинский|украина|乌克兰|乌语|乌文)/.test(s)) return 'uk';
+      const m = s.match(/^([a-z]{2,3})(?:-[a-z0-9]+)?$/);
+      return m ? m[1] : '';
     }
 
-    function targetLanguageFromConstraint() {
+    function normalizeStyleInstruction(raw) {
+      const s = String(raw || '').replace(/\r\n?/g, '\n').replace(/[ \t]+\n/g, '\n').trim();
+      return s.length > STYLE_INSTRUCTION_LIMIT ? s.slice(0, STYLE_INSTRUCTION_LIMIT).trim() : s;
+    }
+
+    function resolveTargetLanguageFromText() {
       const s = cleanInstruction(S.constraint).toLowerCase();
-      if (/english|英语|英文|英式|美式/.test(s)) return 'en';
-      if (/russian|russia|русский|русская|россия|俄语|俄文|俄罗斯日常口语|俄罗斯本地|俄罗斯人/.test(s)) return 'ru';
-      if (/ukrainian|ukraine|українська|украинский|украина|乌克兰语|乌克兰日常口语|乌克兰本地|乌克兰人|乌语|乌文/.test(s)) return 'uk';
-      if (/chinese|中文|汉语|汉文|普通话|简体|繁体/.test(s)) return 'zh';
-      return 'zh';
+      if (/english|英语|英文|英式|美式/.test(s)) return { target: 'en', matched: true };
+      if (/russian|russia|русский|русская|россия|俄语|俄文|俄罗斯|俄罗斯本地|俄罗斯人/.test(s)) return { target: 'ru', matched: true };
+      if (/ukrainian|ukraine|українська|украинский|украина|乌克兰|乌克兰语|乌克兰本地|乌克兰人|乌语|乌文/.test(s)) return { target: 'uk', matched: true };
+      if (/chinese|中文|汉语|汉文|普通话|简体|繁体/.test(s)) return { target: 'zh', matched: true };
+      return { target: 'zh', matched: false };
     }
 
-    async function callDoubaoConstraint(instruction) {
-      if (!S.doubaoEndpoint) throw new Error('Doubao endpoint missing');
-      if (!S.doubaoKey) throw new Error('Doubao API key missing');
-      const headers = {
-        'Content-Type': 'application/json',
-        Accept: 'text/event-stream',
-        Authorization: 'Bearer ' + S.doubaoKey
-      };
-      const req = withTimeout(signal => fetch(S.doubaoEndpoint, {
-        method: 'POST',
-        mode: 'cors',
-        credentials: 'omit',
-        cache: 'no-store',
-        signal,
-        headers,
-        body: JSON.stringify({
-          model: S.doubaoModel || DOUBAO_DEFAULTS.model,
-          input: [{
-            role: 'user',
-            content: [{
-              type: 'input_text',
-              text: buildConstraintPrompt(instruction),
-              translation_options: { target_language: targetLanguageFromConstraint() }
-            }]
-          }],
-          stream: true,
-          store: true
-        })
-      }), requestTimeoutMs('doubao'));
-      const res = await req.done;
-      if (!res.ok) throw new Error(await responseError(res));
-      const result = await readOpenAiStreamDetails(res);
-      return result.id || '';
+    function resolveTargetLanguage() {
+      const target = normalizeTargetLanguage(S.target);
+      if (target) return { target, matched: Object.prototype.hasOwnProperty.call(DOUBAO_SUPPORTED_TARGETS, target) };
+      return resolveTargetLanguageFromText();
+    }
+
+    function doubaoStyleWord(info) {
+      return normalizeStyleInstruction(S.style);
+    }
+
+    function doubaoRequestText(batch, info) {
+      const lines = [];
+      const style = doubaoStyleWord(info);
+      if (style) lines.push(style);
+      batch.forEach(x => lines.push(x.id + ': ' + x.part.input));
+      return lines.join('\n');
     }
 
     async function callDoubao(batch) {
       if (!S.doubaoEndpoint) throw new Error('Doubao endpoint missing');
       if (!S.doubaoKey) throw new Error('Doubao API key missing');
-      const previousId = await ensureConstraintReady();
-      const text = batch.map(x => x.id + ': ' + x.part.input).join('\n');
+      const targetInfo = resolveTargetLanguage();
+      const target = targetInfo.target;
+      const text = doubaoRequestText(batch, targetInfo);
       const headers = {
         'Content-Type': 'application/json',
         Accept: 'text/event-stream',
@@ -1558,12 +1549,13 @@
           content: [{
             type: 'input_text',
             text,
-            translation_options: { target_language: targetLanguageFromConstraint() }
+            translation_options: { target_language: target }
           }]
         }],
         stream: true
       };
-      if (previousId) body.previous_response_id = previousId;
+      if (typeof S.temperature === 'number') body.temperature = S.temperature;
+      if (typeof S.topP === 'number') body.top_p = S.topP;
       const req = withTimeout(signal => fetch(S.doubaoEndpoint, {
         method: 'POST',
         mode: 'cors',
@@ -1676,11 +1668,18 @@
       if (!n.parentNode) return;
       const out = String(v || '').trim();
       if (!out) return;
+      if (nodeText(n) !== p.originalValue) {
+        fail(n);
+        requeueChangedNode(n);
+        return;
+      }
       const mark = n.__kiwiAiTranslation;
       if (mark && mark.parentNode) mark.remove();
       n.__kiwiAiTranslation = null;
-      n.nodeValue = (p.prefix || '') + out;
+      const rendered = (p.prefix || '') + out;
+      n.__kiwiAiOutput = rendered;
       n.__kiwiAiDone = '1';
+      n.nodeValue = rendered;
       S.translated++;
       S.seen.set(n, constraintCacheScope() + '\n' + p.input.toLowerCase());
     }
@@ -1692,7 +1691,6 @@
       reloadConfig,
       configureDoubao,
       saveConstraintInstruction,
-      syncConstraintInstruction,
       show,
       minimize,
       expand,
@@ -1704,7 +1702,6 @@
     };
     ensureUi();
     refreshLiveMode();
-    syncConstraintInstruction(true).catch(() => {});
     if (S.fabEnabled) show(false);
     else hideUi();
     setTimeout(() => {

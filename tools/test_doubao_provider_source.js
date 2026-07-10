@@ -6,6 +6,7 @@ const path = require('path');
 
 const root = path.resolve(__dirname, '..');
 const source = fs.readFileSync(path.join(root, 'tools/google_ai_translate_v8.js'), 'utf8');
+const helperSmali = fs.readFileSync(path.join(root, 'smali/org/chromium/chrome/browser/translate/GoogleAiTranslateHelper.smali'), 'utf8');
 const oldProvider = (...codes) => String.fromCharCode(...codes);
 const removedProviderTerms = [
   oldProvider(72, 89, 45, 77, 84, 50),
@@ -32,6 +33,12 @@ assert.ok(
   'default Doubao model should be doubao-seed-translation-250915'
 );
 assert.ok(
+  /key:\s*''/.test(source)
+    && /doubaoKey:\s*NATIVE_CONFIG\.key \|\| localStorage\.getItem\('kiwi_doubao_api_key'\)/.test(source)
+    && /if \(typeof config\.key === 'string'\)[\s\S]*localStorage\.setItem\('kiwi_doubao_api_key', nextKey\)[\s\S]*localStorage\.removeItem\('kiwi_doubao_api_key'\)/.test(source),
+  'Doubao API key should be supplied by native Settings and bridged into page localStorage'
+);
+assert.ok(
   /async function callDoubao\(batch\)[\s\S]*Accept:\s*'text\/event-stream'[\s\S]*input:\s*\[\{[\s\S]*type:\s*'input_text'[\s\S]*text[\s\S]*stream:\s*true/.test(source),
   'Doubao provider should use SSE streaming Responses API input'
 );
@@ -48,7 +55,7 @@ assert.ok(
   'live mode should not include overlay/download guards that can affect playback'
 );
 assert.ok(
-  /const CURRENT_VERSION = 30/.test(source)
+  /const CURRENT_VERSION = 38/.test(source)
     && /W\.__kiwiAiTranslator && W\.__kiwiAiTranslator\.version >= CURRENT_VERSION[\s\S]*reloadConfig\(\);[\s\S]*return;/.test(source)
     && !/W\.__kiwiAiTranslator\.show\(false\)/.test(source),
   'reinjecting an existing translator should not toggle the live UI'
@@ -92,34 +99,72 @@ assert.ok(
     && /function parseNativeConfig\(raw\)/.test(source)
     && /function applyNativeConfig\(config\)/.test(source)
     && /function saveConstraintInstruction\(silent\)/.test(source),
-  'translator should load the persisted native constraint instruction into page storage'
+  'translator should keep legacy constraint storage readable without sending it as a model-side global constraint'
 );
 
 assert.ok(
-  !/TARGET_KEY|kiwi_ai_translate_target|normalizeTargetLanguage|alreadyTarget|S\.target|Target language/.test(source)
-    && /function targetLanguageFromConstraint\(\)/.test(source)
-    && /translation_options:\s*\{\s*target_language:\s*targetLanguageFromConstraint\(\)\s*\}/.test(source),
-  'target-language selector and state should be removed; the required Doubao target_language should be derived from constraints'
+  !/TARGET_KEY|kiwi_ai_translate_target|alreadyTarget|Target language/.test(source)
+    && /target: normalizeTargetLanguage\(NATIVE_CONFIG\.target\)/.test(source)
+    && /function normalizeTargetLanguage\(raw\)/.test(source)
+    && /function resolveTargetLanguage\(\)/.test(source)
+    && /const targetInfo = resolveTargetLanguage\(\)/.test(source)
+    && /translation_options:\s*\{\s*target_language:\s*target\s*\}/.test(source),
+  'native target-language selection should drive Doubao target_language directly'
 );
 assert.ok(
   !/source_language:\s*['"]auto['"]/.test(source)
-    && /乌克兰日常口语/.test(source)
-    && /俄罗斯日常口语/.test(source),
-  'Doubao translation options should use only target language codes and infer style-only Ukrainian/Russian constraints'
+    && !/乌克兰日常口语|俄罗斯日常口语|英语日常口语|中文网络口语|弹幕文本|DOUBAO_STYLE_BY_TARGET|中网口语|英网口语|俄网口语|乌网口语/.test(source)
+    && /const DOUBAO_SUPPORTED_TARGETS = \{[\s\S]*zh: true[\s\S]*en: true[\s\S]*ru: true[\s\S]*uk: true/.test(source),
+  'Doubao requests should use only target language codes and no built-in default style word'
 );
 assert.ok(
-  /function syncConstraintInstruction\(silent\)[\s\S]*callDoubaoConstraint/.test(source)
-    && /function callDoubaoConstraint\(instruction\)[\s\S]*store:\s*true/.test(source)
-    && /function constraintStoreUnsupported\(message\)/.test(source)
-    && /constraintInlineOnly/.test(source)
-    && /function extractResponseId\(j\)/.test(source),
-  'constraint instruction should try model-side persistence and fall back when the translation model does not support store'
+  /const STYLE_INSTRUCTION_LIMIT = 500/.test(source)
+    && /style: normalizeStyleInstruction\(NATIVE_CONFIG\.style\)/.test(source)
+    && /style: typeof j\.style === 'string' \? normalizeStyleInstruction\(j\.style\) : undefined/.test(source)
+    && /function normalizeStyleInstruction\(raw\)/.test(source),
+  'native config should accept one global custom style instruction'
 );
 assert.ok(
-  /const previousId = await ensureConstraintReady\(\)/.test(source)
-    && /if \(previousId\) body\.previous_response_id = previousId/.test(source)
-    && /const text = batch\.map\(x => x\.id \+ ': ' \+ x\.part\.input\)\.join\('\\n'\)/.test(source),
-  'danmaku translation requests should send numbered text and derive Doubao target_language from constraints'
+  !/syncConstraintInstruction|callDoubaoConstraint|buildConstraintPrompt|ensureConstraintReady|constraintStoreUnsupported|constraintInlineOnly|constraintResponseId|previous_response_id|store:\s*true/.test(source),
+  'translation model does not support global constraints; model-side persistence should be fully removed'
+);
+assert.ok(
+  /function doubaoStyleWord\(info\)[\s\S]*return normalizeStyleInstruction\(S\.style\)/.test(source)
+    && /function doubaoRequestText\(batch, info\)[\s\S]*const style = doubaoStyleWord\(info\)[\s\S]*if \(style\) lines\.push\(style\)[\s\S]*x\.id \+ ': ' \+ x\.part\.input/.test(source)
+    && /const text = doubaoRequestText\(batch, targetInfo\)/.test(source)
+    && /input:\s*\[\{[\s\S]*content:\s*\[\{[\s\S]*type:\s*'input_text'[\s\S]*text[\s\S]*translation_options:\s*\{\s*target_language:\s*target\s*\}[\s\S]*\}\][\s\S]*\}\]/.test(source)
+    && !/translation_options:\s*\{[\s\S]*style/.test(source),
+  'danmaku translation requests should prepend one optional global style instruction plus numbered comments'
+);
+assert.ok(
+  /function constraintCacheScope\(\)[\s\S]*info\.target[\s\S]*doubaoStyleWord\(info\)[\s\S]*S\.temperature[\s\S]*S\.topP/.test(source)
+    && source.includes("].join('\\n');"),
+  'translation cache scope should include target, style, temperature, and top-p'
+);
+assert.ok(
+  /temperature: normalizeSamplingValue\(NATIVE_CONFIG\.temperature, 0, 2\)/.test(source)
+    && /topP: normalizeSamplingValue\(NATIVE_CONFIG\.topP, 0, 1\)/.test(source)
+    && /body\.temperature = S\.temperature/.test(source)
+    && /body\.top_p = S\.topP/.test(source)
+    && /kiwi_ai_translate_temperature/.test(helperSmali)
+    && /kiwi_ai_translate_top_p/.test(helperSmali)
+    && /const-string v1, "temperature"/.test(helperSmali)
+    && /const-string v1, "topP"/.test(helperSmali)
+    && /body\.temperature = S\.temperature/.test(helperSmali)
+    && /body\.top_p = S\.topP/.test(helperSmali),
+  'sampling settings should flow from native preferences into the embedded Doubao request body'
+);
+assert.ok(
+  /MMKf4EpW\(\)Ljava\/lang\/String;/.test(helperSmali)
+    && /const-string v1, "target"/.test(helperSmali)
+    && /kiwi_ai_translate_style_instruction/.test(helperSmali)
+    && !/kiwi_ai_translate_style_word_/.test(helperSmali)
+    && /const-string v1, "style"/.test(helperSmali),
+  'native helper should pass the selected Chrome target language and the global custom style instruction into injected translator config'
+);
+assert.ok(
+  /line\.match\([\s\S]*\\s\+[\s\S]*\)/.test(source),
+  'batch parser should accept Doubao numbered lines with either punctuation or whitespace after the id'
 );
 assert.ok(
   /async function callBatch[\s\S]*await callDoubao\(batch\)/.test(source)
@@ -135,7 +180,11 @@ assert.ok(
   /const FAB_ENABLED_KEY = 'kiwi_ai_floating_ball_enabled'/.test(source)
     && /function showPanel\(\)[\s\S]*showFab\(\);/.test(source)
     && /function installFabDrag\(\)/.test(source),
-  'translator should keep only a settings-controlled draggable floating ball on the page'
+  'translator should retain floating UI plumbing while native config keeps it hidden'
+);
+assert.ok(
+  /const\/4 v8, 0x0[\s\S]*const-string v1, "fabEnabled"[\s\S]*JSONObject;->put\(Ljava\/lang\/String;Z\)/.test(helperSmali),
+  'native helper should disable the floating translation ball in injected config'
 );
 
 assert.ok(

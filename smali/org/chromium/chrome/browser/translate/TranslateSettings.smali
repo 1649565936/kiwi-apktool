@@ -56,7 +56,7 @@
     move-result-object p1
 
     .line 5
-    const p2, 0x7f1406c4
+    const p2, 0x7f140688
 
     .line 6
     .line 7
@@ -92,35 +92,94 @@
 
     .line 24
     .line 25
-    const-string p1, "kiwi_ai_floating_ball_enabled"
+    sget-object p1, LoF;->a:Landroid/content/SharedPreferences;
+
+    invoke-interface {p1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object p1
+
+    const-string p2, "kiwi_ai_floating_ball_enabled"
+
+    const/4 v0, 0x0
+
+    invoke-interface {p1, p2, v0}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
+
+    move-result-object p1
+
+    invoke-interface {p1}, Landroid/content/SharedPreferences$Editor;->apply()V
+
+    const-string p1, "google_ai_translate_api_key"
 
     invoke-virtual {p0, p1}, Ls61;->k1(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
 
     move-result-object p1
 
-    if-eqz p1, :cond_no_fab
+    if-eqz p1, :cond_no_key
 
-    check-cast p1, Lorg/chromium/components/browser_ui/settings/ChromeSwitchPreference;
+    new-instance p2, Lorg/chromium/chrome/browser/translate/GoogleAiKeyPreferenceClickListener;
+
+    invoke-direct {p2, p0}, Lorg/chromium/chrome/browser/translate/GoogleAiKeyPreferenceClickListener;-><init>(Lorg/chromium/chrome/browser/translate/TranslateSettings;)V
+
+	iput-object p2, p1, Landroidx/preference/Preference;->p:Lj61;
 
     sget-object p2, LoF;->a:Landroid/content/SharedPreferences;
 
-    const-string v0, "kiwi_ai_floating_ball_enabled"
+    const-string v0, "google_ai_translate_api_key"
 
-    const/4 v1, 0x1
+    const-string v1, ""
 
-    invoke-interface {p2, v0, v1}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    invoke-interface {p2, v0, v1}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result p2
+    move-result-object p2
 
-    invoke-virtual {p1, p2}, Landroidx/preference/g;->Y(Z)V
+    if-eqz p2, :cond_empty_key
 
-    new-instance p2, Lorg/chromium/chrome/browser/translate/GoogleAiFloatingBallPreferenceChangeListener;
+    invoke-virtual {p2}, Ljava/lang/String;->trim()Ljava/lang/String;
 
-    invoke-direct {p2}, Lorg/chromium/chrome/browser/translate/GoogleAiFloatingBallPreferenceChangeListener;-><init>()V
+    move-result-object p2
 
-	iput-object p2, p1, Landroidx/preference/Preference;->o:Li61;
+    invoke-virtual {p2}, Ljava/lang/String;->length()I
 
-	:cond_no_fab
+    move-result v0
+
+    if-lez v0, :cond_empty_key
+
+    const-string p2, "已设置，点击可修改"
+
+    goto :goto_key_summary
+
+    :cond_empty_key
+    const-string p2, "未设置，点击填写翻译密钥"
+
+    :goto_key_summary
+    invoke-virtual {p1, p2}, Landroidx/preference/Preference;->Q(Ljava/lang/CharSequence;)V
+
+	:cond_no_key
+    const-string p1, "kiwi_ai_translate_target_language"
+
+    invoke-virtual {p0, p1}, Ls61;->k1(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_no_target_language
+
+    new-instance p2, Lorg/chromium/chrome/browser/translate/GoogleAiTargetLanguagePreferenceClickListener;
+
+    invoke-direct {p2}, Lorg/chromium/chrome/browser/translate/GoogleAiTargetLanguagePreferenceClickListener;-><init>()V
+
+    iput-object p2, p1, Landroidx/preference/Preference;->p:Lj61;
+
+    invoke-static {}, LJ/N;->MMKf4EpW()Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-static {p2}, Lorg/chromium/chrome/browser/translate/GoogleAiTargetLanguagePreferenceClickListener;->b(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-virtual {p1, p2}, Landroidx/preference/Preference;->Q(Ljava/lang/CharSequence;)V
+
+    :cond_no_target_language
 	const-string p1, "kiwi_ai_constraint_instruction"
 
 	invoke-virtual {p0, p1}, Ls61;->k1(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
@@ -137,7 +196,7 @@
 
     sget-object p2, LoF;->a:Landroid/content/SharedPreferences;
 
-    const-string v0, "kiwi_ai_translate_constraint_instruction"
+    const-string v0, "kiwi_ai_translate_style_instruction"
 
     const-string v1, ""
 
@@ -153,17 +212,119 @@
 
     if-lez v0, :cond_empty_constraint
 
-    const-string p2, "已设置，刷新或重新打开网页后会自动同步到模型"
+    const-string p2, "已设置，刷新网页后生效"
 
     goto :goto_constraint_summary
 
     :cond_empty_constraint
-    const-string p2, "未设置约束指令"
+    const-string p2, "未设置，使用模型默认状态翻译"
 
     :goto_constraint_summary
     invoke-virtual {p1, p2}, Landroidx/preference/Preference;->Q(Ljava/lang/CharSequence;)V
 
     :cond_no_constraint
+    const-string p1, "kiwi_ai_translate_temperature"
+
+    invoke-virtual {p0, p1}, Ls61;->k1(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_no_temperature
+
+    new-instance p2, Lorg/chromium/chrome/browser/translate/GoogleAiSamplingPreferenceClickListener;
+
+    const-string v0, "kiwi_ai_translate_temperature"
+
+    const-string v1, "temperature（0–2）"
+
+    invoke-direct {p2, v0, v1}, Lorg/chromium/chrome/browser/translate/GoogleAiSamplingPreferenceClickListener;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    iput-object p2, p1, Landroidx/preference/Preference;->p:Lj61;
+
+    sget-object p2, LoF;->a:Landroid/content/SharedPreferences;
+
+    const-string v0, "kiwi_ai_translate_temperature"
+
+    const-string v1, ""
+
+    invoke-interface {p2, v0, v1}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p2
+
+    if-eqz p2, :cond_empty_temperature
+
+    invoke-virtual {p2}, Ljava/lang/String;->length()I
+
+    move-result v0
+
+    if-lez v0, :cond_empty_temperature
+
+    const-string v0, "当前值："
+
+    invoke-virtual {v0, p2}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p2
+
+    goto :goto_temperature_summary
+
+    :cond_empty_temperature
+    const-string p2, "未设置，使用模型默认值（范围 0–2）"
+
+    :goto_temperature_summary
+    invoke-virtual {p1, p2}, Landroidx/preference/Preference;->Q(Ljava/lang/CharSequence;)V
+
+    :cond_no_temperature
+    const-string p1, "kiwi_ai_translate_top_p"
+
+    invoke-virtual {p0, p1}, Ls61;->k1(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_no_top_p
+
+    new-instance p2, Lorg/chromium/chrome/browser/translate/GoogleAiSamplingPreferenceClickListener;
+
+    const-string v0, "kiwi_ai_translate_top_p"
+
+    const-string v1, "top-p（0–1）"
+
+    invoke-direct {p2, v0, v1}, Lorg/chromium/chrome/browser/translate/GoogleAiSamplingPreferenceClickListener;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    iput-object p2, p1, Landroidx/preference/Preference;->p:Lj61;
+
+    sget-object p2, LoF;->a:Landroid/content/SharedPreferences;
+
+    const-string v0, "kiwi_ai_translate_top_p"
+
+    const-string v1, ""
+
+    invoke-interface {p2, v0, v1}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p2
+
+    if-eqz p2, :cond_empty_top_p
+
+    invoke-virtual {p2}, Ljava/lang/String;->length()I
+
+    move-result v0
+
+    if-lez v0, :cond_empty_top_p
+
+    const-string v0, "当前值："
+
+    invoke-virtual {v0, p2}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p2
+
+    goto :goto_top_p_summary
+
+    :cond_empty_top_p
+    const-string p2, "未设置，使用模型默认值（范围 0–1）"
+
+    :goto_top_p_summary
+    invoke-virtual {p1, p2}, Landroidx/preference/Preference;->Q(Ljava/lang/CharSequence;)V
+
+    :cond_no_top_p
     const-string p1, "Settings.Translate.Opened"
 
     .line 26

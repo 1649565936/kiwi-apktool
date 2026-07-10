@@ -1,0 +1,15 @@
+/build/
+/tmp/
+
+*.apk
+*.apks
+*.aab
+*.idsig
+*.jks
+*.keystore
+
+.DS_Store
+*.log
+*.tmp
+*.bak
+*.orig

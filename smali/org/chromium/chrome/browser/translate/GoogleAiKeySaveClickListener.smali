@@ -48,11 +48,7 @@
 
     move-result-object p1
 
-    iget-object p2, p0, Lorg/chromium/chrome/browser/translate/GoogleAiKeySaveClickListener;->a:Landroid/content/Context;
-
-    invoke-static {p2}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
-
-    move-result-object p2
+    sget-object p2, LoF;->a:Landroid/content/SharedPreferences;
 
     invoke-interface {p2}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
@@ -96,12 +92,12 @@
 
     if-lez p1, :cond_empty
 
-    const-string v2, "Doubao Seed is built in."
+    const-string v2, "已设置，点击可修改"
 
     goto :goto_set_summary
 
     :cond_empty
-    const-string v2, "Doubao Seed is built in."
+    const-string v2, "未设置，点击填写翻译密钥"
 
     :goto_set_summary
     invoke-virtual {p2, v2}, Landroidx/preference/Preference;->Q(Ljava/lang/CharSequence;)V

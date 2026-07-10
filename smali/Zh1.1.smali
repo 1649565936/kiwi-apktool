@@ -4122,16 +4122,10 @@
 
     .line 190
     .line 191
-    const v6, 0x7f140728
+    const v6, 0x7f140688
 
-    .line 192
-    .line 193
-    .line 194
     invoke-virtual {v12, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
-    .line 195
-    .line 196
-    .line 197
     move-result-object v6
 
     .line 198

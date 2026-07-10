@@ -2354,6 +2354,7 @@
     <public type="id" name="year" id="0x7f010930" />
     <public type="id" name="yes_button" id="0x7f010931" />
     <public type="id" name="zoom" id="0x7f010932" />
+    <public type="id" name="kiwi_ai_translate_toggle_id" id="0x7f010933" />
     <public type="anim" name="abc_fade_in" id="0x7f020000" />
     <public type="anim" name="abc_fade_out" id="0x7f020001" />
     <public type="anim" name="abc_grow_fade_in_from_bottom" id="0x7f020002" />
@@ -9441,6 +9442,8 @@
     <public type="mipmap" name="ic_launcher" id="0x7f110000" />
     <public type="mipmap" name="ic_launcher_round" id="0x7f110001" />
     <public type="mipmap" name="shortcut_icon_shadow" id="0x7f110002" />
+    <public type="mipmap" name="kiwi_launcher_icon" id="0x7f110003" />
+    <public type="mipmap" name="kiwi_launcher_icon_round" id="0x7f110004" />
     <public type="plurals" name="accessibility_dialog_back_button" id="0x7f120000" />
     <public type="plurals" name="accessibility_dialog_back_button_with_group_name" id="0x7f120001" />
     <public type="plurals" name="accessibility_download_manager_ui_audio" id="0x7f120002" />
@@ -13032,6 +13035,8 @@
     <public type="string" name="yes" id="0x7f140dbe" />
     <public type="string" name="yesterday" id="0x7f140dbf" />
     <public type="string" name="google_ai_translate_default_api_key" id="0x7f140dc0" />
+    <public type="string" name="kiwi_ai_translate_start" id="0x7f140dc1" />
+    <public type="string" name="kiwi_ai_translate_stop" id="0x7f140dc2" />
     <public type="style" name="ActionBarWithBackButton" id="0x7f150000" />
     <public type="style" name="AlertDialog.AppCompat" id="0x7f150001" />
     <public type="style" name="AlertDialog.AppCompat.Light" id="0x7f150002" />

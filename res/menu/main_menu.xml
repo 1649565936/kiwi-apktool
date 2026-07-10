@@ -13,6 +13,8 @@
         </item>
         <item n0:icon="@drawable/menu_update" n0:id="@id/update_menu_id" n0:title="@string/menu_update" />
         <item n0:icon="@drawable/ic_add_box_rounded_corner" n0:id="@id/new_tab_menu_id" n0:title="@string/menu_new_tab" />
+        <item n0:icon="@drawable/ic_translate" n0:id="@id/kiwi_ai_translate_toggle_id" n0:title="@string/kiwi_ai_translate_start" />
+        <item n0:icon="@drawable/ic_translate" n0:id="@id/translate_id" n0:title="@string/languages_settings_translation_title" />
         <item n0:icon="@drawable/incognito_simple" n0:id="@id/new_incognito_tab_menu_id" n0:title="@string/menu_new_incognito_tab" />
         <item n0:icon="@drawable/ic_new_window" n0:id="@id/new_window_menu_id" n0:title="@string/menu_new_window" />
         <item n0:icon="@drawable/ic_open_in_browser" n0:id="@id/move_to_other_window_menu_id" n0:title="@string/menu_move_to_other_window" />
@@ -37,7 +39,6 @@
         <item n0:icon="@drawable/price_tracking_disabled" n0:id="@id/enable_price_tracking_menu_id" n0:title="@string/enable_price_tracking_menu_item" />
         <item n0:icon="@drawable/price_tracking_enabled_filled" n0:id="@id/disable_price_tracking_menu_id" n0:title="@string/disable_price_tracking_menu_item" />
         <item n0:icon="@drawable/ic_find_in_page" n0:id="@id/find_in_page_id" n0:title="@string/menu_find_in_page" />
-        <item n0:icon="@drawable/ic_translate" n0:id="@id/translate_id" n0:title="@string/menu_translate" />
         <item n0:icon="@drawable/ic_add_to_home_screen" n0:id="@id/add_to_homescreen_id" n0:title="@string/menu_add_to_homescreen" />
         <item n0:icon="@drawable/ic_install_webapp" n0:id="@id/install_webapp_id" n0:title="@string/menu_install_webapp" />
         <item n0:icon="@drawable/ic_open_webapk" n0:id="@id/open_webapk_id" n0:title="@string/menu_open_webapk" />

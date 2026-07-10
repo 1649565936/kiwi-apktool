@@ -28,7 +28,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/content/DialogInterface;I)V
-    .locals 4
+    .locals 5
 
     iget-object p1, p0, Lorg/chromium/chrome/browser/translate/GoogleAiConstraintSaveClickListener;->a:Landroid/widget/EditText;
 
@@ -48,7 +48,7 @@
 
     move-result p2
 
-    const/16 v0, 0x7d0
+    const/16 v0, 0x1f4
 
     if-le p2, v0, :cond_length_ok
 
@@ -69,12 +69,26 @@
 
     move-result-object p2
 
-    const-string v0, "kiwi_ai_translate_constraint_instruction"
+    const-string v0, "kiwi_ai_translate_style_instruction"
+
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    if-lez v1, :cond_remove
 
     invoke-interface {p2, v0, p1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
     move-result-object p2
 
+    goto :goto_apply
+
+    :cond_remove
+    invoke-interface {p2, v0}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    move-result-object p2
+
+    :goto_apply
     invoke-interface {p2}, Landroid/content/SharedPreferences$Editor;->apply()V
 
     iget-object p2, p0, Lorg/chromium/chrome/browser/translate/GoogleAiConstraintSaveClickListener;->b:Landroidx/preference/Preference;
@@ -87,15 +101,15 @@
 
     if-lez p1, :cond_empty
 
-    const-string v1, "已设置，刷新或重新打开网页后会自动同步到模型"
+    const-string v0, "已设置，刷新网页后生效"
 
-    goto :goto_set_summary
+    goto :goto_summary
 
     :cond_empty
-    const-string v1, "未设置约束指令"
+    const-string v0, "未设置，使用模型默认状态翻译"
 
-    :goto_set_summary
-    invoke-virtual {p2, v1}, Landroidx/preference/Preference;->Q(Ljava/lang/CharSequence;)V
+    :goto_summary
+    invoke-virtual {p2, v0}, Landroidx/preference/Preference;->Q(Ljava/lang/CharSequence;)V
 
     :cond_done
     return-void

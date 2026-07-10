@@ -2353,5 +2353,6 @@
     <id name="x_right" />
     <id name="year" />
     <id name="yes_button" />
+    <id name="kiwi_ai_translate_toggle_id" />
     <id name="zoom" />
 </resources>

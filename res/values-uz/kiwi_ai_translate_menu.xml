@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="kiwi_ai_translate_start">Tarjimani boshlash</string>
+    <string name="kiwi_ai_translate_stop">Tarjimani toʻxtatish</string>
+</resources>

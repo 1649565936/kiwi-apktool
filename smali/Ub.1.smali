@@ -375,6 +375,41 @@
     .line 24
     .line 25
     .line 26
+    const v1, 0x7f010933
+
+    invoke-interface {p0, v1}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_no_kiwi_translate_toggle
+
+    const/4 v3, 0x1
+
+    invoke-interface {v1, v3}, Landroid/view/MenuItem;->setVisible(Z)Landroid/view/MenuItem;
+
+    sget-object v3, LoF;->a:Landroid/content/SharedPreferences;
+
+    const-string v4, "kiwi_ai_translate_running"
+
+    invoke-interface {v3, v4, v0}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_kiwi_translate_start_title
+
+    const v3, 0x7f140dc2
+
+    goto :goto_kiwi_translate_title
+
+    :cond_kiwi_translate_start_title
+    const v3, 0x7f140dc1
+
+    :goto_kiwi_translate_title
+    invoke-interface {v1, v3}, Landroid/view/MenuItem;->setTitle(I)Landroid/view/MenuItem;
+
+    :cond_no_kiwi_translate_toggle
+    const v1, 0x7f0108bc
+
     invoke-interface {p0, v1}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
     .line 27
@@ -383,7 +418,9 @@
     move-result-object p0
 
     .line 30
-    invoke-interface {p0, v2}, Landroid/view/MenuItem;->setVisible(Z)Landroid/view/MenuItem;
+    const/4 v1, 0x1
+
+    invoke-interface {p0, v1}, Landroid/view/MenuItem;->setVisible(Z)Landroid/view/MenuItem;
 
     .line 31
     .line 32
@@ -539,7 +576,7 @@
     const/4 v3, 0x4
 
     .line 106
-    const v4, 0x7f140728
+    const v4, 0x7f140688
 
     .line 107
     .line 108
@@ -585,7 +622,7 @@
     .line 126
     .line 127
     .line 128
-    invoke-interface {p0, p1}, Landroid/view/MenuItem;->setTitle(I)Landroid/view/MenuItem;
+    invoke-interface {p0, v4}, Landroid/view/MenuItem;->setTitle(I)Landroid/view/MenuItem;
 
     .line 129
     .line 130

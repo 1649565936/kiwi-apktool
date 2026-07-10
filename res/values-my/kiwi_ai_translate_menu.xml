@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="kiwi_ai_translate_start">ဘာသာပြန်ခြင်း စတင်ရန်</string>
+    <string name="kiwi_ai_translate_stop">ဘာသာပြန်ခြင်း ရပ်ရန်</string>
+</resources>

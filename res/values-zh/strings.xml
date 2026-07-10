@@ -5,4 +5,5 @@
     <string name="__arcore_install_app">需要安装最新版本的“面向 AR 的 Google Play 服务”才能使用此应用。</string>
     <string name="__arcore_install_feature">需要安装最新版本的“面向 AR 的 Google Play 服务”才能使用此功能。</string>
     <string name="__arcore_installing">正在安装“面向 AR 的 Google Play 服务”…</string>
+    <string name="languages_settings_translation_title">翻译设置</string>
 </resources>

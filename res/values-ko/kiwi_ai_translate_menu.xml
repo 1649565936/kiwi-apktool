@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="kiwi_ai_translate_start">번역 시작</string>
+    <string name="kiwi_ai_translate_stop">번역 중지</string>
+</resources>
